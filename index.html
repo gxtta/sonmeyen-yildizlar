@@ -64,7 +64,7 @@
             </p>
         </div>
 
-        <!-- === YENİ ARAMA KUTUSU === -->
+        <!-- Arama Kutusu -->
         <div class="absolute top-6 right-6 z-30 pointer-events-auto w-64 md:w-80">
             <div class="relative group">
                 <input type="text" id="search-input" 
@@ -74,14 +74,18 @@
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </div>
-            
-            <!-- Arama Sonuçları Listesi -->
-            <div id="search-results" class="hidden mt-2 bg-[#0a0505]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl max-h-60 overflow-y-auto absolute w-full z-40">
-                <!-- Sonuçlar JS ile buraya gelecek -->
-            </div>
+            <div id="search-results" class="hidden mt-2 bg-[#0a0505]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl max-h-60 overflow-y-auto absolute w-full z-40"></div>
         </div>
-        <!-- === ARAMA KUTUSU SONU === -->
 
+        <!-- === YENİ EKLENEN KAYNAK (SOURCE) BUTONU === -->
+        <!-- Sağ alt köşeye sabitlenmiş, şık ve dikkat dağıtmayan bir kaynak linki -->
+        <a href="https://anitsayac.com/" target="_blank" 
+           class="absolute bottom-6 right-6 z-20 pointer-events-auto flex items-center gap-2 px-4 py-2 bg-black/40 border border-white/10 rounded-full text-xs text-gray-500 hover:text-pink-300 hover:border-pink-500/30 transition-all backdrop-blur-sm hover:bg-black/60 group">
+            <span class="opacity-50 group-hover:opacity-100 transition-opacity">Veri Kaynağı:</span>
+            <span class="font-semibold">Anıt Sayaç</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-50 group-hover:opacity-100"></i>
+        </a>
+        <!-- === KAYNAK BUTONU SONU === -->
 
         <!-- Tooltip -->
         <div id="tooltip" class="absolute hidden bg-black/90 border border-red-500/30 backdrop-blur px-4 py-2 rounded-lg shadow-[0_0_20px_rgba(255,0,0,0.3)] transition-opacity duration-200">
@@ -108,34 +112,13 @@
                 <div class="bg-white/5 rounded-xl p-5 border border-white/5 mb-6">
                     <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Olay Detayları</h3>
                     
-                    <div class="detail-row">
-                        <span class="detail-label"><i class="fa-solid fa-location-dot w-4"></i> İl / İlçe</span>
-                        <span id="det-location" class="detail-value">...</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="detail-label"><i class="fa-solid fa-hourglass-half w-4"></i> Yaş</span>
-                        <span id="det-age" class="detail-value">...</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="detail-label"><i class="fa-solid fa-skull w-4"></i> Fail</span>
-                        <span id="det-killer" class="detail-value text-red-300">...</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="detail-label"><i class="fa-solid fa-question w-4"></i> Neden</span>
-                        <span id="det-reason" class="detail-value">...</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="detail-label"><i class="fa-solid fa-gun w-4"></i> Şekil</span>
-                        <span id="det-method" class="detail-value">...</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="detail-label"><i class="fa-solid fa-shield-halved w-4"></i> Koruma</span>
-                        <span id="det-protection" class="detail-value">...</span>
-                    </div>
-                    <div class="detail-row border-none">
-                        <span class="detail-label"><i class="fa-solid fa-gavel w-4"></i> Fail Durumu</span>
-                        <span id="det-status" class="detail-value">...</span>
-                    </div>
+                    <div class="detail-row"><span class="detail-label"><i class="fa-solid fa-location-dot w-4"></i> İl / İlçe</span><span id="det-location" class="detail-value">...</span></div>
+                    <div class="detail-row"><span class="detail-label"><i class="fa-solid fa-hourglass-half w-4"></i> Yaş</span><span id="det-age" class="detail-value">...</span></div>
+                    <div class="detail-row"><span class="detail-label"><i class="fa-solid fa-skull w-4"></i> Fail</span><span id="det-killer" class="detail-value text-red-300">...</span></div>
+                    <div class="detail-row"><span class="detail-label"><i class="fa-solid fa-question w-4"></i> Neden</span><span id="det-reason" class="detail-value">...</span></div>
+                    <div class="detail-row"><span class="detail-label"><i class="fa-solid fa-gun w-4"></i> Şekil</span><span id="det-method" class="detail-value">...</span></div>
+                    <div class="detail-row"><span class="detail-label"><i class="fa-solid fa-shield-halved w-4"></i> Koruma</span><span id="det-protection" class="detail-value">...</span></div>
+                    <div class="detail-row border-none"><span class="detail-label"><i class="fa-solid fa-gavel w-4"></i> Fail Durumu</span><span id="det-status" class="detail-value">...</span></div>
                 </div>
 
                 <a id="source-link" href="#" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 mb-6 bg-gray-800/50 hover:bg-gray-800 text-gray-400 text-xs rounded transition-colors border border-white/10">
@@ -145,15 +128,11 @@
                 <hr class="border-white/10 mb-6">
 
                 <div>
-                    <h3 class="text-lg font-medium text-pink-300 mb-2 flex items-center gap-2">
-                        <i class="fa-solid fa-pen-nib"></i> Anı Defteri
-                    </h3>
+                    <h3 class="text-lg font-medium text-pink-300 mb-2 flex items-center gap-2"><i class="fa-solid fa-pen-nib"></i> Anı Defteri</h3>
                     <p class="text-xs text-gray-500 mb-3">Bu kişi için bir not bırakın.</p>
                     <textarea id="memory-input" rows="4" class="w-full bg-black/40 border border-white/10 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-pink-500/50 transition-colors resize-none placeholder-gray-600" placeholder="Duygularınızı buraya yazın..."></textarea>
                     <div class="flex justify-end mt-3">
-                        <button id="save-btn" class="px-5 py-2 bg-gradient-to-r from-red-900 to-pink-800 hover:from-red-800 hover:to-pink-700 text-white text-xs font-bold rounded shadow-lg transition-all active:scale-95">
-                            KAYDET
-                        </button>
+                        <button id="save-btn" class="px-5 py-2 bg-gradient-to-r from-red-900 to-pink-800 hover:from-red-800 hover:to-pink-700 text-white text-xs font-bold rounded shadow-lg transition-all active:scale-95">KAYDET</button>
                     </div>
                     <p id="save-msg" class="text-xs text-green-400 mt-2 text-right hidden">Kaydedildi.</p>
                 </div>
@@ -164,87 +143,64 @@
     <script>
         let namesList = []; 
 
-        // --- ARAMA FONKSİYONU ---
         const searchInput = document.getElementById('search-input');
         const searchResults = document.getElementById('search-results');
 
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value.toLocaleLowerCase('tr');
-            searchResults.innerHTML = ''; // Temizle
+            searchResults.innerHTML = ''; 
 
             if(query.length < 2) {
                 searchResults.classList.add('hidden');
                 return;
             }
 
-            // İsim içinde arama yap (Orijinal indeksleri kaybetmemek için map kullanıyoruz)
             const matches = namesList
                 .map((person, index) => ({...person, originalIndex: index}))
                 .filter(p => p.name.toLocaleLowerCase('tr').includes(query))
-                .slice(0, 10); // Max 10 sonuç göster
+                .slice(0, 10); 
 
             if(matches.length > 0) {
                 searchResults.classList.remove('hidden');
                 matches.forEach(match => {
                     const div = document.createElement('div');
                     div.className = 'px-4 py-3 hover:bg-white/5 cursor-pointer border-b border-white/5 last:border-none transition-colors group';
-                    
-                    // Tarihi de yanında gösterelim (varsa)
                     const dateStr = match.date ? `<span class="text-xs text-gray-500 ml-2 group-hover:text-pink-300/70">(${match.date})</span>` : '';
-
-                    div.innerHTML = `
-                        <div class="flex items-center justify-between">
-                            <p class="text-sm text-gray-200 font-medium group-hover:text-pink-200">${match.name} ${dateStr}</p>
-                            <i class="fa-solid fa-chevron-right text-xs text-gray-600 group-hover:text-pink-500"></i>
-                        </div>
-                    `;
-                    
-                    // Tıklayınca paneli aç
+                    div.innerHTML = `<div class="flex items-center justify-between"><p class="text-sm text-gray-200 font-medium group-hover:text-pink-200">${match.name} ${dateStr}</p><i class="fa-solid fa-chevron-right text-xs text-gray-600 group-hover:text-pink-500"></i></div>`;
                     div.onclick = () => {
-                        openPanel(match.originalIndex); // Orijinal ID ile aç
+                        openPanel(match.originalIndex); 
                         searchResults.classList.add('hidden');
-                        searchInput.value = ''; // Kutuyu temizle
+                        searchInput.value = ''; 
                     };
                     searchResults.appendChild(div);
                 });
             } else {
-                // Sonuç yoksa
                 searchResults.classList.remove('hidden');
                 searchResults.innerHTML = '<div class="px-4 py-3 text-xs text-gray-500 italic text-center">Sonuç bulunamadı</div>';
             }
         });
 
-        // Dışarı tıklayınca aramayı kapat
         document.addEventListener('click', (e) => {
             if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
                 searchResults.classList.add('hidden');
             }
         });
 
-
         async function fetchNames() {
             try {
                 const response = await fetch('anit_verileri.json?t=' + new Date().getTime());
                 if (!response.ok) throw new Error('Veri yok');
-                
                 const data = await response.json();
                 namesList = data;
-                
                 document.getElementById('total-count').innerText = namesList.length.toLocaleString();
                 generateGalaxy();
-                
                 const loading = document.getElementById('loading-overlay');
                 loading.style.opacity = '0';
                 setTimeout(() => loading.style.display = 'none', 1000);
-
             } catch (error) {
                 console.warn("Yedek veri kullanılıyor.", error);
-                namesList = [
-                    {name: "Özgecan Aslan", date: "11.02.2015"}, 
-                    {name: "Emine Bulut", date: "18.08.2019"}
-                ];
+                namesList = [{name: "Özgecan Aslan", date: "11.02.2015"}, {name: "Emine Bulut", date: "18.08.2019"}];
                 for(let i=0; i<200; i++) namesList.push({name: "Bilinmiyor", date: "..."});
-                
                 document.getElementById('total-count').innerText = namesList.length.toLocaleString();
                 generateGalaxy();
                 document.getElementById('loading-overlay').style.display = 'none';
@@ -323,7 +279,6 @@
                 colors[i3] = mixedColor.r;
                 colors[i3 + 1] = mixedColor.g;
                 colors[i3 + 2] = mixedColor.b;
-
                 nameIndices[i] = i;
             }
 
@@ -375,7 +330,9 @@
 
         window.addEventListener('click', (e) => {
             if(e.target.closest('#detail-panel')) return;
-            if(e.target.closest('#search-input')) return; // Arama kutusu tıklaması galaksi seçimini engellemesin
+            if(e.target.closest('#search-input')) return;
+            if(e.target.closest('#search-results')) return;
+            if(e.target.closest('a')) return; // Linklere tıklamayı engelleme
             if(currentHoverIndex !== null) openPanel(currentHoverIndex);
         });
 
