@@ -310,15 +310,14 @@
             const targetPos = new THREE.Vector3(x, y, z);
             
             // Kamerayı yıldızın biraz yakınına ve yukarısına konumlandır
-            // Yıldızın konumuna göre hafif bir offset veriyoruz
             const offset = new THREE.Vector3(0, 0.5, 2); 
             const camPos = targetPos.clone().add(offset);
 
             // Animasyonlar
             // 1. Kamera Pozisyonu
             new TWEEN.Tween(camera.position)
-                .to({ x: camPos.x, y: camPos.y, z: camPos.z }, 2000) // 2 saniye
-                .easing(TWEEN.Easing.Cubic.Out) // Yumuşak bitiş
+                .to({ x: camPos.x, y: camPos.y, z: camPos.z }, 2000) 
+                .easing(TWEEN.Easing.Cubic.Out) 
                 .start();
 
             // 2. Kamera Odağı (Controls Target)
@@ -366,7 +365,12 @@
             if(e.target.closest('#search-input')) return;
             if(e.target.closest('#search-results')) return;
             if(e.target.closest('a')) return;
-            if(currentHoverIndex !== null) openPanel(currentHoverIndex);
+            
+            // GÜNCELLENDİ: Tıklanan yıldıza uçuş efekti
+            if(currentHoverIndex !== null) {
+                openPanel(currentHoverIndex);
+                flyToStar(currentHoverIndex); // <-- EKLENDİ
+            }
         });
 
         function openPanel(index) {
