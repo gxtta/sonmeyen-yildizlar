@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <!-- İkonlar -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -31,6 +32,10 @@
         }
         .detail-label { color: #9ca3af; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
         .detail-value { color: #f3f4f6; font-weight: 500; font-size: 0.9rem; text-align: right; word-break: break-word; }
+
+        /* Arama Sonuçları Scrollbar */
+        #search-results::-webkit-scrollbar { width: 4px; }
+        #search-results::-webkit-scrollbar-thumb { background: #db2777; border-radius: 4px; }
     </style>
 </head>
 <body class="antialiased text-gray-100">
@@ -41,13 +46,13 @@
     <div id="loading-overlay">
         <div class="w-16 h-16 border-4 border-red-900 border-t-pink-500 rounded-full animate-spin mb-4"></div>
         <p class="text-pink-300 text-sm tracking-widest animate-pulse">VERİLER YÜKLENİYOR...</p>
-        <p class="text-gray-600 text-xs mt-2" id="loading-text">Yıldızlar hazırlanıyor</p>
+        <p class="text-gray-600 text-xs mt-2">Yıldızlar hazırlanıyor</p>
     </div>
 
     <div class="relative z-10 pointer-events-none w-full h-screen">
         
         <!-- Sol Üst Başlık -->
-        <div class="absolute top-0 left-0 p-8 pointer-events-auto">
+        <div class="absolute top-0 left-0 p-8 pointer-events-auto z-10">
             <h1 class="text-4xl font-light tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-red-600 drop-shadow-lg">
                 SÖNMEYEN YILDIZLAR
             </h1>
@@ -59,6 +64,25 @@
             </p>
         </div>
 
+        <!-- === YENİ ARAMA KUTUSU === -->
+        <div class="absolute top-6 right-6 z-30 pointer-events-auto w-64 md:w-80">
+            <div class="relative group">
+                <input type="text" id="search-input" 
+                    class="w-full bg-black/40 border border-white/20 rounded-full py-2.5 pl-5 pr-10 text-sm text-white focus:outline-none focus:border-pink-500/50 focus:bg-black/80 transition-all placeholder-gray-500 backdrop-blur-sm shadow-lg"
+                    placeholder="İsim ara...">
+                <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 group-hover:text-pink-400 transition-colors">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+            
+            <!-- Arama Sonuçları Listesi -->
+            <div id="search-results" class="hidden mt-2 bg-[#0a0505]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl max-h-60 overflow-y-auto absolute w-full z-40">
+                <!-- Sonuçlar JS ile buraya gelecek -->
+            </div>
+        </div>
+        <!-- === ARAMA KUTUSU SONU === -->
+
+
         <!-- Tooltip -->
         <div id="tooltip" class="absolute hidden bg-black/90 border border-red-500/30 backdrop-blur px-4 py-2 rounded-lg shadow-[0_0_20px_rgba(255,0,0,0.3)] transition-opacity duration-200">
             <span id="tooltip-name" class="font-bold text-pink-200 text-lg block">İsim</span>
@@ -66,7 +90,7 @@
         </div>
 
         <!-- Detay Paneli -->
-        <div id="detail-panel" class="absolute top-0 right-0 h-full w-full md:w-[450px] bg-[#0a0505]/95 backdrop-blur-xl border-l border-red-900/30 shadow-2xl pointer-events-auto transform transition-transform duration-500 translate-x-full flex flex-col">
+        <div id="detail-panel" class="absolute top-0 right-0 h-full w-full md:w-[450px] bg-[#0a0505]/95 backdrop-blur-xl border-l border-red-900/30 shadow-2xl pointer-events-auto transform transition-transform duration-500 translate-x-full flex flex-col z-40">
             
             <button id="close-btn" class="absolute top-4 right-4 text-white/50 hover:text-white text-2xl z-20">&times;</button>
 
@@ -81,7 +105,6 @@
                     <p id="panel-date-head" class="text-sm text-pink-400 uppercase tracking-wider font-medium">...</p>
                 </div>
 
-                <!-- Detaylar -->
                 <div class="bg-white/5 rounded-xl p-5 border border-white/5 mb-6">
                     <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Olay Detayları</h3>
                     
@@ -141,9 +164,66 @@
     <script>
         let namesList = []; 
 
+        // --- ARAMA FONKSİYONU ---
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.toLocaleLowerCase('tr');
+            searchResults.innerHTML = ''; // Temizle
+
+            if(query.length < 2) {
+                searchResults.classList.add('hidden');
+                return;
+            }
+
+            // İsim içinde arama yap (Orijinal indeksleri kaybetmemek için map kullanıyoruz)
+            const matches = namesList
+                .map((person, index) => ({...person, originalIndex: index}))
+                .filter(p => p.name.toLocaleLowerCase('tr').includes(query))
+                .slice(0, 10); // Max 10 sonuç göster
+
+            if(matches.length > 0) {
+                searchResults.classList.remove('hidden');
+                matches.forEach(match => {
+                    const div = document.createElement('div');
+                    div.className = 'px-4 py-3 hover:bg-white/5 cursor-pointer border-b border-white/5 last:border-none transition-colors group';
+                    
+                    // Tarihi de yanında gösterelim (varsa)
+                    const dateStr = match.date ? `<span class="text-xs text-gray-500 ml-2 group-hover:text-pink-300/70">(${match.date})</span>` : '';
+
+                    div.innerHTML = `
+                        <div class="flex items-center justify-between">
+                            <p class="text-sm text-gray-200 font-medium group-hover:text-pink-200">${match.name} ${dateStr}</p>
+                            <i class="fa-solid fa-chevron-right text-xs text-gray-600 group-hover:text-pink-500"></i>
+                        </div>
+                    `;
+                    
+                    // Tıklayınca paneli aç
+                    div.onclick = () => {
+                        openPanel(match.originalIndex); // Orijinal ID ile aç
+                        searchResults.classList.add('hidden');
+                        searchInput.value = ''; // Kutuyu temizle
+                    };
+                    searchResults.appendChild(div);
+                });
+            } else {
+                // Sonuç yoksa
+                searchResults.classList.remove('hidden');
+                searchResults.innerHTML = '<div class="px-4 py-3 text-xs text-gray-500 italic text-center">Sonuç bulunamadı</div>';
+            }
+        });
+
+        // Dışarı tıklayınca aramayı kapat
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                searchResults.classList.add('hidden');
+            }
+        });
+
+
         async function fetchNames() {
             try {
-                // Cache'i atlamak için timestamp ekleyelim
                 const response = await fetch('anit_verileri.json?t=' + new Date().getTime());
                 if (!response.ok) throw new Error('Veri yok');
                 
@@ -160,10 +240,9 @@
             } catch (error) {
                 console.warn("Yedek veri kullanılıyor.", error);
                 namesList = [
-                    {name: "Özgecan Aslan", date: "11.02.2015", location: "Mersin", killer: "Ahmet Suphi Altındöken"}, 
-                    {name: "Emine Bulut", date: "18.08.2019", location: "Kırıkkale", killer: "Fedai Varan"}
+                    {name: "Özgecan Aslan", date: "11.02.2015"}, 
+                    {name: "Emine Bulut", date: "18.08.2019"}
                 ];
-                // Dolgu
                 for(let i=0; i<200; i++) namesList.push({name: "Bilinmiyor", date: "..."});
                 
                 document.getElementById('total-count').innerText = namesList.length.toLocaleString();
@@ -223,7 +302,6 @@
 
             for(let i = 0; i < count; i++) {
                 const i3 = i * 3;
-                // Merkezden dışa büyüme
                 const radiusFactor = Math.pow(i / count, 0.7);
                 const maxRadius = parameters.radius * (1 + count / 8000);
                 const radius = radiusFactor * maxRadius;
@@ -297,6 +375,7 @@
 
         window.addEventListener('click', (e) => {
             if(e.target.closest('#detail-panel')) return;
+            if(e.target.closest('#search-input')) return; // Arama kutusu tıklaması galaksi seçimini engellemesin
             if(currentHoverIndex !== null) openPanel(currentHoverIndex);
         });
 
@@ -306,7 +385,6 @@
             const person = namesList[nameIdx];
             currentSelectedName = person.name;
 
-            // Helper function to safely show data
             const safe = (val) => (val && val.length > 1) ? val : "Bilinmiyor";
 
             els.name.innerText = person.name;
