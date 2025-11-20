@@ -7,6 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <!-- Animasyon için TWEEN kütüphanesi -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
     <!-- İkonlar -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -77,15 +79,13 @@
             <div id="search-results" class="hidden mt-2 bg-[#0a0505]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl max-h-60 overflow-y-auto absolute w-full z-40"></div>
         </div>
 
-        <!-- === YENİ EKLENEN KAYNAK (SOURCE) BUTONU === -->
-        <!-- Sağ alt köşeye sabitlenmiş, şık ve dikkat dağıtmayan bir kaynak linki -->
+        <!-- Kaynak Linki -->
         <a href="https://anitsayac.com/" target="_blank" 
            class="absolute bottom-6 right-6 z-20 pointer-events-auto flex items-center gap-2 px-4 py-2 bg-black/40 border border-white/10 rounded-full text-xs text-gray-500 hover:text-pink-300 hover:border-pink-500/30 transition-all backdrop-blur-sm hover:bg-black/60 group">
             <span class="opacity-50 group-hover:opacity-100 transition-opacity">Veri Kaynağı:</span>
             <span class="font-semibold">Anıt Sayaç</span>
             <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-50 group-hover:opacity-100"></i>
         </a>
-        <!-- === KAYNAK BUTONU SONU === -->
 
         <!-- Tooltip -->
         <div id="tooltip" class="absolute hidden bg-black/90 border border-red-500/30 backdrop-blur px-4 py-2 rounded-lg shadow-[0_0_20px_rgba(255,0,0,0.3)] transition-opacity duration-200">
@@ -169,6 +169,7 @@
                     div.innerHTML = `<div class="flex items-center justify-between"><p class="text-sm text-gray-200 font-medium group-hover:text-pink-200">${match.name} ${dateStr}</p><i class="fa-solid fa-chevron-right text-xs text-gray-600 group-hover:text-pink-500"></i></div>`;
                     div.onclick = () => {
                         openPanel(match.originalIndex); 
+                        flyToStar(match.originalIndex); // SİNEMATİK GEÇİŞ
                         searchResults.classList.add('hidden');
                         searchInput.value = ''; 
                     };
@@ -296,6 +297,38 @@
             scene.add(points);
         };
 
+        // --- KAMERA UÇUŞ FONKSİYONU (TWEEN) ---
+        function flyToStar(index) {
+            if (!geometry) return;
+            
+            // Yıldızın pozisyonunu al
+            const positions = geometry.attributes.position.array;
+            const x = positions[index * 3];
+            const y = positions[index * 3 + 1];
+            const z = positions[index * 3 + 2];
+            
+            const targetPos = new THREE.Vector3(x, y, z);
+            
+            // Kamerayı yıldızın biraz yakınına ve yukarısına konumlandır
+            // Yıldızın konumuna göre hafif bir offset veriyoruz
+            const offset = new THREE.Vector3(0, 0.5, 2); 
+            const camPos = targetPos.clone().add(offset);
+
+            // Animasyonlar
+            // 1. Kamera Pozisyonu
+            new TWEEN.Tween(camera.position)
+                .to({ x: camPos.x, y: camPos.y, z: camPos.z }, 2000) // 2 saniye
+                .easing(TWEEN.Easing.Cubic.Out) // Yumuşak bitiş
+                .start();
+
+            // 2. Kamera Odağı (Controls Target)
+            new TWEEN.Tween(controls.target)
+                .to({ x: targetPos.x, y: targetPos.y, z: targetPos.z }, 2000)
+                .easing(TWEEN.Easing.Cubic.Out)
+                .start();
+        }
+
+
         const raycaster = new THREE.Raycaster();
         const mouse = new THREE.Vector2();
         raycaster.params.Points.threshold = 0.15;
@@ -332,7 +365,7 @@
             if(e.target.closest('#detail-panel')) return;
             if(e.target.closest('#search-input')) return;
             if(e.target.closest('#search-results')) return;
-            if(e.target.closest('a')) return; // Linklere tıklamayı engelleme
+            if(e.target.closest('a')) return;
             if(currentHoverIndex !== null) openPanel(currentHoverIndex);
         });
 
@@ -386,6 +419,9 @@
         });
 
         const tick = () => {
+            // TWEEN GÜNCELLEMESİ (Çok Önemli)
+            TWEEN.update();
+
             if(points) {
                 raycaster.setFromCamera(mouse, camera);
                 const intersects = raycaster.intersectObject(points);
