@@ -3,208 +3,366 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sönmeyen Yıldızlar Anıtı</title>
+    <title>Sönmeyen Yıldızlar - Dijital Anıt</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body { margin: 0; overflow: hidden; background-color: #020205; color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        #canvas-container { width: 100vw; height: 100vh; display: block; }
-        
-        #tooltip {
-            position: absolute; display: none; background: rgba(20, 10, 20, 0.90); 
-            border: 1px solid rgba(255, 100, 150, 0.3); backdrop-filter: blur(8px);
-            padding: 10px 14px; border-radius: 8px; pointer-events: none; z-index: 10;
-            box-shadow: 0 0 15px rgba(255, 50, 100, 0.3); transition: opacity 0.2s ease;
-        }
-
-        #detail-panel {
-            position: absolute; right: -450px; top: 0; width: 450px; height: 100%;
-            background: rgba(15, 10, 20, 0.95); backdrop-filter: blur(20px);
-            border-left: 1px solid rgba(255, 100, 150, 0.2); padding: 40px 30px;
-            transition: right 0.4s cubic-bezier(0.19, 1, 0.22, 1); z-index: 20; overflow-y: auto;
-        }
-        #detail-panel.active { right: 0; }
-        .glow-text { text-shadow: 0 0 15px rgba(255, 200, 220, 0.8); }
-        .btn-primary { background: linear-gradient(135deg, #db2777 0%, #be185d 100%); transition: all 0.3s ease; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(219, 39, 119, 0.4); }
-        #loading {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #020205;
-            display: flex; justify-content: center; align-items: center; z-index: 50;
-            transition: opacity 1.5s ease; flex-direction: column;
-        }
-        .note-card { background: rgba(255, 255, 255, 0.05); border-left: 3px solid #ec4899; padding: 15px; margin-bottom: 10px; border-radius: 0 8px 8px 0; font-style: italic; color: #fce7f3; font-size: 0.9rem; }
-        /* Mobil uyum için */
-        @media (max-width: 600px) { #detail-panel { width: 100%; right: -100%; } }
-    </style>
-</head>
-<body>
-    <div class="absolute top-0 left-0 w-full p-8 z-10 bg-gradient-to-b from-black via-black/60 to-transparent pointer-events-none">
-        <h1 class="text-4xl md:text-5xl font-thin tracking-[0.2em] text-pink-50 glow-text mb-3">SÖNMEYEN YILDIZLAR</h1>
-        <p class="text-pink-200/80 text-sm md:text-base max-w-3xl leading-relaxed font-light">
-            Her bir parlayan kalp, aramızdan alınan bir kadının anısını taşır.<br>
-            <span class="text-xs text-pink-400/60 mt-3 block font-mono">Veriler günlük olarak Anıt Sayaç'tan güncellenmektedir.</span>
-        </p>
-    </div>
-    <div id="tooltip"><p class="text-white font-bold text-sm" id="tooltip-name">İsim</p></div>
-    <div id="detail-panel">
-        <button id="close-panel" class="absolute top-6 right-6 text-white"><i class="fa-solid fa-xmark text-2xl"></i></button>
-        <div class="mt-8 mb-8 text-center">
-            <h2 class="text-3xl font-bold text-white mb-2" id="panel-name">İsim Soyisim</h2>
-            <p class="text-pink-400 font-mono text-xs uppercase" id="panel-date">...</p>
-        </div>
-        <div class="bg-white/5 rounded-xl p-6 border border-white/10 mb-6">
-            <h3 class="text-pink-100 font-semibold text-lg mb-3">Anı Defteri</h3>
-            <textarea id="user-note-input" class="w-full bg-black/40 border border-white/10 rounded-lg p-3 text-sm text-white focus:border-pink-500 outline-none mb-3" rows="4" placeholder="Bir not bırakın..."></textarea>
-            <button id="btn-save-note" class="btn-primary w-full py-2.5 rounded-lg text-white font-medium text-sm">Anıyı Kaydet</button>
-        </div>
-        <div class="mt-6"><div id="notes-container" class="space-y-3"></div></div>
-    </div>
-    <div id="loading">
-        <svg class="animate-pulse h-16 w-16 text-pink-600 mb-6" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-        <p class="text-white tracking-[0.2em] text-sm uppercase font-bold">Yıldızlar Yükleniyor...</p>
-    </div>
-    <div id="canvas-container"></div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <style>
+        /* Arka planı hafif kırmızımsı siyah yaptık */
+        body { margin: 0; overflow: hidden; background-color: #050000; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.3); border-radius: 3px; }
+        
+        #tooltip { pointer-events: none; transform: translate(-50%, -150%); }
+        
+        .fade-enter { opacity: 0; transform: translateX(100%); }
+        .fade-enter-active { opacity: 1; transform: translateX(0); transition: opacity 0.5s, transform 0.5s; }
+
+        /* Yükleme Animasyonu Ekledik (Veri beklenirken boş kalmasın) */
+        #loading-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: #050000; z-index: 50; display: flex;
+            justify-content: center; align-items: center; flex-direction: column;
+            transition: opacity 1s ease;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-100">
+
+    <canvas id="webgl" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
+
+    <!-- Yükleme Ekranı (Veriler çekilene kadar görünür) -->
+    <div id="loading-overlay">
+        <div class="w-16 h-16 border-4 border-red-900 border-t-pink-500 rounded-full animate-spin mb-4"></div>
+        <p class="text-pink-300 text-sm tracking-widest animate-pulse">YILDIZLAR GÜNCELLENİYOR...</p>
+    </div>
+
+    <div class="relative z-10 pointer-events-none w-full h-screen">
+        
+        <div class="absolute top-0 left-0 p-8 pointer-events-auto">
+            <h1 class="text-4xl font-light tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-red-600 drop-shadow-lg">
+                SÖNMEYEN YILDIZLAR
+            </h1>
+            <p class="mt-2 text-sm text-red-100 opacity-70 max-w-md font-light">
+                Her bir yıldız, aramızdan koparılan bir ışığı temsil eder. <br>
+                Onlar sönmedi, sonsuzluğa karıştı.
+                <br><br>
+                <span class="text-xs italic text-gray-500">Galakside gezinmek için sürükleyin, detay için tıklayın.</span>
+            </p>
+        </div>
+
+        <div id="tooltip" class="absolute hidden bg-black/80 border border-red-900/30 backdrop-blur-sm px-3 py-2 rounded text-sm shadow-[0_0_15px_rgba(255,0,0,0.2)] transition-opacity duration-200">
+            <span id="tooltip-name" class="font-semibold text-pink-300">İsim</span>
+        </div>
+
+        <div id="detail-panel" class="absolute top-0 right-0 h-full w-full md:w-[400px] bg-slate-900/80 backdrop-blur-xl border-l border-red-900/20 shadow-2xl pointer-events-auto transform transition-transform duration-500 translate-x-full flex flex-col">
+            
+            <button id="close-btn" class="absolute top-4 right-4 text-white/50 hover:text-white text-2xl">&times;</button>
+
+            <div class="p-8 flex-1 overflow-y-auto">
+                <div class="flex flex-col items-center mt-10">
+                    <div class="w-24 h-24 rounded-full bg-gradient-to-tr from-pink-500 to-red-700 p-[2px] shadow-[0_0_30px_rgba(255,0,50,0.4)]">
+                        <div class="w-full h-full bg-black rounded-full flex items-center justify-center">
+                            <span class="text-3xl">🕊️</span>
+                        </div>
+                    </div>
+                    <h2 id="panel-name" class="mt-6 text-3xl font-bold text-center text-white">İsim Soyisim</h2>
+                    <p id="panel-date" class="mt-2 text-sm text-pink-300 uppercase tracking-wider">01.01.2024</p>
+                </div>
+
+                <hr class="border-white/10 my-8">
+
+                <div>
+                    <h3 class="text-lg font-medium text-pink-400 mb-4 flex items-center gap-2">
+                        <span>📒</span> Anı Defteri
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-3">Bu kişi için bir not bırakın. Notunuz sadece sizin tarayıcınızda saklanır.</p>
+                    
+                    <textarea id="memory-input" rows="6" class="w-full bg-black/30 border border-white/10 rounded-lg p-4 text-sm text-gray-200 focus:outline-none focus:border-red-500/50 transition-colors resize-none placeholder-gray-600" placeholder="Duygularınızı buraya yazın..."></textarea>
+                    
+                    <div class="flex justify-end mt-3">
+                        <button id="save-btn" class="px-6 py-2 bg-gradient-to-r from-red-900 to-pink-700 hover:from-red-800 hover:to-pink-600 text-white text-sm font-medium rounded shadow-lg transition-all transform active:scale-95">
+                            Kaydet
+                        </button>
+                    </div>
+                    <p id="save-msg" class="text-xs text-pink-400 mt-2 text-right hidden fade-in">Not kaydedildi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        const NoteSystem = {
-            getNotes: function(starId) { const notes = localStorage.getItem(`star_note_${starId}`); return notes ? JSON.parse(notes) : []; },
-            addNote: function(starId, text) {
-                const notes = this.getNotes(starId);
-                notes.unshift({ text: text, date: new Date().toLocaleDateString('tr-TR') });
-                localStorage.setItem(`star_note_${starId}`, JSON.stringify(notes));
-            }
-        };
+        // --- VERİ YÖNETİMİ (GÜNCELLENDİ) ---
+        // Sabit liste yerine boş bir liste ile başlıyoruz
+        let namesList = []; 
 
-        const scene = new THREE.Scene(); scene.fog = new THREE.FogExp2(0x020205, 0.015);
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000); camera.position.set(0, 40, 50);
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight); renderer.outputEncoding = THREE.sRGBEncoding;
-        document.getElementById('canvas-container').appendChild(renderer.domElement);
-        const controls = new THREE.OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true; controls.autoRotate = true; controls.autoRotateSpeed = 0.5;
-
-        const parameters = { count: 6000, size: 1.5, radius: 70, branches: 3, spin: 1.5, randomness: 0.3, randomnessPower: 3, insideColor: '#ff9d00', outsideColor: '#0040ff' };
-        let namesList = [];
-
+        // GitHub Actions'ın oluşturduğu JSON dosyasını çek
         async function fetchNames() {
             try {
-                // GitHub Actions tarafından üretilecek dosyayı okuyoruz
                 const response = await fetch('anit_verileri.json');
-                if (!response.ok) throw new Error('Veri yok');
-                namesList = await response.json();
-                if(namesList.length < 10) throw new Error('Veri az');
+                if (!response.ok) throw new Error('Veri dosyası bulunamadı');
+                
+                const data = await response.json();
+                namesList = data; // JSON formatı: [{name: "...", date: "..."}, ...]
+                
+                // Veri gelince galaksiyi oluştur
                 generateGalaxy();
+                
+                // Yükleme ekranını kaldır
+                const loading = document.getElementById('loading-overlay');
+                loading.style.opacity = '0';
+                setTimeout(() => loading.style.display = 'none', 1000);
+
             } catch (error) {
-                console.warn("Veri yüklenemedi, yedek veri kullanılıyor.");
+                console.warn("Veri çekilemedi, yedek veriler kullanılıyor.", error);
+                // Hata olursa yedek liste (Senin orijinal listenin bir kısmı)
                 namesList = [
-                    {name: "Özgecan Aslan", date: "11/02/2015"}, {name: "Emine Bulut", date: "18/08/2019"},
-                    {name: "Ceren Özdemir", date: "03/12/2019"}, {name: "Şule Çet", date: "29/05/2018"},
-                    {name: "Münevver Karabulut", date: "03/03/2009"}, {name: "Başak Cengiz", date: "09/11/2021"}
+                    {name: "Emine Bulut", date: "18.08.2019"}, {name: "Özgecan Aslan", date: "11.02.2015"}, 
+                    {name: "Münevver Karabulut", date: "03.03.2009"}, {name: "Şule Çet", date: "29.05.2018"},
+                    {name: "Ceren Özdemir", date: "03.12.2019"}, {name: "Pınar Gültekin", date: "Temmuz 2020"}
                 ];
-                // Dolgu verisi
+                // Dolgu yap
                 for(let i=0; i<100; i++) namesList.push({name: "İsimsiz Yıldız", date: "Tarih Bilinmiyor"});
+                
                 generateGalaxy();
+                document.getElementById('loading-overlay').style.display = 'none';
             }
-            setTimeout(() => { document.getElementById('loading').style.display = 'none'; }, 1000);
         }
 
-        const heartTexture = new THREE.TextureLoader().load('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE2klEQVR42u2bzWtcVRjGn/fce2cmnUkyk5m00zaTj2ZNG9u0RYu0iCJoFRX8B0TcKSLu3LgSXLgQColLcSXEhQtF3IiiKIrWiiBttU3TJunHzGSSzL1z74uLmzY0zTSdmU7Te8/u/HjP+57zPOfMHWbOnDlz5syZsyA6wCA7F/m+WzYh/oYgLgh4g2JvENH8O88z5y5H0VzN7w3D0E8nZ0s/iYlLAo9A4A0AB0V4A4zXAZx3g3M3K0Xj55kzu8o+70iAt169sCPwgn8EwScC9AHorqF5R4y+UfT978YmN080e0/NA7yH7z+8K3S9lwX+AIAhAEHj9a5a7g+Vwuy3YxNbphu4n2rA97+6Y7fvea8C+FwM9gFwW6y9YtYqhfzXp89v/mEa91PygO/d2Luz7Abvi+ETCB4F0N9K76WwViycOzN5eaq+e+qegB/e3N0bdIPDAP4BcKhV/wXAr75n/njq/OaP5oB2J+B7N/YOlN3gcxG8D+BgK4VFi1+K+emTz9xcaKXuRjzgp5W9A24wDHCkZfrLAD5V8U/MzW+5vR26Fp+AP3pt73A1CN5k43iL9OcA/GLDPz47X5q81Y7dtQ7gJ5XhgeD2EADXKn1Rxd+9ML8l18rdNQFfXL53aGZ2+eNqEHwA4KhD+msA3q/6wZ2FhfnvFqNodq3cNS/BCi4t+qN//D39iSr+FIBB5+NfQ/AFAJ+r4s8WfX/yZrt016wD+J8rweALAB7xSH8VwCeq+LPTs8t/3m7t3h43YAX//DUzOln+RMC7AB70SH8DwCcqODJ9bmvhtur3HcB3f747vDxf/ERM7AHwuAP6SwA+tSbcXZpfmrpTuuuWCRb4c/P+6G+/p/eK4P0G6Q8DeFcVP53P5b87eWb+6nZq37EA/uKlH0cmV1Z3i+BeAEctpL8A4B018bOLheL3p6dK1263/p1rggWurAR73/394kgYhu8AOGqJ/gKADxT+6UoQ/PrH0vK1n05tbqrdHfEAvveXvc+urKz/BOBhC+k/B/C+iN2zWCj+/NvZtYVbaX/HAvjK6vKus+++s1wMgncBPGgh/XkA74rgkVKl/PPJ5+bmbqV9xy7BAo7fFf6i4p+4/T24o66A318+OLOy+omAH50Pvx3AW9aI+0rV0s/Hn1uaupX6d9QTcOXq6mAxCL7SOfHvq+L3FvL5706eLd/Y6Y3u6H8BC+s9+M31X6oB3//F3+g/X9z3/K0yOa53gJkzZ86cOXPmzJkzZ86cOZsG/wYAcG39fK7u2QAAAABJRU5ErkJggg==');
-        let points = null; let starUserData = [];
+        // --- KALP TEXTURE ---
+        function createHeartTexture() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 32;
+            canvas.height = 32;
+            const ctx = canvas.getContext('2d');
+            
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.moveTo(16, 28);
+            ctx.bezierCurveTo(16, 26, 4, 18, 4, 12);
+            ctx.bezierCurveTo(4, 6, 10, 4, 16, 10);
+            ctx.bezierCurveTo(22, 4, 28, 6, 28, 12);
+            ctx.bezierCurveTo(28, 18, 16, 26, 16, 28);
+            ctx.fill();
+            ctx.shadowBlur = 4;
+            ctx.shadowColor = "white";
+            ctx.fill();
+            return new THREE.CanvasTexture(canvas);
+        }
 
-        function generateGalaxy() {
-            if(points) scene.remove(points);
-            const count = Math.max(namesList.length, 4000);
-            const geometry = new THREE.BufferGeometry();
-            const positions = new Float32Array(count * 3);
-            const colors = new Float32Array(count * 3);
+        // --- SAHNE KURULUMU ---
+        const canvas = document.querySelector('canvas.webgl');
+        const scene = new THREE.Scene();
+        
+        // Sis Rengi: Çok koyu kırmızı/siyah karışımı
+        scene.fog = new THREE.FogExp2('#050000', 0.03);
+
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.x = 0;
+        camera.position.y = 4; 
+        camera.position.z = 6;
+
+        const renderer = new THREE.WebGLRenderer({
+            canvas: document.getElementById('webgl'),
+            alpha: true,
+            antialias: true
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 0.5;
+
+        // --- GALAKSİ PARAMETRELERİ (KORUNDU) ---
+        const parameters = {
+            count: 6000,
+            size: 0.15,
+            radius: 8,
+            branches: 4, 
+            spin: 1.2,
+            randomness: 0.5,
+            randomnessPower: 3,
+            // İSTENEN RENKLER
+            insideColor: '#ffc0cb', // Merkez: Yumuşak Pembe
+            outsideColor: '#8a0000' // Dış: Koyu Kan Kırmızısı
+        };
+
+        let geometry = null;
+        let material = null;
+        let points = null;
+
+        const generateGalaxy = () => {
+            // Eğer veri yoksa çizme
+            if(namesList.length === 0) return;
+
+            // Veri sayısına göre veya minimum 4000 yıldıza göre ayarla
+            const displayCount = Math.max(namesList.length, 4000);
+
+            geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(displayCount * 3);
+            const colors = new Float32Array(displayCount * 3);
+            const nameIndices = new Float32Array(displayCount);
+
             const colorInside = new THREE.Color(parameters.insideColor);
             const colorOutside = new THREE.Color(parameters.outsideColor);
-            starUserData = [];
 
-            for(let i=0; i<count; i++) {
-                const i3 = i*3;
+            for(let i = 0; i < displayCount; i++) {
+                const i3 = i * 3;
                 const radius = Math.random() * parameters.radius;
                 const spinAngle = radius * parameters.spin;
                 const branchAngle = (i % parameters.branches) / parameters.branches * Math.PI * 2;
-                const randomX = Math.pow(Math.random(), 3) * (Math.random()<0.5?1:-1) * 0.3 * radius;
-                const randomY = Math.pow(Math.random(), 3) * (Math.random()<0.5?1:-1) * 0.3 * radius;
-                const randomZ = Math.pow(Math.random(), 3) * (Math.random()<0.5?1:-1) * 0.3 * radius;
 
-                positions[i3] = Math.cos(branchAngle+spinAngle)*radius + randomX;
-                positions[i3+1] = randomY * 0.5;
-                positions[i3+2] = Math.sin(branchAngle+spinAngle)*radius + randomZ;
+                const randomX = Math.pow(Math.random(), parameters.randomnessPower) * (Math.random() < 0.5 ? 1 : -1) * parameters.randomness * radius;
+                const randomY = Math.pow(Math.random(), parameters.randomnessPower) * (Math.random() < 0.5 ? 1 : -1) * parameters.randomness * radius;
+                const randomZ = Math.pow(Math.random(), parameters.randomnessPower) * (Math.random() < 0.5 ? 1 : -1) * parameters.randomness * radius;
 
-                const mixedColor = colorInside.clone(); mixedColor.lerp(colorOutside, radius/parameters.radius);
-                colors[i3]=mixedColor.r; colors[i3+1]=mixedColor.g; colors[i3+2]=mixedColor.b;
-                
-                const person = namesList[i % namesList.length];
-                starUserData.push({ id: i, name: person.name || "Bilinmiyor", date: person.date || "Tarih Yok" });
+                positions[i3    ] = Math.cos(branchAngle + spinAngle) * radius + randomX;
+                positions[i3 + 1] = randomY / 2; 
+                positions[i3 + 2] = Math.sin(branchAngle + spinAngle) * radius + randomZ;
+
+                // Renk Karışımı
+                const mixedColor = colorInside.clone();
+                mixedColor.lerp(colorOutside, radius / parameters.radius);
+
+                colors[i3    ] = mixedColor.r;
+                colors[i3 + 1] = mixedColor.g;
+                colors[i3 + 2] = mixedColor.b;
+
+                // İsim indeksi (Döngüsel)
+                nameIndices[i] = i % namesList.length;
             }
+
             geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
             geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-            const material = new THREE.PointsMaterial({ size: parameters.size, sizeAttenuation: true, depthWrite: false, blending: THREE.AdditiveBlending, vertexColors: true, map: heartTexture, transparent: true, opacity: 0.85, alphaTest: 0.01 });
-            points = new THREE.Points(geometry, material); scene.add(points);
-        }
+            geometry.setAttribute('nameIndex', new THREE.BufferAttribute(nameIndices, 1));
 
-        // Raycaster & Events
-        const raycaster = new THREE.Raycaster(); raycaster.params.Points.threshold = 1.5;
-        const mouse = new THREE.Vector2(); let hoveredIndex = -1;
-        
+            material = new THREE.PointsMaterial({
+                size: parameters.size,
+                sizeAttenuation: true,
+                depthWrite: false,
+                blending: THREE.AdditiveBlending,
+                vertexColors: true,
+                map: createHeartTexture(),
+                transparent: true,
+                opacity: 0.8
+            });
+
+            points = new THREE.Points(geometry, material);
+            scene.add(points);
+        };
+
+        // --- ETKİLEŞİM VE UI MANTIĞI ---
+        const raycaster = new THREE.Raycaster();
+        const mouse = new THREE.Vector2();
+        raycaster.params.Points.threshold = 0.15;
+
         const tooltip = document.getElementById('tooltip');
+        const tooltipName = document.getElementById('tooltip-name');
         const detailPanel = document.getElementById('detail-panel');
+        const panelName = document.getElementById('panel-name');
+        const panelDate = document.getElementById('panel-date');
+        const closeBtn = document.getElementById('close-btn');
+        const memoryInput = document.getElementById('memory-input');
+        const saveBtn = document.getElementById('save-btn');
+        const saveMsg = document.getElementById('save-msg');
         
-        window.addEventListener('mousemove', (e) => {
-            mouse.x = (e.clientX / window.innerWidth)*2 - 1; mouse.y = -(e.clientY / window.innerHeight)*2 + 1;
-            if(tooltip.style.display === 'block') { tooltip.style.left = (e.clientX+15)+'px'; tooltip.style.top = (e.clientY+15)+'px'; }
+        let currentHoverIndex = null;
+        let currentSelectedName = null;
+
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            tooltip.style.left = event.clientX + 'px';
+            tooltip.style.top = event.clientY + 'px';
         });
 
-        window.addEventListener('click', (e) => {
-            if(e.target.closest('#detail-panel')) return;
-            if(hoveredIndex !== -1) {
-                const data = starUserData[hoveredIndex];
-                document.getElementById('panel-name').innerText = data.name;
-                document.getElementById('panel-date').innerText = data.date;
-                document.getElementById('user-note-input').value = '';
-                
-                const container = document.getElementById('notes-container'); container.innerHTML = '';
-                const notes = NoteSystem.getNotes(data.id);
-                if(notes.length===0) container.innerHTML = '<p class="text-gray-500 text-xs italic">Not yok.</p>';
-                else notes.forEach(n => container.innerHTML += `<div class="note-card"><p>"${n.text}"</p><span class="text-xs text-gray-500">${n.date}</span></div>`);
-                
-                document.getElementById('btn-save-note').onclick = () => {
-                    const txt = document.getElementById('user-note-input').value.trim();
-                    if(txt) { NoteSystem.addNote(data.id, txt); alert('Kaydedildi'); }
-                };
-                detailPanel.classList.add('active'); controls.autoRotate = false;
+        window.addEventListener('click', () => {
+            if(currentHoverIndex !== null) {
+                openPanel(currentHoverIndex);
             }
         });
 
-        document.getElementById('close-panel').onclick = () => { detailPanel.classList.remove('active'); controls.autoRotate = true; };
-        window.addEventListener('resize', () => { camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
+        function openPanel(index) {
+            controls.autoRotate = false;
+            // BufferGeometry'den isim indeksini al
+            const nameIdx = geometry.attributes.nameIndex.array[index];
+            
+            // Listeden gerçek veriyi çek
+            const personData = namesList[nameIdx];
+            const name = personData.name;
+            const date = personData.date;
 
-        function animate() {
-            requestAnimationFrame(animate); controls.update();
-            if(controls.autoRotate) { if(points) points.rotation.y += 0.0005; }
-            raycaster.setFromCamera(mouse, camera);
+            currentSelectedName = name; 
+
+            panelName.textContent = name;
+            // Rastgele tarih yerine GERÇEK tarihi koyuyoruz
+            panelDate.textContent = date || "Tarih Bilinmiyor";
+
+            const savedNote = localStorage.getItem(`note_${name}`);
+            memoryInput.value = savedNote ? savedNote : "";
+            saveMsg.classList.add('hidden');
+
+            detailPanel.classList.remove('translate-x-full');
+        }
+
+        closeBtn.addEventListener('click', () => {
+            detailPanel.classList.add('translate-x-full');
+            controls.autoRotate = true;
+        });
+
+        saveBtn.addEventListener('click', () => {
+            if(currentSelectedName) {
+                const note = memoryInput.value;
+                localStorage.setItem(`note_${currentSelectedName}`, note);
+                saveMsg.classList.remove('hidden');
+                setTimeout(() => {
+                    saveMsg.classList.add('hidden');
+                }, 2000);
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        const tick = () => {
+            // Sadece noktalar oluşturulduysa raycaster çalıştır
             if(points) {
+                raycaster.setFromCamera(mouse, camera);
                 const intersects = raycaster.intersectObject(points);
-                if(intersects.length>0) {
-                    const idx = intersects[0].index;
-                    if(hoveredIndex !== idx && !detailPanel.classList.contains('active')) {
-                        hoveredIndex = idx; document.body.style.cursor = 'pointer';
-                        document.getElementById('tooltip-name').innerText = starUserData[idx].name;
-                        tooltip.style.display = 'block';
-                    }
+
+                if(intersects.length > 0) {
+                    document.body.style.cursor = 'pointer';
+                    const index = intersects[0].index;
+                    currentHoverIndex = index;
+                    
+                    const nameIdx = geometry.attributes.nameIndex.array[index];
+                    tooltipName.textContent = namesList[nameIdx].name;
+                    
+                    tooltip.classList.remove('hidden');
                 } else {
-                    if(hoveredIndex !== -1) { hoveredIndex = -1; tooltip.style.display = 'none'; document.body.style.cursor = 'default'; }
+                    document.body.style.cursor = 'default';
+                    currentHoverIndex = null;
+                    tooltip.classList.add('hidden');
                 }
             }
-            renderer.render(scene, camera);
-        }
 
-        fetchNames(); animate();
+            controls.update();
+            renderer.render(scene, camera);
+            window.requestAnimationFrame(tick);
+        };
+
+        // Başlat (Önce veri çek, sonra animasyon başlasın)
+        fetchNames();
+        tick();
     </script>
 </body>
 </html>
