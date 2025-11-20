@@ -1,402 +1,1802 @@
 [
     {
         "name": "Feride Sayılır",
-        "date": "19/11/2025"
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "19/11/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Babası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/izmirde-vahset-anlari-engelli-kizini-pompali-tufekle-oldurup-intihar-etti-43025042"
     },
     {
         "name": "İlknur Torgut",
-        "date": "19/11/2025"
+        "age": "Reşit",
+        "location": "Diyarbakır",
+        "date": "19/11/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/diyarbakirda-dehset-annesini-ve-agabeyini-pompali-tufekle-oldurdu-babasina-not-birakti-43024219"
     },
     {
         "name": "Münire Yüzkar",
-        "date": "19/11/2025"
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "19/11/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.ntv.com.tr/amp/turkiye/izmirde-esini-katleden-kisi-intihar-etti-1697721"
     },
     {
         "name": "Firdevs Akgün",
-        "date": "19/11/2025"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "19/11/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Aranıyor",
+        "source": "https://www.hurriyet.com.tr/gundem/pendikte-kadin-cinayeti-esini-bicaklayarak-oldurup-kacti-43024165"
     },
     {
         "name": "Meryem Ş.",
-        "date": "18/11/2025"
+        "age": "Reşit",
+        "location": "Kars",
+        "date": "18/11/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesisi Alet",
+        "status": "Tutuklu",
+        "source": "https://www.t24.com.tr/haber/kars-ta-bir-kisi-tartistigi-esini-bicaklayarak-oldurdu,1277207"
     },
     {
         "name": "Yasemin Bulut",
-        "date": "15/11/2025"
+        "age": "Reşit",
+        "location": "Bursa",
+        "date": "15/11/2025",
+        "reason": "Tartışma",
+        "killer": "Eski Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/bursada-vahset-borek-almaya-gittigi-isletmede-eski-erkek-arkadasi-tarafindan-olduruldu-43020210"
     },
     {
         "name": "Rabia Alaca",
-        "date": "14/11/2025"
+        "age": "Reşit",
+        "location": "Kayseri",
+        "date": "14/11/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.haberturk.com/kayseri-haberleri/39709726-kayseride-kocasi-tarafindan-bicaklanan-kadin-oldu"
     },
     {
         "name": "Fatma Gıyar",
-        "date": "12/11/2025"
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "12/11/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.haberturk.com/antalya-haberleri/115371691-yillik-izindeki-polis-memuru-dehset-sacti-esi-ve-2-kizini-oldurducinayeti-duyup-olay?page=2"
     },
     {
         "name": "Meral Ebrar Gıyar",
-        "date": "12/11/2025"
+        "age": "Reşit Değil",
+        "location": "Antalya",
+        "date": "12/11/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Babası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.haberturk.com/antalya-haberleri/115371691-yillik-izindeki-polis-memuru-dehset-sacti-esi-ve-2-kizini-oldurducinayeti-duyup-olay?page=2"
     },
     {
         "name": "Merve Gıyar",
-        "date": "12/11/2025"
+        "age": "Reşit Değil",
+        "location": "Antalya",
+        "date": "12/11/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Babası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.haberturk.com/antalya-haberleri/115371691-yillik-izindeki-polis-memuru-dehset-sacti-esi-ve-2-kizini-oldurducinayeti-duyup-olay?page=2"
     },
     {
         "name": "Huriye Helvacı",
-        "date": "12/11/2025"
+        "age": "Reşit",
+        "location": "Kastamonu",
+        "date": "12/11/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.t24.com.tr/haber/kastamonu-da-olu-bulunan-5-yasindaki-osman-ve-annesi-huriye-helvaci-ya-otopsi-yapildi,1275541"
     },
     {
         "name": "Melisa Kölekçi",
-        "date": "12/11/2025"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "12/11/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/buyukcekmecede-seri-cinayet-2-erkek-otomobilde-1-kadin-otel-odasinda-olduruldu-43016451"
     },
     {
         "name": "Melisa Şengül",
-        "date": "11/11/2025"
+        "age": "Reşit",
+        "location": "Aydın",
+        "date": "11/11/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/universite-ogrencisi-arkadasinin-evinde-olu-bulundu-43016390"
     },
     {
         "name": "Selvi Kavas",
-        "date": "11/11/2025"
+        "age": "Reşit",
+        "location": "Aksaray",
+        "date": "11/11/2025",
+        "reason": "Tartışma",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.ntv.com.tr/amp/turkiye/aksarayda-kadin-cinayeti-saklandigi-insaatta-yakalandi-1695578"
     },
     {
         "name": "Natalia Baryluk",
-        "date": "11/11/2025"
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "11/11/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.evrensel.net/haber/583399/antalyada-supheli-kadin-olumu-rusyali-kadin-otelde-olu-halde-bulundu"
     },
     {
         "name": "İklimya Subay",
-        "date": "11/11/2025"
+        "age": "Reşit",
+        "location": "Şanlıurfa",
+        "date": "11/11/2025",
+        "reason": "Tartışma",
+        "killer": "Tanımadığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sabah.com.tr/video/yasam/dugunde-pompali-tufekle-oldurulen-16-yasindaki-iklimyanin-son-goruntuleri-ortaya-cikti-video"
     },
     {
         "name": "Safiye Yarbil",
-        "date": "04/11/2025"
+        "age": "Reşit",
+        "location": "Eskişehir",
+        "date": "04/11/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.haberturk.com/eskisehir-haberleri/39609577-eskisehirde-bogazinda-bicak-yarasi-olan-bir-kadin-evinde-olu-bulundu"
     },
     {
         "name": "Nermin Tirit",
-        "date": "03/11/2025"
+        "age": "Reşit",
+        "location": "Erzurum",
+        "date": "03/11/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.cnnturk.com/turkiye/erzurumda-dehset-tahliyeden-12-gun-sonra-nermini-oldurup-intihar-etti-2355309"
     },
     {
         "name": "Arzu Khalılova",
-        "date": "03/11/2025"
+        "age": "Reşit",
+        "location": "Bursa",
+        "date": "03/11/2025",
+        "reason": "Tartışma",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/erkek-arkadasi-tarafindan-bicaklanan-kadin-oldu-p255416"
     },
     {
         "name": "Aydan Vural",
-        "date": "01/11/2025"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "01/11/2025",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.haberler.com/3-sayfa/istanbul-da-iki-cocuk-annesi-kadin-ve-erkek-sirahi-basindan-vurulmus-bulundu-19209380-haberi/"
     },
     {
         "name": "Binnur Gökman",
-        "date": "31/10/2025"
+        "age": "Reşit",
+        "location": "Kocaeli",
+        "date": "31/10/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "İntihara Teşebbüs",
+        "source": "https://www.cumhuriyet.com.tr/turkiye/kocaeli-de-kadin-cinayeti-kizinin-kinasina-1-gun-kala-oldurdu-2448653"
     },
     {
         "name": "Mine Arı",
-        "date": "31/10/2025"
+        "age": "Reşit",
+        "location": "Siirt",
+        "date": "31/10/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sondakika.com/amp/haber-siirt-te-aile-ici-silahli-kavga-2-olu-3-yarali-19204189/"
     },
     {
         "name": "Ülser Sakarya",
-        "date": "30/10/2025"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "30/10/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Darp, Boğularak",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.sabah.com.tr/yasam/silivride-kan-donduran-olay-yasli-kadin-evinde-olu-bulundu-agzi-bantli-boynuna-bagli-esarp-ayaklarinda-7453859"
     },
     {
         "name": "Ebru Kaya",
-        "date": "29/10/2025"
+        "age": "Reşit",
+        "location": "Adana",
+        "date": "29/10/2025",
+        "reason": "Ayrılma Talebi",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşlİ Silah",
+        "status": "İntihara Teşebbüs",
+        "source": "https://www.hurriyet.com.tr/gundem/ayrilik-dehseti-43000377"
     },
     {
         "name": "Hilal Baltaş",
-        "date": "27/10/2025"
+        "age": "Reşit",
+        "location": "Bolu",
+        "date": "27/10/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/haber/kadin-cinayetleri-son-bulmuyor-esini-oldurdu-sosyal-medyadan-paylasim-yapti,1270773"
     },
     {
         "name": "Nilay Kotan",
-        "date": "26/10/2025"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "26/10/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/istanbuldaki-vahset-kamerada-nilaya-sokak-ortasinda-kursun-yagdirip-oldurdu-42997159"
     },
     {
         "name": "Hatice Avcı",
-        "date": "24/10/2025"
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "24/10/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.sozcu.com.tr/apartman-dairesinde-dehset-anne-baba-ve-ogullari-oldurulmus-halde-bulundu-p252274"
     },
     {
         "name": "Meliha Keskin",
-        "date": "23/10/2025"
+        "age": "Reşit",
+        "location": "Kayseri",
+        "date": "23/10/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.haberturk.com/kayseri-haberleri-3-cocuk-annesi-son-sinif-ogrencisi-universitede-kadin-cinayeti-son-dakika-haber-3832171-amp"
     },
     {
         "name": "İlknur Kertlez",
-        "date": "22/10/2025"
+        "age": "Reşit",
+        "location": "Çankırı",
+        "date": "22/10/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "İntihara Teşebbüs",
+        "source": "https://www.ntv.com.tr/amp/turkiye/eski-esini-oldurup-intihara-kalkisti,u_ETpyWK0EmShRwfdGGpGA"
     },
     {
         "name": "Fatma Görkem",
-        "date": "22/10/2025"
+        "age": "Reşit",
+        "location": "Kahramanmaraş",
+        "date": "22/10/2025",
+        "reason": "Tartışma",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.ntv.com.tr/turkiye/kahramanmarasta-eski-es-dehset-sacti-2-olu-1-agir-yarali,04nSYjGkuEa-Y5KR6HT16Q"
     },
     {
         "name": "Gülistan Görkem",
-        "date": "22/10/2025"
+        "age": "Reşit",
+        "location": "Kahramanmaraş",
+        "date": "22/10/2025",
+        "reason": "Kızını Korumaya Çalışırken",
+        "killer": "Eski Damadı",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.ntv.com.tr/turkiye/kahramanmarasta-eski-es-dehset-sacti-2-olu-1-agir-yarali,04nSYjGkuEa-Y5KR6HT16Q"
     },
     {
         "name": "Hasret Akkuzu",
-        "date": "21/10/2025"
+        "age": "Reşit Değil",
+        "location": "Zonguldak",
+        "date": "21/10/2025",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "https://www.t24.com.tr/haber/16-yasindaki-kayip-cocuk-su-kuyusunda-olu-bulundu-3-arkadasi-gozaltina-alindi,1269088"
     },
     {
         "name": "Gönül Karakök",
-        "date": "19/10/2025"
+        "age": "Reşit",
+        "location": "Zonguldak",
+        "date": "19/10/2025",
+        "reason": "Tartışma",
+        "killer": "Eski Kayınpederi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.ntv.com.tr/amp/turkiye/eski-gelinini-katletti,APfE6JxO6EmIJfhZ9C1VZw"
     },
     {
         "name": "Muradiye Gökmen",
-        "date": "19/10/2025"
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "19/10/2025",
+        "reason": "Reddedilme",
+        "killer": "Tanıdığı Birisi",
+        "protection": "YoK",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://haberglobal.com.tr/gundem/cezaevinden-izinli-olarak-cikan-kadin-kendisine-takinti-gelistiren-erkek-tarafindan-cocugunun-gozleri-onunde-katledildi-485584"
     },
     {
         "name": "Suzan Elik",
-        "date": "17/10/2025"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "17/10/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Ateşli Silah",
+        "status": "Aranıyor",
+        "source": "https://www.sabah.com.tr/yasam/istanbulda-bosanma-asamasindaki-esi-tarafindan-vurulmustu-genc-kadin-16-gun-sonra-hayatini-kaybetti-7445493"
     },
     {
         "name": "Gülben Duru",
-        "date": "16/10/2025"
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "16/10/2025",
+        "reason": "Tartışma",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.milliyet.com.tr/gundem/izmirde-genc-kadin-eski-esi-tarafindan-sokak-ortasinda-katledildi-7465340"
     },
     {
         "name": "Aysel Karakoç",
-        "date": "16/10/2025"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "16/10/2025",
+        "reason": "Tartışma",
+        "killer": "Eski Sevgilisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/istanbul-da-dehset-barismak-icin-girdigi-evde-eski-sevgilisini-oldurdu-p247448"
     },
     {
         "name": "İzadiye Teker",
-        "date": "15/10/2025"
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "15/10/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/kanser-hastasi-esini-yataginda-uyurken-oldurdu-42984886"
     },
     {
         "name": "Şerife A.",
-        "date": "12/10/2025"
+        "age": "Reşit",
+        "location": "Çanakkale",
+        "date": "12/10/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/isyerinde-av-tufegiyle-olduruldu-serife-de-katledildi-42980552"
     },
     {
         "name": "Hasibe Aybar",
-        "date": "12/10/2025"
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "12/10/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.ntv.com.tr/amp/turkiye/manisada-kadin-cinayeti-kocasi-tarafindan-tufekle-vuruldu,nchY0NN03kO609DHHoo2sA"
     },
     {
         "name": "Keziban Pars",
-        "date": "07/10/2025"
+        "age": "Reşit",
+        "location": "Denizli",
+        "date": "07/10/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.ntv.com.tr/amp/turkiye/1-aylik-esini-katledip-yasamina-son-verdi,NBqYyx5ad0Wc5OGsCkwQMw"
     },
     {
         "name": "Burçin Razak Akyürek",
-        "date": "06/10/2025"
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "06/10/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.haberturk.com/son-dakika-izmir-in-urla-ve-menderes-ilcelerinde-kadin-cinayeti-bicak-ve-tufekle-3827929-amp"
     },
     {
         "name": "Belgin Aslanoğlu",
-        "date": "06/10/2025"
+        "age": "Reşit",
+        "location": "Yalova",
+        "date": "06/10/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Aranıyor",
+        "source": "https://www.sabah.com.tr/yalova/2025/10/06/esini-sokak-ortasinda-oldurdu"
     },
     {
         "name": "Serpil Güral",
-        "date": "05/010/2025"
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "05/010/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/gene-kadin-cinayeti-gene-eski-koca-uzaklastirma-karari-oldugu-halde-katledildi-p234255"
     },
     {
         "name": "Derya Kazmacı",
-        "date": "03/10/2025"
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "03/10/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Aşırı Dozda Uyuşturucu",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.t24.com.tr/haber/antalya-da-supheli-kadin-olumu-10-gun-once-cezaevinden-cikmisti-arkadasinin-evinde-olu-bulundu,1265236"
     },
     {
         "name": "Sara Merabi",
-        "date": "02/10/2025"
+        "age": "Reşit",
+        "location": "Diyarbakır",
+        "date": "02/10/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Asılarak",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.t24.com.tr/haber/diyarbakir-da-supheli-kadin-olumu,1264984"
     },
     {
         "name": "Gülhanım Baktır",
-        "date": "02/10/2025"
+        "age": "Reşit",
+        "location": "Kayseri",
+        "date": "02/10/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.hurriyet.com.tr/gundem/kayseride-evlerinin-onunde-silahli-saldiriya-ugrayan-kari-koca-oldu-42970041"
     },
     {
         "name": "Şennur Çepkenli",
-        "date": "01/10/2025"
+        "age": "Reşit",
+        "location": "Edirne",
+        "date": "01/10/2025",
+        "reason": "Psikolojik Rahatsızlık",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.ntv.com.tr/amp/turkiye/oglu-bicaklamisti-20-gun-sonra-hayatini-kaybetti,ZcMTtjuqxUSDqDk_mgBJ7w"
     },
     {
         "name": "Fadik Polat",
-        "date": "30/09/2025"
+        "age": "Reşit",
+        "location": "Kocaeli",
+        "date": "30/09/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.ntv.com.tr/amp/turkiye/dairede-yarali-bulunan-kadin-hastanede-oldu-supheli-es-gozaltinda,PDEriTtXPUG6eM26_HZ6Sg"
     },
     {
         "name": "Aysun Avcı",
-        "date": "30/09/2025"
+        "age": "Reşit",
+        "location": "Sakarya",
+        "date": "30/09/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.bugunkocaeli.com.tr/intihar-mi-cinayet-mi-aysun-avcinin-cansiz-bedenine-ulasildi/amp"
     },
     {
         "name": "Dilara Yıldırım",
-        "date": "28/09/2025"
+        "age": "Reşit",
+        "location": "Zonguldak",
+        "date": "28/09/2025",
+        "reason": "Tartışma",
+        "killer": "Komşusu",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/yuksek-sesli-muzik-kavgasinda-dilara-komsusu-tarafindan-olduruldu-42964675"
     },
     {
         "name": "İpek Kurt",
-        "date": "28/09/2025"
+        "age": "Reşit",
+        "location": "Gaziantep",
+        "date": "28/09/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.sozcu.com.tr/gaziantep-kadin-cinayeti-28-eylul-p232062"
     },
     {
         "name": "Azime Öz",
-        "date": "27/09/2025"
+        "age": "Reşit",
+        "location": "Kırşehir",
+        "date": "27/09/2025",
+        "reason": "Tartışma",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.milliyet.com.tr/gundem/kirsehirde-vahset-anne-ve-babasini-oldurdu-2-kuzenini-de-yaraladi-7453923"
     },
     {
         "name": "Fatma Günegül",
-        "date": "26/09/2025"
+        "age": "Reşit",
+        "location": "Samsun",
+        "date": "26/09/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Darp",
+        "status": "Tutuklu",
+        "source": "https://www.milliyet.com.tr/gundem/kan-donduran-cinayet-4-cocuk-annesi-esini-porselen-bardakla-oldurdu-7453005"
     },
     {
         "name": "Bülbül Özcan",
-        "date": "24/09/2025"
+        "age": "Reşit",
+        "location": "Van",
+        "date": "24/09/2025",
+        "reason": "Husumet",
+        "killer": "Tanıdığı Birileri",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.milliyet.com.tr/yerel-haberler/van/vanda-silahli-saldirida-anne-ve-2-oglu-oldu-7452082"
     },
     {
         "name": "Durgül Sivrikaya",
-        "date": "24/09/2025"
+        "age": "Reşit",
+        "location": "Muğla",
+        "date": "24/09/2025",
+        "reason": "Tartışma",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.ntv.com.tr/amp/turkiye/muglada-dehsetava-gitmesini-istemeyen-annesini-oldurdu,9KxyMJhtxEOLcT_0FbpJyQ"
     },
     {
         "name": "Rümeysa Karagöz",
-        "date": "23/09/2025"
+        "age": "Reşit",
+        "location": "Sakarya",
+        "date": "23/09/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.halk54.com/akyazida-kanli-olay-silahla-vurulmus-halde-olu-bulundu/amp"
     },
     {
         "name": "Zülayha E.",
-        "date": "21/09/2025"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "21/09/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/fatihte-36-yasindaki-kadin-bogazi-kesilmis-halde-olu-bulundu-42956423"
     },
     {
         "name": "Ayşegül Çankaya",
-        "date": "20/09/2025"
+        "age": "Reşit",
+        "location": "Afyonkarahisar",
+        "date": "20/09/2025",
+        "reason": "Tartışma",
+        "killer": "Eski Eniştesi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.nefes.com.tr/eski-damadin-vurdugu-baldiz-da-kurtarilamadi-olu-sayisi-3e-cikti-64132"
     },
     {
         "name": "Hanım Ayşe Kızılhan",
-        "date": "19/09/2025"
+        "age": "Reşit",
+        "location": "Denizli",
+        "date": "19/09/2025",
+        "reason": "Tartışma",
+        "killer": "Torunu",
+        "protection": "Yok",
+        "method": "Darp",
+        "status": "Tutuklu",
+        "source": "https://www.cumhuriyet.com.tr/turkiye/denizli-de-dehset-babaannesini-basina-tuple-vurarak-oldurdu-2436410"
     },
     {
         "name": "Elif Can Göktürk",
-        "date": "18/09/2025"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "18/09/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.patronlardunyasi.com/istanbul-bakirkoyde-tip-teknisyeni-elif-can-gokturkun-otel-odasinda-supheli-olumu"
     },
     {
         "name": "Hafize Gönül",
-        "date": "17/09/2025"
+        "age": "Reşit",
+        "location": "Denizli",
+        "date": "17/09/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Darp",
+        "status": "Tutuklu",
+        "source": "https://www.milliyet.com.tr/gundem/oglu-tarafindan-2-saat-boyunca-dovulmustu-hafize-anne-hayatini-kaybetti-7447669"
     },
     {
         "name": "Emine Kaygısız",
-        "date": "17/09/2025"
+        "age": "Reşit",
+        "location": "Kırşehir",
+        "date": "17/09/2025",
+        "reason": "Tartışma",
+        "killer": "Akrabası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/dayisi-ve-yengesini-olduren-supheli-kalp-krizinden-oldu-p234236"
     },
     {
         "name": "Takibe Şanlı",
-        "date": "15/09/2025"
+        "age": "Reşit",
+        "location": "Batman",
+        "date": "15/09/2025",
+        "reason": "Husumet",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.sozcu.com.tr/batman-da-4-kisilik-ailenin-katledilme-nedeni-ortaya-cikti-p227811"
     },
     {
         "name": "Elanur Şanlı",
-        "date": "15/09/2025"
+        "age": "Reşit Değil",
+        "location": "Batman",
+        "date": "15/09/2025",
+        "reason": "Husumet",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.sozcu.com.tr/batman-da-4-kisilik-ailenin-katledilme-nedeni-ortaya-cikti-p227811"
     },
     {
         "name": "Melek Kişen",
-        "date": "15/09/2025"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "15/09/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/taki-dukkaninin-2-kisi-olu-bulundu-42949857"
     },
     {
         "name": "Gülşah Karaman Kıyak",
-        "date": "12/09/2025"
+        "age": "Reşit",
+        "location": "Samsun",
+        "date": "12/09/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "https://www.t24.com.tr/haber/esini-ve-oglunu-oldurdugu-suclamasiyla-tutuklanan-doktor-cezaevinde-intihara-kalkisti,1262218"
     },
     {
         "name": "Hanım Biçer",
-        "date": "12/09/2025"
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "12/09/2025",
+        "reason": "Tartışma",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/korkunc-olay-eski-esini-esarbiyla-bogdu-42946972"
     },
     {
         "name": "İpek Genç",
-        "date": "12/09/2025"
+        "age": "Reşit",
+        "location": "Kocaeli",
+        "date": "12/09/2025",
+        "reason": "Reddedilme",
+        "killer": "Eski Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.sabah.com.tr/haberplus/kocaelide-kiskanc-sevgili-vahseti-hemsire-sevgilisi-ve-kardesini-oldurup-intihar-etti-7423556"
     },
     {
         "name": "Selin Angun",
-        "date": "11/09/2025"
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "11/09/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eski Sevgilisi",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.posta.com.tr/gundem/izmirde-kadin-cinayeti-eski-sevgilisini-oldurup-2-kisiyi-yaraladiktan-sonra-intihar-etti-2907856"
     },
     {
         "name": "Z.M.",
-        "date": "10/09/2025"
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "10/09/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.cumhuriyet.com.tr/turkiye/ankara-da-erkek-dehseti-evli-oldugu-kadini-oldurup-intihar-etti-2433799"
     },
     {
         "name": "Dursune Bilgili",
-        "date": "10/09/2025"
+        "age": "Reşit",
+        "location": "Kocaeli",
+        "date": "10/09/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/kocaelideki-vahset-anne-ile-5-yasindaki-kizi-evlerinde-olu-bulunmustu-16-yasindaki-supheli-gozaltinda-42943677"
     },
     {
         "name": "Havva Nur Anzerli",
-        "date": "10/09/2025"
+        "age": "Reşit Değil",
+        "location": "Kocaeli",
+        "date": "10/09/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Üvey Abisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/kocaelideki-vahset-anne-ile-5-yasindaki-kizi-evlerinde-olu-bulunmustu-16-yasindaki-supheli-gozaltinda-42943677"
     },
     {
         "name": "Jawhara Aboucheikh",
-        "date": "10/09/2025"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "10/09/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/beyoglunda-20-yasindaki-fasli-kadin-rezidansta-olu-bulundu-kiz-arkadasim-rahatsizlandi-diyerek-kacan-erkek-arkadasi-tutuklandi-42943578"
     },
     {
         "name": "Başak Gürkan Aslan",
-        "date": "09/09/2025"
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "09/09/2025",
+        "reason": "Tartışma",
+        "killer": "Kayınpederi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.ntv.com.tr/amp/galeri/turkiye/ankarada-kadin-cinayeti-msbde-gorevli-yuksek-muhendis-5-yasindaki-kizi-onunde-olduruldu,lkgGKfSDvEyNxYjs0pX_LA"
     },
     {
         "name": "Kübra Türkan",
-        "date": "09/09/2025"
+        "age": "Reşit",
+        "location": "Afyonkarahisar",
+        "date": "09/09/2025",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sabah.com.tr/haberplus/afyonkarahisarda-dehset-veren-olay-bosanma-asamasindaki-esini-ve-kayinvalidesini-oldurdu-baldizi-agir-yarali-7421227"
     },
     {
         "name": "Elvida Karadeniz",
-        "date": "09/09/2025"
+        "age": "Reşit",
+        "location": "Afyonkarahisar",
+        "date": "09/09/2025",
+        "reason": "Kızını Korumaya Çalışırken",
+        "killer": "Damadı",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sabah.com.tr/haberplus/afyonkarahisarda-dehset-veren-olay-bosanma-asamasindaki-esini-ve-kayinvalidesini-oldurdu-baldizi-agir-yarali-7421227"
     },
     {
         "name": "Gülşah Güngör",
-        "date": "09/09/2025"
+        "age": "Reşit",
+        "location": "Tekirdağ",
+        "date": "09/09/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.t24.com.tr/haber/basindan-vurulan-gulsah-in-supheli-olumune-dair-gozaltina-alinan-uzman-cavus-serbest-birakildi,1260418"
     },
     {
         "name": "Hiranur Nilgün Aygar",
-        "date": "01/09/2025"
+        "age": "Reşit Değil",
+        "location": "Mersin",
+        "date": "01/09/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birileri",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.turkiyegazetesi.com.tr/turkiye/bogazicinden-sonra-bu-kez-mersin-16-yasindaki-hiranur-nilgun-aygar-olduruldu-1142638"
     },
     {
         "name": "Hilal Özdemir",
-        "date": "31/08/2025"
+        "age": "Reşit Değil",
+        "location": "İstanbul",
+        "date": "31/08/2025",
+        "reason": "Tartışma",
+        "killer": "Eski Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/bogazici-universitesindeki-vahsette-yeni-detay-hilali-olduren-caninin-sabikasi-kabarik-cikti-42932253"
     },
     {
         "name": "Aslı Aygan",
-        "date": "30/08/2025"
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "30/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.hurriyet.com.tr/gundem/aslinin-supheli-olumu-5-gundur-kayipti-42930925"
     },
     {
         "name": "Şilan Tekin",
-        "date": "30/08/2025"
+        "age": "Reşit",
+        "location": "Van",
+        "date": "30/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.colemerghaber.com/van-golunde-olu-bulunan-kadin-hakkari-nufusuna-kayitli-cikti"
     },
     {
         "name": "N.M.",
-        "date": "28/08/2025"
+        "age": "Reşit",
+        "location": "Muğla",
+        "date": "28/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://bodrumolay.com/milasta-43-yasindaki-kadin-evinde-olduruldu/"
     },
     {
         "name": "N.M",
-        "date": "28/08/2025"
+        "age": "Reşit",
+        "location": "Muğla",
+        "date": "28/08/2025",
+        "reason": "Tartışma",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.sozcu.com.tr/iki-cocuk-annesi-evinde-silahla-vurulmus-bulundu-p217375"
     },
     {
         "name": "Ayten Alıcı",
-        "date": "28/08/2025"
+        "age": "Reşit",
+        "location": "Gaziantep",
+        "date": "28/08/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/gaziantepte-kadin-cinayeti-cani-esi-tarafindan-14-yerinden-bicaklandi-ayten-alici-20-gunluk-yasam-savasini-kaybetti-42928740"
     },
     {
         "name": "Sevgül Ulutaş",
-        "date": "27/08/2025"
+        "age": "Reşit",
+        "location": "Kocaeli",
+        "date": "27/08/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/cani-koca-esini-katletti-42927050"
     },
     {
         "name": "Sevgi Yandık Şendilek",
-        "date": "27/08/2025"
+        "age": "Reşit",
+        "location": "Bursa",
+        "date": "27/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/daha-once-esini-bicaklamisti-esini-yine-bicaklayip-oldurdu-42927082"
     },
     {
         "name": "Aric Aljarouk",
-        "date": "25/08/2025"
+        "age": "Reşit Değil",
+        "location": "Kilis",
+        "date": "25/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/kiliste-3-yasindaki-kayip-kiz-cocugu-kuyuda-olu-bulundu-42925074"
     },
     {
         "name": "Yaren Erkaplan",
-        "date": "25/08/2025"
+        "age": "Reşit Değil",
+        "location": "Diyarbakır",
+        "date": "25/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.vanekspres.com.tr/17-yasindaki-9-aylik-hamile-yaren-ve-bebegi-kurtarilamadi"
     },
     {
         "name": "Büşra Nur Taşkın",
-        "date": "25/08/2025"
+        "age": "Reşit Değil",
+        "location": "Samsun",
+        "date": "25/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.haberturk.com/samsun-haberleri-kayip-busra-insaatin-onunde-olu-bulundu-son-dakika-haberi-3817305"
     },
     {
         "name": "Gülsüm Sarı",
-        "date": "25/08/2025"
+        "age": "Reşit",
+        "location": "Isparta",
+        "date": "25/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Asılarak",
+        "status": "Soruştuma Sürüyor",
+        "source": "https://www.ispartaduysun.com/ispartada-kayip-olan-yasli-kadin-tarlada-olu-bulundu/"
     },
     {
         "name": "Çiğdem Kınay",
-        "date": "25/08/2025"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "25/08/2025",
+        "reason": "Tartışma",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Aranıyor",
+        "source": "https://www.hurriyet.com.tr/gundem/sultangazide-dehset-annesini-silahla-vurarak-oldurdu-42924902"
     },
     {
         "name": "Eşe Adamhasan",
-        "date": "25/08/2025"
+        "age": "Reşit",
+        "location": "Adana",
+        "date": "25/08/2025",
+        "reason": "Maganda Kurşunu",
+        "killer": "Tanıdığı Birileri",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Aranıyor",
+        "source": "https://www.hurriyet.com.tr/gundem/adanada-dugunde-korkunc-olay-damadin-anneannesi-olduruldu-42925002"
     },
     {
         "name": "Leyla Işıktaş",
-        "date": "23/08/2025"
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "23/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.sabah.com.tr/haberplus/son-dakika-sabahcomtr-ozel-mardinde-bir-gunde-3-kadin-evinde-olu-bulundu-dikkat-ceken-darp-veya-kesici-alet-iddiasi-7409926"
     },
     {
         "name": "Muatter Işıktaş",
-        "date": "23/08/2025"
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "23/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.sabah.com.tr/haberplus/son-dakika-sabahcomtr-ozel-mardinde-bir-gunde-3-kadin-evinde-olu-bulundu-dikkat-ceken-darp-veya-kesici-alet-iddiasi-7409926"
     },
     {
         "name": "Helin Uçar",
-        "date": "23/08/2025"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "23/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.ekoltv.com.tr/amp/gundem/mezuniyetine-bir-yil-kalmisti-universiteli-helin-ucarin-supheli-olumu-56320h"
     },
     {
         "name": "Elif Kılıç",
-        "date": "23/08/2025"
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "23/08/2025",
+        "reason": "Tartışma, Kavgayı Önleme",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/antalyada-oda-baskani-2-kisiyi-oldurup-intihar-etmisti-pastanedeki-dehset-kamerada-42923163"
     },
     {
         "name": "Najiba İbadi",
-        "date": "23/08/2025"
+        "age": "Reşit",
+        "location": "Konya",
+        "date": "23/08/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Darp",
+        "status": "Tutuklu",
+        "source": "https://www.sabah.com.tr/yasam/cani-koca-esini-sopayla-doverek-oldurdu-7410348"
     },
     {
         "name": "Kezban Süne",
-        "date": "22/08/2025"
+        "age": "Reşit",
+        "location": "Muğla",
+        "date": "22/08/2025",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.muglayenigun.com/milasta-islenen-kadin-cinayeti-halki-yasa-bogdu-keske-hic-buyumeseydin-kezban/"
     },
     {
         "name": "Dilek Aslan",
-        "date": "22/08/2025"
+        "age": "Reşit",
+        "location": "Van",
+        "date": "22/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tespit Edilemeyen",
+        "source": "https://yeniyasamgazetesi9.com/wanda-supheli-kadin-olumu-10/"
+    },
+    {
+        "name": "Keziban Süne",
+        "age": "Reşit",
+        "location": "Muğla",
+        "date": "22/08/2025",
+        "reason": "Kıskançlık",
+        "killer": "Eski Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.haberturk.com/mugla-haberleri/38897919-muglada-silahli-saldiriya-ugrayan-kadin-oldu"
+    },
+    {
+        "name": "Olga Aydın",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "21/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.birgun.net/haber/iki-kentte-bir-kadin-olduruldu-biri-darbedildi-647198"
+    },
+    {
+        "name": "Göksu Çelebi",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "20/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Uyuşturucu",
+        "status": "Tutuklu",
+        "source": "https://www.ntv.com.tr/turkiye/icrypexin-patronu-tutuklanmisti-avukat-goksu-celebi-yasamini-yitirdi,WK17yOMEMEWxPiMrouKlhg"
+    },
+    {
+        "name": "Zeynep Sut",
+        "age": "Reşit Değil",
+        "location": "Mardin",
+        "date": "19/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.t24.com.tr/haber/mardin-de-12-yasindaki-zeynep-in-supheli-olumu-sorusturma-baslatildi,1256236"
+    },
+    {
+        "name": "F.K.",
+        "age": "Reşit",
+        "location": "Ağrı",
+        "date": "19/08/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.haberler.com/3-sayfa/agri-da-esini-vuran-71-yasindaki-adam-teslim-oldu-18963004-haberi/"
+    },
+    {
+        "name": "Meryem Mercan",
+        "age": "Reşit",
+        "location": "Isparta",
+        "date": "18/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.sabah.com.tr/yasam/genc-kiz-evinin-balkonunda-olu-bulundu-7407375"
+    },
+    {
+        "name": "Nıgına Sattarova",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "18/08/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/umraniyede-vahset-sokakta-satirli-saldiriya-ugrayan-kadin-hayatini-kaybetti-42917770"
+    },
+    {
+        "name": "Burcu Derin",
+        "age": "Reşit",
+        "location": "Aydın",
+        "date": "18/08/2025",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/polis-memuru-esine-kursun-yagdirip-oldurdu-42917975"
+    },
+    {
+        "name": "Nazlı Demir",
+        "age": "Reşit",
+        "location": "Diyarbakır",
+        "date": "18/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihara Teşebbüs",
+        "source": "https://www.sondakika.com/guncel/haber-diyarbakir-da-kadin-cinayeti-esi-kendini-vurdu-18959439/"
+    },
+    {
+        "name": "Edibe Özel",
+        "age": "Reşit",
+        "location": "Van",
+        "date": "17/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tespit Edilemeyen",
+        "source": "https://politikahaber.com/vanda-supheli-kadin-olumu-16/"
+    },
+    {
+        "name": "Ümmü Gülsüm Sever",
+        "age": "Reşit",
+        "location": "Karaman",
+        "date": "16/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Asılarak",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.kgrthaber.com/karamanda-33-yasindaki-kadinin-olumu-suphe-uyandirdi"
+    },
+    {
+        "name": "Hatice Fırtına",
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "16/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Akrabası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.t24.com.tr/haber/manisa-da-16-yasindaki-kiz-cocugu-evinde-bicaklanmis-halde-olu-bulundu,1255804"
+    },
+    {
+        "name": "Cevahir İnan",
+        "age": "Reşit",
+        "location": "Mersin",
+        "date": "15/08/2025",
+        "reason": "Gasp",
+        "killer": "Tanımadığı Birileri",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sondakika.com/amp/haber-mersin-de-kadin-cinayeti-iki-supheli-tutuklandi-18951333/"
+    },
+    {
+        "name": "Kadriye Ejder",
+        "age": "Reşit",
+        "location": "Şanlıurfa",
+        "date": "15/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.ntv.com.tr/amp/galeri/turkiye/sanliurfada-korkunc-olay-anne-ve-babasi-olu-bulundu-bes-yasindaki-dicle-kayip,K0-ybYY04ESBmoMOU2BaHg"
+    },
+    {
+        "name": "Derya Yaşar",
+        "age": "Reşit",
+        "location": "Balıkesir",
+        "date": "14/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.haberturk.com/balikesir-haberleri/114130717-bandirmada-apartmanin-3uncu-katindan-dusen-kadin-oldu"
+    },
+    {
+        "name": "Hacer Kepçe",
+        "age": "Reşit",
+        "location": "Çorum",
+        "date": "14/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.milliyet.com.tr/gundem/atik-yag-tankina-dusen-anne-ile-oglu-oldu-7426661"
+    },
+    {
+        "name": "Sedanur Bağdigen",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "13/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/doktorun-supheli-olumu-42912330"
+    },
+    {
+        "name": "Songül Perçem",
+        "age": "Reşit",
+        "location": "Mersin",
+        "date": "12/08/2025",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihara Teşebbüs",
+        "source": "https://www.milliyet.com.tr/gundem/mersinde-korkunc-olay-tartistigi-kadini-oldurup-intihara-kalkisti-7425376"
+    },
+    {
+        "name": "Ezgi El",
+        "age": "Reşit",
+        "location": "Bodrum",
+        "date": "12/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.milliyet.com.tr/gundem/bodrumda-korkunc-olay-iki-sevgili-basindan-vurulmus-halde-bulundu-7425519"
+    },
+    {
+        "name": "Neşe Karakaya",
+        "age": "Reşit",
+        "location": "Kayseri",
+        "date": "10/08/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/kayseride-dehset-anlari-esini-oldurup-intihar-etti-42908985"
+    },
+    {
+        "name": "Hüsniye İlhan",
+        "age": "Reşit",
+        "location": "Malatya",
+        "date": "10/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.malatyatime.com/haber/supheli-olum-camdan-giren-ekipler-husniye-ilhanin-cansiz-bedenini-buldu-109578"
+    },
+    {
+        "name": "Tuğba Sağlam",
+        "age": "Reşit",
+        "location": "Trabzon",
+        "date": "09/08/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet, Ateşli Silah",
+        "status": "Aranııyor",
+        "source": "https://www.t24.com.tr/haber/kadina-siddet-son-bulmuyor-trabzon-da-esi-tarafindan-bicaklanan-ve-tufekle-vurulan-kadin-hayatini-kaybetti,1254487"
+    },
+    {
+        "name": "Merve Demir",
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "08/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://politikahaber.com/mardinde-supheli-2-kadin-olumu/#:~:text=Edinilen%20bilgilere%20g%C3%B6re%3B%20Derik%20il%C3%A7esine,Devlet%20Hastanesine%20kald%C4%B1r%C4%B1lan%20kad%C4%B1n%20kurtar%C4%B1lamad%C4%B1."
+    },
+    {
+        "name": "Bayan Acabey",
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "08/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://politikahaber.com/mardinde-supheli-2-kadin-olumu/#:~:text=Edinilen%20bilgilere%20g%C3%B6re%3B%20Derik%20il%C3%A7esine,Devlet%20Hastanesine%20kald%C4%B1r%C4%B1lan%20kad%C4%B1n%20kurtar%C4%B1lamad%C4%B1."
+    },
+    {
+        "name": "Badegül Maden",
+        "age": "Reşit",
+        "location": "Sakarya",
+        "date": "07/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.sakaryadetayhaber.com/haber/eve-gelen-yakinlari-kanlar-icinde-buldu-108319.html"
+    },
+    {
+        "name": "Gülten Bakan",
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "07/08/2025",
+        "reason": "Tartışma",
+        "killer": "Kayınbiraderi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.milliyet.com.tr/gundem/mardinde-aile-ici-dehset-gelin-ve-kayinbirader-olduruldu-7422525"
+    },
+    {
+        "name": "Devrim Saf",
+        "age": "Reşit",
+        "location": "Hatay",
+        "date": "07/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kayınbiraderi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.milliyet.com.tr/gundem/aci-son-21-yil-boyunca-evlatlarina-hem-anne-hem-baba-oldu-kayinbiraderi-tarafindan-canice-olduruldu-7421952"
+    },
+    {
+        "name": "Teslime Hanedan",
+        "age": "Reşit",
+        "location": "Aydın",
+        "date": "07/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.ntv.com.tr/turkiye/universite-ogrencisi-teslime-olu-bulundu-erkek-arkadasi-gozaltinda,vPkiB6TrO06aY8QpZDkXkQ"
+    },
+    {
+        "name": "Gonca Avcı",
+        "age": "Reşit",
+        "location": "Balıkesir",
+        "date": "07/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Kesici Alet",
+        "status": "İntihar",
+        "source": "https://www.birgun.net/haber/balikesir-de-kadin-cinayeti-evli-oldugu-kadini-olduren-fail-intihar-etti-643922"
+    },
+    {
+        "name": "Fatıma Rahmani",
+        "age": "Reşit",
+        "location": "Isparta",
+        "date": "07/08/2025",
+        "reason": "Tartışma",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/ispartada-kan-donduran-olay-fatima-rahmani-eski-esi-tarafindan-bogularak-olduruldu-42906262"
+    },
+    {
+        "name": "Saliha Akkaş",
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "06/08/2025",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Kesici Alet",
+        "status": "İntihar",
+        "source": "https://www.t24.com.tr/haber/tbmm-den-bosanma-asamasindaki-esi-tarafindan-katledilen-saliha-akkas-icin-bassagligi-mesaji,1253903"
+    },
+    {
+        "name": "Didem Örs Alacı",
+        "age": "Reşit",
+        "location": "Edirne",
+        "date": "04/08/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "İntihara Teşebbüs",
+        "source": "https://www.hurriyet.com.tr/gundem/edirnede-vahset-esini-ve-9-yasindaki-oglunu-bogarak-oldurdu-bicakla-intihar-girisiminde-bulundu-42903001"
+    },
+    {
+        "name": "Yasemin Budak",
+        "age": "Reşit",
+        "location": "Diyarbakır",
+        "date": "04/08/2025",
+        "reason": "Husumet",
+        "killer": "Aile Meclisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Aranıyor",
+        "source": "https://www.hurriyet.com.tr/gundem/akrabalari-tarafindan-oldurulen-yasemin-budakin-esinden-adalet-cagrisi-esimi-sucsuz-sebepsiz-oldurduler-42902397"
+    },
+    {
+        "name": "Semra Derya",
+        "age": "Reşit",
+        "location": "Karabük",
+        "date": "04/08/2025",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Yangın",
+        "status": "İntihar",
+        "source": "https://www.sozcu.com.tr/amp/bosanma-asamasindaki-cift-yangin-cikan-evde-olu-bulundu-carpici-cezaevi-detayi-p202525"
+    },
+    {
+        "name": "N.G.",
+        "age": "Reşit",
+        "location": "Kayseri",
+        "date": "04/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.birgun.net/haber/kayseri-de-supheli-kadin-olumu-643162"
+    },
+    {
+        "name": "Müesser Ü.",
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "04/08/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/bosanma-asamasindaki-esini-cocuklarinin-gozu-onunde-tabancayla-oldurdu-42937872"
+    },
+    {
+        "name": "Nilüfer Tuzlulu",
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "02/08/2025",
+        "reason": "Miras",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.ntv.com.tr/amp/galeri/turkiye/izmirde-cifte-cinayet-katilin-seytani-plani-defin-islemlerini-kendisi-yapmis,1J8fN5xT3ESy77argG_ANQ"
+    },
+    {
+        "name": "Sinem Somoncu Topaloğlu",
+        "age": "Reşit",
+        "location": "Trabzon",
+        "date": "01/08/2025",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.milliyet.com.tr/gundem/balkondan-girdi-esine-kursun-yagdirdi-sok-paylasim-intikam-aceleye-gelmez-7418271"
+    },
+    {
+        "name": "Nazlı Söylemez",
+        "age": "Reşit",
+        "location": "Denizli",
+        "date": "01/08/2025",
+        "reason": "Bunalım",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.milliyet.com.tr/gundem/son-dakika-denizlide-dehset-polis-memuru-esini-ve-iki-cocugunu-oldurup-intihar-etti-7418266"
+    },
+    {
+        "name": "Duru Söylemez",
+        "age": "Reşit Değil",
+        "location": "Denizli",
+        "date": "01/08/2025",
+        "reason": "Bunalım",
+        "killer": "Babası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.milliyet.com.tr/gundem/son-dakika-denizlide-dehset-polis-memuru-esini-ve-iki-cocugunu-oldurup-intihar-etti-7418266"
+    },
+    {
+        "name": "Nida Nazlıer",
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "31/07/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.milliyet.com.tr/gundem/antalyada-trans-birey-olu-bulundu-birlikte-yasadigi-arkadasi-gozaltinda-7418060"
+    },
+    {
+        "name": "Meliha Kaya",
+        "age": "Reşit",
+        "location": "Diyarbakır",
+        "date": "29/07/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.evrensel.net/haber/563367/diyarbakirda-supheli-kadin-olumu"
+    },
+    {
+        "name": "Havva Ş.",
+        "age": "Reşit",
+        "location": "Çanakkale",
+        "date": "29/07/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.gundemebakis.com/supheli-kadin-olumu-cesedi-su-kuyusunda-bulundu"
+    },
+    {
+        "name": "Merve Verimli",
+        "age": "Reşit",
+        "location": "Adana",
+        "date": "28/07/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.evrensel.net/haber/563364/adanada-kadin-cinayet-merve-verimli-ve-kizi-elif-evli-oldugu-erkek-tarafindan-olduruldu"
+    },
+    {
+        "name": "Elif Verimli",
+        "age": "Reşit Değil",
+        "location": "Adana",
+        "date": "28/07/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Babası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.evrensel.net/haber/563364/adanada-kadin-cinayet-merve-verimli-ve-kizi-elif-evli-oldugu-erkek-tarafindan-olduruldu"
+    },
+    {
+        "name": "Türkan Söylemez",
+        "age": "Reşit",
+        "location": "Mersin",
+        "date": "27/07/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kızının Kayınbiraderi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Aranıyor",
+        "source": "https://www.haberler.com/amp/mersin-de-kadin-cinayeti-gelin-ve-kayinvalidesi-olduruldu-18889710-haberi/"
+    },
+    {
+        "name": "Aygül Çınar",
+        "age": "Reşit",
+        "location": "Mersin",
+        "date": "27/07/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kayınbiraderi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Aranıyor",
+        "source": "https://www.haberler.com/amp/mersin-de-kadin-cinayeti-gelin-ve-kayinvalidesi-olduruldu-18889710-haberi/"
+    },
+    {
+        "name": "Helin Eren",
+        "age": "Reşit Değil",
+        "location": "Diyarbakır",
+        "date": "25/07/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eski Dini Nikahlı Eşi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/9-gun-arayla-oldurulen-ilayda-ve-helin-in-katilleri-yakin-arkadasmis-p198476"
+    },
+    {
+        "name": "Teslime Çetin",
+        "age": "Reşit",
+        "location": "Adana",
+        "date": "25/07/2025",
+        "reason": "Tartışma",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Darp",
+        "status": "Tutuklu",
+        "source": "https://www.ntv.com.tr/amp/turkiye/annesini-sopayla-doverek-oldurdu-adanada-vahset,ZG8Nyp3xj067QP6sIIvyDA"
+    },
+    {
+        "name": "Belkıs Durmuş",
+        "age": "Reşit",
+        "location": "Mersin",
+        "date": "24/07/2025",
+        "reason": "Tartışma",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.ntv.com.tr/amp/turkiye/annesini-bicaklayarak-oldurdu,incwKrMsXU2URefaV4JoSg"
     }
 ]
