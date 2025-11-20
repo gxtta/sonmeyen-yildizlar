@@ -3,6 +3,10 @@ from bs4 import BeautifulSoup
 import json
 import time
 import re
+import sys
+
+# Türkçe karakterler için stdout ayarı
+sys.stdout.reconfigure(encoding='utf-8')
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
@@ -10,102 +14,113 @@ HEADERS = {
 BASE_URL = "https://anitsayac.com/"
 
 def clean_text(text):
-    """HTML etiketlerinden arınmış temiz metin döndürür."""
-    if not text: return "Bilinmiyor"
-    # &nbsp; gibi boşlukları ve baştaki/sondaki boşlukları temizle
-    return text.replace('\xa0', ' ').strip()
+    if not text: return None
+    text = text.replace('\xa0', ' ').replace('\r', '').replace('\n', '').strip()
+    return text if len(text) > 1 else None
 
-def get_detail_value(soup, key_text):
-    """Verilen anahtar kelimeyi (örn: 'İl/ilçe') bulup yanındaki değeri döndürür."""
-    try:
-        # İçinde anahtar kelime geçen <b> etiketini bul
-        label = soup.find("b", string=re.compile(re.escape(key_text)))
-        if label and label.next_sibling:
-            return clean_text(label.next_sibling)
-    except:
-        pass
+def get_value_from_bold_tag(soup, keywords):
+    all_bolds = soup.find_all("b")
+    for b in all_bolds:
+        if not b.string: continue
+        b_text = b.string.lower().strip()
+        for key in keywords:
+            if key in b_text:
+                sibling = b.next_sibling
+                for _ in range(3): 
+                    if not sibling: break
+                    if isinstance(sibling, str):
+                        cleaned = clean_text(sibling)
+                        if cleaned: return cleaned
+                    sibling = sibling.next_sibling
     return "Bilinmiyor"
 
+def extract_source_link(soup):
+    try:
+        source_label = soup.find("b", string=re.compile("Kaynak", re.IGNORECASE))
+        if source_label:
+            link = source_label.find_next("a")
+            if link: return link.get("href")
+    except:
+        pass
+    return ""
+
 def main():
-    print("Detaylı veri çekme işlemi başlıyor...")
+    print("TÜM VERİLERİ ÇEKME İŞLEMİ BAŞLIYOR...", flush=True)
     
     try:
-        r = requests.get(BASE_URL, headers=HEADERS, timeout=30)
+        r = requests.get(BASE_URL, headers=HEADERS, timeout=60)
         soup = BeautifulSoup(r.content, "html.parser")
     except Exception as e:
         print(f"Ana sayfaya bağlanılamadı: {e}")
         return
 
+    # Tüm linkleri al
     links = soup.select("span.xxy a")
-    print(f"Toplam bulunan kayıt: {len(links)}")
+    total_links = len(links)
+    print(f"Toplam {total_links} kayıt bulundu. Hepsi işlenecek.", flush=True)
     
     all_data = []
     
-    # GÜVENLİK İÇİN LİMİT: GitHub Actions süresini aşmamak için
-    # İlk seferde veya günlük güncellemede son 150 kişiyi çekmek mantıklıdır.
-    # Hepsini çekmek isterseniz bu satırı: target_links = links
-    # yapabilirsiniz ancak işlem 30-40 dakika sürebilir.
-    target_links = links[:150] 
+    # LİMİTİ KALDIRDIK: target_links = links
+    target_links = links 
 
-    print(f"{len(target_links)} kayıt detaylandırılacak...")
+    # Her 100 kişide bir dosyayı kaydetmek istersen (Opsiyonel güvenlik)
+    save_interval = 100
+
+    start_time = time.time()
 
     for index, link in enumerate(target_links):
         try:
             name = clean_text(link.get_text())
+            if not name: continue
+            
             href = link.get("href")
             if not href: continue
-
+            
             full_url = BASE_URL + href
             
-            # Detay sayfasına git
-            det_req = requests.get(full_url, headers=HEADERS, timeout=10)
-            # Türkçe karakter sorunu olmaması için
-            det_req.encoding = det_req.apparent_encoding
-            det_soup = BeautifulSoup(det_req.text, "html.parser")
-            
-            # --- Verileri Ayıkla ---
-            person_data = {
-                "name": name,
-                "age": get_detail_value(det_soup, "Maktülün yaşı:"),
-                "location": get_detail_value(det_soup, "İl/ilçe:"),
-                "date": get_detail_value(det_soup, "Tarih:"),
-                "reason": get_detail_value(det_soup, "Neden öldürüldü:"),
-                "killer": get_detail_value(det_soup, "Kim tarafından öldürüldü:"),
-                "protection": get_detail_value(det_soup, "Korunma talebi:"),
-                "method": get_detail_value(det_soup, "Öldürülme şekli:"),
-                "status": get_detail_value(det_soup, "Failin durumu:"),
-                "source": ""
-            }
-
-            # Kaynak Linkini Özel Olarak Al (Link olduğu için)
+            # Detay çekme (Hata olursa pas geçme, retry yapabiliriz ama basit tutalım)
             try:
-                source_label = det_soup.find("b", string=re.compile("Kaynak:"))
-                if source_label:
-                    # Kaynak etiketinden sonraki ilk <a> etiketini bul
-                    # Bazen direkt yanında, bazen <br>den sonra olabilir.
-                    # next_elements kullanarak ileriye doğru arıyoruz.
-                    for elem in source_label.find_all_next("a", limit=1):
-                        person_data["source"] = elem.get("href")
-            except:
-                person_data["source"] = ""
+                det_req = requests.get(full_url, headers=HEADERS, timeout=15)
+                det_req.encoding = det_req.apparent_encoding
+                det_soup = BeautifulSoup(det_req.text, "html.parser")
+                
+                person_data = {
+                    "name": name,
+                    "age": get_value_from_bold_tag(det_soup, ["yaşı", "yasi", "yas"]),
+                    "location": get_value_from_bold_tag(det_soup, ["il/ilçe", "ilçe", "sehir"]),
+                    "date": get_value_from_bold_tag(det_soup, ["tarih"]),
+                    "reason": get_value_from_bold_tag(det_soup, ["neden", "sebep"]),
+                    "killer": get_value_from_bold_tag(det_soup, ["kim tarafından", "fail"]),
+                    "protection": get_value_from_bold_tag(det_soup, ["korunma", "tedbir"]),
+                    "method": get_value_from_bold_tag(det_soup, ["şekli", "sekli", "silah"]),
+                    "status": get_value_from_bold_tag(det_soup, ["failin durumu", "durumu"]),
+                    "source": extract_source_link(det_soup)
+                }
+                
+                all_data.append(person_data)
+                
+                # İlerleme çubuğu gibi konsola yaz
+                if index % 10 == 0:
+                    elapsed = time.time() - start_time
+                    print(f"[{index+1}/{total_links}] İşlenen: {name} (Geçen süre: {int(elapsed)}sn)", flush=True)
 
-            # Konsola bilgi bas
-            print(f"[{index+1}/{len(target_links)}] {name} ({person_data['date']})")
+            except Exception as e:
+                print(f"HATA ({name}): {e}")
+                # Detay alınamasa bile ismi kaydet
+                all_data.append({"name": name, "date": "Veri Alınamadı"})
             
-            all_data.append(person_data)
-            
-            # Siteyi yormamak için bekle
-            time.sleep(0.2) 
+            # Siteyi çok yormamak için bekleme (Çok önemli)
+            time.sleep(0.15) 
 
         except Exception as e:
-            print(f"Hata ({name}): {e}")
             continue
 
-    # JSON Kaydet
+    # İşlem bitince kaydet
     with open("anit_verileri.json", "w", encoding="utf-8") as f:
         json.dump(all_data, f, ensure_ascii=False, indent=4)
     
-    print(f"İşlem tamamlandı. Toplam {len(all_data)} veri kaydedildi.")
+    print(f"BİTTİ! Toplam {len(all_data)} veri anit_verileri.json dosyasına yazıldı.")
 
 if __name__ == "__main__":
     main()
