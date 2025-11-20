@@ -42,7 +42,7 @@
 </head>
 <body class="antialiased text-gray-100">
 
-    <canvas id="webgl" class="absolute top-0 left-0 w-full h-full z-0 pointer-events-auto"></canvas>
+    <canvas id="webgl" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
 
     <!-- Yükleme Ekranı -->
     <div id="loading-overlay">
@@ -141,39 +141,49 @@
     </div>
 
     <script>
-        let namesList = [];
-        let points = null; 
-        let geometry = null;
+        let namesList = []; 
 
-        // --- Arama Kutusu İşlemleri ---
         const searchInput = document.getElementById('search-input');
         const searchResults = document.getElementById('search-results');
 
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value.toLocaleLowerCase('tr');
             searchResults.innerHTML = ''; 
-            if(query.length < 2) { searchResults.classList.add('hidden'); return; }
 
-            const matches = namesList.map((p, i) => ({...p, originalIndex: i}))
-                .filter(p => p.name.toLocaleLowerCase('tr').includes(query)).slice(0, 10);
+            if(query.length < 2) {
+                searchResults.classList.add('hidden');
+                return;
+            }
+
+            const matches = namesList
+                .map((person, index) => ({...person, originalIndex: index}))
+                .filter(p => p.name.toLocaleLowerCase('tr').includes(query))
+                .slice(0, 10); 
 
             if(matches.length > 0) {
                 searchResults.classList.remove('hidden');
                 matches.forEach(match => {
                     const div = document.createElement('div');
-                    div.className = 'px-4 py-3 hover:bg-white/5 cursor-pointer border-b border-white/5 text-gray-200 text-sm';
-                    div.innerText = match.name;
+                    div.className = 'px-4 py-3 hover:bg-white/5 cursor-pointer border-b border-white/5 last:border-none transition-colors group';
+                    const dateStr = match.date ? `<span class="text-xs text-gray-500 ml-2 group-hover:text-pink-300/70">(${match.date})</span>` : '';
+                    div.innerHTML = `<div class="flex items-center justify-between"><p class="text-sm text-gray-200 font-medium group-hover:text-pink-200">${match.name} ${dateStr}</p><i class="fa-solid fa-chevron-right text-xs text-gray-600 group-hover:text-pink-500"></i></div>`;
                     div.onclick = () => {
-                        openPanel(match.originalIndex);
-                        flyToStar(match.originalIndex);
+                        openPanel(match.originalIndex); 
+                        flyToStar(match.originalIndex); // SİNEMATİK GEÇİŞ
                         searchResults.classList.add('hidden');
-                        searchInput.value = '';
+                        searchInput.value = ''; 
                     };
                     searchResults.appendChild(div);
                 });
             } else {
                 searchResults.classList.remove('hidden');
-                searchResults.innerHTML = '<div class="px-4 py-3 text-xs text-gray-500 italic text-center">Sonuç yok</div>';
+                searchResults.innerHTML = '<div class="px-4 py-3 text-xs text-gray-500 italic text-center">Sonuç bulunamadı</div>';
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                searchResults.classList.add('hidden');
             }
         });
 
@@ -181,135 +191,150 @@
             try {
                 const response = await fetch('anit_verileri.json?t=' + new Date().getTime());
                 if (!response.ok) throw new Error('Veri yok');
-                namesList = await response.json();
+                const data = await response.json();
+                namesList = data;
                 document.getElementById('total-count').innerText = namesList.length.toLocaleString();
                 generateGalaxy();
-                document.getElementById('loading-overlay').style.display = 'none';
+                const loading = document.getElementById('loading-overlay');
+                loading.style.opacity = '0';
+                setTimeout(() => loading.style.display = 'none', 1000);
             } catch (error) {
+                console.warn("Yedek veri kullanılıyor.", error);
                 namesList = [{name: "Özgecan Aslan", date: "11.02.2015"}, {name: "Emine Bulut", date: "18.08.2019"}];
-                for(let i=0; i<500; i++) namesList.push({name: "Bilinmiyor", date: "..."});
+                for(let i=0; i<200; i++) namesList.push({name: "Bilinmiyor", date: "..."});
+                document.getElementById('total-count').innerText = namesList.length.toLocaleString();
                 generateGalaxy();
                 document.getElementById('loading-overlay').style.display = 'none';
             }
         }
 
-        // --- Three.js Kurulumu ---
-        // DÜZELTME: document.querySelector('canvas.webgl') yerine document.getElementById('webgl') kullanıldı.
-        const canvas = document.getElementById('webgl');
+        function createHeartTexture() {
+            const canvas = document.createElement('canvas');
+            canvas.width = 32; canvas.height = 32;
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.moveTo(16, 28); ctx.bezierCurveTo(16, 26, 4, 18, 4, 12);
+            ctx.bezierCurveTo(4, 6, 10, 4, 16, 10); ctx.bezierCurveTo(22, 4, 28, 6, 28, 12);
+            ctx.bezierCurveTo(28, 18, 16, 26, 16, 28);
+            ctx.fill();
+            ctx.shadowBlur = 4; ctx.shadowColor = "white"; ctx.fill();
+            return new THREE.CanvasTexture(canvas);
+        }
+
+        const canvas = document.querySelector('canvas.webgl');
         const scene = new THREE.Scene();
         scene.fog = new THREE.FogExp2('#050000', 0.03);
+
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
         camera.position.set(0, 4, 8);
-        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('webgl'), alpha: true, antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
         const controls = new THREE.OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true; controls.autoRotate = true; controls.autoRotateSpeed = 0.5;
 
-        // --- Galaksi ---
-        function createHeartTexture() {
-            const c = document.createElement('canvas'); c.width=32; c.height=32; const x = c.getContext('2d');
-            x.fillStyle='#fff'; x.beginPath(); x.moveTo(16,28); x.bezierCurveTo(16,26,4,18,4,12);
-            x.bezierCurveTo(4,6,10,4,16,10); x.bezierCurveTo(22,4,28,6,28,12); x.bezierCurveTo(28,18,16,26,16,28);
-            x.fill(); x.shadowBlur=4; x.shadowColor="white"; x.fill(); return new THREE.CanvasTexture(c);
-        }
+        const parameters = {
+            size: 0.15, radius: 8, branches: 4, spin: 1.2, 
+            randomness: 0.5, randomnessPower: 3,
+            insideColor: '#ffc0cb', outsideColor: '#8a0000'
+        };
+
+        let geometry = null;
+        let points = null;
 
         const generateGalaxy = () => {
             if(namesList.length === 0) return;
             const count = namesList.length;
+
             geometry = new THREE.BufferGeometry();
             const positions = new Float32Array(count * 3);
             const colors = new Float32Array(count * 3);
-            
-            const colorIn = new THREE.Color('#ffc0cb');
-            const colorOut = new THREE.Color('#8a0000');
+            const nameIndices = new Float32Array(count);
 
-            for(let i=0; i<count; i++) {
-                const i3 = i*3;
-                const r = Math.pow(i/count, 0.7) * 12; // Yarıçap
-                const s = r * 1.2; // Dönüş açısı
-                const b = (i % 4) / 4 * Math.PI * 2; // Dal açısı
-                const rx = Math.pow(Math.random(), 3) * (Math.random()<0.5?1:-1) * 0.5 * r;
-                const ry = Math.pow(Math.random(), 3) * (Math.random()<0.5?1:-1) * 0.5 * r;
-                const rz = Math.pow(Math.random(), 3) * (Math.random()<0.5?1:-1) * 0.5 * r;
+            const colorInside = new THREE.Color(parameters.insideColor);
+            const colorOutside = new THREE.Color(parameters.outsideColor);
 
-                positions[i3] = Math.cos(b+s)*r + rx;
-                positions[i3+1] = ry/2;
-                positions[i3+2] = Math.sin(b+s)*r + rz;
+            for(let i = 0; i < count; i++) {
+                const i3 = i * 3;
+                const radiusFactor = Math.pow(i / count, 0.7);
+                const maxRadius = parameters.radius * (1 + count / 8000);
+                const radius = radiusFactor * maxRadius;
 
-                const mixedColor = colorIn.clone(); mixedColor.lerp(colorOut, r/12);
-                colors[i3] = mixedColor.r; colors[i3+1] = mixedColor.g; colors[i3+2] = mixedColor.b;
+                const spinAngle = radius * parameters.spin;
+                const branchAngle = (i % parameters.branches) / parameters.branches * Math.PI * 2;
+
+                const randomX = Math.pow(Math.random(), parameters.randomnessPower) * (Math.random() < 0.5 ? 1 : -1) * parameters.randomness * radius;
+                const randomY = Math.pow(Math.random(), parameters.randomnessPower) * (Math.random() < 0.5 ? 1 : -1) * parameters.randomness * radius;
+                const randomZ = Math.pow(Math.random(), parameters.randomnessPower) * (Math.random() < 0.5 ? 1 : -1) * parameters.randomness * radius;
+
+                positions[i3] = Math.cos(branchAngle + spinAngle) * radius + randomX;
+                positions[i3 + 1] = randomY / 2;
+                positions[i3 + 2] = Math.sin(branchAngle + spinAngle) * radius + randomZ;
+
+                const mixedColor = colorInside.clone();
+                mixedColor.lerp(colorOutside, radius / maxRadius);
+
+                colors[i3] = mixedColor.r;
+                colors[i3 + 1] = mixedColor.g;
+                colors[i3 + 2] = mixedColor.b;
+                nameIndices[i] = i;
             }
+
             geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
             geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-            const material = new THREE.PointsMaterial({ size: 0.15, sizeAttenuation: true, depthWrite: false, blending: THREE.AdditiveBlending, vertexColors: true, map: createHeartTexture(), transparent: true, opacity: 0.8 });
+            geometry.setAttribute('nameIndex', new THREE.BufferAttribute(nameIndices, 1));
+
+            const material = new THREE.PointsMaterial({
+                size: parameters.size, sizeAttenuation: true, depthWrite: false,
+                blending: THREE.AdditiveBlending, vertexColors: true,
+                map: createHeartTexture(), transparent: true, opacity: 0.8
+            });
+
             points = new THREE.Points(geometry, material);
             scene.add(points);
-        }
+        };
 
-        // --- MIKNATIS MANTIĞI (EN YAKIN YILDIZI BULMA) ---
-        function getNearestStar(mouseX, mouseY) {
-            if (!geometry) return null;
-            const positions = geometry.attributes.position.array;
-            let minDist = 9999;
-            let nearestIndex = -1;
-            const threshold = 30; // 30 piksel yakınına tıklarsa kabul et
-
-            const tempVec = new THREE.Vector3();
-
-            for (let i = 0; i < namesList.length; i++) {
-                tempVec.set(positions[i*3], positions[i*3+1], positions[i*3+2]);
-                tempVec.project(camera);
-                
-                // Kameranın arkasındakileri yoksay
-                if(tempVec.z > 1) continue; 
-
-                const x = (tempVec.x * .5 + .5) * canvas.clientWidth;
-                const y = (tempVec.y * -.5 + .5) * canvas.clientHeight;
-
-                const dist = Math.sqrt(Math.pow(x - mouseX, 2) + Math.pow(y - mouseY, 2));
-
-                if (dist < threshold && dist < minDist) {
-                    minDist = dist;
-                    nearestIndex = i;
-                }
-            }
-            return nearestIndex;
-        }
-
-        // --- Fare Olayları ---
-        let clickStartX = 0;
-        let clickStartY = 0;
-        
-        window.addEventListener('mousedown', (e) => {
-            clickStartX = e.clientX;
-            clickStartY = e.clientY;
-        });
-
-        window.addEventListener('mouseup', (e) => {
-            // Sürükleme kontrolü (3 pikselden az oynadıysa tıklamadır)
-            if (Math.abs(e.clientX - clickStartX) > 3 || Math.abs(e.clientY - clickStartY) > 3) return;
-            if (e.target.closest('#detail-panel') || e.target.closest('#search-input') || e.target.closest('#search-results') || e.target.closest('a')) return;
-
-            // Mıknatıs Mantığı Çalıştır
-            const nearestIdx = getNearestStar(e.clientX, e.clientY);
+        // --- KAMERA UÇUŞ FONKSİYONU (TWEEN) ---
+        function flyToStar(index) {
+            if (!geometry) return;
             
-            if (nearestIdx !== -1 && nearestIdx !== null) {
-                openPanel(nearestIdx);
-                flyToStar(nearestIdx);
-            }
-        });
+            // Yıldızın pozisyonunu al
+            const positions = geometry.attributes.position.array;
+            const x = positions[index * 3];
+            const y = positions[index * 3 + 1];
+            const z = positions[index * 3 + 2];
+            
+            const targetPos = new THREE.Vector3(x, y, z);
+            
+            // Kamerayı yıldızın biraz yakınına ve yukarısına konumlandır
+            const offset = new THREE.Vector3(0, 0.5, 2); 
+            const camPos = targetPos.clone().add(offset);
 
-        // Hover için tooltip
+            // Animasyonlar
+            // 1. Kamera Pozisyonu
+            new TWEEN.Tween(camera.position)
+                .to({ x: camPos.x, y: camPos.y, z: camPos.z }, 2000) 
+                .easing(TWEEN.Easing.Cubic.Out) 
+                .start();
+
+            // 2. Kamera Odağı (Controls Target)
+            new TWEEN.Tween(controls.target)
+                .to({ x: targetPos.x, y: targetPos.y, z: targetPos.z }, 2000)
+                .easing(TWEEN.Easing.Cubic.Out)
+                .start();
+        }
+
+
+        const raycaster = new THREE.Raycaster();
+        const mouse = new THREE.Vector2();
+        raycaster.params.Points.threshold = 0.15;
+
         const tooltip = document.getElementById('tooltip');
-        window.addEventListener('mousemove', (e) => {
-            if (tooltip.style.display !== 'none') {
-                tooltip.style.left = e.clientX + 'px';
-                tooltip.style.top = e.clientY + 'px';
-            }
-        });
-
-        // --- Diğer Fonksiyonlar ---
+        const detailPanel = document.getElementById('detail-panel');
+        
         const els = {
             name: document.getElementById('panel-name'),
             dateHead: document.getElementById('panel-date-head'),
@@ -324,12 +349,36 @@
             input: document.getElementById('memory-input'),
             saveMsg: document.getElementById('save-msg')
         };
+
+        let currentHoverIndex = null;
         let currentSelectedName = null;
+
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            tooltip.style.left = event.clientX + 'px';
+            tooltip.style.top = event.clientY + 'px';
+        });
+
+        window.addEventListener('click', (e) => {
+            if(e.target.closest('#detail-panel')) return;
+            if(e.target.closest('#search-input')) return;
+            if(e.target.closest('#search-results')) return;
+            if(e.target.closest('a')) return;
+            
+            // GÜNCELLENDİ: Tıklanan yıldıza uçuş efekti
+            if(currentHoverIndex !== null) {
+                openPanel(currentHoverIndex);
+                flyToStar(currentHoverIndex); // <-- EKLENDİ
+            }
+        });
 
         function openPanel(index) {
             controls.autoRotate = false;
-            const person = namesList[index];
+            const nameIdx = geometry.attributes.nameIndex.array[index];
+            const person = namesList[nameIdx];
             currentSelectedName = person.name;
+
             const safe = (val) => (val && val.length > 1) ? val : "Bilinmiyor";
 
             els.name.innerText = person.name;
@@ -348,40 +397,56 @@
             } else {
                 els.sourceLink.style.display = 'none';
             }
+
             els.input.value = localStorage.getItem(`note_${person.name}`) || "";
             els.saveMsg.classList.add('hidden');
-            document.getElementById('detail-panel').classList.remove('translate-x-full');
+            detailPanel.classList.remove('translate-x-full');
         }
 
-        function flyToStar(index) {
-            if (!geometry) return;
-            const positions = geometry.attributes.position.array;
-            const targetPos = new THREE.Vector3(positions[index*3], positions[index*3+1], positions[index*3+2]);
-            const offset = new THREE.Vector3(0, 0.5, 2); 
-            const camPos = targetPos.clone().add(offset);
-
-            new TWEEN.Tween(camera.position).to({x:camPos.x, y:camPos.y, z:camPos.z}, 2000).easing(TWEEN.Easing.Cubic.Out).start();
-            new TWEEN.Tween(controls.target).to({x:targetPos.x, y:targetPos.y, z:targetPos.z}, 2000).easing(TWEEN.Easing.Cubic.Out).start();
-        }
-
-        document.getElementById('close-btn').onclick = () => { document.getElementById('detail-panel').classList.add('translate-x-full'); controls.autoRotate = true; };
-        document.getElementById('save-btn').onclick = () => {
-            if(currentSelectedName) {
-                localStorage.setItem(`note_${currentSelectedName}`, els.input.value);
-                els.saveMsg.classList.remove('hidden'); setTimeout(() => els.saveMsg.classList.add('hidden'), 2000);
-            }
-        };
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('close-btn').addEventListener('click', () => {
+            detailPanel.classList.add('translate-x-full');
+            controls.autoRotate = true;
         });
 
-        function tick() {
+        document.getElementById('save-btn').addEventListener('click', () => {
+            if(currentSelectedName) {
+                localStorage.setItem(`note_${currentSelectedName}`, els.input.value);
+                els.saveMsg.classList.remove('hidden');
+                setTimeout(() => els.saveMsg.classList.add('hidden'), 2000);
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        const tick = () => {
+            // TWEEN GÜNCELLEMESİ (Çok Önemli)
             TWEEN.update();
+
+            if(points) {
+                raycaster.setFromCamera(mouse, camera);
+                const intersects = raycaster.intersectObject(points);
+                if(intersects.length > 0) {
+                    document.body.style.cursor = 'pointer';
+                    const idx = intersects[0].index;
+                    currentHoverIndex = idx;
+                    const person = namesList[geometry.attributes.nameIndex.array[idx]];
+                    document.getElementById('tooltip-name').innerText = person.name;
+                    document.getElementById('tooltip-date').innerText = person.date || "";
+                    tooltip.classList.remove('hidden');
+                } else {
+                    document.body.style.cursor = 'default';
+                    currentHoverIndex = null;
+                    tooltip.classList.add('hidden');
+                }
+            }
             controls.update();
             renderer.render(scene, camera);
-            requestAnimationFrame(tick);
-        }
+            window.requestAnimationFrame(tick);
+        };
 
         fetchNames();
         tick();
