@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-    <!-- İkonlar için FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -26,16 +25,12 @@
             transition: opacity 1s ease;
         }
 
-        /* Panel içindeki detay satırları için stil */
         .detail-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex; justify-content: space-between; align-items: flex-start;
+            padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .detail-label { color: #9ca3af; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; }
-        .detail-value { color: #f3f4f6; font-weight: 500; font-size: 0.9rem; text-align: right; max-width: 60%; }
+        .detail-label { color: #9ca3af; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+        .detail-value { color: #f3f4f6; font-weight: 500; font-size: 0.9rem; text-align: right; word-break: break-word; }
     </style>
 </head>
 <body class="antialiased text-gray-100">
@@ -45,7 +40,8 @@
     <!-- Yükleme Ekranı -->
     <div id="loading-overlay">
         <div class="w-16 h-16 border-4 border-red-900 border-t-pink-500 rounded-full animate-spin mb-4"></div>
-        <p class="text-pink-300 text-sm tracking-widest animate-pulse">VERİLER ÇEKİLİYOR...</p>
+        <p class="text-pink-300 text-sm tracking-widest animate-pulse">VERİLER YÜKLENİYOR...</p>
+        <p class="text-gray-600 text-xs mt-2" id="loading-text">Yıldızlar hazırlanıyor</p>
     </div>
 
     <div class="relative z-10 pointer-events-none w-full h-screen">
@@ -57,7 +53,7 @@
             </h1>
             <p class="mt-2 text-sm text-red-100 opacity-70 max-w-md font-light">
                 Her bir yıldız, aramızdan koparılan bir ışığı temsil eder. <br>
-                Toplam <span id="total-count" class="font-bold text-white">...</span> can sonsuzluğa karıştı.
+                Bu anıtta şu an <span id="total-count" class="font-bold text-white">...</span> isim yaşatılıyor.
                 <br><br>
                 <span class="text-xs italic text-gray-500">Galakside gezinmek için sürükleyin, detaylar için tıklayın.</span>
             </p>
@@ -75,7 +71,6 @@
             <button id="close-btn" class="absolute top-4 right-4 text-white/50 hover:text-white text-2xl z-20">&times;</button>
 
             <div class="p-8 flex-1 overflow-y-auto relative">
-                <!-- Profil Bölümü -->
                 <div class="flex flex-col items-center mt-4 mb-6">
                     <div class="w-20 h-20 rounded-full bg-gradient-to-b from-pink-600 to-red-900 p-[2px] shadow-[0_0_30px_rgba(220,20,60,0.4)]">
                         <div class="w-full h-full bg-black rounded-full flex items-center justify-center">
@@ -83,10 +78,10 @@
                         </div>
                     </div>
                     <h2 id="panel-name" class="mt-4 text-2xl font-bold text-center text-white">İsim Soyisim</h2>
-                    <p id="panel-date-head" class="text-sm text-pink-400 uppercase tracking-wider font-medium">01.01.2024</p>
+                    <p id="panel-date-head" class="text-sm text-pink-400 uppercase tracking-wider font-medium">...</p>
                 </div>
 
-                <!-- Detaylar Listesi -->
+                <!-- Detaylar -->
                 <div class="bg-white/5 rounded-xl p-5 border border-white/5 mb-6">
                     <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Olay Detayları</h3>
                     
@@ -120,22 +115,18 @@
                     </div>
                 </div>
 
-                <!-- Kaynak Butonu -->
-                <a id="source-link" href="#" target="_blank" class="flex items-center justify-center gap-2 w-full py-2 mb-6 bg-gray-800/50 hover:bg-gray-800 text-gray-400 text-xs rounded transition-colors hidden">
-                    <i class="fa-solid fa-link"></i> Haberi / Kaynağı Görüntüle
+                <a id="source-link" href="#" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 mb-6 bg-gray-800/50 hover:bg-gray-800 text-gray-400 text-xs rounded transition-colors border border-white/10">
+                    <i class="fa-solid fa-external-link-alt"></i> Haberi / Kaynağı Görüntüle
                 </a>
 
                 <hr class="border-white/10 mb-6">
 
-                <!-- Anı Defteri -->
                 <div>
                     <h3 class="text-lg font-medium text-pink-300 mb-2 flex items-center gap-2">
                         <i class="fa-solid fa-pen-nib"></i> Anı Defteri
                     </h3>
-                    <p class="text-xs text-gray-500 mb-3">Bu kişi için dijital bir not bırakın (Sadece siz görebilirsiniz).</p>
-                    
-                    <textarea id="memory-input" rows="4" class="w-full bg-black/40 border border-white/10 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-pink-500/50 transition-colors resize-none placeholder-gray-600" placeholder="Bir şeyler yazın..."></textarea>
-                    
+                    <p class="text-xs text-gray-500 mb-3">Bu kişi için bir not bırakın.</p>
+                    <textarea id="memory-input" rows="4" class="w-full bg-black/40 border border-white/10 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-pink-500/50 transition-colors resize-none placeholder-gray-600" placeholder="Duygularınızı buraya yazın..."></textarea>
                     <div class="flex justify-end mt-3">
                         <button id="save-btn" class="px-5 py-2 bg-gradient-to-r from-red-900 to-pink-800 hover:from-red-800 hover:to-pink-700 text-white text-xs font-bold rounded shadow-lg transition-all active:scale-95">
                             KAYDET
@@ -150,12 +141,14 @@
     <script>
         let namesList = []; 
 
-        // --- VERİ ÇEKME ---
         async function fetchNames() {
             try {
-                const response = await fetch('anit_verileri.json');
+                // Cache'i atlamak için timestamp ekleyelim
+                const response = await fetch('anit_verileri.json?t=' + new Date().getTime());
                 if (!response.ok) throw new Error('Veri yok');
-                namesList = await response.json();
+                
+                const data = await response.json();
+                namesList = data;
                 
                 document.getElementById('total-count').innerText = namesList.length.toLocaleString();
                 generateGalaxy();
@@ -166,8 +159,14 @@
 
             } catch (error) {
                 console.warn("Yedek veri kullanılıyor.", error);
-                // Hata durumunda basit yedek veri
-                namesList = [{name: "Veri Yüklenemedi", date: "...", location: "...", killer: "..."}];
+                namesList = [
+                    {name: "Özgecan Aslan", date: "11.02.2015", location: "Mersin", killer: "Ahmet Suphi Altındöken"}, 
+                    {name: "Emine Bulut", date: "18.08.2019", location: "Kırıkkale", killer: "Fedai Varan"}
+                ];
+                // Dolgu
+                for(let i=0; i<200; i++) namesList.push({name: "Bilinmiyor", date: "..."});
+                
+                document.getElementById('total-count').innerText = namesList.length.toLocaleString();
                 generateGalaxy();
                 document.getElementById('loading-overlay').style.display = 'none';
             }
@@ -187,7 +186,6 @@
             return new THREE.CanvasTexture(canvas);
         }
 
-        // --- THREE.JS SETUP ---
         const canvas = document.querySelector('canvas.webgl');
         const scene = new THREE.Scene();
         scene.fog = new THREE.FogExp2('#050000', 0.03);
@@ -202,7 +200,6 @@
         const controls = new THREE.OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true; controls.autoRotate = true; controls.autoRotateSpeed = 0.5;
 
-        // --- GALAKSİ ---
         const parameters = {
             size: 0.15, radius: 8, branches: 4, spin: 1.2, 
             randomness: 0.5, randomnessPower: 3,
@@ -266,7 +263,6 @@
             scene.add(points);
         };
 
-        // --- UI ETKİLEŞİMİ ---
         const raycaster = new THREE.Raycaster();
         const mouse = new THREE.Vector2();
         raycaster.params.Points.threshold = 0.15;
@@ -274,7 +270,6 @@
         const tooltip = document.getElementById('tooltip');
         const detailPanel = document.getElementById('detail-panel');
         
-        // Panel Elemanları
         const els = {
             name: document.getElementById('panel-name'),
             dateHead: document.getElementById('panel-date-head'),
@@ -301,9 +296,7 @@
         });
 
         window.addEventListener('click', (e) => {
-            // Panele tıklayınca kapanmasın
             if(e.target.closest('#detail-panel')) return;
-            
             if(currentHoverIndex !== null) openPanel(currentHoverIndex);
         });
 
@@ -313,29 +306,28 @@
             const person = namesList[nameIdx];
             currentSelectedName = person.name;
 
-            // Verileri Doldur
-            els.name.innerText = person.name;
-            els.dateHead.innerText = person.date || "Tarih Yok";
-            els.location.innerText = person.location || "Bilinmiyor";
-            els.age.innerText = person.age || "Bilinmiyor";
-            els.killer.innerText = person.killer || "Bilinmiyor";
-            els.reason.innerText = person.reason || "Bilinmiyor";
-            els.method.innerText = person.method || "Bilinmiyor";
-            els.protection.innerText = person.protection || "Yok";
-            els.status.innerText = person.status || "Bilinmiyor";
+            // Helper function to safely show data
+            const safe = (val) => (val && val.length > 1) ? val : "Bilinmiyor";
 
-            // Kaynak Linki
+            els.name.innerText = person.name;
+            els.dateHead.innerText = safe(person.date);
+            els.location.innerText = safe(person.location);
+            els.age.innerText = safe(person.age);
+            els.killer.innerText = safe(person.killer);
+            els.reason.innerText = safe(person.reason);
+            els.method.innerText = safe(person.method);
+            els.protection.innerText = safe(person.protection);
+            els.status.innerText = safe(person.status);
+
             if(person.source && person.source.startsWith('http')) {
                 els.sourceLink.href = person.source;
-                els.sourceLink.classList.remove('hidden');
+                els.sourceLink.style.display = 'flex';
             } else {
-                els.sourceLink.classList.add('hidden');
+                els.sourceLink.style.display = 'none';
             }
 
-            // Anı Defteri
             els.input.value = localStorage.getItem(`note_${person.name}`) || "";
             els.saveMsg.classList.add('hidden');
-
             detailPanel.classList.remove('translate-x-full');
         }
 
@@ -366,7 +358,6 @@
                     document.body.style.cursor = 'pointer';
                     const idx = intersects[0].index;
                     currentHoverIndex = idx;
-                    
                     const person = namesList[geometry.attributes.nameIndex.array[idx]];
                     document.getElementById('tooltip-name').innerText = person.name;
                     document.getElementById('tooltip-date').innerText = person.date || "";
