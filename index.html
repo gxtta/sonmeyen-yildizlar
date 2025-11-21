@@ -7,19 +7,18 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-    <!-- Animasyon için TWEEN kütüphanesi -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
-    <!-- İkonlar -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         body { margin: 0; overflow: hidden; background-color: #050000; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         
+        /* Scrollbar */
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
         ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
         
-        #tooltip { pointer-events: none; transform: translate(-50%, -150%); z-index: 40; }
+        #tooltip { pointer-events: none; transform: translate(15px, 15px); z-index: 40; }
         
         #loading-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
@@ -28,63 +27,87 @@
             transition: opacity 1s ease;
         }
 
-        .detail-row {
-            display: flex; justify-content: space-between; align-items: flex-start;
-            padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
+        /* Detay Paneli Stilleri */
+        .detail-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
         .detail-label { color: #9ca3af; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
         .detail-value { color: #f3f4f6; font-weight: 500; font-size: 0.9rem; text-align: right; word-break: break-word; }
 
-        /* Arama Sonuçları Scrollbar */
         #search-results::-webkit-scrollbar { width: 4px; }
         #search-results::-webkit-scrollbar-thumb { background: #db2777; border-radius: 4px; }
+
+        /* Seçim Modu İmleci */
+        body.selection-active canvas { cursor: crosshair !important; }
+        
+        /* Buton Animasyonu */
+        .pulse-ring {
+            box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.7);
+            animation: pulse-red 2s infinite;
+        }
+        @keyframes pulse-red {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(219, 39, 119, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(219, 39, 119, 0); }
+        }
     </style>
 </head>
 <body class="antialiased text-gray-100">
 
-    <canvas id="webgl" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
+    <canvas id="webgl" class="absolute top-0 left-0 w-full h-full z-0 pointer-events-auto"></canvas>
 
     <!-- Yükleme Ekranı -->
     <div id="loading-overlay">
         <div class="w-16 h-16 border-4 border-red-900 border-t-pink-500 rounded-full animate-spin mb-4"></div>
         <p class="text-pink-300 text-sm tracking-widest animate-pulse">VERİLER YÜKLENİYOR...</p>
-        <p class="text-gray-600 text-xs mt-2">Yıldızlar hazırlanıyor</p>
     </div>
 
+    <!-- BİLGİLENDİRME POPUP (Girişte Açılır) -->
+    <div id="intro-modal" class="absolute inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm transition-opacity duration-500">
+        <div class="bg-[#1a0505] border border-red-900/50 rounded-2xl p-8 max-w-md text-center shadow-[0_0_50px_rgba(220,20,60,0.2)] mx-4 relative">
+            <div class="w-16 h-16 bg-gradient-to-br from-pink-600 to-red-900 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <i class="fa-solid fa-hand-pointer text-2xl text-white"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-white mb-2">Hoş Geldiniz</h2>
+            <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+                Sönmeyen Yıldızlar anıtında her bir ışık bir yaşamı temsil eder.<br><br>
+                <span class="text-pink-400 font-semibold">🖱️ Gezinmek için:</span> Ekranı sürükleyin.<br>
+                <span class="text-pink-400 font-semibold">✨ Detay görmek için:</span> Sol alttaki <br> <span class="border border-white/20 px-1 rounded bg-white/10"><i class="fa-solid fa-arrow-pointer text-xs"></i> Seçim Modu</span> butonunu açıp yıldızlara tıklayın.
+            </p>
+            <button id="close-intro-btn" class="px-8 py-3 bg-gradient-to-r from-red-900 to-pink-700 hover:from-red-800 hover:to-pink-600 text-white rounded-full font-medium transition-all transform hover:scale-105 shadow-lg">
+                Anladım, Başla
+            </button>
+        </div>
+    </div>
+
+    <!-- Sol Üst Başlık -->
     <div class="relative z-10 pointer-events-none w-full h-screen">
-        
-        <!-- Sol Üst Başlık -->
         <div class="absolute top-0 left-0 p-8 pointer-events-auto z-10">
-            <h1 class="text-4xl font-light tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-red-600 drop-shadow-lg">
-                SÖNMEYEN YILDIZLAR
-            </h1>
+            <h1 class="text-4xl font-light tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-red-600 drop-shadow-lg">SÖNMEYEN YILDIZLAR</h1>
             <p class="mt-2 text-sm text-red-100 opacity-70 max-w-md font-light">
-                Her bir yıldız, aramızdan koparılan bir ışığı temsil eder. <br>
-                Bu anıtta şu an <span id="total-count" class="font-bold text-white">...</span> isim yaşatılıyor.
-                <br><br>
-                <span class="text-xs italic text-gray-500">Galakside gezinmek için sürükleyin, detaylar için tıklayın.</span>
+                Her bir yıldız, aramızdan koparılan bir ışığı temsil eder.<br>
+                <span id="total-count" class="font-bold text-white">...</span> can sonsuzluğa karıştı.
             </p>
         </div>
 
         <!-- Arama Kutusu -->
         <div class="absolute top-6 right-6 z-30 pointer-events-auto w-64 md:w-80">
             <div class="relative group">
-                <input type="text" id="search-input" 
-                    class="w-full bg-black/40 border border-white/20 rounded-full py-2.5 pl-5 pr-10 text-sm text-white focus:outline-none focus:border-pink-500/50 focus:bg-black/80 transition-all placeholder-gray-500 backdrop-blur-sm shadow-lg"
-                    placeholder="İsim ara...">
-                <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 group-hover:text-pink-400 transition-colors">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
+                <input type="text" id="search-input" class="w-full bg-black/40 border border-white/20 rounded-full py-2.5 pl-5 pr-10 text-sm text-white focus:outline-none focus:border-pink-500/50 transition-all placeholder-gray-500 backdrop-blur-sm" placeholder="İsim ara...">
+                <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <div id="search-results" class="hidden mt-2 bg-[#0a0505]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl max-h-60 overflow-y-auto absolute w-full z-40"></div>
         </div>
 
-        <!-- Kaynak Linki -->
-        <a href="https://anitsayac.com/" target="_blank" 
-           class="absolute bottom-6 right-6 z-20 pointer-events-auto flex items-center gap-2 px-4 py-2 bg-black/40 border border-white/10 rounded-full text-xs text-gray-500 hover:text-pink-300 hover:border-pink-500/30 transition-all backdrop-blur-sm hover:bg-black/60 group">
-            <span class="opacity-50 group-hover:opacity-100 transition-opacity">Veri Kaynağı:</span>
-            <span class="font-semibold">Anıt Sayaç</span>
-            <i class="fa-solid fa-arrow-up-right-from-square text-[10px] opacity-50 group-hover:opacity-100"></i>
+        <!-- SEÇİM MODU BUTONU (SOL ALT) -->
+        <div class="absolute bottom-8 left-8 z-30 pointer-events-auto flex flex-col gap-2 items-start">
+            <div id="mode-tooltip" class="bg-black/80 text-white text-xs px-2 py-1 rounded mb-1 opacity-0 transition-opacity">Seçim Modu: Kapalı</div>
+            <button id="toggle-selection-mode" class="w-14 h-14 rounded-full bg-black/60 border-2 border-gray-500 text-gray-400 flex items-center justify-center transition-all hover:scale-110 hover:bg-black/80 shadow-2xl backdrop-blur-md">
+                <i class="fa-solid fa-arrow-pointer text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Kaynak Linki (Sağ Alt) -->
+        <a href="https://anitsayac.com/" target="_blank" class="absolute bottom-6 right-6 z-20 pointer-events-auto flex items-center gap-2 px-4 py-2 bg-black/40 border border-white/10 rounded-full text-xs text-gray-500 hover:text-pink-300 transition-all backdrop-blur-sm hover:bg-black/60">
+            <span class="opacity-50">Veri Kaynağı:</span><span class="font-semibold">Anıt Sayaç</span>
         </a>
 
         <!-- Tooltip -->
@@ -95,45 +118,28 @@
 
         <!-- Detay Paneli -->
         <div id="detail-panel" class="absolute top-0 right-0 h-full w-full md:w-[450px] bg-[#0a0505]/95 backdrop-blur-xl border-l border-red-900/30 shadow-2xl pointer-events-auto transform transition-transform duration-500 translate-x-full flex flex-col z-40">
-            
             <button id="close-btn" class="absolute top-4 right-4 text-white/50 hover:text-white text-2xl z-20">&times;</button>
-
             <div class="p-8 flex-1 overflow-y-auto relative">
                 <div class="flex flex-col items-center mt-4 mb-6">
-                    <div class="w-20 h-20 rounded-full bg-gradient-to-b from-pink-600 to-red-900 p-[2px] shadow-[0_0_30px_rgba(220,20,60,0.4)]">
-                        <div class="w-full h-full bg-black rounded-full flex items-center justify-center">
-                            <i class="fa-solid fa-dove text-2xl text-white/90"></i>
-                        </div>
-                    </div>
-                    <h2 id="panel-name" class="mt-4 text-2xl font-bold text-center text-white">İsim Soyisim</h2>
+                    <div class="w-20 h-20 rounded-full bg-gradient-to-b from-pink-600 to-red-900 p-[2px] shadow-[0_0_30px_rgba(220,20,60,0.4)]"><div class="w-full h-full bg-black rounded-full flex items-center justify-center"><i class="fa-solid fa-dove text-2xl text-white/90"></i></div></div>
+                    <h2 id="panel-name" class="mt-4 text-2xl font-bold text-center text-white">...</h2>
                     <p id="panel-date-head" class="text-sm text-pink-400 uppercase tracking-wider font-medium">...</p>
                 </div>
-
                 <div class="bg-white/5 rounded-xl p-5 border border-white/5 mb-6">
-                    <h3 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">Olay Detayları</h3>
-                    
-                    <div class="detail-row"><span class="detail-label"><i class="fa-solid fa-location-dot w-4"></i> İl / İlçe</span><span id="det-location" class="detail-value">...</span></div>
-                    <div class="detail-row"><span class="detail-label"><i class="fa-solid fa-hourglass-half w-4"></i> Yaş</span><span id="det-age" class="detail-value">...</span></div>
-                    <div class="detail-row"><span class="detail-label"><i class="fa-solid fa-skull w-4"></i> Fail</span><span id="det-killer" class="detail-value text-red-300">...</span></div>
-                    <div class="detail-row"><span class="detail-label"><i class="fa-solid fa-question w-4"></i> Neden</span><span id="det-reason" class="detail-value">...</span></div>
-                    <div class="detail-row"><span class="detail-label"><i class="fa-solid fa-gun w-4"></i> Şekil</span><span id="det-method" class="detail-value">...</span></div>
-                    <div class="detail-row"><span class="detail-label"><i class="fa-solid fa-shield-halved w-4"></i> Koruma</span><span id="det-protection" class="detail-value">...</span></div>
-                    <div class="detail-row border-none"><span class="detail-label"><i class="fa-solid fa-gavel w-4"></i> Fail Durumu</span><span id="det-status" class="detail-value">...</span></div>
+                    <div class="detail-row"><span class="detail-label">İl / İlçe</span><span id="det-location" class="detail-value">...</span></div>
+                    <div class="detail-row"><span class="detail-label">Yaş</span><span id="det-age" class="detail-value">...</span></div>
+                    <div class="detail-row"><span class="detail-label">Fail</span><span id="det-killer" class="detail-value text-red-300">...</span></div>
+                    <div class="detail-row"><span class="detail-label">Neden</span><span id="det-reason" class="detail-value">...</span></div>
+                    <div class="detail-row"><span class="detail-label">Şekil</span><span id="det-method" class="detail-value">...</span></div>
+                    <div class="detail-row"><span class="detail-label">Koruma</span><span id="det-protection" class="detail-value">...</span></div>
+                    <div class="detail-row border-none"><span class="detail-label">Durum</span><span id="det-status" class="detail-value">...</span></div>
                 </div>
-
-                <a id="source-link" href="#" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 mb-6 bg-gray-800/50 hover:bg-gray-800 text-gray-400 text-xs rounded transition-colors border border-white/10">
-                    <i class="fa-solid fa-external-link-alt"></i> Haberi / Kaynağı Görüntüle
-                </a>
-
+                <a id="source-link" href="#" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 mb-6 bg-gray-800/50 hover:bg-gray-800 text-gray-400 text-xs rounded transition-colors border border-white/10"><i class="fa-solid fa-external-link-alt"></i> Haberi Görüntüle</a>
                 <hr class="border-white/10 mb-6">
-
                 <div>
                     <h3 class="text-lg font-medium text-pink-300 mb-2 flex items-center gap-2"><i class="fa-solid fa-pen-nib"></i> Anı Defteri</h3>
-                    <p class="text-xs text-gray-500 mb-3">Bu kişi için bir not bırakın.</p>
-                    <textarea id="memory-input" rows="4" class="w-full bg-black/40 border border-white/10 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-pink-500/50 transition-colors resize-none placeholder-gray-600" placeholder="Duygularınızı buraya yazın..."></textarea>
-                    <div class="flex justify-end mt-3">
-                        <button id="save-btn" class="px-5 py-2 bg-gradient-to-r from-red-900 to-pink-800 hover:from-red-800 hover:to-pink-700 text-white text-xs font-bold rounded shadow-lg transition-all active:scale-95">KAYDET</button>
-                    </div>
+                    <textarea id="memory-input" rows="4" class="w-full bg-black/40 border border-white/10 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-pink-500/50 transition-colors resize-none placeholder-gray-600" placeholder="Bir not bırakın..."></textarea>
+                    <div class="flex justify-end mt-3"><button id="save-btn" class="px-5 py-2 bg-gradient-to-r from-red-900 to-pink-800 hover:from-red-800 hover:to-pink-700 text-white text-xs font-bold rounded shadow-lg transition-all active:scale-95">KAYDET</button></div>
                     <p id="save-msg" class="text-xs text-green-400 mt-2 text-right hidden">Kaydedildi.</p>
                 </div>
             </div>
@@ -141,246 +147,220 @@
     </div>
 
     <script>
-        let namesList = []; 
+        let namesList = [];
+        let points = null; 
+        let geometry = null;
+        let isSelectionMode = false; // SEÇİM MODU DURUMU
 
+        // --- Başlangıç Popup Kontrolü ---
+        document.getElementById('close-intro-btn').onclick = () => {
+            document.getElementById('intro-modal').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('intro-modal').style.display = 'none';
+            }, 500);
+        };
+
+        // --- Seçim Modu Butonu Kontrolü ---
+        const modeBtn = document.getElementById('toggle-selection-mode');
+        const modeTooltip = document.getElementById('mode-tooltip');
+
+        modeBtn.onclick = () => {
+            isSelectionMode = !isSelectionMode;
+            if(isSelectionMode) {
+                // Aktif Durum
+                modeBtn.classList.remove('border-gray-500', 'text-gray-400', 'bg-black/60');
+                modeBtn.classList.add('border-pink-500', 'text-white', 'bg-pink-900/50', 'pulse-ring');
+                document.body.classList.add('selection-active');
+                modeTooltip.innerText = "Seçim Modu: AÇIK";
+                modeTooltip.style.opacity = '1';
+            } else {
+                // Pasif Durum
+                modeBtn.classList.add('border-gray-500', 'text-gray-400', 'bg-black/60');
+                modeBtn.classList.remove('border-pink-500', 'text-white', 'bg-pink-900/50', 'pulse-ring');
+                document.body.classList.remove('selection-active');
+                modeTooltip.innerText = "Seçim Modu: KAPALI";
+                modeTooltip.style.opacity = '0';
+            }
+        };
+
+        // --- Arama Kutusu ---
         const searchInput = document.getElementById('search-input');
         const searchResults = document.getElementById('search-results');
-
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value.toLocaleLowerCase('tr');
             searchResults.innerHTML = ''; 
-
-            if(query.length < 2) {
-                searchResults.classList.add('hidden');
-                return;
-            }
-
-            const matches = namesList
-                .map((person, index) => ({...person, originalIndex: index}))
-                .filter(p => p.name.toLocaleLowerCase('tr').includes(query))
-                .slice(0, 10); 
-
+            if(query.length < 2) { searchResults.classList.add('hidden'); return; }
+            const matches = namesList.map((p, i) => ({...p, originalIndex: i})).filter(p => p.name.toLocaleLowerCase('tr').includes(query)).slice(0, 10);
             if(matches.length > 0) {
                 searchResults.classList.remove('hidden');
                 matches.forEach(match => {
                     const div = document.createElement('div');
-                    div.className = 'px-4 py-3 hover:bg-white/5 cursor-pointer border-b border-white/5 last:border-none transition-colors group';
-                    const dateStr = match.date ? `<span class="text-xs text-gray-500 ml-2 group-hover:text-pink-300/70">(${match.date})</span>` : '';
-                    div.innerHTML = `<div class="flex items-center justify-between"><p class="text-sm text-gray-200 font-medium group-hover:text-pink-200">${match.name} ${dateStr}</p><i class="fa-solid fa-chevron-right text-xs text-gray-600 group-hover:text-pink-500"></i></div>`;
-                    div.onclick = () => {
+                    div.className = 'px-4 py-3 hover:bg-white/5 cursor-pointer border-b border-white/5 text-gray-200 text-sm';
+                    div.innerText = match.name;
+                    div.onclick = () => { 
                         openPanel(match.originalIndex); 
-                        flyToStar(match.originalIndex); // SİNEMATİK GEÇİŞ
-                        searchResults.classList.add('hidden');
+                        flyToStar(match.originalIndex); 
+                        searchResults.classList.add('hidden'); 
                         searchInput.value = ''; 
                     };
                     searchResults.appendChild(div);
                 });
             } else {
-                searchResults.classList.remove('hidden');
-                searchResults.innerHTML = '<div class="px-4 py-3 text-xs text-gray-500 italic text-center">Sonuç bulunamadı</div>';
+                searchResults.classList.remove('hidden'); searchResults.innerHTML = '<div class="px-4 py-3 text-xs text-gray-500 italic text-center">Sonuç yok</div>';
             }
         });
-
-        document.addEventListener('click', (e) => {
-            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
-                searchResults.classList.add('hidden');
-            }
-        });
+        document.addEventListener('click', (e) => { if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) searchResults.classList.add('hidden'); });
 
         async function fetchNames() {
             try {
                 const response = await fetch('anit_verileri.json?t=' + new Date().getTime());
                 if (!response.ok) throw new Error('Veri yok');
-                const data = await response.json();
-                namesList = data;
+                namesList = await response.json();
                 document.getElementById('total-count').innerText = namesList.length.toLocaleString();
                 generateGalaxy();
-                const loading = document.getElementById('loading-overlay');
-                loading.style.opacity = '0';
-                setTimeout(() => loading.style.display = 'none', 1000);
+                document.getElementById('loading-overlay').style.display = 'none';
             } catch (error) {
-                console.warn("Yedek veri kullanılıyor.", error);
                 namesList = [{name: "Özgecan Aslan", date: "11.02.2015"}, {name: "Emine Bulut", date: "18.08.2019"}];
-                for(let i=0; i<200; i++) namesList.push({name: "Bilinmiyor", date: "..."});
-                document.getElementById('total-count').innerText = namesList.length.toLocaleString();
+                for(let i=0; i<500; i++) namesList.push({name: "Bilinmiyor", date: "..."});
                 generateGalaxy();
                 document.getElementById('loading-overlay').style.display = 'none';
             }
         }
 
-        function createHeartTexture() {
-            const canvas = document.createElement('canvas');
-            canvas.width = 32; canvas.height = 32;
-            const ctx = canvas.getContext('2d');
-            ctx.fillStyle = '#ffffff';
-            ctx.beginPath();
-            ctx.moveTo(16, 28); ctx.bezierCurveTo(16, 26, 4, 18, 4, 12);
-            ctx.bezierCurveTo(4, 6, 10, 4, 16, 10); ctx.bezierCurveTo(22, 4, 28, 6, 28, 12);
-            ctx.bezierCurveTo(28, 18, 16, 26, 16, 28);
-            ctx.fill();
-            ctx.shadowBlur = 4; ctx.shadowColor = "white"; ctx.fill();
-            return new THREE.CanvasTexture(canvas);
-        }
-
-        const canvas = document.querySelector('canvas.webgl');
+        const canvas = document.getElementById('webgl');
         const scene = new THREE.Scene();
         scene.fog = new THREE.FogExp2('#050000', 0.03);
-
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
         camera.position.set(0, 4, 8);
-
-        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('webgl'), alpha: true, antialias: true });
+        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
         const controls = new THREE.OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true; controls.autoRotate = true; controls.autoRotateSpeed = 0.5;
 
-        const parameters = {
-            size: 0.15, radius: 8, branches: 4, spin: 1.2, 
-            randomness: 0.5, randomnessPower: 3,
-            insideColor: '#ffc0cb', outsideColor: '#8a0000'
-        };
-
-        let geometry = null;
-        let points = null;
+        function createHeartTexture() {
+            const c = document.createElement('canvas'); c.width=32; c.height=32; const x = c.getContext('2d');
+            x.fillStyle='#fff'; x.beginPath(); x.moveTo(16,28); x.bezierCurveTo(16,26,4,18,4,12);
+            x.bezierCurveTo(4,6,10,4,16,10); x.bezierCurveTo(22,4,28,6,28,12); x.bezierCurveTo(28,18,16,26,16,28);
+            x.fill(); x.shadowBlur=4; x.shadowColor="white"; x.fill(); return new THREE.CanvasTexture(c);
+        }
 
         const generateGalaxy = () => {
             if(namesList.length === 0) return;
             const count = namesList.length;
-
             geometry = new THREE.BufferGeometry();
             const positions = new Float32Array(count * 3);
             const colors = new Float32Array(count * 3);
             const nameIndices = new Float32Array(count);
+            const colorIn = new THREE.Color('#ffc0cb');
+            const colorOut = new THREE.Color('#8a0000');
 
-            const colorInside = new THREE.Color(parameters.insideColor);
-            const colorOutside = new THREE.Color(parameters.outsideColor);
+            for(let i=0; i<count; i++) {
+                const i3 = i*3;
+                const r = Math.pow(i/count, 0.7) * 12; 
+                const s = r * 1.2; 
+                const b = (i % 4) / 4 * Math.PI * 2; 
+                const rx = Math.pow(Math.random(), 3) * (Math.random()<0.5?1:-1) * 0.5 * r;
+                const ry = Math.pow(Math.random(), 3) * (Math.random()<0.5?1:-1) * 0.5 * r;
+                const rz = Math.pow(Math.random(), 3) * (Math.random()<0.5?1:-1) * 0.5 * r;
 
-            for(let i = 0; i < count; i++) {
-                const i3 = i * 3;
-                const radiusFactor = Math.pow(i / count, 0.7);
-                const maxRadius = parameters.radius * (1 + count / 8000);
-                const radius = radiusFactor * maxRadius;
+                positions[i3] = Math.cos(b+s)*r + rx;
+                positions[i3+1] = ry/2;
+                positions[i3+2] = Math.sin(b+s)*r + rz;
 
-                const spinAngle = radius * parameters.spin;
-                const branchAngle = (i % parameters.branches) / parameters.branches * Math.PI * 2;
-
-                const randomX = Math.pow(Math.random(), parameters.randomnessPower) * (Math.random() < 0.5 ? 1 : -1) * parameters.randomness * radius;
-                const randomY = Math.pow(Math.random(), parameters.randomnessPower) * (Math.random() < 0.5 ? 1 : -1) * parameters.randomness * radius;
-                const randomZ = Math.pow(Math.random(), parameters.randomnessPower) * (Math.random() < 0.5 ? 1 : -1) * parameters.randomness * radius;
-
-                positions[i3] = Math.cos(branchAngle + spinAngle) * radius + randomX;
-                positions[i3 + 1] = randomY / 2;
-                positions[i3 + 2] = Math.sin(branchAngle + spinAngle) * radius + randomZ;
-
-                const mixedColor = colorInside.clone();
-                mixedColor.lerp(colorOutside, radius / maxRadius);
-
-                colors[i3] = mixedColor.r;
-                colors[i3 + 1] = mixedColor.g;
-                colors[i3 + 2] = mixedColor.b;
+                const mixedColor = colorIn.clone(); mixedColor.lerp(colorOut, r/12);
+                colors[i3] = mixedColor.r; colors[i3+1] = mixedColor.g; colors[i3+2] = mixedColor.b;
                 nameIndices[i] = i;
             }
-
             geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
             geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
             geometry.setAttribute('nameIndex', new THREE.BufferAttribute(nameIndices, 1));
-
-            const material = new THREE.PointsMaterial({
-                size: parameters.size, sizeAttenuation: true, depthWrite: false,
-                blending: THREE.AdditiveBlending, vertexColors: true,
-                map: createHeartTexture(), transparent: true, opacity: 0.8
-            });
-
+            const material = new THREE.PointsMaterial({ size: 0.25, sizeAttenuation: true, depthWrite: false, blending: THREE.AdditiveBlending, vertexColors: true, map: createHeartTexture(), transparent: true, opacity: 0.8 });
             points = new THREE.Points(geometry, material);
             scene.add(points);
-        };
-
-        // --- KAMERA UÇUŞ FONKSİYONU (TWEEN) ---
-        function flyToStar(index) {
-            if (!geometry) return;
-            
-            // Yıldızın pozisyonunu al
-            const positions = geometry.attributes.position.array;
-            const x = positions[index * 3];
-            const y = positions[index * 3 + 1];
-            const z = positions[index * 3 + 2];
-            
-            const targetPos = new THREE.Vector3(x, y, z);
-            
-            // Kamerayı yıldızın biraz yakınına ve yukarısına konumlandır
-            const offset = new THREE.Vector3(0, 0.5, 2); 
-            const camPos = targetPos.clone().add(offset);
-
-            // Animasyonlar
-            // 1. Kamera Pozisyonu
-            new TWEEN.Tween(camera.position)
-                .to({ x: camPos.x, y: camPos.y, z: camPos.z }, 2000) 
-                .easing(TWEEN.Easing.Cubic.Out) 
-                .start();
-
-            // 2. Kamera Odağı (Controls Target)
-            new TWEEN.Tween(controls.target)
-                .to({ x: targetPos.x, y: targetPos.y, z: targetPos.z }, 2000)
-                .easing(TWEEN.Easing.Cubic.Out)
-                .start();
         }
 
-
-        const raycaster = new THREE.Raycaster();
-        const mouse = new THREE.Vector2();
-        raycaster.params.Points.threshold = 0.15;
-
-        const tooltip = document.getElementById('tooltip');
-        const detailPanel = document.getElementById('detail-panel');
-        
-        const els = {
-            name: document.getElementById('panel-name'),
-            dateHead: document.getElementById('panel-date-head'),
-            location: document.getElementById('det-location'),
-            age: document.getElementById('det-age'),
-            killer: document.getElementById('det-killer'),
-            reason: document.getElementById('det-reason'),
-            method: document.getElementById('det-method'),
-            protection: document.getElementById('det-protection'),
-            status: document.getElementById('det-status'),
-            sourceLink: document.getElementById('source-link'),
-            input: document.getElementById('memory-input'),
-            saveMsg: document.getElementById('save-msg')
-        };
-
-        let currentHoverIndex = null;
-        let currentSelectedName = null;
-
-        window.addEventListener('mousemove', (event) => {
-            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-            tooltip.style.left = event.clientX + 'px';
-            tooltip.style.top = event.clientY + 'px';
-        });
-
-        window.addEventListener('click', (e) => {
-            if(e.target.closest('#detail-panel')) return;
-            if(e.target.closest('#search-input')) return;
-            if(e.target.closest('#search-results')) return;
-            if(e.target.closest('a')) return;
+        // --- EKRAN BAZLI SEÇİM (Mıknatıs) ---
+        function getNearestStarOnScreen(clientX, clientY) {
+            if (!geometry || !points) return null;
             
-            // GÜNCELLENDİ: Tıklanan yıldıza uçuş efekti
-            if(currentHoverIndex !== null) {
-                openPanel(currentHoverIndex);
-                flyToStar(currentHoverIndex); // <-- EKLENDİ
+            const positions = geometry.attributes.position.array;
+            const count = namesList.length;
+            let minDistance = 40; // Mıknatıs gücü (piksel)
+            let nearestIndex = -1;
+            
+            const tempVec = new THREE.Vector3();
+
+            for(let i=0; i<count; i++) {
+                tempVec.set(positions[i*3], positions[i*3+1], positions[i*3+2]);
+                tempVec.project(camera);
+                if(tempVec.z > 1) continue;
+
+                const x = (tempVec.x * .5 + .5) * window.innerWidth;
+                const y = (-(tempVec.y * .5) + .5) * window.innerHeight;
+                const dist = Math.sqrt(Math.pow(x - clientX, 2) + Math.pow(y - clientY, 2));
+
+                if(dist < minDistance) {
+                    minDistance = dist;
+                    nearestIndex = i;
+                }
+            }
+            return nearestIndex;
+        }
+
+        // --- Mouse Move & Hover Tooltip ---
+        const tooltip = document.getElementById('tooltip');
+        const tooltipName = document.getElementById('tooltip-name');
+        const tooltipDate = document.getElementById('tooltip-date');
+
+        window.addEventListener('mousemove', (e) => {
+            // Tooltip pozisyonunu güncelle
+            tooltip.style.left = (e.clientX + 15) + 'px';
+            tooltip.style.top = (e.clientY + 15) + 'px';
+
+            // Yakın yıldızı kontrol et (Hover)
+            const nearestIdx = getNearestStarOnScreen(e.clientX, e.clientY);
+
+            if (nearestIdx !== -1 && nearestIdx !== null) {
+                document.body.style.cursor = 'pointer';
+                
+                // Tooltip içeriğini doldur
+                const nameIdx = geometry.attributes.nameIndex.array[nearestIdx];
+                const person = namesList[nameIdx];
+                tooltipName.innerText = person.name;
+                tooltipDate.innerText = person.date || "";
+                
+                // Tooltipi göster
+                tooltip.classList.remove('hidden');
+            } else {
+                // Yıldız yoksa imleci ve tooltipi sıfırla
+                document.body.style.cursor = isSelectionMode ? 'crosshair' : 'default';
+                tooltip.classList.add('hidden');
             }
         });
 
+        window.addEventListener('click', (e) => {
+            // Eğer Seçim Modu KAPALIYSA hiçbir şey yapma
+            if (!isSelectionMode) return;
+
+            if (e.target.closest('#detail-panel') || e.target.closest('#search-input') || e.target.closest('#search-results') || e.target.closest('a') || e.target.closest('#toggle-selection-mode')) return;
+
+            const nearestIdx = getNearestStarOnScreen(e.clientX, e.clientY);
+            
+            if (nearestIdx !== -1 && nearestIdx !== null) {
+                openPanel(nearestIdx);
+                flyToStar(nearestIdx);
+            }
+        });
+
+        const els = { name: document.getElementById('panel-name'), dateHead: document.getElementById('panel-date-head'), location: document.getElementById('det-location'), age: document.getElementById('det-age'), killer: document.getElementById('det-killer'), reason: document.getElementById('det-reason'), method: document.getElementById('det-method'), protection: document.getElementById('det-protection'), status: document.getElementById('det-status'), sourceLink: document.getElementById('source-link'), input: document.getElementById('memory-input'), saveMsg: document.getElementById('save-msg') };
+        let currentSelectedName = null;
+
         function openPanel(index) {
             controls.autoRotate = false;
-            const nameIdx = geometry.attributes.nameIndex.array[index];
-            const person = namesList[nameIdx];
+            const person = namesList[index];
             currentSelectedName = person.name;
-
             const safe = (val) => (val && val.length > 1) ? val : "Bilinmiyor";
-
             els.name.innerText = person.name;
             els.dateHead.innerText = safe(person.date);
             els.location.innerText = safe(person.location);
@@ -390,63 +370,32 @@
             els.method.innerText = safe(person.method);
             els.protection.innerText = safe(person.protection);
             els.status.innerText = safe(person.status);
-
-            if(person.source && person.source.startsWith('http')) {
-                els.sourceLink.href = person.source;
-                els.sourceLink.style.display = 'flex';
-            } else {
-                els.sourceLink.style.display = 'none';
-            }
-
+            if(person.source && person.source.startsWith('http')) { els.sourceLink.href = person.source; els.sourceLink.style.display = 'flex'; } else { els.sourceLink.style.display = 'none'; }
             els.input.value = localStorage.getItem(`note_${person.name}`) || "";
             els.saveMsg.classList.add('hidden');
-            detailPanel.classList.remove('translate-x-full');
+            document.getElementById('detail-panel').classList.remove('translate-x-full');
         }
 
-        document.getElementById('close-btn').addEventListener('click', () => {
-            detailPanel.classList.add('translate-x-full');
-            controls.autoRotate = true;
-        });
+        function flyToStar(index) {
+            if (!geometry) return;
+            const positions = geometry.attributes.position.array;
+            const targetPos = new THREE.Vector3(positions[index*3], positions[index*3+1], positions[index*3+2]);
+            const offset = new THREE.Vector3(0, 0.5, 2); 
+            const camPos = targetPos.clone().add(offset);
+            new TWEEN.Tween(camera.position).to({x:camPos.x, y:camPos.y, z:camPos.z}, 2000).easing(TWEEN.Easing.Cubic.Out).start();
+            new TWEEN.Tween(controls.target).to({x:targetPos.x, y:targetPos.y, z:targetPos.z}, 2000).easing(TWEEN.Easing.Cubic.Out).start();
+        }
 
-        document.getElementById('save-btn').addEventListener('click', () => {
-            if(currentSelectedName) {
-                localStorage.setItem(`note_${currentSelectedName}`, els.input.value);
-                els.saveMsg.classList.remove('hidden');
-                setTimeout(() => els.saveMsg.classList.add('hidden'), 2000);
-            }
-        });
+        document.getElementById('close-btn').onclick = () => { document.getElementById('detail-panel').classList.add('translate-x-full'); controls.autoRotate = true; };
+        document.getElementById('save-btn').onclick = () => { if(currentSelectedName) { localStorage.setItem(`note_${currentSelectedName}`, els.input.value); els.saveMsg.classList.remove('hidden'); setTimeout(() => els.saveMsg.classList.add('hidden'), 2000); } };
+        window.addEventListener('resize', () => { camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
 
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        const tick = () => {
-            // TWEEN GÜNCELLEMESİ (Çok Önemli)
+        function tick() {
             TWEEN.update();
-
-            if(points) {
-                raycaster.setFromCamera(mouse, camera);
-                const intersects = raycaster.intersectObject(points);
-                if(intersects.length > 0) {
-                    document.body.style.cursor = 'pointer';
-                    const idx = intersects[0].index;
-                    currentHoverIndex = idx;
-                    const person = namesList[geometry.attributes.nameIndex.array[idx]];
-                    document.getElementById('tooltip-name').innerText = person.name;
-                    document.getElementById('tooltip-date').innerText = person.date || "";
-                    tooltip.classList.remove('hidden');
-                } else {
-                    document.body.style.cursor = 'default';
-                    currentHoverIndex = null;
-                    tooltip.classList.add('hidden');
-                }
-            }
             controls.update();
             renderer.render(scene, camera);
-            window.requestAnimationFrame(tick);
-        };
+            requestAnimationFrame(tick);
+        }
 
         fetchNames();
         tick();
