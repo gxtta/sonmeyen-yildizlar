@@ -52308,6 +52308,18 @@
         "source": "http://www.milliyet.com.tr/hapisten-cikip-ablasini-oldurdu-gundem-1980595/"
     },
     {
+        "name": "A.Ş.",
+        "age": "Reşit",
+        "location": "Çorum",
+        "date": "06/12/2014",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanımadığı Birisi",
+        "protection": "Yok",
+        "method": "Kesicİ Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/dosya-11-yil-sonra-raftan-indi-cinayetin-sir-perdesi-boyle-aralandi-43026380"
+    },
+    {
         "name": "Ayşe Hakan",
         "age": "Bilinmiyor",
         "location": "Bilinmiyor",
@@ -52501,15 +52513,7 @@
     },
     {
         "name": "Hatice Uysal",
-        "age": "Bilinmiyor",
-        "location": "Bilinmiyor",
-        "date": "06/11/2014",
-        "reason": "Kıskançlık",
-        "killer": "Eski Kocası",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Bilinmiyor",
-        "source": "http://www.milliyet.com.tr/cifte-cinayetin-faili-konustu-gundem-1965824/"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Merve İnce",
@@ -57025,15 +57029,7 @@
     },
     {
         "name": "Fatma Dugar",
-        "age": "Bilinmiyor",
-        "location": "Bilinmiyor",
-        "date": "05/06/2013",
-        "reason": "Namus cinayeti",
-        "killer": "Kocası",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Bilinmiyor",
-        "source": "http://www.igdirim76.com/haber/igdir-da-namus-cinayeti-3-olu/610/"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Melisa Sert",
