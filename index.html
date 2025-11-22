@@ -4,357 +4,592 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sönmeyen Yıldızlar - Dijital Anıt</title>
+
+  <!-- TAILWIND -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- THREE.JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <!-- TWEEN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
+
+  <!-- ICONS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    /* (orijinal stil bloğunuz buraya aynen kalsın) */
-    body { margin: 0; overflow: hidden; background-color: #050000; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
-    ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
-    #tooltip { pointer-events: none; transform: translate(-50%, -150%); z-index: 40; }
-    #loading-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #050000; z-index: 50; display: flex; justify-content: center; align-items: center; flex-direction: column; transition: opacity 1s ease; }
-    .detail-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-    .detail-label { color: #9ca3af; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-    .detail-value { color: #f3f4f6; font-weight: 500; font-size: 0.9rem; text-align: right; word-break: break-word; }
-    #search-results::-webkit-scrollbar { width: 4px; }
-    #search-results::-webkit-scrollbar-thumb { background: #db2777; border-radius: 4px; }
-    body.selection-active canvas { cursor: crosshair !important; }
-    .pulse-border { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.7); animation: pulse-red 2s infinite; }
-    @keyframes pulse-red { 0% { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(219, 39, 119, 0); } 100% { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0); } }
-    .modal-wrapper { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
-    .modal-wrapper.active { opacity: 1; pointer-events: auto; }
-    .modal-content { transform: scale(0.95); transition: transform 0.3s ease; }
-    .modal-wrapper.active .modal-content { transform: scale(1); }
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #050000;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    #tooltip { 
+      pointer-events: none; 
+      transform: translate(-50%, -150%); 
+      z-index: 40; 
+    }
+
+    body.selection-active canvas { 
+      cursor: crosshair !important; 
+    }
+
+    .pulse-border {
+      animation: pulse 2s infinite;
+      box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.7);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(219, 39, 119, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0); }
+    }
   </style>
+
 </head>
+
 <body class="antialiased text-gray-100">
 
-  <canvas id="webgl" class="absolute top-0 left-0 w-full h-full z-0 pointer-events-auto"></canvas>
+<!-- CANVAS -->
+<canvas id="webgl" class="absolute top-0 left-0 w-full h-full"></canvas>
 
-  <!-- (HTML içeriğiniz - modallar, UI vb. olduğu gibi kalıyor) -->
-  <!-- ... burada sizin tüm modal ve UI markup'ınız aynen yer almalı ... -->
-  <!-- (uzun olduğu için bu örnekte atlıyorum, orijinal dosyanızdaki markup'ı kullanın) -->
 
-  <!-- (Tooltip, detay panel, butonlar vb. sizde zaten var; script kısmını aşağıdakiyle değiştirin) -->
+<!-- LOADING -->
+<div id="loading-overlay" class="absolute top-0 left-0 w-full h-full bg-black flex flex-col items-center justify-center text-white text-xl z-50">
+  <div class="mb-4 animate-pulse text-pink-400 font-bold text-3xl">Sönmeyen Yıldızlar</div>
+  <div class="text-gray-300">Yükleniyor...</div>
+</div>
 
-  <script>
-  // ----- Sadece script kısmı: orijinal script'inizi buradaki ile değiştirin -----
 
-  let namesList = [];
-  let points = null;
-  let geometry = null;
-  let isSelectionMode = false;
+<!-- TOOLTIP -->
+<div id="tooltip" class="absolute hidden bg-black/80 px-3 py-2 rounded-lg border border-white/10 text-sm">
+  <div id="tooltip-name" class="font-bold text-pink-300"></div>
+  <div id="tooltip-date" class="text-xs text-gray-300"></div>
+</div>
 
-  // Modal yönetimi ve UI handler'lar (orijinal kodunuzdan aynen alınabilir)
-  const introModal = document.getElementById('intro-modal');
-  const infoModal = document.getElementById('info-modal');
-  const donateModal = document.getElementById('donate-modal');
-  const defenseModal = document.getElementById('defense-modal');
 
-  function openModal(modal) { modal.classList.remove('hidden'); void modal.offsetWidth; modal.classList.add('active'); }
-  function closeModal(modal) { modal.classList.remove('active'); setTimeout(()=>modal.classList.add('hidden'),300); }
+<!-- DETAY PANEL -->
+<div id="detail-panel" class="fixed right-0 top-0 h-full w-96 bg-black/70 backdrop-blur-lg border-l border-white/10 p-6 translate-x-full transition-all duration-300 overflow-y-auto z-40">
 
-  document.getElementById('close-intro-btn').onclick = () => closeModal(introModal);
-  document.getElementById('open-info-btn').onclick = () => openModal(infoModal);
-  document.getElementById('open-donate-btn').onclick = () => openModal(donateModal);
-  document.getElementById('open-defense-btn').onclick = () => openModal(defenseModal);
+  <button id="close-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
 
-  document.querySelectorAll('.close-modal-btn').forEach(btn => {
-    btn.onclick = (e) => {
-      const modal = e.target.closest('.modal-wrapper');
-      if (modal) closeModal(modal);
+  <h2 id="panel-name" class="text-2xl font-bold mb-1 text-white"></h2>
+  <p id="panel-date-head" class="text-gray-400 mb-4"></p>
+
+  <div class="space-y-4 pt-4">
+
+    <div class="detail-row">
+      <span class="detail-label">Konum:</span>
+      <span id="det-location" class="detail-value"></span>
+    </div>
+
+    <div class="detail-row">
+      <span class="detail-label">Yaş:</span>
+      <span id="det-age" class="detail-value"></span>
+    </div>
+
+    <div class="detail-row">
+      <span class="detail-label">Fail:</span>
+      <span id="det-killer" class="detail-value"></span>
+    </div>
+
+    <div class="detail-row">
+      <span class="detail-label">Sebep:</span>
+      <span id="det-reason" class="detail-value"></span>
+    </div>
+
+    <div class="detail-row">
+      <span class="detail-label">Yöntem:</span>
+      <span id="det-method" class="detail-value"></span>
+    </div>
+
+    <div class="detail-row">
+      <span class="detail-label">Koruma Talebi:</span>
+      <span id="det-protection" class="detail-value"></span>
+    </div>
+
+    <div class="detail-row">
+      <span class="detail-label">Hukuki Durum:</span>
+      <span id="det-status" class="detail-value"></span>
+    </div>
+
+    <div id="source-box" class="mt-4">
+      <a id="source-link" href="#" target="_blank" class="text-pink-400 underline text-sm"></a>
+    </div>
+
+    <div class="mt-6">
+      <label class="text-gray-300 text-sm mb-2 block">Bu kişi için bir not bırak:</label>
+      <textarea id="memory-input" class="w-full h-24 bg-black/40 border border-white/10 p-3 rounded"></textarea>
+      <button id="save-btn" class="mt-2 w-full bg-pink-600 hover:bg-pink-700 py-2 rounded">Kaydet</button>
+      <div id="save-msg" class="hidden text-green-400 text-sm mt-2">Kaydedildi.</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ÜST BAR -->
+<div class="fixed top-0 left-0 w-full p-4 flex justify-between items-center pointer-events-none z-30">
+
+  <!-- SOL -->
+  <div class="pointer-events-auto flex items-center gap-4">
+    <div class="bg-black/60 px-4 py-2 rounded-lg border border-white/10">
+      Toplam: <span id="total-count" class="font-bold text-pink-400">0</span> kişi
+    </div>
+
+    <div class="relative">
+      <input id="search-input" class="bg-black/50 border border-white/20 px-3 py-2 rounded-lg w-64" 
+             placeholder="İsim ara...">
+      <div id="search-results"
+           class="absolute top-full left-0 w-full bg-black/80 border border-white/10 rounded-lg mt-1 hidden max-h-64 overflow-y-auto"></div>
+    </div>
+  </div>
+
+  <!-- SAĞ -->
+  <div class="pointer-events-auto flex items-center gap-4">
+
+    <button id="toggle-selection-mode"
+            class="bg-black/60 border border-gray-500 text-gray-300 px-4 py-2 rounded-lg flex items-center gap-2">
+      <i class="fa-solid fa-crosshairs"></i>
+      <span>Seçim Modu:</span>
+      <span id="mode-text" class="font-bold">KAPALI</span>
+      <span id="mode-indicator" class="ml-2 w-3 h-3 bg-pink-500 rounded-full opacity-0 transition-all"></span>
+    </button>
+
+  </div>
+</div>
+
+
+<script>
+/*====================================================================
+  GLOBAL
+====================================================================*/
+let namesList = [];
+let points = null;
+let geometry = null;
+
+let isSelectionMode = false;
+
+const canvas = document.getElementById("webgl");
+
+/*====================================================================
+  MODAL / PANEL ELEMENTLERİ
+====================================================================*/
+const detailPanel = document.getElementById("detail-panel");
+const tooltip = document.getElementById("tooltip");
+const tooltipName = document.getElementById("tooltip-name");
+const tooltipDate = document.getElementById("tooltip-date");
+
+const panelEls = {
+  name: document.getElementById("panel-name"),
+  dateHead: document.getElementById("panel-date-head"),
+  location: document.getElementById("det-location"),
+  age: document.getElementById("det-age"),
+  killer: document.getElementById("det-killer"),
+  reason: document.getElementById("det-reason"),
+  method: document.getElementById("det-method"),
+  protection: document.getElementById("det-protection"),
+  status: document.getElementById("det-status"),
+  sourceLink: document.getElementById("source-link"),
+  input: document.getElementById("memory-input"),
+  saveMsg: document.getElementById("save-msg")
+};
+
+let currentSelectedName = null;
+
+
+/*====================================================================
+  ÜÇ BOYUTLU SAHNE
+====================================================================*/
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2("#050000", 0.03);
+
+const camera = new THREE.PerspectiveCamera(
+  75, window.innerWidth / window.innerHeight, 0.1, 100
+);
+camera.position.set(0, 4, 8);
+
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true;
+controls.autoRotate = true;
+controls.autoRotateSpeed = 0.6;
+
+
+/*====================================================================
+  YÜREK DOKUSU
+====================================================================*/
+function createHeartTexture() {
+  const c = document.createElement("canvas");
+  c.width = 32;
+  c.height = 32;
+  const ctx = c.getContext("2d");
+
+  ctx.fillStyle = "#ffffff";
+  ctx.beginPath();
+  ctx.moveTo(16, 28);
+  ctx.bezierCurveTo(16, 26, 4, 18, 4, 12);
+  ctx.bezierCurveTo(4, 6, 10, 4, 16, 10);
+  ctx.bezierCurveTo(22, 4, 28, 6, 28, 12);
+  ctx.bezierCurveTo(28, 18, 16, 26, 16, 28);
+  ctx.fill();
+
+  ctx.shadowBlur = 6;
+  ctx.shadowColor = "white";
+  ctx.fill();
+
+  return new THREE.CanvasTexture(c);
+}
+
+
+/*====================================================================
+  GALAKSİ OLUŞTURMA
+====================================================================*/
+function generateGalaxy() {
+  const count = namesList.length;
+  document.getElementById("total-count").innerText = count;
+
+  geometry = new THREE.BufferGeometry();
+  const positions = new Float32Array(count * 3);
+  const colors = new Float32Array(count * 3);
+  const nameIndex = new Float32Array(count);
+
+  const c1 = new THREE.Color("#ffc0cb");
+  const c2 = new THREE.Color("#8a0000");
+
+  for (let i = 0; i < count; i++) {
+    const i3 = i * 3;
+
+    const r = Math.pow(i / count, 0.7) * 12;
+    const swirl = r * 1.3;
+    const b = (i % 5) / 5 * Math.PI * 2;
+
+    positions[i3] = Math.cos(b + swirl) * r + (Math.random() - 0.5) * r * 0.4;
+    positions[i3 + 1] = (Math.random() - 0.5) * r * 0.25;
+    positions[i3 + 2] = Math.sin(b + swirl) * r + (Math.random() - 0.5) * r * 0.4;
+
+    const mixed = c1.clone().lerp(c2, r / 12);
+    colors[i3] = mixed.r;
+    colors[i3 + 1] = mixed.g;
+    colors[i3 + 2] = mixed.b;
+
+    nameIndex[i] = i;
+  }
+
+  geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+  geometry.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+  geometry.setAttribute("nameIndex", new THREE.BufferAttribute(nameIndex, 1));
+
+  const material = new THREE.PointsMaterial({
+    size: 0.25,
+    sizeAttenuation: true,
+    depthWrite: false,
+    blending: THREE.AdditiveBlending,
+    vertexColors: true,
+    map: createHeartTexture(),
+    transparent: true
+  });
+
+  points = new THREE.Points(geometry, material);
+  scene.add(points);
+}
+
+
+/*====================================================================
+  VERİ ÇEKME
+====================================================================*/
+async function fetchNames() {
+  try {
+    const r = await fetch("anit_verileri.json?t=" + Date.now());
+    namesList = await r.json();
+  } catch {
+    namesList = [
+      { name: "Özgecan Aslan", date: "2015", location: "Mersin", killer: "Bilinmiyor" },
+      { name: "Emine Bulut", date: "2019", location: "Kırıkkale", killer: "Eski eşi" }
+    ];
+  }
+
+  generateGalaxy();
+  document.getElementById("loading-overlay").style.opacity = 0;
+  setTimeout(() => {
+    document.getElementById("loading-overlay").style.display = "none";
+  }, 1200);
+}
+
+
+/*====================================================================
+  RAYCASTER
+====================================================================*/
+const raycaster = new THREE.Raycaster();
+raycaster.params.Points.threshold = 0.6;
+const mouse = new THREE.Vector2();
+
+
+/*====================================================================
+  HOVER (TOOLTIP)
+====================================================================*/
+window.addEventListener("mousemove", (e) => {
+  if (!points) return;
+
+  mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+
+  raycaster.setFromCamera(mouse, camera);
+  const hit = raycaster.intersectObject(points);
+
+  if (hit.length > 0) {
+    const index = hit[0].index;
+    const real = geometry.attributes.nameIndex.array[index];
+    const p = namesList[real];
+
+    tooltipName.innerText = p.name;
+    tooltipDate.innerText = p.date || "";
+
+    tooltip.style.left = e.clientX + 15 + "px";
+    tooltip.style.top = e.clientY + 15 + "px";
+    tooltip.classList.remove("hidden");
+
+    document.body.style.cursor = isSelectionMode ? "crosshair" : "pointer";
+
+  } else {
+    tooltip.classList.add("hidden");
+    document.body.style.cursor = isSelectionMode ? "crosshair" : "default";
+  }
+});
+
+
+/*====================================================================
+  SEÇİM MODU CLICK (TIKLAMA)
+====================================================================*/
+let pointerDown = false;
+let pointerMoved = false;
+let downX = 0, downY = 0;
+
+canvas.addEventListener("pointerdown", (e) => {
+  pointerDown = true;
+  pointerMoved = false;
+  downX = e.clientX;
+  downY = e.clientY;
+});
+
+canvas.addEventListener("pointermove", (e) => {
+  if (!pointerDown) return;
+  if (Math.abs(e.clientX - downX) > 5 || Math.abs(e.clientY - downY) > 5) {
+    pointerMoved = true;
+  }
+});
+
+canvas.addEventListener("pointerup", () => {
+  pointerDown = false;
+  pointerMoved = false;
+});
+
+canvas.addEventListener("click", (e) => {
+  if (!isSelectionMode) return;
+  if (pointerMoved) return;
+
+  mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+
+  raycaster.setFromCamera(mouse, camera);
+  const hit = raycaster.intersectObject(points);
+
+  if (hit.length > 0) {
+    const index = hit[0].index;
+    const real = geometry.attributes.nameIndex.array[index];
+
+    openPanel(real);
+    flyToStar(index);
+  }
+});
+
+
+/*====================================================================
+  PANEL AÇMA
+====================================================================*/
+function openPanel(index) {
+  const p = namesList[index];
+  currentSelectedName = p.name;
+
+  const safe = (v) => v ? v : "Bilinmiyor";
+
+  panelEls.name.innerText = p.name;
+  panelEls.dateHead.innerText = safe(p.date);
+  panelEls.location.innerText = safe(p.location);
+  panelEls.age.innerText = safe(p.age);
+  panelEls.killer.innerText = safe(p.killer);
+  panelEls.reason.innerText = safe(p.reason);
+  panelEls.method.innerText = safe(p.method);
+  panelEls.protection.innerText = safe(p.protection);
+  panelEls.status.innerText = safe(p.status);
+
+  if (p.source) {
+    panelEls.sourceLink.href = p.source;
+    panelEls.sourceLink.innerText = "Kaynak bağlantısı";
+  } else {
+    panelEls.sourceLink.innerText = "";
+  }
+
+  panelEls.input.value = localStorage.getItem("note_" + p.name) || "";
+
+  detailPanel.classList.remove("translate-x-full");
+  controls.autoRotate = false;
+}
+
+document.getElementById("close-btn").onclick = () => {
+  detailPanel.classList.add("translate-x-full");
+  controls.autoRotate = true;
+};
+
+
+/*====================================================================
+  KAMERA UÇUŞU
+====================================================================*/
+function flyToStar(index) {
+  const pos = geometry.attributes.position.array;
+  const target = new THREE.Vector3(
+    pos[index * 3],
+    pos[index * 3 + 1],
+    pos[index * 3 + 2]
+  );
+
+  const camTarget = target.clone().add(new THREE.Vector3(0, 0.5, 2));
+
+  new TWEEN.Tween(camera.position)
+    .to({ x: camTarget.x, y: camTarget.y, z: camTarget.z }, 1000)
+    .easing(TWEEN.Easing.Cubic.Out)
+    .start();
+
+  new TWEEN.Tween(controls.target)
+    .to({ x: target.x, y: target.y, z: target.z }, 1000)
+    .easing(TWEEN.Easing.Cubic.Out)
+    .start();
+}
+
+
+/*====================================================================
+  NOT KAYDETME
+====================================================================*/
+document.getElementById("save-btn").onclick = () => {
+  if (!currentSelectedName) return;
+
+  localStorage.setItem("note_" + currentSelectedName, panelEls.input.value);
+
+  panelEls.saveMsg.classList.remove("hidden");
+  setTimeout(() => panelEls.saveMsg.classList.add("hidden"), 1500);
+};
+
+
+/*====================================================================
+  SEÇİM MODU BUTONU
+====================================================================*/
+document.getElementById("toggle-selection-mode").onclick = () => {
+  isSelectionMode = !isSelectionMode;
+
+  const btn = document.getElementById("toggle-selection-mode");
+  const text = document.getElementById("mode-text");
+  const ind = document.getElementById("mode-indicator");
+
+  if (isSelectionMode) {
+    text.innerText = "AÇIK";
+    ind.style.opacity = 1;
+    btn.classList.add("pulse-border");
+    document.body.classList.add("selection-active");
+  } else {
+    text.innerText = "KAPALI";
+    ind.style.opacity = 0;
+    btn.classList.remove("pulse-border");
+    document.body.classList.remove("selection-active");
+  }
+};
+
+
+/*====================================================================
+  ARAMA
+====================================================================*/
+const searchInput = document.getElementById("search-input");
+const searchResults = document.getElementById("search-results");
+
+searchInput.addEventListener("input", () => {
+  const q = searchInput.value.toLowerCase();
+  searchResults.innerHTML = "";
+
+  if (q.length < 2) {
+    searchResults.classList.add("hidden");
+    return;
+  }
+
+  const found = namesList
+    .map((p, i) => ({ ...p, index: i }))
+    .filter(p => p.name.toLowerCase().includes(q))
+    .slice(0, 10);
+
+  if (found.length === 0) {
+    searchResults.innerHTML =
+      '<div class="px-3 py-2 text-gray-400 text-sm">Sonuç yok</div>';
+    searchResults.classList.remove("hidden");
+    return;
+  }
+
+  found.forEach(p => {
+    const div = document.createElement("div");
+    div.className =
+      "px-3 py-2 hover:bg-white/10 cursor-pointer text-sm border-b border-white/10";
+    div.innerText = p.name;
+    div.onclick = () => {
+      openPanel(p.index);
+      flyToStar(p.index);
+      searchResults.classList.add("hidden");
+      searchInput.value = "";
     };
+    searchResults.appendChild(div);
   });
-  window.addEventListener('click', (e) => { if (e.target.classList.contains('modal-wrapper')) closeModal(e.target); });
 
-  // Seçim modu toggle (orijinal ile aynı)
-  const modeBtn = document.getElementById('toggle-selection-mode');
-  const modeText = document.getElementById('mode-text');
-  const modeIndicator = document.getElementById('mode-indicator');
+  searchResults.classList.remove("hidden");
+});
 
-  modeBtn.onclick = () => {
-    isSelectionMode = !isSelectionMode;
-    if(isSelectionMode) {
-      modeBtn.classList.remove('border-gray-500','text-gray-300','bg-black/60');
-      modeBtn.classList.add('border-pink-500','text-white','bg-pink-900/60','pulse-border');
-      document.body.classList.add('selection-active');
-      modeText.innerText = "AÇIK"; modeText.classList.add('text-pink-300');
-      modeIndicator.style.opacity = '1';
-    } else {
-      modeBtn.classList.add('border-gray-500','text-gray-300','bg-black/60');
-      modeBtn.classList.remove('border-pink-500','text-white','bg-pink-900/60','pulse-border');
-      document.body.classList.remove('selection-active');
-      modeText.innerText = "KAPALI"; modeText.classList.remove('text-pink-300');
-      modeIndicator.style.opacity = '0';
-      document.getElementById('tooltip').classList.add('hidden');
-    }
-  };
-
-  // Arama kutusu (orijinalle aynı; kısaltmadım)
-  const searchInput = document.getElementById('search-input');
-  const searchResults = document.getElementById('search-results');
-  searchInput.addEventListener('input', (e) => {
-    const query = e.target.value.toLocaleLowerCase('tr');
-    searchResults.innerHTML = '';
-    if (query.length < 2) { searchResults.classList.add('hidden'); return; }
-    const matches = namesList.map((p,i)=>({...p, originalIndex:i})).filter(p=>p.name.toLocaleLowerCase('tr').includes(query)).slice(0,10);
-    if(matches.length>0) {
-      searchResults.classList.remove('hidden');
-      matches.forEach(match=>{
-        const div = document.createElement('div');
-        div.className = 'px-4 py-3 hover:bg-white/5 cursor-pointer border-b border-white/5 text-gray-200 text-sm';
-        div.innerText = match.name;
-        div.onclick = ()=>{ openPanel(match.originalIndex); flyToStar(match.originalIndex); searchResults.classList.add('hidden'); searchInput.value = ''; };
-        searchResults.appendChild(div);
-      });
-    } else {
-      searchResults.classList.remove('hidden');
-      searchResults.innerHTML = '<div class="px-4 py-3 text-xs text-gray-500 italic text-center">Sonuç yok</div>';
-    }
-  });
-  document.addEventListener('click', (e) => { if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) searchResults.classList.add('hidden'); });
-
-  async function fetchNames() {
-    try {
-      const response = await fetch('anit_verileri.json?t=' + new Date().getTime());
-      if (!response.ok) throw new Error('Veri yok');
-      namesList = await response.json();
-      document.getElementById('total-count').innerText = namesList.length.toLocaleString();
-      generateGalaxy();
-      document.getElementById('loading-overlay').style.display = 'none';
-    } catch (error) {
-      // fallback
-      namesList = [{name: "Özgecan Aslan", date: "11.02.2015"}, {name: "Emine Bulut", date: "18.08.2019"}];
-      for(let i=0;i<500;i++) namesList.push({name:"Bilinmiyor", date:"..."});
-      generateGalaxy();
-      document.getElementById('loading-overlay').style.display = 'none';
-    }
+document.addEventListener("click", (e) => {
+  if (!searchInput.contains(e.target)) {
+    searchResults.classList.add("hidden");
   }
+});
 
-  const canvas = document.getElementById('webgl');
-  const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2('#050000', 0.03);
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 100);
-  camera.position.set(0,4,8);
-  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+
+/*====================================================================
+  EKRAN YENİDEN BOYUTLANDI
+====================================================================*/
+window.addEventListener("resize", () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  const controls = new THREE.OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true; controls.autoRotate = true; controls.autoRotateSpeed = 0.5;
+});
 
-  function createHeartTexture() {
-    const c = document.createElement('canvas'); c.width=32; c.height=32; const x = c.getContext('2d');
-    x.fillStyle='#fff'; x.beginPath(); x.moveTo(16,28); x.bezierCurveTo(16,26,4,18,4,12);
-    x.bezierCurveTo(4,6,10,4,16,10); x.bezierCurveTo(22,4,28,6,28,12); x.bezierCurveTo(28,18,16,26,16,28);
-    x.fill(); x.shadowBlur=4; x.shadowColor="white"; x.fill(); return new THREE.CanvasTexture(c);
-  }
 
-  const generateGalaxy = () => {
-    if(namesList.length === 0) return;
-    const count = namesList.length;
-    geometry = new THREE.BufferGeometry();
-    const positions = new Float32Array(count * 3);
-    const colors = new Float32Array(count * 3);
-    const nameIndices = new Float32Array(count);
-    const colorIn = new THREE.Color('#ffc0cb');
-    const colorOut = new THREE.Color('#8a0000');
+/*====================================================================
+  ANİMASYON
+====================================================================*/
+function tick() {
+  TWEEN.update();
+  controls.update();
+  renderer.render(scene, camera);
+  requestAnimationFrame(tick);
+}
 
-    for(let i=0;i<count;i++){
-      const i3 = i*3;
-      const r = Math.pow(i/count,0.7) * 12;
-      const s = r * 1.2;
-      const b = (i % 4) / 4 * Math.PI * 2;
-      const rx = Math.pow(Math.random(),3) * (Math.random()<0.5?1:-1) * 0.5 * r;
-      const ry = Math.pow(Math.random(),3) * (Math.random()<0.5?1:-1) * 0.5 * r;
-      const rz = Math.pow(Math.random(),3) * (Math.random()<0.5?1:-1) * 0.5 * r;
 
-      positions[i3]   = Math.cos(b+s)*r + rx;
-      positions[i3+1] = ry/2;
-      positions[i3+2] = Math.sin(b+s)*r + rz;
+/*====================================================================
+  BAŞLAT
+====================================================================*/
+fetchNames();
+tick();
 
-      const mixedColor = colorIn.clone(); mixedColor.lerp(colorOut, r/12);
-      colors[i3] = mixedColor.r; colors[i3+1] = mixedColor.g; colors[i3+2] = mixedColor.b;
-      nameIndices[i] = i;
-    }
-
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-    geometry.setAttribute('nameIndex', new THREE.BufferAttribute(nameIndices, 1));
-
-    const material = new THREE.PointsMaterial({
-      size: 0.25,
-      sizeAttenuation: true,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending,
-      vertexColors: true,
-      map: createHeartTexture(),
-      transparent: true,
-      opacity: 0.8
-    });
-
-    points = new THREE.Points(geometry, material);
-    scene.add(points);
-  };
-
-  // RAYCASTER
-  const raycaster = new THREE.Raycaster();
-  raycaster.params.Points = { threshold: 0.6 }; // daha güvenilir threshold
-  const mouse = new THREE.Vector2();
-
-  // Pointer-based seçim mantığı (dokunmatik/ fare uyumlu)
-  let pointerDown = false;
-  let pointerMoved = false;
-  let downX = 0, downY = 0;
-
-  // pointerdown: kaydet
-  canvas.addEventListener('pointerdown', (e) => {
-    pointerDown = true;
-    pointerMoved = false;
-    downX = e.clientX; downY = e.clientY;
-    // mouse capture (isteğe bağlı)
-    canvas.setPointerCapture && canvas.setPointerCapture(e.pointerId);
-  });
-
-  // pointermove: sürükleme algıla
-  canvas.addEventListener('pointermove', (e) => {
-    if (!pointerDown) return;
-    const dx = Math.abs(e.clientX - downX);
-    const dy = Math.abs(e.clientY - downY);
-    if (dx > 5 || dy > 5) pointerMoved = true; // küçük hareketleri toleranslı bırak
-  });
-
-  // click: sadece isSelectionMode ve sürüklenmediyse çalış
-  canvas.addEventListener('click', (e) => {
-    // Modal/ UI üzerinde değilse devam et
-    // Eğer seçim modu kapalıysa seçime izin verme
-    if (!isSelectionMode) return;
-
-    // Eğer kullanıcı sürüklediyse (drag), tıklama sayılmasın
-    if (pointerMoved) return;
-
-    // Eğer kullanıcı UI elementleri üzerine tıkladıysa (ör: buton), iptal et
-    const uiEl = e.target.closest && (e.target.closest('.modal-wrapper.active') || e.target.closest('#detail-panel') || e.target.closest('#search-input') || e.target.closest('#search-results') || e.target.closest('button') || e.target.closest('a'));
-    if (uiEl) return;
-
-    // Normalize mouse coords
-    mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
-
-    raycaster.setFromCamera(mouse, camera);
-    if (points) {
-      const intersects = raycaster.intersectObject(points);
-      if (intersects.length > 0) {
-        const idx = intersects[0].index;
-        const nameIdx = geometry.attributes.nameIndex.array[idx];
-        if (typeof nameIdx === 'number') {
-          openPanel(nameIdx);
-          flyToStar(idx);
-        }
-      }
-    }
-  });
-
-  // pointerup: temizle
-  canvas.addEventListener('pointerup', (e) => {
-    pointerDown = false;
-    pointerMoved = false;
-    canvas.releasePointerCapture && canvas.releasePointerCapture(e.pointerId);
-  });
-
-  // tooltip hover - orijinal hover mantığını koruyorum (fare ile bilgi gösterme)
-  const tooltip = document.getElementById('tooltip');
-  const tooltipName = document.getElementById('tooltip-name');
-  const tooltipDate = document.getElementById('tooltip-date');
-
-  window.addEventListener('mousemove', (e) => {
-    if (!points) return;
-    mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
-    mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
-    raycaster.setFromCamera(mouse, camera);
-    const intersects = raycaster.intersectObject(points);
-    if (intersects.length > 0) {
-      document.body.style.cursor = isSelectionMode ? 'crosshair' : 'pointer';
-      const idx = intersects[0].index;
-      const nameIdx = geometry.attributes.nameIndex.array[idx];
-      const person = namesList[nameIdx] || {name: 'Bilinmiyor', date: ''};
-      tooltipName.innerText = person.name;
-      tooltipDate.innerText = person.date || '';
-      tooltip.style.left = (e.clientX + 15) + 'px';
-      tooltip.style.top = (e.clientY + 15) + 'px';
-      tooltip.classList.remove('hidden');
-    } else {
-      document.body.style.cursor = isSelectionMode ? 'crosshair' : 'default';
-      tooltip.classList.add('hidden');
-    }
-  });
-
-  // Panel açma / kayıt / detaylar (orijinal kodunuzdan alındı)
-  const els = {
-    name: document.getElementById('panel-name'),
-    dateHead: document.getElementById('panel-date-head'),
-    location: document.getElementById('det-location'),
-    age: document.getElementById('det-age'),
-    killer: document.getElementById('det-killer'),
-    reason: document.getElementById('det-reason'),
-    method: document.getElementById('det-method'),
-    protection: document.getElementById('det-protection'),
-    status: document.getElementById('det-status'),
-    sourceLink: document.getElementById('source-link'),
-    input: document.getElementById('memory-input'),
-    saveMsg: document.getElementById('save-msg')
-  };
-  let currentSelectedName = null;
-
-  function openPanel(index) {
-    controls.autoRotate = false;
-    const person = namesList[index];
-    currentSelectedName = person.name;
-    const safe = (val) => (val && val.length > 1) ? val : "Bilinmiyor";
-    els.name.innerText = person.name;
-    els.dateHead.innerText = safe(person.date);
-    els.location.innerText = safe(person.location);
-    els.age.innerText = safe(person.age);
-    els.killer.innerText = safe(person.killer);
-    els.reason.innerText = safe(person.reason);
-    els.method.innerText = safe(person.method);
-    els.protection.innerText = safe(person.protection);
-    els.status.innerText = safe(person.status);
-    if (person.source && person.source.startsWith('http')) { els.sourceLink.href = person.source; els.sourceLink.style.display = 'flex'; } else { els.sourceLink.style.display = 'none'; }
-    els.input.value = localStorage.getItem(`note_${person.name}`) || "";
-    els.saveMsg.classList.add('hidden');
-    document.getElementById('detail-panel').classList.remove('translate-x-full');
-  }
-
-  function flyToStar(index) {
-    if (!geometry) return;
-    const positions = geometry.attributes.position.array;
-    const targetPos = new THREE.Vector3(positions[index*3], positions[index*3+1], positions[index*3+2]);
-    const offset = new THREE.Vector3(0, 0.5, 2);
-    const camPos = targetPos.clone().add(offset);
-    new TWEEN.Tween(camera.position).to({x:camPos.x, y:camPos.y, z:camPos.z}, 1000).easing(TWEEN.Easing.Cubic.Out).start();
-    new TWEEN.Tween(controls.target).to({x:targetPos.x, y:targetPos.y, z:targetPos.z}, 1000).easing(TWEEN.Easing.Cubic.Out).start();
-  }
-
-  document.getElementById('close-btn').onclick = () => { document.getElementById('detail-panel').classList.add('translate-x-full'); controls.autoRotate = true; };
-  document.getElementById('save-btn').onclick = () => { if(currentSelectedName) { localStorage.setItem(`note_${currentSelectedName}`, els.input.value); els.saveMsg.classList.remove('hidden'); setTimeout(()=>els.saveMsg.classList.add('hidden'),2000); } };
-  window.addEventListener('resize', () => { camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
-
-  function tick() {
-    TWEEN.update();
-    controls.update();
-    renderer.render(scene, camera);
-    requestAnimationFrame(tick);
-  }
-
-  fetchNames();
-  tick();
-
-  // ----- script sonu -----
-  </script>
+</script>
 
 </body>
 </html>
