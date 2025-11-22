@@ -18,7 +18,7 @@
         ::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
         ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
         
-        #tooltip { pointer-events: none; transform: translate(15px, 15px); z-index: 40; }
+        #tooltip { pointer-events: none; transform: translate(-50%, -150%); z-index: 40; }
         
         #loading-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
@@ -48,6 +48,10 @@
             70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(219, 39, 119, 0); }
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(219, 39, 119, 0); }
         }
+
+        /* Modal Geçişleri */
+        .modal-content { transform: scale(0.95); opacity: 0; transition: all 0.3s ease-out; }
+        .modal-open .modal-content { transform: scale(1); opacity: 1; }
     </style>
 </head>
 <body class="antialiased text-gray-100">
@@ -60,7 +64,9 @@
         <p class="text-pink-300 text-sm tracking-widest animate-pulse">VERİLER YÜKLENİYOR...</p>
     </div>
 
-    <!-- BİLGİLENDİRME POPUP (Girişte Açılır) -->
+    <!-- ================= MODALLAR (POP-UP PENCERELER) ================= -->
+
+    <!-- 1. BAŞLANGIÇ BİLGİLENDİRME -->
     <div id="intro-modal" class="absolute inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm transition-opacity duration-500">
         <div class="bg-[#1a0505] border border-red-900/50 rounded-2xl p-8 max-w-md text-center shadow-[0_0_50px_rgba(220,20,60,0.2)] mx-4 relative">
             <div class="w-16 h-16 bg-gradient-to-br from-pink-600 to-red-900 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
@@ -78,31 +84,221 @@
         </div>
     </div>
 
-    <!-- Sol Üst Başlık -->
+    <!-- 2. GÜVENLİK REHBERİ (YENİ KALKAN BUTONU İÇİN) -->
+    <div id="defense-modal" class="hidden absolute inset-0 z-[60] flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
+        <div class="modal-content bg-[#100505] border border-pink-900/30 rounded-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl relative">
+            <button class="close-modal-btn absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+            
+            <div class="p-8">
+                <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3 border-b border-white/10 pb-4">
+                    <i class="fa-solid fa-shield-halved text-pink-500"></i> Kadınlar İçin Güvenlik Rehberi
+                </h2>
+
+                <div class="grid gap-6 md:grid-cols-2">
+                    <!-- KADES -->
+                    <div class="bg-white/5 p-5 rounded-lg border border-white/5 hover:border-pink-500/30 transition-colors">
+                        <h3 class="text-pink-300 font-bold text-lg mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-mobile-screen-button"></i> KADES Uygulaması
+                        </h3>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Emniyet Genel Müdürlüğü'nün resmi uygulamasıdır. Acil durumlarda tek tuşla konumunuzu paylaşarak en yakın polis ekibinin gelmesini sağlar.
+                        </p>
+                        <a href="https://play.google.com/store/apps/details?id=tr.gov.egm.kades" target="_blank" class="inline-block mt-3 text-xs text-blue-400 hover:text-blue-300 underline">İndirmek için tıklayın</a>
+                    </div>
+
+                    <!-- ACİL NUMARALAR -->
+                    <div class="bg-white/5 p-5 rounded-lg border border-white/5 hover:border-pink-500/30 transition-colors">
+                        <h3 class="text-pink-300 font-bold text-lg mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-phone-volume"></i> Acil Numaralar
+                        </h3>
+                        <ul class="text-gray-300 text-sm space-y-2">
+                            <li><span class="font-bold text-white">112</span> - Acil Çağrı Merkezi (Polis/Ambulans)</li>
+                            <li><span class="font-bold text-white">183</span> - Sosyal Destek Hattı (7/24)</li>
+                            <li><span class="font-bold text-white">155</span> - Polis İmdat</li>
+                            <li><span class="font-bold text-white">156</span> - Jandarma İmdat</li>
+                        </ul>
+                    </div>
+
+                    <!-- 6284 -->
+                    <div class="bg-white/5 p-5 rounded-lg border border-white/5 hover:border-pink-500/30 transition-colors md:col-span-2">
+                        <h3 class="text-pink-300 font-bold text-lg mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-gavel"></i> 6284 Sayılı Kanun & Haklarınız
+                        </h3>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-2">
+                            Şiddete uğrayan veya uğrama tehlikesi bulunan kadınlar, çocuklar ve aile bireyleri bu kanunla korunur.
+                        </p>
+                        <ul class="list-disc list-inside text-gray-400 text-sm space-y-1">
+                            <li>Delil veya belge aranmaksızın koruma kararı talep edebilirsiniz.</li>
+                            <li>Şiddet uygulayanın evden uzaklaştırılmasını isteyebilirsiniz.</li>
+                            <li>Barolardan ücretsiz avukat (Adli Yardım) talep edebilirsiniz.</li>
+                            <li>ŞÖNİM (Şiddet Önleme ve İzleme Merkezleri) size rehberlik eder.</li>
+                        </ul>
+                    </div>
+
+                    <!-- KİŞİSEL GÜVENLİK İPUÇLARI -->
+                    <div class="bg-gradient-to-br from-white/5 to-pink-900/10 p-5 rounded-lg border border-pink-500/20 hover:border-pink-500/40 transition-colors md:col-span-2">
+                        <h3 class="text-pink-300 font-bold text-lg mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-person-rays"></i> Kişisel Güvenlik ve Savunma İpuçları
+                        </h3>
+                        <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside marker:text-pink-500">
+                            <li><strong class="text-white">Konum Paylaşımı:</strong> Taksiye bindiğinizde veya güvensiz hissettiğinizde, güvendiğiniz birine canlı konumunuzu atın ve bunu telefonla konuşarak belli edin.</li>
+                            <li><strong class="text-white">Çevresel Farkındalık:</strong> Yürürken telefona odaklanmak yerine çevrenizi gözlemleyin. Takip edildiğinizi hissederseniz kalabalık bir yere veya açık bir dükkana girin.</li>
+                            <li><strong class="text-white">Anahtarlar:</strong> Eve yaklaşırken anahtarlarınızı elinizde hazır tutun. Bu hem hızlı girmenizi sağlar hem de acil durumda savunma aracı olabilir.</li>
+                            <li><strong class="text-white">Ses Çıkarın:</strong> Tehlike anında "İmdat" veya "Yangın" diye bağırmak saldırganı şaşırtabilir.</li>
+                            <li><strong class="text-white">Asansör Güvenliği:</strong> Asansöre binerken şüpheli biriyle yalnız kalmamaya çalışın, kapıya yakın durun.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. HAKKINDA (INFO) - YENİ İÇERİK -->
+    <div id="info-modal" class="hidden absolute inset-0 z-[60] flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
+        <div class="modal-content bg-[#100505] border border-blue-900/30 rounded-xl w-full max-w-md shadow-2xl relative text-center">
+            <button class="close-modal-btn absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+            
+            <div class="p-8">
+                <div class="w-16 h-16 bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-laptop-code text-3xl text-blue-400"></i>
+                </div>
+                <h2 class="text-xl font-bold text-white mb-2">Hakkında</h2>
+                <p class="text-gray-400 text-sm mb-6 leading-relaxed">
+                    Bu proje, kadın cinayetlerine dikkat çekmek ve hayatını kaybeden kadınların anısını dijital bir evrende sonsuza kadar yaşatmak amacıyla oluşturulmuştur.
+                </p>
+
+                <div class="bg-white/5 p-4 rounded-lg border border-white/10 mb-4 text-left">
+                    <h3 class="text-white font-bold text-sm mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-wand-magic-sparkles text-yellow-400"></i> Teknoloji
+                    </h3>
+                    <p class="text-gray-400 text-xs">
+                        Bu websitesi, tasarımından kodlamasına kadar tamamen <strong>Google Gemini Yapay Zeka</strong> modeli ile geliştirilmiştir. Veriler anlık olarak güncellenmektedir.
+                    </p>
+                </div>
+
+                <div class="text-xs text-gray-500 mt-4">
+                    <p>Veri Kaynağı: Anıt Sayaç</p>
+                    <p>Tasarım & Kodlama: Gemini AI</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. BAĞIŞ & DESTEK (DONATE) -->
+    <div id="donate-modal" class="hidden absolute inset-0 z-[60] flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
+        <div class="modal-content bg-[#100505] border border-pink-900/30 rounded-xl w-full max-w-md shadow-2xl relative">
+            <button class="close-modal-btn absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+            
+            <div class="p-8 text-center">
+                <div class="w-16 h-16 bg-pink-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-hand-holding-heart text-3xl text-pink-400"></i>
+                </div>
+                <h2 class="text-xl font-bold text-white mb-2">Dayanışma Yaşatır</h2>
+                <p class="text-gray-400 text-xs mb-6">Kadın mücadelesini güçlendirmek için resmi kurumlara ve derneklere destek olabilirsiniz.</p>
+
+                <div class="space-y-3 text-left">
+                    <!-- Mor Çatı -->
+                    <a href="https://morcati.org.tr/bagis-yap/" target="_blank" class="flex items-center justify-between p-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg group transition-all">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded bg-purple-600 flex items-center justify-center text-white font-bold">M</div>
+                            <div>
+                                <h4 class="text-white text-sm font-bold group-hover:text-pink-300">Mor Çatı Vakfı</h4>
+                                <p class="text-[10px] text-gray-500">Kadın sığınağı ve dayanışma merkezi.</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-gray-600 group-hover:text-white"></i>
+                    </a>
+
+                    <!-- KCDP -->
+                    <a href="https://kadincinayetlerinidurduracagiz.net/" target="_blank" class="flex items-center justify-between p-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg group transition-all">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded bg-red-600 flex items-center justify-center text-white font-bold"><i class="fa-solid fa-hand-fist"></i></div>
+                            <div>
+                                <h4 class="text-white text-sm font-bold group-hover:text-pink-300">Kadın Cinayetlerini D.P.</h4>
+                                <p class="text-[10px] text-gray-500">Hukuki mücadele ve eylem platformu.</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-gray-600 group-hover:text-white"></i>
+                    </a>
+
+                    <!-- TKDF -->
+                    <a href="https://tkdf.org.tr/" target="_blank" class="flex items-center justify-between p-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg group transition-all">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded bg-blue-600 flex items-center justify-center text-white font-bold">F</div>
+                            <div>
+                                <h4 class="text-white text-sm font-bold group-hover:text-pink-300">TKDF</h4>
+                                <p class="text-[10px] text-gray-500">Türkiye Kadın Dernekleri Federasyonu.</p>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-gray-600 group-hover:text-white"></i>
+                    </a>
+
+                    <hr class="border-white/10 my-4">
+
+                    <!-- Patreon -->
+                    <a href="#" class="flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-orange-600 to-red-600 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-opacity opacity-50 cursor-not-allowed" title="Yakında eklenecek">
+                        <i class="fa-solid fa-coffee"></i> Geliştiriciye Kahve Ismarla (Yakında)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= ANA ARAYÜZ ================= -->
+
     <div class="relative z-10 pointer-events-none w-full h-screen">
+        
+        <!-- Sol Üst Başlık -->
         <div class="absolute top-0 left-0 p-8 pointer-events-auto z-10">
-            <h1 class="text-4xl font-light tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-red-600 drop-shadow-lg">SÖNMEYEN YILDIZLAR</h1>
+            <h1 class="text-4xl font-light tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-red-600 drop-shadow-lg">
+                SÖNMEYEN YILDIZLAR
+            </h1>
             <p class="mt-2 text-sm text-red-100 opacity-70 max-w-md font-light">
                 Her bir yıldız, aramızdan koparılan bir ışığı temsil eder.<br>
                 <span id="total-count" class="font-bold text-white">...</span> can sonsuzluğa karıştı.
             </p>
         </div>
 
-        <!-- Arama Kutusu -->
-        <div class="absolute top-6 right-6 z-30 pointer-events-auto w-64 md:w-80">
-            <div class="relative group">
-                <input type="text" id="search-input" class="w-full bg-black/40 border border-white/20 rounded-full py-2.5 pl-5 pr-10 text-sm text-white focus:outline-none focus:border-pink-500/50 transition-all placeholder-gray-500 backdrop-blur-sm" placeholder="İsim ara...">
-                <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <!-- SAĞ ÜST: Arama ve Butonlar -->
+        <div class="absolute top-6 right-6 z-30 pointer-events-auto flex gap-3 items-center flex-row-reverse">
+            <!-- Arama -->
+            <div class="relative group w-48 md:w-64">
+                <input type="text" id="search-input" 
+                    class="w-full bg-black/40 border border-white/20 rounded-full py-2.5 pl-5 pr-10 text-sm text-white focus:outline-none focus:border-pink-500/50 focus:bg-black/80 transition-all placeholder-gray-500 backdrop-blur-sm shadow-lg"
+                    placeholder="İsim ara...">
+                <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 group-hover:text-pink-400 transition-colors">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <!-- Sonuçlar -->
+                <div id="search-results" class="hidden mt-2 bg-[#0a0505]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl max-h-60 overflow-y-auto absolute w-full z-40"></div>
             </div>
-            <div id="search-results" class="hidden mt-2 bg-[#0a0505]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl max-h-60 overflow-y-auto absolute w-full z-40"></div>
+
+            <!-- Bilgi Butonu (Hakkında) -->
+            <button id="open-info-btn" class="w-8 h-8 rounded-full bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20 hover:text-white hover:border-blue-500/50 transition-all flex items-center justify-center backdrop-blur-sm" title="Hakkında">
+                <i class="fa-solid fa-info text-sm"></i>
+            </button>
+
+            <!-- YENİ GÜVENLİK REHBERİ BUTONU (KALKAN) -->
+            <button id="open-defense-btn" class="w-8 h-8 rounded-full bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20 hover:text-pink-300 hover:border-pink-500/50 transition-all flex items-center justify-center backdrop-blur-sm" title="Güvenlik Rehberi">
+                <i class="fa-solid fa-shield-halved text-sm"></i>
+            </button>
         </div>
 
-        <!-- SEÇİM MODU BUTONU (SOL ALT) -->
-        <div class="absolute bottom-8 left-8 z-30 pointer-events-auto flex flex-col gap-2 items-start">
-            <div id="mode-tooltip" class="bg-black/80 text-white text-xs px-2 py-1 rounded mb-1 opacity-0 transition-opacity">Seçim Modu: Kapalı</div>
-            <button id="toggle-selection-mode" class="w-14 h-14 rounded-full bg-black/60 border-2 border-gray-500 text-gray-400 flex items-center justify-center transition-all hover:scale-110 hover:bg-black/80 shadow-2xl backdrop-blur-md">
-                <i class="fa-solid fa-arrow-pointer text-xl"></i>
+        <!-- SOL ALT: Seçim Modu ve BAĞIŞ Butonu -->
+        <div class="absolute bottom-8 left-8 z-30 pointer-events-auto flex flex-col gap-4 items-start">
+            
+            <!-- Bağış Butonu -->
+            <button id="open-donate-btn" class="w-12 h-12 rounded-full bg-gradient-to-tr from-red-900 to-pink-800 border border-white/10 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform group" title="Destek Ol">
+                <i class="fa-solid fa-heart text-lg group-hover:animate-pulse"></i>
             </button>
+
+            <!-- Seçim Modu -->
+            <div class="flex flex-col items-start">
+                <div id="mode-tooltip" class="bg-black/80 text-white text-xs px-2 py-1 rounded mb-1 opacity-0 transition-opacity">Seçim Modu: Kapalı</div>
+                <button id="toggle-selection-mode" class="w-14 h-14 rounded-full bg-black/60 border-2 border-gray-500 text-gray-400 flex items-center justify-center transition-all hover:scale-110 hover:bg-black/80 shadow-2xl backdrop-blur-md">
+                    <i class="fa-solid fa-arrow-pointer text-xl"></i>
+                </button>
+            </div>
         </div>
 
         <!-- Kaynak Linki (Sağ Alt) -->
@@ -150,31 +346,53 @@
         let namesList = [];
         let points = null; 
         let geometry = null;
-        let isSelectionMode = false; // SEÇİM MODU DURUMU
+        let isSelectionMode = false; 
 
-        // --- Başlangıç Popup Kontrolü ---
-        document.getElementById('close-intro-btn').onclick = () => {
-            document.getElementById('intro-modal').style.opacity = '0';
-            setTimeout(() => {
-                document.getElementById('intro-modal').style.display = 'none';
-            }, 500);
-        };
+        // --- MODAL YÖNETİMİ ---
+        const introModal = document.getElementById('intro-modal');
+        const infoModal = document.getElementById('info-modal');
+        const donateModal = document.getElementById('donate-modal');
+        const defenseModal = document.getElementById('defense-modal'); // YENİ
 
-        // --- Seçim Modu Butonu Kontrolü ---
+        // Modal Açma/Kapatma
+        function openModal(modal) {
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.add('modal-open'), 10);
+        }
+        function closeModal(modal) {
+            modal.classList.remove('modal-open');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        }
+
+        document.getElementById('close-intro-btn').onclick = () => { introModal.style.opacity = '0'; setTimeout(() => introModal.style.display = 'none', 500); };
+        document.getElementById('open-info-btn').onclick = () => openModal(infoModal);
+        document.getElementById('open-donate-btn').onclick = () => openModal(donateModal);
+        document.getElementById('open-defense-btn').onclick = () => openModal(defenseModal); // YENİ
+
+        document.querySelectorAll('.close-modal-btn').forEach(btn => {
+            btn.onclick = (e) => closeModal(e.target.closest('.absolute'));
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === infoModal) closeModal(infoModal);
+            if (e.target === donateModal) closeModal(donateModal);
+            if (e.target === defenseModal) closeModal(defenseModal);
+        });
+
+
+        // --- Seçim Modu ---
         const modeBtn = document.getElementById('toggle-selection-mode');
         const modeTooltip = document.getElementById('mode-tooltip');
 
         modeBtn.onclick = () => {
             isSelectionMode = !isSelectionMode;
             if(isSelectionMode) {
-                // Aktif Durum
                 modeBtn.classList.remove('border-gray-500', 'text-gray-400', 'bg-black/60');
                 modeBtn.classList.add('border-pink-500', 'text-white', 'bg-pink-900/50', 'pulse-ring');
                 document.body.classList.add('selection-active');
                 modeTooltip.innerText = "Seçim Modu: AÇIK";
                 modeTooltip.style.opacity = '1';
             } else {
-                // Pasif Durum
                 modeBtn.classList.add('border-gray-500', 'text-gray-400', 'bg-black/60');
                 modeBtn.classList.remove('border-pink-500', 'text-white', 'bg-pink-900/50', 'pulse-ring');
                 document.body.classList.remove('selection-active');
@@ -280,13 +498,13 @@
             scene.add(points);
         }
 
-        // --- EKRAN BAZLI SEÇİM (Mıknatıs) ---
+        // --- MIKNATIS MANTIĞI ---
         function getNearestStarOnScreen(clientX, clientY) {
             if (!geometry || !points) return null;
             
             const positions = geometry.attributes.position.array;
             const count = namesList.length;
-            let minDistance = 40; // Mıknatıs gücü (piksel)
+            let minDistance = 40; // Piksel
             let nearestIndex = -1;
             
             const tempVec = new THREE.Vector3();
@@ -308,48 +526,52 @@
             return nearestIndex;
         }
 
-        // --- Mouse Move & Hover Tooltip ---
+        // --- Mouse Move & Hover ---
         const tooltip = document.getElementById('tooltip');
         const tooltipName = document.getElementById('tooltip-name');
         const tooltipDate = document.getElementById('tooltip-date');
 
         window.addEventListener('mousemove', (e) => {
-            // Tooltip pozisyonunu güncelle
-            tooltip.style.left = (e.clientX + 15) + 'px';
-            tooltip.style.top = (e.clientY + 15) + 'px';
-
-            // Yakın yıldızı kontrol et (Hover)
             const nearestIdx = getNearestStarOnScreen(e.clientX, e.clientY);
 
             if (nearestIdx !== -1 && nearestIdx !== null) {
                 document.body.style.cursor = 'pointer';
-                
-                // Tooltip içeriğini doldur
                 const nameIdx = geometry.attributes.nameIndex.array[nearestIdx];
                 const person = namesList[nameIdx];
                 tooltipName.innerText = person.name;
                 tooltipDate.innerText = person.date || "";
-                
-                // Tooltipi göster
+                tooltip.style.left = (e.clientX + 15) + 'px';
+                tooltip.style.top = (e.clientY + 15) + 'px';
                 tooltip.classList.remove('hidden');
             } else {
-                // Yıldız yoksa imleci ve tooltipi sıfırla
                 document.body.style.cursor = isSelectionMode ? 'crosshair' : 'default';
                 tooltip.classList.add('hidden');
             }
         });
 
-        window.addEventListener('click', (e) => {
-            // Eğer Seçim Modu KAPALIYSA hiçbir şey yapma
-            if (!isSelectionMode) return;
+        // --- Tıklama Mantığı ---
+        let clickStartX = 0;
+        let clickStartY = 0;
 
-            if (e.target.closest('#detail-panel') || e.target.closest('#search-input') || e.target.closest('#search-results') || e.target.closest('a') || e.target.closest('#toggle-selection-mode')) return;
+        window.addEventListener('mousedown', (e) => {
+            clickStartX = e.clientX;
+            clickStartY = e.clientY;
+        });
 
-            const nearestIdx = getNearestStarOnScreen(e.clientX, e.clientY);
-            
-            if (nearestIdx !== -1 && nearestIdx !== null) {
-                openPanel(nearestIdx);
-                flyToStar(nearestIdx);
+        window.addEventListener('mouseup', (e) => {
+            if(e.button !== 0) return;
+            const diffX = Math.abs(e.clientX - clickStartX);
+            const diffY = Math.abs(e.clientY - clickStartY);
+
+            if (diffX < 3 && diffY < 3) {
+                if (!isSelectionMode) return; 
+                if (e.target.closest('#detail-panel') || e.target.closest('#search-input') || e.target.closest('#search-results') || e.target.closest('a') || e.target.closest('.absolute')) return;
+
+                const nearestIdx = getNearestStarOnScreen(e.clientX, e.clientY);
+                if (nearestIdx !== -1 && nearestIdx !== null) {
+                    openPanel(nearestIdx);
+                    flyToStar(nearestIdx);
+                }
             }
         });
 
