@@ -18,7 +18,7 @@
         ::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
         ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
         
-        #tooltip { pointer-events: none; transform: translate(-50%, -150%); z-index: 40; }
+        #tooltip { pointer-events: none; transform: translate(15px, 15px); z-index: 40; }
         
         #loading-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
@@ -27,7 +27,6 @@
             transition: opacity 1s ease;
         }
 
-        /* Detay Paneli Stilleri */
         .detail-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
         .detail-label { color: #9ca3af; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
         .detail-value { color: #f3f4f6; font-weight: 500; font-size: 0.9rem; text-align: right; word-break: break-word; }
@@ -39,19 +38,20 @@
         body.selection-active canvas { cursor: crosshair !important; }
         
         /* Buton Animasyonu */
-        .pulse-ring {
+        .pulse-border {
             box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.7);
             animation: pulse-red 2s infinite;
         }
         @keyframes pulse-red {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(219, 39, 119, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(219, 39, 119, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(219, 39, 119, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0); }
         }
 
-        /* Modal Geçişleri */
-        .modal-content { transform: scale(0.95); opacity: 0; transition: all 0.3s ease-out; }
-        .modal-open .modal-content { transform: scale(1); opacity: 1; }
+        .modal-wrapper { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .modal-wrapper.active { opacity: 1; pointer-events: auto; }
+        .modal-content { transform: scale(0.95); transition: transform 0.3s ease; }
+        .modal-wrapper.active .modal-content { transform: scale(1); }
     </style>
 </head>
 <body class="antialiased text-gray-100">
@@ -64,11 +64,11 @@
         <p class="text-pink-300 text-sm tracking-widest animate-pulse">VERİLER YÜKLENİYOR...</p>
     </div>
 
-    <!-- ================= MODALLAR (POP-UP PENCERELER) ================= -->
+    <!-- ================= MODALLAR ================= -->
 
-    <!-- 1. BAŞLANGIÇ BİLGİLENDİRME -->
-    <div id="intro-modal" class="absolute inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm transition-opacity duration-500">
-        <div class="bg-[#1a0505] border border-red-900/50 rounded-2xl p-8 max-w-md text-center shadow-[0_0_50px_rgba(220,20,60,0.2)] mx-4 relative">
+    <!-- 1. BAŞLANGIÇ -->
+    <div id="intro-modal" class="modal-wrapper active absolute inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
+        <div class="modal-content bg-[#1a0505] border border-red-900/50 rounded-2xl p-8 max-w-md text-center shadow-[0_0_50px_rgba(220,20,60,0.2)] mx-4 relative">
             <div class="w-16 h-16 bg-gradient-to-br from-pink-600 to-red-900 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                 <i class="fa-solid fa-hand-pointer text-2xl text-white"></i>
             </div>
@@ -76,7 +76,7 @@
             <p class="text-gray-300 text-sm mb-6 leading-relaxed">
                 Sönmeyen Yıldızlar anıtında her bir ışık bir yaşamı temsil eder.<br><br>
                 <span class="text-pink-400 font-semibold">🖱️ Gezinmek için:</span> Ekranı sürükleyin.<br>
-                <span class="text-pink-400 font-semibold">✨ Detay görmek için:</span> Sol alttaki <br> <span class="border border-white/20 px-1 rounded bg-white/10"><i class="fa-solid fa-arrow-pointer text-xs"></i> Seçim Modu</span> butonunu açıp yıldızlara tıklayın.
+                <span class="text-pink-400 font-semibold">✨ Detay görmek için:</span> Sol alttaki <br> <span class="border border-white/20 px-2 py-0.5 rounded bg-white/10 text-xs">Seçim Modu</span> butonunu açıp yıldızlara tıklayın.
             </p>
             <button id="close-intro-btn" class="px-8 py-3 bg-gradient-to-r from-red-900 to-pink-700 hover:from-red-800 hover:to-pink-600 text-white rounded-full font-medium transition-all transform hover:scale-105 shadow-lg">
                 Anladım, Başla
@@ -84,8 +84,8 @@
         </div>
     </div>
 
-    <!-- 2. GÜVENLİK REHBERİ (YENİ KALKAN BUTONU İÇİN) -->
-    <div id="defense-modal" class="hidden absolute inset-0 z-[60] flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
+    <!-- 2. GÜVENLİK REHBERİ (KALKAN) -->
+    <div id="defense-modal" class="modal-wrapper absolute inset-0 z-[60] flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
         <div class="modal-content bg-[#100505] border border-pink-900/30 rounded-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl relative">
             <button class="close-modal-btn absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
             
@@ -100,10 +100,17 @@
                         <h3 class="text-pink-300 font-bold text-lg mb-2 flex items-center gap-2">
                             <i class="fa-solid fa-mobile-screen-button"></i> KADES Uygulaması
                         </h3>
-                        <p class="text-gray-300 text-sm leading-relaxed">
-                            Emniyet Genel Müdürlüğü'nün resmi uygulamasıdır. Acil durumlarda tek tuşla konumunuzu paylaşarak en yakın polis ekibinin gelmesini sağlar.
+                        <p class="text-gray-300 text-xs leading-relaxed mb-4">
+                            Emniyet Genel Müdürlüğü'nün resmi uygulamasıdır. Tek tuşla konumunuzu paylaşarak en yakın polis ekibinin gelmesini sağlar.
                         </p>
-                        <a href="https://play.google.com/store/apps/details?id=tr.gov.egm.kades" target="_blank" class="inline-block mt-3 text-xs text-blue-400 hover:text-blue-300 underline">İndirmek için tıklayın</a>
+                        <div class="flex gap-2">
+                            <a href="https://apps.apple.com/tr/app/kades/id1360309770" target="_blank" class="flex-1 flex items-center justify-center gap-2 bg-black/40 border border-white/20 rounded py-2 hover:bg-white/10 transition-colors">
+                                <i class="fa-brands fa-apple text-lg"></i> <span class="text-xs">App Store</span>
+                            </a>
+                            <a href="https://play.google.com/store/apps/details?id=tr.gov.egm.kades" target="_blank" class="flex-1 flex items-center justify-center gap-2 bg-black/40 border border-white/20 rounded py-2 hover:bg-white/10 transition-colors">
+                                <i class="fa-brands fa-google-play text-lg"></i> <span class="text-xs">Google Play</span>
+                            </a>
+                        </div>
                     </div>
 
                     <!-- ACİL NUMARALAR -->
@@ -112,7 +119,7 @@
                             <i class="fa-solid fa-phone-volume"></i> Acil Numaralar
                         </h3>
                         <ul class="text-gray-300 text-sm space-y-2">
-                            <li><span class="font-bold text-white">112</span> - Acil Çağrı Merkezi (Polis/Ambulans)</li>
+                            <li><span class="font-bold text-white">112</span> - Acil Çağrı Merkezi</li>
                             <li><span class="font-bold text-white">183</span> - Sosyal Destek Hattı (7/24)</li>
                             <li><span class="font-bold text-white">155</span> - Polis İmdat</li>
                             <li><span class="font-bold text-white">156</span> - Jandarma İmdat</li>
@@ -124,28 +131,23 @@
                         <h3 class="text-pink-300 font-bold text-lg mb-2 flex items-center gap-2">
                             <i class="fa-solid fa-gavel"></i> 6284 Sayılı Kanun & Haklarınız
                         </h3>
-                        <p class="text-gray-300 text-sm leading-relaxed mb-2">
-                            Şiddete uğrayan veya uğrama tehlikesi bulunan kadınlar, çocuklar ve aile bireyleri bu kanunla korunur.
-                        </p>
                         <ul class="list-disc list-inside text-gray-400 text-sm space-y-1">
-                            <li>Delil veya belge aranmaksızın koruma kararı talep edebilirsiniz.</li>
+                            <li>Belge aranmaksızın koruma kararı talep edebilirsiniz.</li>
                             <li>Şiddet uygulayanın evden uzaklaştırılmasını isteyebilirsiniz.</li>
                             <li>Barolardan ücretsiz avukat (Adli Yardım) talep edebilirsiniz.</li>
                             <li>ŞÖNİM (Şiddet Önleme ve İzleme Merkezleri) size rehberlik eder.</li>
                         </ul>
                     </div>
 
-                    <!-- KİŞİSEL GÜVENLİK İPUÇLARI -->
+                    <!-- İPUÇLARI -->
                     <div class="bg-gradient-to-br from-white/5 to-pink-900/10 p-5 rounded-lg border border-pink-500/20 hover:border-pink-500/40 transition-colors md:col-span-2">
                         <h3 class="text-pink-300 font-bold text-lg mb-2 flex items-center gap-2">
-                            <i class="fa-solid fa-person-rays"></i> Kişisel Güvenlik ve Savunma İpuçları
+                            <i class="fa-solid fa-person-rays"></i> Kişisel Güvenlik İpuçları
                         </h3>
                         <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside marker:text-pink-500">
-                            <li><strong class="text-white">Konum Paylaşımı:</strong> Taksiye bindiğinizde veya güvensiz hissettiğinizde, güvendiğiniz birine canlı konumunuzu atın ve bunu telefonla konuşarak belli edin.</li>
-                            <li><strong class="text-white">Çevresel Farkındalık:</strong> Yürürken telefona odaklanmak yerine çevrenizi gözlemleyin. Takip edildiğinizi hissederseniz kalabalık bir yere veya açık bir dükkana girin.</li>
-                            <li><strong class="text-white">Anahtarlar:</strong> Eve yaklaşırken anahtarlarınızı elinizde hazır tutun. Bu hem hızlı girmenizi sağlar hem de acil durumda savunma aracı olabilir.</li>
-                            <li><strong class="text-white">Ses Çıkarın:</strong> Tehlike anında "İmdat" veya "Yangın" diye bağırmak saldırganı şaşırtabilir.</li>
-                            <li><strong class="text-white">Asansör Güvenliği:</strong> Asansöre binerken şüpheli biriyle yalnız kalmamaya çalışın, kapıya yakın durun.</li>
+                            <li><strong class="text-white">Konum:</strong> Takside veya güvensiz hissettiğinizde canlı konum paylaşın.</li>
+                            <li><strong class="text-white">Anahtarlar:</strong> Eve yaklaşırken anahtarlarınızı elinizde hazır tutun.</li>
+                            <li><strong class="text-white">Ses:</strong> Tehlike anında "Yangın" diye bağırmak daha fazla dikkat çekebilir.</li>
                         </ul>
                     </div>
                 </div>
@@ -153,8 +155,8 @@
         </div>
     </div>
 
-    <!-- 3. HAKKINDA (INFO) - YENİ İÇERİK -->
-    <div id="info-modal" class="hidden absolute inset-0 z-[60] flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
+    <!-- 3. HAKKINDA (INFO) -->
+    <div id="info-modal" class="modal-wrapper absolute inset-0 z-[60] flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
         <div class="modal-content bg-[#100505] border border-blue-900/30 rounded-xl w-full max-w-md shadow-2xl relative text-center">
             <button class="close-modal-btn absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
             
@@ -166,16 +168,14 @@
                 <p class="text-gray-400 text-sm mb-6 leading-relaxed">
                     Bu proje, kadın cinayetlerine dikkat çekmek ve hayatını kaybeden kadınların anısını dijital bir evrende sonsuza kadar yaşatmak amacıyla oluşturulmuştur.
                 </p>
-
                 <div class="bg-white/5 p-4 rounded-lg border border-white/10 mb-4 text-left">
                     <h3 class="text-white font-bold text-sm mb-2 flex items-center gap-2">
                         <i class="fa-solid fa-wand-magic-sparkles text-yellow-400"></i> Teknoloji
                     </h3>
                     <p class="text-gray-400 text-xs">
-                        Bu websitesi, tasarımından kodlamasına kadar tamamen <strong>Google Gemini Yapay Zeka</strong> modeli ile geliştirilmiştir. Veriler anlık olarak güncellenmektedir.
+                        Bu websitesi, tasarımından kodlamasına kadar tamamen <strong>Google Gemini Yapay Zeka</strong> modeli ile geliştirilmiştir.
                     </p>
                 </div>
-
                 <div class="text-xs text-gray-500 mt-4">
                     <p>Veri Kaynağı: Anıt Sayaç</p>
                     <p>Tasarım & Kodlama: Gemini AI</p>
@@ -184,8 +184,8 @@
         </div>
     </div>
 
-    <!-- 4. BAĞIŞ & DESTEK (DONATE) -->
-    <div id="donate-modal" class="hidden absolute inset-0 z-[60] flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
+    <!-- 4. BAĞIŞ (DONATE) -->
+    <div id="donate-modal" class="modal-wrapper absolute inset-0 z-[60] flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
         <div class="modal-content bg-[#100505] border border-pink-900/30 rounded-xl w-full max-w-md shadow-2xl relative">
             <button class="close-modal-btn absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
             
@@ -194,11 +194,11 @@
                     <i class="fa-solid fa-hand-holding-heart text-3xl text-pink-400"></i>
                 </div>
                 <h2 class="text-xl font-bold text-white mb-2">Dayanışma Yaşatır</h2>
-                <p class="text-gray-400 text-xs mb-6">Kadın mücadelesini güçlendirmek için resmi kurumlara ve derneklere destek olabilirsiniz.</p>
+                <p class="text-gray-400 text-xs mb-6">Kadın mücadelesini güçlendirmek için resmi kurumlara destek olabilirsiniz.</p>
 
                 <div class="space-y-3 text-left">
                     <!-- Mor Çatı -->
-                    <a href="https://morcati.org.tr/bagis-yap/" target="_blank" class="flex items-center justify-between p-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg group transition-all">
+                    <a href="https://bagis.morcati.org.tr/" target="_blank" class="flex items-center justify-between p-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg group transition-all">
                         <div class="flex items-center gap-3">
                             <div class="w-8 h-8 rounded bg-purple-600 flex items-center justify-center text-white font-bold">M</div>
                             <div>
@@ -210,7 +210,7 @@
                     </a>
 
                     <!-- KCDP -->
-                    <a href="https://kadincinayetlerinidurduracagiz.net/" target="_blank" class="flex items-center justify-between p-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg group transition-all">
+                    <a href="https://fonzip.com/kcdp/online-bagis" target="_blank" class="flex items-center justify-between p-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg group transition-all">
                         <div class="flex items-center gap-3">
                             <div class="w-8 h-8 rounded bg-red-600 flex items-center justify-center text-white font-bold"><i class="fa-solid fa-hand-fist"></i></div>
                             <div>
@@ -222,7 +222,7 @@
                     </a>
 
                     <!-- TKDF -->
-                    <a href="https://tkdf.org.tr/" target="_blank" class="flex items-center justify-between p-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg group transition-all">
+                    <a href="https://fonzip.com/tkdf/bagis" target="_blank" class="flex items-center justify-between p-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg group transition-all">
                         <div class="flex items-center gap-3">
                             <div class="w-8 h-8 rounded bg-blue-600 flex items-center justify-center text-white font-bold">F</div>
                             <div>
@@ -269,36 +269,39 @@
                 <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 group-hover:text-pink-400 transition-colors">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
-                <!-- Sonuçlar -->
                 <div id="search-results" class="hidden mt-2 bg-[#0a0505]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl max-h-60 overflow-y-auto absolute w-full z-40"></div>
             </div>
 
-            <!-- Bilgi Butonu (Hakkında) -->
+            <!-- Bilgi Butonu -->
             <button id="open-info-btn" class="w-8 h-8 rounded-full bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20 hover:text-white hover:border-blue-500/50 transition-all flex items-center justify-center backdrop-blur-sm" title="Hakkında">
                 <i class="fa-solid fa-info text-sm"></i>
             </button>
 
-            <!-- YENİ GÜVENLİK REHBERİ BUTONU (KALKAN) -->
+            <!-- Güvenlik Rehberi Butonu -->
             <button id="open-defense-btn" class="w-8 h-8 rounded-full bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20 hover:text-pink-300 hover:border-pink-500/50 transition-all flex items-center justify-center backdrop-blur-sm" title="Güvenlik Rehberi">
                 <i class="fa-solid fa-shield-halved text-sm"></i>
             </button>
         </div>
 
         <!-- SOL ALT: Seçim Modu ve BAĞIŞ Butonu -->
-        <div class="absolute bottom-8 left-8 z-30 pointer-events-auto flex flex-col gap-4 items-start">
+        <div class="absolute bottom-8 left-8 z-30 pointer-events-auto flex flex-row items-end gap-4">
             
-            <!-- Bağış Butonu -->
-            <button id="open-donate-btn" class="w-12 h-12 rounded-full bg-gradient-to-tr from-red-900 to-pink-800 border border-white/10 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform group" title="Destek Ol">
-                <i class="fa-solid fa-heart text-lg group-hover:animate-pulse"></i>
+            <!-- Seçim Modu Butonu -->
+            <button id="toggle-selection-mode" class="flex items-center gap-3 px-5 py-3 bg-black/60 border border-gray-500 text-gray-300 rounded-full backdrop-blur-md transition-all hover:bg-black/80 group shadow-lg">
+                <div class="relative">
+                    <i class="fa-solid fa-arrow-pointer text-lg transition-transform group-hover:-translate-y-1"></i>
+                    <span id="mode-indicator" class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full opacity-0 transition-opacity"></span>
+                </div>
+                <div class="text-left">
+                    <div class="text-[10px] text-gray-500 uppercase tracking-wider font-bold">Seçim Modu</div>
+                    <div id="mode-text" class="text-sm font-bold text-white">KAPALI</div>
+                </div>
             </button>
 
-            <!-- Seçim Modu -->
-            <div class="flex flex-col items-start">
-                <div id="mode-tooltip" class="bg-black/80 text-white text-xs px-2 py-1 rounded mb-1 opacity-0 transition-opacity">Seçim Modu: Kapalı</div>
-                <button id="toggle-selection-mode" class="w-14 h-14 rounded-full bg-black/60 border-2 border-gray-500 text-gray-400 flex items-center justify-center transition-all hover:scale-110 hover:bg-black/80 shadow-2xl backdrop-blur-md">
-                    <i class="fa-solid fa-arrow-pointer text-xl"></i>
-                </button>
-            </div>
+            <!-- Bağış Butonu -->
+            <button id="open-donate-btn" class="w-12 h-12 rounded-full bg-gradient-to-tr from-red-900 to-pink-800 border border-white/10 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform group mb-1" title="Bağış Yap">
+                <i class="fa-solid fa-heart text-lg group-hover:animate-pulse"></i>
+            </button>
         </div>
 
         <!-- Kaynak Linki (Sağ Alt) -->
@@ -352,52 +355,56 @@
         const introModal = document.getElementById('intro-modal');
         const infoModal = document.getElementById('info-modal');
         const donateModal = document.getElementById('donate-modal');
-        const defenseModal = document.getElementById('defense-modal'); // YENİ
+        const defenseModal = document.getElementById('defense-modal');
 
-        // Modal Açma/Kapatma
         function openModal(modal) {
             modal.classList.remove('hidden');
-            setTimeout(() => modal.classList.add('modal-open'), 10);
+            void modal.offsetWidth;
+            modal.classList.add('active');
         }
         function closeModal(modal) {
-            modal.classList.remove('modal-open');
+            modal.classList.remove('active');
             setTimeout(() => modal.classList.add('hidden'), 300);
         }
 
-        document.getElementById('close-intro-btn').onclick = () => { introModal.style.opacity = '0'; setTimeout(() => introModal.style.display = 'none', 500); };
+        document.getElementById('close-intro-btn').onclick = () => closeModal(introModal);
         document.getElementById('open-info-btn').onclick = () => openModal(infoModal);
         document.getElementById('open-donate-btn').onclick = () => openModal(donateModal);
-        document.getElementById('open-defense-btn').onclick = () => openModal(defenseModal); // YENİ
+        document.getElementById('open-defense-btn').onclick = () => openModal(defenseModal);
 
         document.querySelectorAll('.close-modal-btn').forEach(btn => {
-            btn.onclick = (e) => closeModal(e.target.closest('.absolute'));
+            btn.onclick = (e) => {
+                const modal = e.target.closest('.modal-wrapper');
+                if (modal) closeModal(modal);
+            };
         });
 
         window.addEventListener('click', (e) => {
-            if (e.target === infoModal) closeModal(infoModal);
-            if (e.target === donateModal) closeModal(donateModal);
-            if (e.target === defenseModal) closeModal(defenseModal);
+            if (e.target.classList.contains('modal-wrapper')) closeModal(e.target);
         });
 
-
-        // --- Seçim Modu ---
+        // --- Seçim Modu Toggle ---
         const modeBtn = document.getElementById('toggle-selection-mode');
-        const modeTooltip = document.getElementById('mode-tooltip');
+        const modeText = document.getElementById('mode-text');
+        const modeIndicator = document.getElementById('mode-indicator');
 
         modeBtn.onclick = () => {
             isSelectionMode = !isSelectionMode;
             if(isSelectionMode) {
-                modeBtn.classList.remove('border-gray-500', 'text-gray-400', 'bg-black/60');
-                modeBtn.classList.add('border-pink-500', 'text-white', 'bg-pink-900/50', 'pulse-ring');
+                modeBtn.classList.remove('border-gray-500', 'text-gray-300', 'bg-black/60');
+                modeBtn.classList.add('border-pink-500', 'text-white', 'bg-pink-900/60', 'pulse-border');
                 document.body.classList.add('selection-active');
-                modeTooltip.innerText = "Seçim Modu: AÇIK";
-                modeTooltip.style.opacity = '1';
+                modeText.innerText = "AÇIK";
+                modeText.classList.add('text-pink-300');
+                modeIndicator.style.opacity = '1';
             } else {
-                modeBtn.classList.add('border-gray-500', 'text-gray-400', 'bg-black/60');
-                modeBtn.classList.remove('border-pink-500', 'text-white', 'bg-pink-900/50', 'pulse-ring');
+                modeBtn.classList.add('border-gray-500', 'text-gray-300', 'bg-black/60');
+                modeBtn.classList.remove('border-pink-500', 'text-white', 'bg-pink-900/60', 'pulse-border');
                 document.body.classList.remove('selection-active');
-                modeTooltip.innerText = "Seçim Modu: KAPALI";
-                modeTooltip.style.opacity = '0';
+                modeText.innerText = "KAPALI";
+                modeText.classList.remove('text-pink-300');
+                modeIndicator.style.opacity = '0';
+                document.getElementById('tooltip').classList.add('hidden');
             }
         };
 
@@ -445,6 +452,7 @@
             }
         }
 
+        // --- Three.js Kurulumu ---
         const canvas = document.getElementById('webgl');
         const scene = new THREE.Scene();
         scene.fog = new THREE.FogExp2('#050000', 0.03);
@@ -498,79 +506,71 @@
             scene.add(points);
         }
 
-        // --- MIKNATIS MANTIĞI ---
-        function getNearestStarOnScreen(clientX, clientY) {
-            if (!geometry || !points) return null;
-            
-            const positions = geometry.attributes.position.array;
-            const count = namesList.length;
-            let minDistance = 40; // Piksel
-            let nearestIndex = -1;
-            
-            const tempVec = new THREE.Vector3();
-
-            for(let i=0; i<count; i++) {
-                tempVec.set(positions[i*3], positions[i*3+1], positions[i*3+2]);
-                tempVec.project(camera);
-                if(tempVec.z > 1) continue;
-
-                const x = (tempVec.x * .5 + .5) * window.innerWidth;
-                const y = (-(tempVec.y * .5) + .5) * window.innerHeight;
-                const dist = Math.sqrt(Math.pow(x - clientX, 2) + Math.pow(y - clientY, 2));
-
-                if(dist < minDistance) {
-                    minDistance = dist;
-                    nearestIndex = i;
-                }
-            }
-            return nearestIndex;
-        }
-
-        // --- Mouse Move & Hover ---
-        const tooltip = document.getElementById('tooltip');
-        const tooltipName = document.getElementById('tooltip-name');
-        const tooltipDate = document.getElementById('tooltip-date');
-
-        window.addEventListener('mousemove', (e) => {
-            const nearestIdx = getNearestStarOnScreen(e.clientX, e.clientY);
-
-            if (nearestIdx !== -1 && nearestIdx !== null) {
-                document.body.style.cursor = 'pointer';
-                const nameIdx = geometry.attributes.nameIndex.array[nearestIdx];
-                const person = namesList[nameIdx];
-                tooltipName.innerText = person.name;
-                tooltipDate.innerText = person.date || "";
-                tooltip.style.left = (e.clientX + 15) + 'px';
-                tooltip.style.top = (e.clientY + 15) + 'px';
-                tooltip.classList.remove('hidden');
-            } else {
-                document.body.style.cursor = isSelectionMode ? 'crosshair' : 'default';
-                tooltip.classList.add('hidden');
-            }
-        });
-
-        // --- Tıklama Mantığı ---
+        // --- RAYCASTER VE TIKLAMA MANTIĞI ---
+        const raycaster = new THREE.Raycaster();
+        // ÖNEMLİ: Threshold'u artırdık, böylece yıldıza tam isabet etmese de yakalar.
+        raycaster.params.Points.threshold = 0.5; // İdeal nokta
+        const mouse = new THREE.Vector2();
         let clickStartX = 0;
         let clickStartY = 0;
 
-        window.addEventListener('mousedown', (e) => {
+        // KANVAS ÜZERİNE EVENT EKLİYORUZ (Tüm sayfa değil)
+        canvas.addEventListener('mousedown', (e) => {
             clickStartX = e.clientX;
             clickStartY = e.clientY;
         });
 
-        window.addEventListener('mouseup', (e) => {
+        canvas.addEventListener('mouseup', (e) => {
             if(e.button !== 0) return;
             const diffX = Math.abs(e.clientX - clickStartX);
             const diffY = Math.abs(e.clientY - clickStartY);
 
             if (diffX < 3 && diffY < 3) {
                 if (!isSelectionMode) return; 
-                if (e.target.closest('#detail-panel') || e.target.closest('#search-input') || e.target.closest('#search-results') || e.target.closest('a') || e.target.closest('.absolute')) return;
 
-                const nearestIdx = getNearestStarOnScreen(e.clientX, e.clientY);
-                if (nearestIdx !== -1 && nearestIdx !== null) {
-                    openPanel(nearestIdx);
-                    flyToStar(nearestIdx);
+                mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+                mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+                
+                raycaster.setFromCamera(mouse, camera);
+                if(points) {
+                    const intersects = raycaster.intersectObject(points);
+                    if (intersects.length > 0) {
+                        const idx = intersects[0].index;
+                        const nameIdx = geometry.attributes.nameIndex.array[idx];
+                        openPanel(nameIdx);
+                        flyToStar(idx);
+                    }
+                }
+            }
+        });
+
+        const tooltip = document.getElementById('tooltip');
+        const tooltipName = document.getElementById('tooltip-name');
+        const tooltipDate = document.getElementById('tooltip-date');
+
+        canvas.addEventListener('mousemove', (e) => {
+            // Hover her zaman çalışsın (Bilgi amaçlı)
+            if(points) {
+                mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+                mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+                
+                raycaster.setFromCamera(mouse, camera);
+                const intersects = raycaster.intersectObject(points);
+                
+                if (intersects.length > 0) {
+                    document.body.style.cursor = 'pointer';
+                    const idx = intersects[0].index;
+                    const nameIdx = geometry.attributes.nameIndex.array[idx];
+                    const person = namesList[nameIdx];
+                    
+                    tooltipName.innerText = person.name;
+                    tooltipDate.innerText = person.date || "";
+                    tooltip.style.left = (e.clientX + 15) + 'px';
+                    tooltip.style.top = (e.clientY + 15) + 'px';
+                    tooltip.classList.remove('hidden');
+                } else {
+                    document.body.style.cursor = isSelectionMode ? 'crosshair' : 'default';
+                    tooltip.classList.add('hidden');
                 }
             }
         });
