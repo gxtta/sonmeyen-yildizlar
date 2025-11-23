@@ -17857,15 +17857,7 @@
     },
     {
         "name": "Yonca Türkman",
-        "age": "Reşit",
-        "location": "İstanbul",
-        "date": "20/06/2022",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Yüksekten Düşme",
-        "status": "Tespit Edilemeyen",
-        "source": "https://www.hurriyet.com.tr/gundem/yoncanin-sir-olumu-42087246"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Zerin Kılınç",
@@ -52513,7 +52505,15 @@
     },
     {
         "name": "Hatice Uysal",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "06/11/2014",
+        "reason": "Kıskançlık",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Bilinmiyor",
+        "source": "http://www.milliyet.com.tr/cifte-cinayetin-faili-konustu-gundem-1965824/"
     },
     {
         "name": "Merve İnce",
@@ -57029,7 +57029,15 @@
     },
     {
         "name": "Fatma Dugar",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "05/06/2013",
+        "reason": "Namus cinayeti",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Bilinmiyor",
+        "source": "http://www.igdirim76.com/haber/igdir-da-namus-cinayeti-3-olu/610/"
     },
     {
         "name": "Melisa Sert",
