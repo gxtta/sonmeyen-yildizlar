@@ -1,5 +1,29 @@
 [
     {
+        "name": "Rumeysa Sanpur",
+        "age": "Reşit",
+        "location": "Kırklareli",
+        "date": "22/11/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Nişanlısının Husumetlileri",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/19-yasindaki-genc-kadin-nisanlisinin-evinde-cikan-catismada-vurulup-olduruldu-43028511"
+    },
+    {
+        "name": "Firdevs Akgün",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "19/11/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Aranıyor",
+        "source": "https://www.hurriyet.com.tr/gundem/pendikte-kadin-cinayeti-esini-bicaklayarak-oldurup-kacti-43024165"
+    },
+    {
         "name": "Feride Sayılır",
         "age": "Reşit",
         "location": "İzmir",
@@ -34,18 +58,6 @@
         "method": "Ateşli Silah",
         "status": "İntihar",
         "source": "https://www.ntv.com.tr/amp/turkiye/izmirde-esini-katleden-kisi-intihar-etti-1697721"
-    },
-    {
-        "name": "Firdevs Akgün",
-        "age": "Reşit",
-        "location": "İstanbul",
-        "date": "19/11/2025",
-        "reason": "Tartışma",
-        "killer": "Kocası",
-        "protection": "Yok",
-        "method": "Kesici Alet",
-        "status": "Aranıyor",
-        "source": "https://www.hurriyet.com.tr/gundem/pendikte-kadin-cinayeti-esini-bicaklayarak-oldurup-kacti-43024165"
     },
     {
         "name": "Meryem Ş.",
@@ -17857,7 +17869,15 @@
     },
     {
         "name": "Yonca Türkman",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "20/06/2022",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.hurriyet.com.tr/gundem/yoncanin-sir-olumu-42087246"
     },
     {
         "name": "Zerin Kılınç",
