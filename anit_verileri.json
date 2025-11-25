@@ -1,5 +1,29 @@
 [
     {
+        "name": "Fatma Kılıç",
+        "age": "Reşit",
+        "location": "Amasya",
+        "date": "24/11/2025",
+        "reason": "Tartışma, Borç Para Talebi",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "https://www.evrensel.net/haber/584838/edirnede-kadin-cinayeti-komsusu-tarafindan-vurulan-turkan-demirci-yasamini-yitirdi"
+    },
+    {
+        "name": "Nuran Şimşek",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "24/11/2025",
+        "reason": "Tartışma",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.t24.com.tr/haber/kadin-cinayetleri-son-bulmuyor-konusma-bahanesiyle-evinden-aldigi-eski-esini-silahla-basindan-vurup-oldurdu,1278645"
+    },
+    {
         "name": "Rumeysa Sanpur",
         "age": "Reşit",
         "location": "Kırklareli",
@@ -10,6 +34,18 @@
         "method": "Ateşli Silah",
         "status": "Soruşturma Sürüyor",
         "source": "https://www.hurriyet.com.tr/gundem/19-yasindaki-genc-kadin-nisanlisinin-evinde-cikan-catismada-vurulup-olduruldu-43028511"
+    },
+    {
+        "name": "Türkan Demirci",
+        "age": "Reşit",
+        "location": "Edirne",
+        "date": "20/11/2025",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.evrensel.net/haber/584838/edirnede-kadin-cinayeti-komsusu-tarafindan-vurulan-turkan-demirci-yasamini-yitirdi"
     },
     {
         "name": "Firdevs Akgün",
