@@ -1,5 +1,17 @@
 [
     {
+        "name": "Zehra Özkan",
+        "age": "Reşit",
+        "location": "Gaziantep",
+        "date": "25/11/2025",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.t24.com.tr/haber/bosanma-asamasindaki-esini-tabancayla-vurdu,1278961"
+    },
+    {
         "name": "Fatma Kılıç",
         "age": "Reşit",
         "location": "Amasya",
