@@ -12,16 +12,40 @@
         "source": "https://www.t24.com.tr/haber/bosanma-asamasindaki-esini-tabancayla-vurdu,1278961"
     },
     {
-        "name": "Fatma Kılıç",
+        "name": "Sümeyye Yıldız",
         "age": "Reşit",
-        "location": "Amasya",
-        "date": "24/11/2025",
-        "reason": "Tartışma, Borç Para Talebi",
-        "killer": "Tanıdığı Birisi",
+        "location": "Elazığ",
+        "date": "25/11/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
         "protection": "Yok",
-        "method": "Boğularak",
+        "method": "Ateşli Silah",
         "status": "Tutuklu",
-        "source": "https://www.evrensel.net/haber/584838/edirnede-kadin-cinayeti-komsusu-tarafindan-vurulan-turkan-demirci-yasamini-yitirdi"
+        "source": "https://www.hurriyet.com.tr/gundem/elazigda-kadin-cinayeti-sumeyye-yildiz-esi-tarafindan-olduruldu-43031678"
+    },
+    {
+        "name": "Berna Kaya",
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "25/11/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.ntv.com.tr/amp/turkiye/mardinde-aile-katliami-uc-kisi-olu-bulundu-1699358"
+    },
+    {
+        "name": "Samyeli Kaya",
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "25/11/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.ntv.com.tr/amp/turkiye/mardinde-aile-katliami-uc-kisi-olu-bulundu-1699358"
     },
     {
         "name": "Nuran Şimşek",
@@ -3718,6 +3742,18 @@
         "method": "Asılarak",
         "status": "Soruşturma Sürüyor",
         "source": "https://www.sondakika.com/amp/haber-unye-de-bir-kadin-evinde-olu-bulundu-18471583/"
+    },
+    {
+        "name": "Fatma Kılıç",
+        "age": "Reşit",
+        "location": "Amasya",
+        "date": "24/03/2025",
+        "reason": "Tartışma, Borç Para Talebi",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "https://www.evrensel.net/haber/584877/gaz-sizintisindan-zehirlendigi-sanilan-kadini-akrabasi-oldurmus"
     },
     {
         "name": "Yevdokia Nikolaeva Kireyeva",
