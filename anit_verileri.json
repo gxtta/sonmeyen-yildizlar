@@ -1,5 +1,53 @@
 [
     {
+        "name": "Nurselen Gülaçtı",
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "27/11/2025",
+        "reason": "Tartışma",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/yerel-haberler/ankara/cankaya/tartistigi-nurseleni-basindan-vurarak-oldurdu-43034300"
+    },
+    {
+        "name": "Emine Çelikaslan",
+        "age": "Reşit",
+        "location": "Mersin",
+        "date": "27/11/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/uzaklastirma-karari-aldirdigi-icin-esini-tufekle-oldurdu-43033892"
+    },
+    {
+        "name": "Ebru K.",
+        "age": "Reşit",
+        "location": "Kayseri",
+        "date": "27/11/2025",
+        "reason": "Tartışma",
+        "killer": "Eski Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.ntv.com.tr/amp/turkiye/ebruyu-eski-sevgilisi-katletti-1699856"
+    },
+    {
+        "name": "M.M.",
+        "age": "Reşit",
+        "location": "Kayseri",
+        "date": "26/11/2025",
+        "reason": "Miras Tartışması",
+        "killer": "Damadı",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/kayseride-miras-kavgasi-korkunc-bitti-kayinvalidesini-oldurup-kendini-vurdu-43033104"
+    },
+    {
         "name": "Zehra Özkan",
         "age": "Reşit",
         "location": "Gaziantep",
@@ -7641,6 +7689,18 @@
         "protection": "Yok",
         "method": "Ateşli Silah",
         "status": "İntihara Teşebbüs",
+        "source": "https://www.milliyet.com.tr/gundem/malatyada-aile-katliami-esini-kizini-ve-torununu-uyurken-oldurup-intihara-kalkisti-7152401"
+    },
+    {
+        "name": "Bulem Aslan",
+        "age": "Reşit Değil",
+        "location": "Malatya",
+        "date": "07/07/2024",
+        "reason": "Çocuğun annesi ile tartışma",
+        "killer": "Dedesi",
+        "protection": "Yok",
+        "method": "Ateşli Slah",
+        "status": "Tutuklu",
         "source": "https://www.milliyet.com.tr/gundem/malatyada-aile-katliami-esini-kizini-ve-torununu-uyurken-oldurup-intihara-kalkisti-7152401"
     },
     {
