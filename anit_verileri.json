@@ -5,11 +5,11 @@
         "location": "Ankara",
         "date": "27/11/2025",
         "reason": "Tartışma",
-        "killer": "Sevgilisi",
+        "killer": "Tanımadığı Birisi",
         "protection": "Yok",
         "method": "Ateşli Silah",
         "status": "Tutuklu",
-        "source": "https://www.hurriyet.com.tr/yerel-haberler/ankara/cankaya/tartistigi-nurseleni-basindan-vurarak-oldurdu-43034300"
+        "source": "https://www.dha.com.tr/yerel-haberler/ankara/ankara-oldurulen-nurselenin-kardesi-kurtulm-2767678"
     },
     {
         "name": "Emine Çelikaslan",
@@ -19153,15 +19153,7 @@
     },
     {
         "name": "Yasemin El Salih",
-        "age": "Reşit",
-        "location": "Şanlıurfa",
-        "date": "07/04/2022",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Kesici Alet",
-        "status": "Tespit Edilemeyen",
-        "source": "https://www.hurriyet.com.tr/gundem/sanliurfada-kan-donduran-kadin-cinayeti-elleri-arkadan-bagli-bogazi-kesilmis-halde-bulundu-42038898"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Zeynep Gıcık",
@@ -36169,7 +36161,15 @@
     },
     {
         "name": "Meral T.",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "17/12/2018",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.takvim.com.tr/webtv/video-haber/video/bagcilarda-ofkeli-koca-dehset-sactionce-karisini-oldurdu-ardindan-intihara-tesebbus-etti"
     },
     {
         "name": "R.K.",
