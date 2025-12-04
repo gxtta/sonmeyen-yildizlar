@@ -1,5 +1,17 @@
 [
     {
+        "name": "Şerife Gelmeli",
+        "age": "Reşit",
+        "location": "Gaziantep",
+        "date": "03/12/2025",
+        "reason": "Reddedilme",
+        "killer": "Eski Kocası",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Kesici Alet",
+        "status": "İntihara Teşebbüs",
+        "source": "https://www.hurriyet.com.tr/gundem/gaziantepte-vahset-eski-esini-cocuklarinin-yaninda-bicaklayarak-oldurdu-43041350"
+    },
+    {
         "name": "Nurselen Gülaçtı",
         "age": "Reşit",
         "location": "Ankara",
@@ -181,7 +193,15 @@
     },
     {
         "name": "Meryem Ş.",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Kars",
+        "date": "18/11/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesisi Alet",
+        "status": "Tutuklu",
+        "source": "https://www.t24.com.tr/haber/kars-ta-bir-kisi-tartistigi-esini-bicaklayarak-oldurdu,1277207"
     },
     {
         "name": "Yasemin Bulut",
@@ -6533,7 +6553,15 @@
     },
     {
         "name": "Sıla M.",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Kars",
+        "date": "30/09/2024",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.ntv.com.tr/turkiye/bir-kadin-daha-cinayet-kurbaniesi-tarafindan-vurulan-sila-yasamini-yitirdi,OfI2UnTyoky8M6cDJLclTg"
     },
     {
         "name": "Satı Aktan",
@@ -12813,7 +12841,15 @@
     },
     {
         "name": "Büşra Alper",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Malatya",
+        "date": "25/07/2023",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/malatyada-kadin-cinayeti-esi-tarafindan-bicaklanan-busra-alper-hayatini-kaybetti-42304580"
     },
     {
         "name": "Serpil Temiz",
@@ -19717,7 +19753,15 @@
     },
     {
         "name": "Sıla Şentürk",
-        "date": "Veri Alınamadı"
+        "age": "Reşit Değil",
+        "location": "Giresun",
+        "date": "16/02/2022",
+        "reason": "Tartışma",
+        "killer": "Eski Nişanlısı",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.mynet.com/korkunc-olay-16-yasindaki-sila-senturk-nisanlisi-tarafindan-bogazi-kesilerek-olduruldu-110106915961"
     },
     {
         "name": "Hazal Alpyörük",
@@ -28661,7 +28705,15 @@
     },
     {
         "name": "Güler A.",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "08/06/2020",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://ilerihaber.org/icerik/izmirde-kadin-cinayeti-evli-oldugu-erkek-tarafindan-katledildi-113819.html"
     },
     {
         "name": "Türkan A.",
@@ -35565,7 +35617,15 @@
     },
     {
         "name": "Sibel Dudaklı",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Bursa",
+        "date": "07/01/2019",
+        "reason": "Tartışma",
+        "killer": "Eski Sevgilisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.sabah.com.tr/webtv/haber/bursanin-gemlik-ilcesinde-eski-sevgilisini-ve-kardesini-olduren-katil-zanlisi-yunanistana-kacarken-yakalandi"
     },
     {
         "name": "Ayça Songur",
@@ -42457,7 +42517,15 @@
     },
     {
         "name": "Nilgün Ertan",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Diyarbakır",
+        "date": "30/07/2017",
+        "reason": "Tartışma",
+        "killer": "Babası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Aranıyor",
+        "source": "http://www.hurriyet.com.tr/eski-esi-ve-kizini-sokak-ortasinda-katletti-sebebi-akilalmaz-40535361"
     },
     {
         "name": "Hanife Ertan",
@@ -48689,7 +48757,15 @@
     },
     {
         "name": "Damla İ.",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "06/12/2015",
+        "reason": "Kıskançlık",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Bilinmiyor",
+        "source": "http://www.milliyet.com.tr/enisteyi-sevgili-sandi-esini-gundem-2159189/"
     },
     {
         "name": "Nevriye Altun",
@@ -54981,7 +55057,15 @@
     },
     {
         "name": "Birgül Ergen",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "10/03/2014",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Bilinmiyor",
+        "source": "http://gundem.milliyet.com.tr/esini-ve-kizini-olduren-baba/gundem/detay/1849393/default.htm"
     },
     {
         "name": "Özge Gündoğan",
@@ -61261,7 +61345,15 @@
     },
     {
         "name": "Ayşe Gökçe",
-        "date": "Veri Alınamadı"
+        "age": "35",
+        "location": "Bursa",
+        "date": "06/03/2011",
+        "reason": "Namus",
+        "killer": "Damadı",
+        "protection": "yok",
+        "method": "Vurucu Alet",
+        "status": "Bilinmiyor",
+        "source": "http://www.dha.com.tr/kayinvalidemi-oldurdum-cunku_217615.html"
     },
     {
         "name": "Şehri Filiz",
