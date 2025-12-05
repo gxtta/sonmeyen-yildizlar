@@ -1,5 +1,17 @@
 [
     {
+        "name": "Remziye Kaya",
+        "age": "Reşi",
+        "location": "Mersin",
+        "date": "04/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/dehset-zinciri-once-anne-ve-oglunu-ardindan-bufeciyi-oldurdu-43041897"
+    },
+    {
         "name": "Şerife Gelmeli",
         "age": "Reşit",
         "location": "Gaziantep",
