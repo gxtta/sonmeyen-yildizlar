@@ -1,7 +1,31 @@
 [
     {
+        "name": "Meliha Sarıkaya",
+        "age": "Reşit",
+        "location": "Hatay",
+        "date": "06/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/hatayda-kan-donduran-vahset-esini-baltayla-oldurup-banyoya-gomdu-43044600"
+    },
+    {
+        "name": "Nilgün Geçer",
+        "age": "Reşit",
+        "location": "Kırıkkale",
+        "date": "05/12/2025",
+        "reason": "Tartışma",
+        "killer": "Kız kardeşinin kayınpederi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Aranıyor",
+        "source": "https://www.hurriyet.com.tr/gundem/kayinpeder-avukatlik-ofisinde-dehset-sacti-gelinini-tabancayla-yaralayip-onun-kiz-kardesini-oldurdu-43044302"
+    },
+    {
         "name": "Remziye Kaya",
-        "age": "Reşi",
+        "age": "Reşit",
         "location": "Mersin",
         "date": "04/12/2025",
         "reason": "Tespit Edilemeyen",
@@ -31561,15 +31585,7 @@
     },
     {
         "name": "Alexandra Köppel",
-        "age": "Reşit",
-        "location": "İstanbul",
-        "date": "15/10/2019",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Boğulma",
-        "status": "Tespit Edilmeyen",
-        "source": "https://www.sozcu.com.tr/2019/gundem/isvecli-kadinin-istanbulda-sir-olumu-kimligi-belli-oldu-5390892/"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Sebahat Türk",
@@ -62257,15 +62273,7 @@
     },
     {
         "name": "Necla Yıldız",
-        "age": "Bilinmiyor",
-        "location": "Bilinmiyor",
-        "date": "21/10/2010",
-        "reason": "Kıskançlık",
-        "killer": "Tanıdığı Biri",
-        "protection": "Gerçekleşmemiş",
-        "method": "Bıçaklama",
-        "status": "Bilinmiyor",
-        "source": "http://www.cnnturk.com/2010/turkiye/10/21/geliyorum.diyen.cinayet.geldi/593730.0/index.html"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Nejla Yıldız",
