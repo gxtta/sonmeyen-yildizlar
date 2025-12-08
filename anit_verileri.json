@@ -31585,7 +31585,15 @@
     },
     {
         "name": "Alexandra Köppel",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "15/10/2019",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Boğulma",
+        "status": "Tespit Edilmeyen",
+        "source": "https://www.sozcu.com.tr/2019/gundem/isvecli-kadinin-istanbulda-sir-olumu-kimligi-belli-oldu-5390892/"
     },
     {
         "name": "Sebahat Türk",
@@ -62273,7 +62281,15 @@
     },
     {
         "name": "Necla Yıldız",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "21/10/2010",
+        "reason": "Kıskançlık",
+        "killer": "Tanıdığı Biri",
+        "protection": "Gerçekleşmemiş",
+        "method": "Bıçaklama",
+        "status": "Bilinmiyor",
+        "source": "http://www.cnnturk.com/2010/turkiye/10/21/geliyorum.diyen.cinayet.geldi/593730.0/index.html"
     },
     {
         "name": "Nejla Yıldız",
