@@ -33757,7 +33757,15 @@
     },
     {
         "name": "Ayşe Özlem Bağdemir",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "25/05/2019",
+        "reason": "Tespit Edilmeyen",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "http://www.milliyet.com.tr/uyuyan-esinin-agzini-bantladi--gundem-2879891/"
     },
     {
         "name": "Hatice Dabaz",
@@ -37865,7 +37873,15 @@
     },
     {
         "name": "Hatice Türk",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Bayburt",
+        "date": "11/08/2018",
+        "reason": "Tartışma",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.cnnturk.com/turkiye/oglu-tarafindan-tufekle-vurulan-kadin-oldu"
     },
     {
         "name": "Nuriye Yasak",
@@ -41961,7 +41977,15 @@
     },
     {
         "name": "Fatıma Boumendıl",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Konya",
+        "date": "14/09/2017",
+        "reason": "Karısınla arkadaşlık ettiği için",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "http://www.milliyet.com.tr/misirli-koca-esini-zengin-bir-gundem-2519285/"
     },
     {
         "name": "Deniz Güneş Adıyaman",
@@ -46081,7 +46105,15 @@
     },
     {
         "name": "Türkan Mavi",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Mersin",
+        "date": "19/09/2016",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "http://www.milliyet.com.tr/eski-esi-ve-elektrikciyi-olduren-gundem-2319238/"
     },
     {
         "name": "Semra Ezel",
@@ -50273,7 +50305,15 @@
     },
     {
         "name": "E.Y.",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "20/06/2015",
+        "reason": "Tartışma",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Bilinmiyor",
+        "source": "http://www.bursahakimiyet.com.tr/haber/asayis/mitte-ask-cinayeti-85938.html"
     },
     {
         "name": "Arzu Köse",
@@ -54369,7 +54409,15 @@
     },
     {
         "name": "Dilber Kılıç",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "24/05/2014",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Bilinmiyor",
+        "source": "http://www.evrensel.net/haber/84932/cekmekoyde-kadin-cinayeti.html#.U4WoGyi629o"
     },
     {
         "name": "Seda Çapan",
@@ -58489,7 +58537,15 @@
     },
     {
         "name": "Gülşah Aktürk",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "06/12/2012",
+        "reason": "Reddetme",
+        "killer": "Eski Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Bilinmiyor",
+        "source": "http://www.hurriyet.com.tr/gundem/22108814.asp"
     },
     {
         "name": "Gülistan Tosun",
@@ -62681,7 +62737,15 @@
     },
     {
         "name": "Server Güven",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "26/08/2010",
+        "reason": "Kriz ve İşsizlik",
+        "killer": "Sevgilisi",
+        "protection": "Tespit Edilemeyen",
+        "method": "Ateşli Silah",
+        "status": "Bilinmiyor",
+        "source": "http://www.milliyet.com.tr/hemsire-sevgilisini-3-kursunla-oldurdu/turkiye/sondakika/26.08.2010/1281313/default.htm"
     },
     {
         "name": "Mukaddes Topval",
