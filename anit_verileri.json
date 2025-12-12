@@ -1,5 +1,53 @@
 [
     {
+        "name": "Ayşe Kaplan",
+        "age": "Reşit",
+        "location": "Gaziantep",
+        "date": "11/12/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/haber/evli-oldugu-kadini-katletti-bir-anlik-sinir-diyerek-savundu-nobetci-hakimlik-tutukladi,1282819"
+    },
+    {
+        "name": "Hilal Aktepe",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "11/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/pendikte-kadin-cinayeti-eski-esi-tarafindan-katledildi-43050830"
+    },
+    {
+        "name": "Eser Ereli",
+        "age": "Reşit",
+        "location": "Kırklareli",
+        "date": "11/12/2025",
+        "reason": "Tartışma",
+        "killer": "Kayınpederi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.milliyet.com.tr/gundem/avukatlik-burosunda-kan-dokuldu-kayinpederinin-gogsunden-vurdugu-kadin-oldu-7500345"
+    },
+    {
+        "name": "F.Y.G.",
+        "age": "Reşit",
+        "location": "Çanakkale",
+        "date": "09/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.cumhuriyet.com.tr/turkiye/canakkale-de-kadin-cinayeti-oglu-tarafindan-katledildi-2459920"
+    },
+    {
         "name": "Melek Gül",
         "age": "Reşit",
         "location": "Kayseri",
@@ -10,6 +58,18 @@
         "method": "Kesici Alet",
         "status": "Tutuklu",
         "source": "https://www.sozcu.com.tr/emekli-bascavus-dehseti-esini-oldurmeye-gitti-tartistigi-baska-bir-kadini-oldurdu-p268941"
+    },
+    {
+        "name": "Gülhan Taş",
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "08/12/2025",
+        "reason": "Reddedilme",
+        "killer": "Eski Sevgilisi",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/cigligini-duyurmaya-calismis-katledilen-gulhanin-dhaya-verdigi-konusma-ortaya-cikti-43050438"
     },
     {
         "name": "Merve Şen",
