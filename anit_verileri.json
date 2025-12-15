@@ -1,5 +1,17 @@
 [
     {
+        "name": "Sultan Değirmenci",
+        "age": "Reşit",
+        "location": "Maraş",
+        "date": "13/12/2025",
+        "reason": "Reddedilm",
+        "killer": "Eski Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.evrensel.net/haber/588398/marasta-kadin-cinayeti-sultan-degirmenci-adli-kadin-bir-erkek-tarafindan-katledildi"
+    },
+    {
         "name": "Ayşe Kaplan",
         "age": "Reşit",
         "location": "Gaziantep",
