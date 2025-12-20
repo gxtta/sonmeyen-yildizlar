@@ -1,5 +1,29 @@
 [
     {
+        "name": "Gülhan Börülce",
+        "age": "Reşit",
+        "location": "Siirt",
+        "date": "18/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.hurriyet.com.tr/gundem/siirtte-kadin-cinayeti-evinde-bicaklanmis-halde-olu-bulundu-43058481"
+    },
+    {
+        "name": "Sevgi Özdemir",
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "17/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.cumhuriyet.com.tr/turkiye/ankara-da-kadin-cinayeti-19-yasindaki-sevgi-evli-oldugu-yasin-ozdemir-tarafindan-katledildi-2462265"
+    },
+    {
         "name": "Sultan Değirmenci",
         "age": "Reşit",
         "location": "Maraş",
