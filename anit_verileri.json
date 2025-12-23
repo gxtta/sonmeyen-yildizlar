@@ -1,15 +1,63 @@
 [
     {
+        "name": "Aynur Erkenci",
+        "age": "Reşit",
+        "location": "Kırklareli",
+        "date": "22/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Damadı",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.t24.com.tr/haber/kadin-cinayeti-kayinvalidesini-olduren-erkek-tutuklandi,1285305"
+    },
+    {
+        "name": "Demet Altan",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "20/12/2025",
+        "reason": "Tespit Edilmeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.ntv.com.tr/amp/turkiye/kadikoyde-gunluk-kiralik-dairede-dehset-iki-kisi-olu-bulundu-1704031"
+    },
+    {
+        "name": "Emine Aluç",
+        "age": "Reşit",
+        "location": "Adıyaman",
+        "date": "20/12/2025",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Aranıyor",
+        "source": "https://www.ntv.com.tr/amp/turkiye/bosanmak-isteyen-esini-cocugunun-yaninda-katletti-1704059"
+    },
+    {
         "name": "Gülhan Börülce",
         "age": "Reşit",
         "location": "Siirt",
         "date": "18/12/2025",
+        "reason": "Ziynet eşyaları için",
+        "killer": "Komşuları",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/siirtte-kadin-cinayeti-evinde-bicaklanmis-halde-olu-bulundu-43058481"
+    },
+    {
+        "name": "Gamze Nur Yalçın",
+        "age": "Reşit",
+        "location": "Çanakkale",
+        "date": "18/12/2025",
         "reason": "Tespit Edilemeyen",
         "killer": "Tespit Edilemeyen",
         "protection": "Yok",
-        "method": "Kesici Alet",
-        "status": "Tespit Edilemeyen",
-        "source": "https://www.hurriyet.com.tr/gundem/siirtte-kadin-cinayeti-evinde-bicaklanmis-halde-olu-bulundu-43058481"
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.milliyet.com.tr/gundem/canakkalede-supheli-olum-24-yasindaki-gamze-nur-erkek-arkadasinin-evinde-bulundu-7505800"
     },
     {
         "name": "Sevgi Özdemir",
@@ -70,6 +118,18 @@
         "method": "Ateşli Silah",
         "status": "Tutuklu",
         "source": "https://www.milliyet.com.tr/gundem/avukatlik-burosunda-kan-dokuldu-kayinpederinin-gogsunden-vurdugu-kadin-oldu-7500345"
+    },
+    {
+        "name": "Selvi Sarı",
+        "age": "Reşit",
+        "location": "Adıyaman",
+        "date": "10/12/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.t24.com.tr/haber/evde-katliam-yapip-corba-icmeye-gitmis,1285093"
     },
     {
         "name": "F.Y.G.",
