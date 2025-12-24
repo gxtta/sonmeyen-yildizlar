@@ -1,5 +1,29 @@
 [
     {
+        "name": "Duygu Karabaş",
+        "age": "Reşit",
+        "location": "Çanakkale",
+        "date": "23/12/2025",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/canakkalede-korkunc-olay-bosanma-asamasindaki-cift-olduruldu-43063345"
+    },
+    {
+        "name": "Dilan Geyik",
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "22/12/2025",
+        "reason": "Tespit Edilmeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "https://www.tibbiyebulteni.com/izmirde-18-yasindaki-dilan-geyik-evinde-olu-bulundu/amp"
+    },
+    {
         "name": "Aynur Erkenci",
         "age": "Reşit",
         "location": "Kırklareli",
@@ -70,6 +94,18 @@
         "method": "Kesici Alet",
         "status": "Tutuklu",
         "source": "https://www.cumhuriyet.com.tr/turkiye/ankara-da-kadin-cinayeti-19-yasindaki-sevgi-evli-oldugu-yasin-ozdemir-tarafindan-katledildi-2462265"
+    },
+    {
+        "name": "Deniz Şişman",
+        "age": "Reşit",
+        "location": "Alanya",
+        "date": "16/12/2025",
+        "reason": "Husumet",
+        "killer": "Akrabası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihara Teşebbüs",
+        "source": "https://www.milliyet.com.tr/gundem/dayi-dehsetinde-sok-detaylar-gercekler-ortaya-cikacak-diye-katletti-7503248"
     },
     {
         "name": "Sultan Değirmenci",
