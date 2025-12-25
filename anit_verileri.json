@@ -1,5 +1,17 @@
 [
     {
+        "name": "Komang Dwantari",
+        "age": "Reşit",
+        "location": "Alanya",
+        "date": "26/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.haberler.com/amp/alanya-da-yabanci-uyruklu-kadin-sahilde-olu-bulundu-19384911-haberi/"
+    },
+    {
         "name": "Duygu Karabaş",
         "age": "Reşit",
         "location": "Çanakkale",
@@ -58044,7 +58056,7 @@
         "source": "http://www.hurriyet.com.tr/gundem/22840568.asp"
     },
     {
-        "name": "Birgül Baykara",
+        "name": "Birgül B.",
         "age": "Bilinmiyor",
         "location": "Bilinmiyor",
         "date": "17/03/2013",
