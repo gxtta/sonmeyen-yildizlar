@@ -27733,7 +27733,15 @@
     },
     {
         "name": "Emir Canım",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Ödemiş",
+        "date": "22/08/2020",
+        "reason": "Tartışma",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Düşme",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.denizli24haber.com/haber/odemiste-minibusten-atladigi-iddia-edilen-emir-canim-oldu-31526"
     },
     {
         "name": "P.A.",
