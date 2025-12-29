@@ -1,5 +1,17 @@
 [
     {
+        "name": "Fatma Yılmaz Çetinkaya",
+        "age": "Reşit",
+        "location": "Karaman",
+        "date": "27/12/2025",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/son-gorusmede-katledildi-43068125"
+    },
+    {
         "name": "Komang Dwantari",
         "age": "Reşit",
         "location": "Alanya",
@@ -10,6 +22,42 @@
         "method": "Tespit Edilemeyen",
         "status": "Tespit Edilemeyen",
         "source": "https://www.haberler.com/amp/alanya-da-yabanci-uyruklu-kadin-sahilde-olu-bulundu-19384911-haberi/"
+    },
+    {
+        "name": "Rojda Yakışıklı",
+        "age": "Reşit",
+        "location": "Diyarbakır",
+        "date": "26/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Dini Nikahlı Eşi",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/dini-nikahla-yasadigi-kadini-bogup-cesedini-araziye-gomdu-43069988"
+    },
+    {
+        "name": "Sümeyye Durgun",
+        "age": "Reşit",
+        "location": "Diyarbakır",
+        "date": "25/12/2025",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/cop-posetinde-cansiz-bedeni-bulunmustu-sumeyyenin-dogum-gununde-cekilen-goruntusu-ortaya-cikti-43068900"
+    },
+    {
+        "name": "Derin Kiracı",
+        "age": "Reşit Değil",
+        "location": "Adana",
+        "date": "25/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Babası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/son-dakika-futbolda-bahis-sorusturmasi-14u-futbolcu-29-kisi-hakkinda-gozalti-karari-43066979"
     },
     {
         "name": "Duygu Karabaş",
@@ -22165,15 +22213,7 @@
     },
     {
         "name": "Nazlı Koldaguç",
-        "age": "Reşit",
-        "location": "Tekirdağ",
-        "date": "01/10/2021",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Sevgilisi",
-        "protection": "Yok",
-        "method": "Kesici Alet",
-        "status": "Tutuklu",
-        "source": "https://www.cumhuriyet.com.tr/turkiye/tekirdagda-kadin-cinayeti-nazli-koldaguc-sevgilisi-oldugu-iddia-edilen-kisi-tarafindan-olduruldu-1873418"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Aynur Mert",
