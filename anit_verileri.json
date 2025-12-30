@@ -22213,7 +22213,15 @@
     },
     {
         "name": "Nazlı Koldaguç",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Tekirdağ",
+        "date": "01/10/2021",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.cumhuriyet.com.tr/turkiye/tekirdagda-kadin-cinayeti-nazli-koldaguc-sevgilisi-oldugu-iddia-edilen-kisi-tarafindan-olduruldu-1873418"
     },
     {
         "name": "Aynur Mert",
