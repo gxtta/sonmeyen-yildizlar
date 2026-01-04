@@ -168,6 +168,18 @@
         "source": "https://www.milliyet.com.tr/gundem/dayi-dehsetinde-sok-detaylar-gercekler-ortaya-cikacak-diye-katletti-7503248"
     },
     {
+        "name": "Naime Z.",
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "13/12/2025",
+        "reason": "Tartışma",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.t24.com.tr/haber/cinayeti-kan-lekesi-aydinlatti-annesinden-para-istemis-vermeyince-bicaklamis,1288122"
+    },
+    {
         "name": "Sultan Değirmenci",
         "age": "Reşit",
         "location": "Maraş",
@@ -7705,7 +7717,15 @@
     },
     {
         "name": "Pınar Bayrak",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Mersin",
+        "date": "03/08/2024",
+        "reason": "Tartışma",
+        "killer": "Dini Nikahlı Eşi",
+        "protection": "Yok",
+        "method": "Darp",
+        "status": "Tutuklu",
+        "source": "https://www.ntv.com.tr/turkiye/dini-nikahli-esini-doverek-oldurdu-2-3-tokat-vurdum-bilinci-yerindeydi,Cx2ZI-XOREaLjRb1IWUkzg"
     },
     {
         "name": "Arife Öz",
@@ -20777,11 +20797,27 @@
     },
     {
         "name": "Melike Yağmur Uyaner",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Adana",
+        "date": "28/12/2021",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar Teşebbüsü",
+        "source": "https://www.milliyet.com.tr/gundem/kripto-para-cinneti-400-bin-tl-kaybedince-dehset-sacti-6669891"
     },
     {
         "name": "Nebahat Özdemir",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Rize",
+        "date": "27/12/2021",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/ozdemir-cifti-evlerinde-olu-bulunmustu-sirri-cozuldu-41969484"
     },
     {
         "name": "Ayşegül Taşkın",
@@ -20797,7 +20833,15 @@
     },
     {
         "name": "Hibetullah el Muhammed el Nasır",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Bursa",
+        "date": "27/12/2021",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Var Koruma Kararı",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.birgun.net/haber/bir-gunde-iki-kentte-iki-kadin-cinayeti-370851"
     },
     {
         "name": "Sevda Yalın",
