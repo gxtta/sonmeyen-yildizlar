@@ -1,5 +1,29 @@
 [
     {
+        "name": "Nora Dzuliashvili",
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "03/01/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eski Kayıbiraderi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.evrensel.net/haber/592059/akin-gurlek-icin-suc-duyurusunda-bulundu-kendisine-dava-acildi"
+    },
+    {
+        "name": "Kadriye Köken",
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "30/12/2025",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.evrensel.net/haber/591285/manisa-da-kadin-cinayeti-kadriye-koken-bosanma-asamasindaki-erkek-tarafindan-katledildi"
+    },
+    {
         "name": "Fatma Yılmaz Çetinkaya",
         "age": "Reşit",
         "location": "Karaman",
@@ -10,6 +34,18 @@
         "method": "Boğularak",
         "status": "Tutuklu",
         "source": "https://www.hurriyet.com.tr/gundem/son-gorusmede-katledildi-43068125"
+    },
+    {
+        "name": "İmhan Sağır",
+        "age": "Reşit",
+        "location": "Urfa",
+        "date": "27/12/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.evrensel.net/haber/590753/evli-oldugu-kadin-ve-oglunu-oldurdu"
     },
     {
         "name": "Komang Dwantari",
@@ -60,6 +96,42 @@
         "source": "https://www.hurriyet.com.tr/gundem/son-dakika-futbolda-bahis-sorusturmasi-14u-futbolcu-29-kisi-hakkinda-gozalti-karari-43066979"
     },
     {
+        "name": "Tülay Ündeş",
+        "age": "Reşit",
+        "location": "Zonguldak",
+        "date": "24/12/2025",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/haber/bosanma-asamasindaki-esi-ve-esinin-annesini-av-tufegiyle-oldurdu,1285969"
+    },
+    {
+        "name": "Zaide Alkaç",
+        "age": "Reşit",
+        "location": "Zonguldak",
+        "date": "24/12/2025",
+        "reason": "Kızını Korumaya Çalışırken",
+        "killer": "Damadı",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/haber/bosanma-asamasindaki-esi-ve-esinin-annesini-av-tufegiyle-oldurdu,1285969"
+    },
+    {
+        "name": "Nazen Gümüş",
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "24/12/2025",
+        "reason": "Tartışma",
+        "killer": "Torunu",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://m.haber7.com/amphtml/manisa/haber/3590568-manisada-cinayet-16-yasindaki-torunu-tarafindan-olduruldu"
+    },
+    {
         "name": "Duygu Karabaş",
         "age": "Reşit",
         "location": "Çanakkale",
@@ -94,6 +166,18 @@
         "method": "Kesici Alet",
         "status": "Tutuklu",
         "source": "https://www.t24.com.tr/haber/kadin-cinayeti-kayinvalidesini-olduren-erkek-tutuklandi,1285305"
+    },
+    {
+        "name": "Eylül K.",
+        "age": "Reşit",
+        "location": "Osmaniye",
+        "date": "21/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/iki-genc-park-halindeki-aracta-olu-bulundu-43061604"
     },
     {
         "name": "Demet Altan",
@@ -784,8 +868,8 @@
         "age": "Reşit",
         "location": "İzmir",
         "date": "24/10/2025",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Oğlu",
+        "reason": "Miras",
+        "killer": "Küçük Oğlu",
         "protection": "Yok",
         "method": "Ateşli Silah",
         "status": "İntihar",
