@@ -1,5 +1,17 @@
 [
     {
+        "name": "Binnaz Eriş",
+        "age": "Reşit",
+        "location": "Tekirdağ",
+        "date": "09/01/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.sozcu.com.tr/chp-li-ismin-kayinvalidesi-yangin-cikan-evde-bicaklanmis-halde-olu-bulundu-p282689"
+    },
+    {
         "name": "Sümeyye Khaled Abira",
         "age": "Reşit",
         "location": "Mardin",
@@ -21,7 +33,7 @@
         "protection": "Yok",
         "method": "Ateşli Silah",
         "status": "Tutuklu",
-        "source": ""
+        "source": "https://www.hurriyet.com.tr/gundem/mardinde-cifte-cinayetin-firari-suphelisi-yakalandi-43079195"
     },
     {
         "name": "Songül Canatan",
