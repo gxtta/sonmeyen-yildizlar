@@ -12,6 +12,18 @@
         "source": "https://www.sozcu.com.tr/chp-li-ismin-kayinvalidesi-yangin-cikan-evde-bicaklanmis-halde-olu-bulundu-p282689"
     },
     {
+        "name": "Şerife Çınar",
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "09/01/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruştuma Sürüyor",
+        "source": "https://www.milliyet.com.tr/gundem/8-gundur-kayip-olarak-aranan-serife-cinar-olu-bulundu-7518214"
+    },
+    {
         "name": "Sümeyye Khaled Abira",
         "age": "Reşit",
         "location": "Mardin",
@@ -8122,6 +8134,18 @@
         "method": "Boğularak",
         "status": "Tutuklu",
         "source": "https://www.milliyet.com.tr/gundem/adiyamanda-korkunc-olay-esini-oldurdu-cesedini-torbaya-koyup-bahceye-atti-7158501"
+    },
+    {
+        "name": "Nuriye Dilmaç",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "13/07/2024",
+        "reason": "Namus",
+        "killer": "Oğlu, Eski Kocası",
+        "protection": "Yok",
+        "method": "Boğularak, Darp",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/her-satiri-dehset-nuriye-dilmacin-eski-esi-ve-oglu-tarafindan-olduruldugu-ortaya-cikti-oglu-kan-donduran-cinayeti-itiraf-etti-43081381"
     },
     {
         "name": "Erva Raziye Asar",
