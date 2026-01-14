@@ -1,11 +1,27 @@
 [
     {
         "name": "Esra Murtatoğlu",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "12/01/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/esra-evde-olduruldu-erkek-arkadasi-ve-annesi-gozaltinda-p283398"
     },
     {
         "name": "Çiğdem Akyüz",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "12/01/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.sondakika.com/amp/haber-midyat-ta-genc-kadin-cinayeti-19452498/"
     },
     {
         "name": "Şerife Çınar",
@@ -21,15 +37,39 @@
     },
     {
         "name": "Binnaz Eriş",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Tekirdağ",
+        "date": "09/01/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.sozcu.com.tr/chp-li-ismin-kayinvalidesi-yangin-cikan-evde-bicaklanmis-halde-olu-bulundu-p282689"
     },
     {
         "name": "Sümeyye Khaled Abira",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "07/01/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Dini Nikahlı Eşi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/mardinde-cifte-cinayetin-firari-suphelisi-yakalandi-43079195"
     },
     {
         "name": "Süheyla Özdaş",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "07/01/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Ablasının Dini Nikahlı Eşi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/mardinde-cifte-cinayetin-firari-suphelisi-yakalandi-43079195"
     },
     {
         "name": "Songül Canatan",
@@ -57,15 +97,51 @@
     },
     {
         "name": "Nora Dzuliashvili",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "03/01/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eski Kayıbiraderi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.evrensel.net/haber/592059/akin-gurlek-icin-suc-duyurusunda-bulundu-kendisine-dava-acildi"
     },
     {
         "name": "Kadriye Köken",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "30/12/2025",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.evrensel.net/haber/591285/manisa-da-kadin-cinayeti-kadriye-koken-bosanma-asamasindaki-erkek-tarafindan-katledildi"
+    },
+    {
+        "name": "Mihriban Yılmaz",
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "29/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/kayip-mihribanin-ormanda-cesedi-bulundu-tuyler-urperten-itiraf-bogduktan-sonra-gomdum-43083604"
     },
     {
         "name": "Elif Kumal",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Balıkesir",
+        "date": "28/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilmeyen",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.milliyet.com.tr/gundem/son-dakika-balikesirde-aranan-elif-kumalin-golde-cansiz-bedeni-bulundu-7515315"
     },
     {
         "name": "Fatma Yılmaz Çetinkaya",
@@ -81,63 +157,183 @@
     },
     {
         "name": "İmhan Sağır",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Urfa",
+        "date": "27/12/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.evrensel.net/haber/590753/evli-oldugu-kadin-ve-oglunu-oldurdu"
     },
     {
         "name": "Komang Dwantari",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Alanya",
+        "date": "26/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.haberler.com/amp/alanya-da-yabanci-uyruklu-kadin-sahilde-olu-bulundu-19384911-haberi/"
     },
     {
         "name": "Rojda Yakışıklı",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Diyarbakır",
+        "date": "26/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Dini Nikahlı Eşi",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/dini-nikahla-yasadigi-kadini-bogup-cesedini-araziye-gomdu-43069988"
     },
     {
         "name": "Sümeyye Durgun",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Diyarbakır",
+        "date": "25/12/2025",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/cop-posetinde-cansiz-bedeni-bulunmustu-sumeyyenin-dogum-gununde-cekilen-goruntusu-ortaya-cikti-43068900"
     },
     {
         "name": "Derin Kiracı",
-        "date": "Veri Alınamadı"
+        "age": "Reşit Değil",
+        "location": "Adana",
+        "date": "25/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Babası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/son-dakika-futbolda-bahis-sorusturmasi-14u-futbolcu-29-kisi-hakkinda-gozalti-karari-43066979"
     },
     {
         "name": "Tülay Ündeş",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Zonguldak",
+        "date": "24/12/2025",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/haber/bosanma-asamasindaki-esi-ve-esinin-annesini-av-tufegiyle-oldurdu,1285969"
     },
     {
         "name": "Zaide Alkaç",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Zonguldak",
+        "date": "24/12/2025",
+        "reason": "Kızını Korumaya Çalışırken",
+        "killer": "Damadı",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/haber/bosanma-asamasindaki-esi-ve-esinin-annesini-av-tufegiyle-oldurdu,1285969"
     },
     {
         "name": "Nazen Gümüş",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "24/12/2025",
+        "reason": "Tartışma",
+        "killer": "Torunu",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://m.haber7.com/amphtml/manisa/haber/3590568-manisada-cinayet-16-yasindaki-torunu-tarafindan-olduruldu"
     },
     {
         "name": "Duygu Karabaş",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Çanakkale",
+        "date": "23/12/2025",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/canakkalede-korkunc-olay-bosanma-asamasindaki-cift-olduruldu-43063345"
     },
     {
         "name": "Dilan Geyik",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "22/12/2025",
+        "reason": "Tespit Edilmeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "https://www.tibbiyebulteni.com/izmirde-18-yasindaki-dilan-geyik-evinde-olu-bulundu/amp"
     },
     {
         "name": "Aynur Erkenci",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Kırklareli",
+        "date": "22/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Damadı",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.t24.com.tr/haber/kadin-cinayeti-kayinvalidesini-olduren-erkek-tutuklandi,1285305"
     },
     {
         "name": "Eylül K.",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Osmaniye",
+        "date": "21/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/iki-genc-park-halindeki-aracta-olu-bulundu-43061604"
     },
     {
         "name": "Demet Altan",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "20/12/2025",
+        "reason": "Tespit Edilmeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.ntv.com.tr/amp/turkiye/kadikoyde-gunluk-kiralik-dairede-dehset-iki-kisi-olu-bulundu-1704031"
     },
     {
         "name": "Emine Aluç",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Adıyaman",
+        "date": "20/12/2025",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Aranıyor",
+        "source": "https://www.ntv.com.tr/amp/turkiye/bosanmak-isteyen-esini-cocugunun-yaninda-katletti-1704059"
     },
     {
         "name": "Gülhan Börülce",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Siirt",
+        "date": "18/12/2025",
+        "reason": "Ziynet eşyaları için",
+        "killer": "Komşuları",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/siirtte-kadin-cinayeti-evinde-bicaklanmis-halde-olu-bulundu-43058481"
     },
     {
         "name": "Gamze Nur Yalçın",
@@ -165,7 +361,15 @@
     },
     {
         "name": "Deniz Şişman",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Alanya",
+        "date": "16/12/2025",
+        "reason": "Husumet",
+        "killer": "Akrabası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihara Teşebbüs",
+        "source": "https://www.milliyet.com.tr/gundem/dayi-dehsetinde-sok-detaylar-gercekler-ortaya-cikacak-diye-katletti-7503248"
     },
     {
         "name": "Naime Z.",
@@ -181,15 +385,39 @@
     },
     {
         "name": "Sultan Değirmenci",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Maraş",
+        "date": "13/12/2025",
+        "reason": "Reddedilm",
+        "killer": "Eski Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.evrensel.net/haber/588398/marasta-kadin-cinayeti-sultan-degirmenci-adli-kadin-bir-erkek-tarafindan-katledildi"
     },
     {
         "name": "Ayşe Kaplan",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Gaziantep",
+        "date": "11/12/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/haber/evli-oldugu-kadini-katletti-bir-anlik-sinir-diyerek-savundu-nobetci-hakimlik-tutukladi,1282819"
     },
     {
         "name": "Hilal Aktepe",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "11/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/pendikte-kadin-cinayeti-eski-esi-tarafindan-katledildi-43050830"
     },
     {
         "name": "Eser Ereli",
@@ -205,23 +433,63 @@
     },
     {
         "name": "Selvi Sarı",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Adıyaman",
+        "date": "10/12/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.t24.com.tr/haber/evde-katliam-yapip-corba-icmeye-gitmis,1285093"
     },
     {
         "name": "F.Y.G.",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Çanakkale",
+        "date": "09/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.cumhuriyet.com.tr/turkiye/canakkale-de-kadin-cinayeti-oglu-tarafindan-katledildi-2459920"
     },
     {
         "name": "Melek Gül",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Kayseri",
+        "date": "09/12/2025",
+        "reason": "Tartışma",
+        "killer": "Tanımadığı Birisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/emekli-bascavus-dehseti-esini-oldurmeye-gitti-tartistigi-baska-bir-kadini-oldurdu-p268941"
     },
     {
         "name": "Gülhan Taş",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "08/12/2025",
+        "reason": "Reddedilme",
+        "killer": "Eski Sevgilisi",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/cigligini-duyurmaya-calismis-katledilen-gulhanin-dhaya-verdigi-konusma-ortaya-cikti-43050438"
     },
     {
         "name": "Merve Şen",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Samsun",
+        "date": "08/12/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.milliyet.com.tr/gundem/samsunda-korkunc-olay-bosandigi-esini-otomobilde-vurup-intihar-etti-7498205"
     },
     {
         "name": "Meliha Sarıkaya",
@@ -237,7 +505,15 @@
     },
     {
         "name": "Nilgün Geçer",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Kırıkkale",
+        "date": "05/12/2025",
+        "reason": "Tartışma",
+        "killer": "Kız kardeşinin kayınpederi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Aranıyor",
+        "source": "https://www.hurriyet.com.tr/gundem/kayinpeder-avukatlik-ofisinde-dehset-sacti-gelinini-tabancayla-yaralayip-onun-kiz-kardesini-oldurdu-43044302"
     },
     {
         "name": "Remziye Kaya",
@@ -337,7 +613,15 @@
     },
     {
         "name": "Berna Kaya",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "25/11/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.ntv.com.tr/amp/turkiye/mardinde-aile-katliami-uc-kisi-olu-bulundu-1699358"
     },
     {
         "name": "Samyeli Kaya",
@@ -521,7 +805,15 @@
     },
     {
         "name": "Melisa Kölekçi",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "12/11/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/buyukcekmecede-seri-cinayet-2-erkek-otomobilde-1-kadin-otel-odasinda-olduruldu-43016451"
     },
     {
         "name": "Melisa Şengül",
@@ -573,7 +865,15 @@
     },
     {
         "name": "Safiye Yarbil",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Eskişehir",
+        "date": "04/11/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.haberturk.com/eskisehir-haberleri/39609577-eskisehirde-bogazinda-bicak-yarasi-olan-bir-kadin-evinde-olu-bulundu"
     },
     {
         "name": "Nermin Tirit",
@@ -1141,7 +1441,15 @@
     },
     {
         "name": "Elanur Şanlı",
-        "date": "Veri Alınamadı"
+        "age": "Reşit Değil",
+        "location": "Batman",
+        "date": "15/09/2025",
+        "reason": "Husumet",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.sozcu.com.tr/batman-da-4-kisilik-ailenin-katledilme-nedeni-ortaya-cikti-p227811"
     },
     {
         "name": "Melek Kişen",
