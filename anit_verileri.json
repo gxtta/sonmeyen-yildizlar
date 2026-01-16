@@ -1,5 +1,17 @@
 [
     {
+        "name": "Ebru D.",
+        "age": "Reşit",
+        "location": "Nevşehir",
+        "date": "13/01/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Asılarak",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.cumhuriyet.com.tr/turkiye/30-yasindaki-kadin-evinde-asili-halde-olu-bulundu-2469811"
+    },
+    {
         "name": "Esra Murtatoğlu",
         "age": "Reşit",
         "location": "Ankara",
@@ -16177,27 +16189,11 @@
     },
     {
         "name": "Saadet Yıldız",
-        "age": "Reşit",
-        "location": "Kocaeli",
-        "date": "15/12/2022",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Asılarak",
-        "status": "Tespit Edilemeyen",
-        "source": "https://kocaelifikir.com/haber/13051999/saadet-yildiz-intihar-mi-etti-cinayete-mi-kurban-gitti"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "M.J.",
-        "age": "Reşit",
-        "location": "İstanbul",
-        "date": "12/12/2022",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Yüksekten Düşme",
-        "status": "Tespit Edilemeyen",
-        "source": "https://www.hurriyet.com.tr/gundem/esenyurtta-iranli-kadinin-sir-olumu-10-kattan-dustu-42186217"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Gisela Uysal",
@@ -18385,15 +18381,7 @@
     },
     {
         "name": "Ummuhan Yurtseven",
-        "age": "Reşit",
-        "location": "Manisa",
-        "date": "29/06/2022",
-        "reason": "Boşanma Talebi, Reddedilme",
-        "killer": "Kocası",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Tutuklu",
-        "source": "https://www.cumhuriyet.com.tr/turkiye/bosanma-asamasindaki-esi-ile-oglunu-katletti-1952511"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Şengül Kaya",
@@ -22789,39 +22777,15 @@
     },
     {
         "name": "Amara Dwla",
-        "age": "Reşit",
-        "location": "Şanlıurfa",
-        "date": "05/09/2021",
-        "reason": "Evlenmek İstememesi",
-        "killer": "Babası",
-        "protection": "Yok",
-        "method": "Darp, Yakma",
-        "status": "Tutuklu",
-        "source": "https://www.milliyet.com.tr/gundem/kizini-yakan-baba-daha-once-de-esinin-uzerine-kaynar-su-dokmus-6590749"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Emine Pulent",
-        "age": "Reşit",
-        "location": "Mardin",
-        "date": "04/09/2021",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Kocası",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Aranıyor",
-        "source": "https://haber.sol.org.tr/haber/mardinde-kadin-cinayeti-emine-pulent-esi-tarafindan-olduruldu-312974"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Aleyna Ağgül",
-        "age": "Reşit",
-        "location": "Iğdır",
-        "date": "04/09/2021",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Yüksekten Düşerek",
-        "status": "Tespit Edilemeyen",
-        "source": "https://www.ankaramasasi.com/haber/1038476/igdirda-yasayan-18-yasindaki-aleyna-aggulun-sir-olumu"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Ela Sonyüksek",
@@ -41821,7 +41785,15 @@
     },
     {
         "name": "Şengül Çataloğlu",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Kastomonu",
+        "date": "29/11/2017",
+        "reason": "Para",
+        "killer": "Tanımadığı Birileri",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "http://www.milliyet.com.tr/5-kisilik-aileyi-katledenler-gundem-2679125/"
     },
     {
         "name": "Üsküdar Kulaksız",
@@ -61159,13 +61131,13 @@
         "name": "Dilek Koçyiğit",
         "age": "Bilinmiyor",
         "location": "Bilinmiyor",
-        "date": "24/07/2011",
-        "reason": "Boşanma",
-        "killer": "Kocası",
-        "protection": "Tespit Edilemeyen",
-        "method": "Ateşli Silah",
+        "date": "Bilinmiyor",
+        "reason": "Bilinmiyor",
+        "killer": "Bilinmiyor",
+        "protection": "Bilinmiyor",
+        "method": "Bilinmiyor",
         "status": "Bilinmiyor",
-        "source": "http://haber.mynet.com/dilek-kocyigit-haberleri-26874-etiket/"
+        "source": ""
     },
     {
         "name": "Semra Aras",
@@ -61181,111 +61153,103 @@
     },
     {
         "name": "Gamze Dikgöz",
-        "age": "15",
-        "location": "İstanbul",
-        "date": "21/07/2011",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Tespit Edilemeyen",
-        "method": "Kesici Alet",
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "Bilinmiyor",
+        "reason": "Bilinmiyor",
+        "killer": "Bilinmiyor",
+        "protection": "Bilinmiyor",
+        "method": "Bilinmiyor",
         "status": "Bilinmiyor",
-        "source": "http://www.sabah.com.tr/Yasam/2011/07/21/gamzenin-katili-kameraya-takildi"
+        "source": ""
     },
     {
         "name": "Ceylan Soysal",
-        "age": "21",
-        "location": "Hatay",
-        "date": "19/07/2011",
-        "reason": "Boşanma",
-        "killer": "Aile Meclisi - Erkek Kardeşi-Baba",
-        "protection": "Gerçekleşmemiş",
-        "method": "Ateşli Silah",
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "Bilinmiyor",
+        "reason": "Bilinmiyor",
+        "killer": "Bilinmiyor",
+        "protection": "Bilinmiyor",
+        "method": "Bilinmiyor",
         "status": "Bilinmiyor",
-        "source": "http://www.dha.com.tr/boyle-tore-olmaz-olsun_187459.html"
+        "source": ""
     },
     {
         "name": "Neslihan Adıgüzel",
-        "age": "26",
-        "location": "İzmir",
-        "date": "18/07/2011",
-        "reason": "Namus",
-        "killer": "Aile Meclisi - Eşi",
-        "protection": "Bilinmiyor-şiddet",
-        "method": "Boğma",
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "Bilinmiyor",
+        "reason": "Bilinmiyor",
+        "killer": "Bilinmiyor",
+        "protection": "Bilinmiyor",
+        "method": "Bilinmiyor",
         "status": "Bilinmiyor",
-        "source": "http://gundem.milliyet.com.tr/kocasi-oldurup-baraj-golune-atti/gundem/gundemdetay/19.07.2011/1416057/default.htm"
+        "source": ""
     },
     {
         "name": "Sıla Sadi",
-        "age": "27",
-        "location": "Aydın",
-        "date": "17/07/2011",
-        "reason": "Kıskançlık",
-        "killer": "Sevgilisi - Polis",
-        "protection": "yok",
-        "method": "Ateşli Silah",
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "Bilinmiyor",
+        "reason": "Bilinmiyor",
+        "killer": "Bilinmiyor",
+        "protection": "Bilinmiyor",
+        "method": "Bilinmiyor",
         "status": "Bilinmiyor",
-        "source": "http://www.posta.com.tr/turkiye/HaberDetay/Tartistigi_sevgilisini_beylik_tabancasiyla_oldurdu.htm?ArticleID=80481"
+        "source": ""
     },
     {
         "name": "İlknur Büyükyazıcı",
-        "age": "36",
-        "location": "Kocaeli",
-        "date": "16/07/2011",
-        "reason": "Boşanma",
-        "killer": "Eski Kocası",
-        "protection": "Gerçekleşmemiş",
-        "method": "Ateşli Silah",
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "Bilinmiyor",
+        "reason": "Bilinmiyor",
+        "killer": "Bilinmiyor",
+        "protection": "Bilinmiyor",
+        "method": "Bilinmiyor",
         "status": "Bilinmiyor",
-        "source": "http://gundem.milliyet.com.tr/oldurulmeden-uc-gun-once-dilekce-vermis/gundem/gundemdetay/18.07.2011/1415934/default.htm"
+        "source": ""
     },
     {
         "name": "Ayten D.",
-        "age": "45",
-        "location": "İzmir",
-        "date": "15/07/2011",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Kocası",
-        "protection": "Tespit Edilemeyen",
-        "method": "Kesici Alet",
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "Bilinmiyor",
+        "reason": "Bilinmiyor",
+        "killer": "Bilinmiyor",
+        "protection": "Bilinmiyor",
+        "method": "Bilinmiyor",
         "status": "Bilinmiyor",
-        "source": "http://www.dha.com.tr/yine-kadin-cinayeti-_185885.html"
+        "source": ""
     },
     {
         "name": "Ebru Acay",
-        "age": "34",
-        "location": "konya",
-        "date": "14/07/2011",
-        "reason": "Boşanma",
-        "killer": "Kocası",
-        "protection": "Tespit Edilemeyen",
-        "method": "Ateşli Silah",
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "Bilinmiyor",
+        "reason": "Bilinmiyor",
+        "killer": "Bilinmiyor",
+        "protection": "Bilinmiyor",
+        "method": "Bilinmiyor",
         "status": "Bilinmiyor",
-        "source": "http://www.dha.com.tr/bir-kadin-cinayeti-daha_185226.html"
+        "source": ""
     },
     {
         "name": "Feride Şen",
-        "age": "36",
-        "location": "samsun",
-        "date": "09/07/2011",
-        "reason": "Kriz ve İşsizlik",
-        "killer": "Kocası",
-        "protection": "Tespit Edilemeyen",
-        "method": "Bıçaklama",
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "Bilinmiyor",
+        "reason": "Bilinmiyor",
+        "killer": "Bilinmiyor",
+        "protection": "Bilinmiyor",
+        "method": "Bilinmiyor",
         "status": "Bilinmiyor",
-        "source": "http://www.sabah.com.tr/Yasam/2011/07/09/karisini-12-yerinden-bicaklayarak-oldurdu"
+        "source": ""
     },
     {
         "name": "Kübra Nur Şahin",
-        "age": "18",
-        "location": "Kahramanmaraş",
-        "date": "08/07/2011",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Sevgilisi",
-        "protection": "Tespit Edilemeyen",
-        "method": "Boğma",
-        "status": "Bilinmiyor",
-        "source": "http://gundem.milliyet.com.tr/kiz-arkadasini-oldurdu-gozaltinda-inithara-kalkisti/gundem/gundemdetay/08.07.2011/1411981/default.htm"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Fatma Koç",
