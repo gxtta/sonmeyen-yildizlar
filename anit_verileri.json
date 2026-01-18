@@ -1,5 +1,41 @@
 [
     {
+        "name": "Ada Altunbaş",
+        "age": "Reşit Değil",
+        "location": "Adana",
+        "date": "17/01/2026",
+        "reason": "Karısının Evi Terk Etmesi",
+        "killer": "Babası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/geride-o-mutlu-kareler-kaldi-en-aci-karne-gunu-43086522"
+    },
+    {
+        "name": "İsmihan Türkmen",
+        "age": "Reşit",
+        "location": "Konya",
+        "date": "16/01/2026",
+        "reason": "Tartışma",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.t24.com.tr/haber/konyada-bir-erkek-annesi-ve-kiz-kardesini-oldurdu-hayatina-son-verdi,1291484"
+    },
+    {
+        "name": "Nisa Türkmen",
+        "age": "Reşit",
+        "location": "Konya",
+        "date": "16/01/2026",
+        "reason": "Tartışma",
+        "killer": "Kardeşi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.t24.com.tr/haber/konyada-bir-erkek-annesi-ve-kiz-kardesini-oldurdu-hayatina-son-verdi,1291484"
+    },
+    {
         "name": "Ebru D.",
         "age": "Reşit",
         "location": "Nevşehir",
@@ -49213,15 +49249,7 @@
     },
     {
         "name": "Zahide Genç",
-        "age": "Bilinmiyor",
-        "location": "Bilinmiyor",
-        "date": "13/12/2015",
-        "reason": "Tartışma",
-        "killer": "Oğlu",
-        "protection": "Yok",
-        "method": "Vurucu Alet",
-        "status": "Bilinmiyor",
-        "source": "http://www.milliyet.com.tr/annesini-oldurup-denize-atladi-gundem-2162780/"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Elif Kınacı",
@@ -61057,7 +61085,15 @@
     },
     {
         "name": "Gülay Yaşar",
-        "date": "Veri Alınamadı"
+        "age": "28",
+        "location": "İstanbul",
+        "date": "22/08/2011",
+        "reason": "Ayrılık",
+        "killer": "Eski Kocası",
+        "protection": "Gerçekleşmemiş",
+        "method": "Atılma",
+        "status": "Bilinmiyor",
+        "source": "http://gundem.milliyet.com.tr/eski-koca-evindeki-supheli-olume-bakanlik-mudahil/gundem/gundemdetay/13.06.2012/1552961/default.htm"
     },
     {
         "name": "Ezgi Köseoğlu",
