@@ -49249,7 +49249,15 @@
     },
     {
         "name": "Zahide Genç",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "13/12/2015",
+        "reason": "Tartışma",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Vurucu Alet",
+        "status": "Bilinmiyor",
+        "source": "http://www.milliyet.com.tr/annesini-oldurup-denize-atladi-gundem-2162780/"
     },
     {
         "name": "Elif Kınacı",
