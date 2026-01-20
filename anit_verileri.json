@@ -1,5 +1,17 @@
 [
     {
+        "name": "Helin Kutay",
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "18/01/2026",
+        "reason": "Tartışma",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.ntv.com.tr/amp/turkiye/uc-ay-once-evlenen-helinin-supheli-olumu-kocasi-gozaltinda-1707988"
+    },
+    {
         "name": "Ada Altunbaş",
         "age": "Reşit Değil",
         "location": "Adana",
@@ -36,7 +48,7 @@
         "source": "https://www.t24.com.tr/haber/konyada-bir-erkek-annesi-ve-kiz-kardesini-oldurdu-hayatina-son-verdi,1291484"
     },
     {
-        "name": "Ebru D.",
+        "name": "Ebru Dirici",
         "age": "Reşit",
         "location": "Nevşehir",
         "date": "13/01/2026",
@@ -16054,6 +16066,18 @@
         "method": "Ateşli Silah",
         "status": "Aranıyor",
         "source": "https://www.hurriyet.com.tr/gundem/eski-nisanlisinin-vurdugu-ulku-deniz-ersoz-hayatini-kaybetti-42197963"
+    },
+    {
+        "name": "Naile Büşra Sarıgül",
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "01/01/2023",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/haber/mihriban-yilmaz-cinayetinden-tutuklanmisti-katil-fatih-inanin-naile-busra-sarigulu-de-oldurdugu-ortaya-cikti,1292067"
     },
     {
         "name": "Mutlu Menekşe",
