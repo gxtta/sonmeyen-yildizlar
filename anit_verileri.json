@@ -9348,6 +9348,18 @@
         "source": "https://www.evrensel.net/haber/517394/sultanbeylide-bosanma-asamasinda-oldugu-hivda-temeli-olduren-sanik-yakalandi"
     },
     {
+        "name": "Meryeme Hasanoğlu",
+        "age": "Reşit",
+        "location": "Bitlis",
+        "date": "02/05/2024",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.t24.com.tr/haber/bitliste-supheli-kadin-olumu-davasinda-erteleme-adalet-istiyorum,1292341"
+    },
+    {
         "name": "Minenur Ala",
         "age": "Reşit",
         "location": "Ankara",
@@ -13320,16 +13332,16 @@
         "source": "https://www.hurriyet.com.tr/gundem/dehset-evi-5-yil-once-tv-programina-konuk-olmuslardi-42308974"
     },
     {
-        "name": "Gülten Ataklı",
+        "name": "Naile Büşra Sarıgül",
         "age": "Reşit",
-        "location": "Çorum",
-        "date": "31/07/2023",
-        "reason": "Boşanma Talebi",
-        "killer": "Şüpheli Kocası",
+        "location": "Manisa",
+        "date": "03/08/2023",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birisi",
         "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Soruşturma Sürüyor",
-        "source": "https://www.hurriyet.com.tr/gundem/corumda-bosanma-asamasindaki-kadin-olduruldu-polis-esi-gozaltinda-42307647"
+        "method": "Yüksekten Düşme",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/haber/mihriban-yilmaz-cinayetinden-tutuklanmisti-katil-fatih-inanin-naile-busra-sarigulu-de-oldurdugu-ortaya-cikti,1292067"
     },
     {
         "name": "Sultan Zencirci",
@@ -13342,6 +13354,18 @@
         "method": "Ateşli Silah",
         "status": "Tutuklu",
         "source": "https://www.milliyet.com.tr/gundem/pizzacidaki-kadin-cinayetinde-yeni-gelisme-sucunu-kabul-etti-6984079"
+    },
+    {
+        "name": "Gülten Ataklı",
+        "age": "Reşit",
+        "location": "Çorum",
+        "date": "31/07/2023",
+        "reason": "Boşanma Talebi",
+        "killer": "Şüpheli Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/corumda-bosanma-asamasindaki-kadin-olduruldu-polis-esi-gozaltinda-42307647"
     },
     {
         "name": "Gönül Er",
@@ -16066,18 +16090,6 @@
         "method": "Ateşli Silah",
         "status": "Aranıyor",
         "source": "https://www.hurriyet.com.tr/gundem/eski-nisanlisinin-vurdugu-ulku-deniz-ersoz-hayatini-kaybetti-42197963"
-    },
-    {
-        "name": "Naile Büşra Sarıgül",
-        "age": "Reşit",
-        "location": "Manisa",
-        "date": "01/01/2023",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tanıdığı Birisi",
-        "protection": "Yok",
-        "method": "Yüksekten Düşme",
-        "status": "Tutuklu",
-        "source": "https://t24.com.tr/haber/mihriban-yilmaz-cinayetinden-tutuklanmisti-katil-fatih-inanin-naile-busra-sarigulu-de-oldurdugu-ortaya-cikti,1292067"
     },
     {
         "name": "Mutlu Menekşe",
