@@ -109,27 +109,11 @@
     },
     {
         "name": "Sümeyye Khaled Abira",
-        "age": "Reşit",
-        "location": "Mardin",
-        "date": "07/01/2026",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Dini Nikahlı Eşi",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Tutuklu",
-        "source": "https://www.hurriyet.com.tr/gundem/mardinde-cifte-cinayetin-firari-suphelisi-yakalandi-43079195"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Süheyla Özdaş",
-        "age": "Reşit",
-        "location": "Mardin",
-        "date": "07/01/2026",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Ablasının Dini Nikahlı Eşi",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Tutuklu",
-        "source": "https://www.hurriyet.com.tr/gundem/mardinde-cifte-cinayetin-firari-suphelisi-yakalandi-43079195"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Songül Canatan",
@@ -3430,6 +3414,18 @@
         "method": "Ateşli Silah",
         "status": "Tutuklu",
         "source": "https://www.sozcu.com.tr/esinin-vurdugu-zeynep-in-tabutunu-kadinlar-tasidi-p174899"
+    },
+    {
+        "name": "Kadriye Abak",
+        "age": "Reşit",
+        "location": "Kastamonu",
+        "date": "17/05/2025",
+        "reason": "Husumet",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.haberturk.com/kastamonu-haberleri-kari-koca-cifti-oldurmustu-cinayeti-anlatti-son-dakika-haber-3855498-amp"
     },
     {
         "name": "Dilber Artuç",
@@ -28321,7 +28317,15 @@
     },
     {
         "name": "Merve Yeşiltaş",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Ordu",
+        "date": "10/08/2020",
+        "reason": "Tartışma",
+        "killer": "Sevgililsi",
+        "protection": "Yok",
+        "method": "Yakılarak Öldürüldü",
+        "status": "İntihar",
+        "source": "https://t24.com.tr/video/tartistigi-sevgilisini-ve-kendini-benzin-dokup-yakti-kadin-hayatini-kaybetti,31302"
     },
     {
         "name": "Dilan Karataş",
