@@ -109,11 +109,27 @@
     },
     {
         "name": "Sümeyye Khaled Abira",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "07/01/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Dini Nikahlı Eşi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/mardinde-cifte-cinayetin-firari-suphelisi-yakalandi-43079195"
     },
     {
         "name": "Süheyla Özdaş",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "07/01/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Ablasının Dini Nikahlı Eşi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/mardinde-cifte-cinayetin-firari-suphelisi-yakalandi-43079195"
     },
     {
         "name": "Songül Canatan",
