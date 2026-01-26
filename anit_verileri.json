@@ -1,5 +1,41 @@
 [
     {
+        "name": "Durdona Khokimova",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "24/01/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tutuklu",
+        "source": "https://halktv.com.tr/service/amp/gundem/sislide-dehset-cop-konteynerinde-basi-kesik-ceset-bulundu-1003264h"
+    },
+    {
+        "name": "Nur Banu Ötünç",
+        "age": "Reşit Değil",
+        "location": "Mardin",
+        "date": "23/01/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.hurriyet.com.tr/gundem/mardinde-14-yasindaki-nur-banu-otunc-silahla-vurulmus-halde-bulunmustu-son-yolculuguna-ugurlandi-43091436"
+    },
+    {
+        "name": "Gözde Akbaba",
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "21/01/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eski Sevgilisi",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/video/uzaklastirma-karari-vardi-katledilen-gozde-akbabanin-vurulma-ani-guvenlik-kamerasinda,67983"
+    },
+    {
         "name": "Helin Kutay",
         "age": "Reşit",
         "location": "Antalya",
@@ -84,18 +120,6 @@
         "source": "https://www.sondakika.com/amp/haber-midyat-ta-genc-kadin-cinayeti-19452498/"
     },
     {
-        "name": "Şerife Çınar",
-        "age": "Reşit",
-        "location": "Manisa",
-        "date": "09/01/2026",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Tespit Edilemeyen",
-        "status": "Soruştuma Sürüyor",
-        "source": "https://www.milliyet.com.tr/gundem/8-gundur-kayip-olarak-aranan-serife-cinar-olu-bulundu-7518214"
-    },
-    {
         "name": "Binnaz Eriş",
         "age": "Reşit",
         "location": "Tekirdağ",
@@ -106,6 +130,18 @@
         "method": "Kesici Alet",
         "status": "Soruşturma Sürüyor",
         "source": "https://www.sozcu.com.tr/chp-li-ismin-kayinvalidesi-yangin-cikan-evde-bicaklanmis-halde-olu-bulundu-p282689"
+    },
+    {
+        "name": "Şerife Çınar",
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "09/01/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruştuma Sürüyor",
+        "source": "https://www.milliyet.com.tr/gundem/8-gundur-kayip-olarak-aranan-serife-cinar-olu-bulundu-7518214"
     },
     {
         "name": "Sümeyye Khaled Abira",
@@ -204,18 +240,6 @@
         "source": "https://www.milliyet.com.tr/gundem/son-dakika-balikesirde-aranan-elif-kumalin-golde-cansiz-bedeni-bulundu-7515315"
     },
     {
-        "name": "Fatma Yılmaz Çetinkaya",
-        "age": "Reşit",
-        "location": "Karaman",
-        "date": "27/12/2025",
-        "reason": "Boşanma Talebi",
-        "killer": "Kocası",
-        "protection": "Yok",
-        "method": "Boğularak",
-        "status": "Tutuklu",
-        "source": "https://www.hurriyet.com.tr/gundem/son-gorusmede-katledildi-43068125"
-    },
-    {
         "name": "İmhan Sağır",
         "age": "Reşit",
         "location": "Urfa",
@@ -226,6 +250,18 @@
         "method": "Ateşli Silah",
         "status": "Tutuklu",
         "source": "https://www.evrensel.net/haber/590753/evli-oldugu-kadin-ve-oglunu-oldurdu"
+    },
+    {
+        "name": "Fatma Yılmaz Çetinkaya",
+        "age": "Reşit",
+        "location": "Karaman",
+        "date": "27/12/2025",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/son-gorusmede-katledildi-43068125"
     },
     {
         "name": "Komang Dwantari",
@@ -384,18 +420,6 @@
         "source": "https://www.ntv.com.tr/amp/turkiye/bosanmak-isteyen-esini-cocugunun-yaninda-katletti-1704059"
     },
     {
-        "name": "Gülhan Börülce",
-        "age": "Reşit",
-        "location": "Siirt",
-        "date": "18/12/2025",
-        "reason": "Ziynet eşyaları için",
-        "killer": "Komşuları",
-        "protection": "Yok",
-        "method": "Kesici Alet",
-        "status": "Tutuklu",
-        "source": "https://www.hurriyet.com.tr/gundem/siirtte-kadin-cinayeti-evinde-bicaklanmis-halde-olu-bulundu-43058481"
-    },
-    {
         "name": "Gamze Nur Yalçın",
         "age": "Reşit",
         "location": "Çanakkale",
@@ -406,6 +430,18 @@
         "method": "Tespit Edilemeyen",
         "status": "Soruşturma Sürüyor",
         "source": "https://www.milliyet.com.tr/gundem/canakkalede-supheli-olum-24-yasindaki-gamze-nur-erkek-arkadasinin-evinde-bulundu-7505800"
+    },
+    {
+        "name": "Gülhan Börülce",
+        "age": "Reşit",
+        "location": "Siirt",
+        "date": "18/12/2025",
+        "reason": "Ziynet eşyaları için",
+        "killer": "Komşuları",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/siirtte-kadin-cinayeti-evinde-bicaklanmis-halde-olu-bulundu-43058481"
     },
     {
         "name": "Sevgi Özdemir",
@@ -14677,75 +14713,27 @@
     },
     {
         "name": "Songül Çakmak",
-        "age": "Reşit",
-        "location": "Adana",
-        "date": "16/05/2023",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Tespit Edilemeyen",
-        "status": "Tespit Edilemeyen",
-        "source": "https://www.haberturk.com/adana-haberleri/102835879-ailesinin-kayip-basvurusunda-bulundugu-kadinin-kanalda-cesedi-bulundu"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "G.T.",
-        "age": "Reşit",
-        "location": "Kırşehir",
-        "date": "16/05/2023",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Kesici Alet",
-        "status": "Tespit Edilemeyen",
-        "source": "https://www.haberturk.com/kirsehir-de-bir-kadin-evinde-olu-bulundu-3592259"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Türkiye A.",
-        "age": "Reşit",
-        "location": "Adana",
-        "date": "14/05/2023",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Oğlu",
-        "protection": "Yok",
-        "method": "Darp",
-        "status": "Tutuklu",
-        "source": "https://www.yenibakis.com.tr/adana-yuregli-supheli-olum"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Zeynep Başaran",
-        "age": "Reşit",
-        "location": "Muğla",
-        "date": "12/05/2023",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Sevgilisi",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Tutuklu",
-        "source": "https://www.t24.com.tr/haber/mugla-da-kadin-cinayeti-36-yasindaki-zeynep-basaran-in-yol-kenarinda-cansiz-bedeni-bulundu,1109365"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Emine Ercandoğdu",
-        "age": "Reşit",
-        "location": "Sakarya",
-        "date": "10/05/2023",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Sevgilisi",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "İntihar",
-        "source": "https://t24.com.tr/haber/gelecek-partisi-istanbul-il-kadin-kollari-baskan-yardimcisi-bir-erkek-tarafindan-olduruldu,1108927"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Saibe Akdağ",
-        "age": "Reşit",
-        "location": "Antalya",
-        "date": "10/05/2023",
-        "reason": "Tartışma",
-        "killer": "Kocası",
-        "protection": "Yok",
-        "method": "Kesici Alet",
-        "status": "Tutuklu",
-        "source": "https://www.t24.com.tr/haber/esini-keserle-doverek-oldurdu,1108882"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Saiba Akdağ",
