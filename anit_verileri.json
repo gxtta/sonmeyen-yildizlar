@@ -1,13 +1,25 @@
 [
     {
+        "name": "Tuba Dinç",
+        "age": "Reşit Değil",
+        "location": "Kütahya",
+        "date": "26/01/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.cnnturk.com/turkiye/kutahyada-kaybolan-15-yasindaki-tuba-dere-kenarinda-olu-bulundu-2389020"
+    },
+    {
         "name": "Durdona Khokimova",
         "age": "Reşit",
         "location": "İstanbul",
         "date": "24/01/2026",
-        "reason": "Tespit Edilemeyen",
+        "reason": "Tartışma",
         "killer": "Sevgilisi",
         "protection": "Yok",
-        "method": "Tespit Edilemeyen",
+        "method": "Kesici Alet",
         "status": "Tutuklu",
         "source": "https://halktv.com.tr/service/amp/gundem/sislide-dehset-cop-konteynerinde-basi-kesik-ceset-bulundu-1003264h"
     },
@@ -14713,27 +14725,75 @@
     },
     {
         "name": "Songül Çakmak",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Adana",
+        "date": "16/05/2023",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.haberturk.com/adana-haberleri/102835879-ailesinin-kayip-basvurusunda-bulundugu-kadinin-kanalda-cesedi-bulundu"
     },
     {
         "name": "G.T.",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Kırşehir",
+        "date": "16/05/2023",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.haberturk.com/kirsehir-de-bir-kadin-evinde-olu-bulundu-3592259"
     },
     {
         "name": "Türkiye A.",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Adana",
+        "date": "14/05/2023",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Darp",
+        "status": "Tutuklu",
+        "source": "https://www.yenibakis.com.tr/adana-yuregli-supheli-olum"
     },
     {
         "name": "Zeynep Başaran",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Muğla",
+        "date": "12/05/2023",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.t24.com.tr/haber/mugla-da-kadin-cinayeti-36-yasindaki-zeynep-basaran-in-yol-kenarinda-cansiz-bedeni-bulundu,1109365"
     },
     {
         "name": "Emine Ercandoğdu",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Sakarya",
+        "date": "10/05/2023",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://t24.com.tr/haber/gelecek-partisi-istanbul-il-kadin-kollari-baskan-yardimcisi-bir-erkek-tarafindan-olduruldu,1108927"
     },
     {
         "name": "Saibe Akdağ",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "10/05/2023",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.t24.com.tr/haber/esini-keserle-doverek-oldurdu,1108882"
     },
     {
         "name": "Saiba Akdağ",
