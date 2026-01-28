@@ -1,5 +1,29 @@
 [
     {
+        "name": "Pınar Karataş",
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "27/01/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/manisa-da-korkunc-cinayet-yedi-cocugunun-annesini-olduruldu-p287782"
+    },
+    {
+        "name": "Ülker Koçak",
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "27/01/2026",
+        "reason": "Kızını Korumaya Çalışırken",
+        "killer": "Damadı",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.iha.com.tr/ankara-haberleri/ankarada-eski-esini-agir-yaralayan-sahis-kayinvalidesini-oldurup-intihar-etti-369248114"
+    },
+    {
         "name": "Tuba Dinç",
         "age": "Reşit Değil",
         "location": "Kütahya",
