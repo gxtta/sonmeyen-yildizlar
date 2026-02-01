@@ -27109,7 +27109,15 @@
     },
     {
         "name": "Çilem Kılıç",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "13/11/2020",
+        "reason": "Tartışma",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.milliyet.com.tr/gundem/eski-kocasi-tarafindan-oldurulen-cilem-kilic-topraga-verildi-6354073"
     },
     {
         "name": "Melike Kocabıyık",
@@ -54161,15 +54169,7 @@
     },
     {
         "name": "Ceyda Kayalar",
-        "age": "Bilinmiyor",
-        "location": "Bilinmiyor",
-        "date": "01/09/2014",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tanıdığı BIrisi",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Bilinmiyor",
-        "source": "http://www.radikal.com.tr/turkiye/iki_saat_once_tanistigi_kadini_oldurdu-1210290"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Neriman Y.",
@@ -58049,7 +58049,15 @@
     },
     {
         "name": "Mevzüne Can",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "23/05/2013",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Boğma",
+        "status": "Bilinmiyor",
+        "source": "http://www.khaber.com.tr/haber/3sayfa-cinayet/karisini-bogarak-oldurdu-26559.html"
     },
     {
         "name": "Emine Demirci",
@@ -58725,15 +58733,7 @@
     },
     {
         "name": "D.L",
-        "age": "Bilinmiyor",
-        "location": "Bilinmiyor",
-        "date": "14/02/2013",
-        "reason": "Tespit EdilemeyenBilinmiyor",
-        "killer": "Tanıdığı birisi",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Bilinmiyor",
-        "source": "http://yarinhaber.net/news/2546"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Serpil Topbaş",
@@ -60837,7 +60837,15 @@
     },
     {
         "name": "B. C.",
-        "date": "Veri Alınamadı"
+        "age": "45",
+        "location": "Sakarya",
+        "date": "25/06/2012",
+        "reason": "Kavga",
+        "killer": "Arkadaşı",
+        "protection": "Tespit Edilemeyen",
+        "method": "Ateşli Silah",
+        "status": "Bilinmiyor",
+        "source": "http://www.sakaryarehberim.com/others/haber-adapazarinda-arkadas-cinayeti-170345.html"
     },
     {
         "name": "Fatma Demir",
