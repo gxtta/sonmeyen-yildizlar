@@ -1,5 +1,17 @@
 [
     {
+        "name": "Gül Seher Göksan",
+        "age": "Reşit",
+        "location": "Aydın",
+        "date": "01/02/2026",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Birileri",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/didimde-kanli-infaz-1i-kadin-2-kisinin-cansiz-bedenleri-sokakta-bulundu-43097750"
+    },
+    {
         "name": "Önriye Duman",
         "age": "Reşit",
         "location": "Muğla",
@@ -18781,15 +18793,7 @@
     },
     {
         "name": "Zerin Kılınç",
-        "age": "Reşit",
-        "location": "Eskişehir",
-        "date": "20/06/2022",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Yüksekten Düşme",
-        "status": "Tespit Edilemeyen",
-        "source": "https://www.hurriyet.com.tr/gundem/bu-nasil-saplanti-42211829"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Gülten Şencan",
@@ -35041,15 +35045,7 @@
     },
     {
         "name": "Özge Y.",
-        "age": "Reşit",
-        "location": "Şanlıurfa",
-        "date": "10/04/2019",
-        "reason": "Tartışma",
-        "killer": "Kocası",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Tutuklu",
-        "source": "http://beyazgazete.com/video/webtv/3-sayfa-15/sanliurfa-da-koca-dehseti-tartistigi-karisini-oldurdu-695093.html"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Hayat Meşail",
@@ -54169,7 +54165,15 @@
     },
     {
         "name": "Ceyda Kayalar",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "01/09/2014",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı BIrisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Bilinmiyor",
+        "source": "http://www.radikal.com.tr/turkiye/iki_saat_once_tanistigi_kadini_oldurdu-1210290"
     },
     {
         "name": "Neriman Y.",
@@ -58733,7 +58737,15 @@
     },
     {
         "name": "D.L",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "14/02/2013",
+        "reason": "Tespit EdilemeyenBilinmiyor",
+        "killer": "Tanıdığı birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Bilinmiyor",
+        "source": "http://yarinhaber.net/news/2546"
     },
     {
         "name": "Serpil Topbaş",
