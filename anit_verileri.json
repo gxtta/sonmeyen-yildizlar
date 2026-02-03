@@ -1,5 +1,17 @@
 [
     {
+        "name": "Özlem Arslan",
+        "age": "Reşit",
+        "location": "Muğla",
+        "date": "03/02/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.sozcu.com.tr/3-cocuk-annesi-kadina-sokak-ortasinda-vahsi-saldiri-bicaklanarak-olduruldu-p290371"
+    },
+    {
         "name": "Gül Seher Göksan",
         "age": "Reşit",
         "location": "Aydın",
@@ -18793,7 +18805,15 @@
     },
     {
         "name": "Zerin Kılınç",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Eskişehir",
+        "date": "20/06/2022",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.hurriyet.com.tr/gundem/bu-nasil-saplanti-42211829"
     },
     {
         "name": "Gülten Şencan",
@@ -35045,7 +35065,15 @@
     },
     {
         "name": "Özge Y.",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Şanlıurfa",
+        "date": "10/04/2019",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "http://beyazgazete.com/video/webtv/3-sayfa-15/sanliurfa-da-koca-dehseti-tartistigi-karisini-oldurdu-695093.html"
     },
     {
         "name": "Hayat Meşail",
