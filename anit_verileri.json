@@ -1,5 +1,17 @@
 [
     {
+        "name": "Kadriye Alver",
+        "age": "Reşit",
+        "location": "Adana",
+        "date": "04/02/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.ntv.com.tr/amp/turkiye/adanada-kadin-cinayeti-uc-cocuk-annesi-katledildi-1710452"
+    },
+    {
         "name": "Özlem Arslan",
         "age": "Reşit",
         "location": "Muğla",
@@ -13513,7 +13525,15 @@
     },
     {
         "name": "Gülten Ataklı",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Çorum",
+        "date": "31/07/2023",
+        "reason": "Boşanma Talebi",
+        "killer": "Şüpheli Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/corumda-bosanma-asamasindaki-kadin-olduruldu-polis-esi-gozaltinda-42307647"
     },
     {
         "name": "Gönül Er",
@@ -55901,7 +55921,15 @@
     },
     {
         "name": "Ayşe Atıcı",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "03/03/2014",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Bilinmiyor",
+        "source": "http://www.posta.com.tr/3Sayfa/HaberDetay/Tuyler-urperten-cinayet-.htm?ArticleID=219218"
     },
     {
         "name": "Firdevs Yılmaz",
@@ -56949,7 +56977,15 @@
     },
     {
         "name": "Emine Üçkaç",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "23/10/2013",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Bilinmiyor",
+        "source": "http://www.haberturk.com/gundem/haber/887808-sirnakta-kadin-cinayeti"
     },
     {
         "name": "Sevim Gündoğdu",
