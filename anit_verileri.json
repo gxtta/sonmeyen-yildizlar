@@ -1,5 +1,17 @@
 [
     {
+        "name": "Ceren Işık",
+        "age": "Reşit",
+        "location": "Iğdır",
+        "date": "08/02/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silaj",
+        "status": "Soruştuma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/cerenin-supheli-olumu-43103000"
+    },
+    {
         "name": "Kadriye Alver",
         "age": "Reşit",
         "location": "Adana",
