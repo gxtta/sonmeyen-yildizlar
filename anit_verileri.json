@@ -12,6 +12,30 @@
         "source": "https://www.hurriyet.com.tr/gundem/cerenin-supheli-olumu-43103000"
     },
     {
+        "name": "R.D.",
+        "age": "Reşit",
+        "location": "Batman",
+        "date": "07/02/2026",
+        "reason": "Tespie Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.haberturk.com/batman-da-genc-kadin-evinde-olu-bulundu-3859862-amp"
+    },
+    {
+        "name": "İsmi Bilinmiyor",
+        "age": "Reşit",
+        "location": "Sakarya",
+        "date": "06/02/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.evrensel.net/haber/5969430/sakarya-da-kadin-cinayeti-emekli-polis-esini-ve-mhp-li-baskani-oldurdu"
+    },
+    {
         "name": "Kadriye Alver",
         "age": "Reşit",
         "location": "Adana",
@@ -286,6 +310,18 @@
         "method": "Tespit Edilemeyen",
         "status": "Soruştuma Sürüyor",
         "source": "https://www.milliyet.com.tr/gundem/8-gundur-kayip-olarak-aranan-serife-cinar-olu-bulundu-7518214"
+    },
+    {
+        "name": "Esra Koca",
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "08/01/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://kaosgl1.org/haber/evinde-olu-bulunan-trans-kadin-esra-koca-son-yolculuguna-ugurlandi"
     },
     {
         "name": "Sümeyye Khaled Abira",
