@@ -1,5 +1,53 @@
 [
     {
+        "name": "Azize Cengiz",
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "09/02/2026",
+        "reason": "Tartışma",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.t24.com.tr/haber/cezaevinden-izinli-cikan-adam-tum-ailesini-katletti-annesini-8-yasindaki-kizini-esini-tabancayla-vurdu,1298052"
+    },
+    {
+        "name": "Azra Cengiz",
+        "age": "Reşit Değil",
+        "location": "Ankara",
+        "date": "09/02/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Babası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.t24.com.tr/haber/cezaevinden-izinli-cikan-adam-tum-ailesini-katletti-annesini-8-yasindaki-kizini-esini-tabancayla-vurdu,1298052"
+    },
+    {
+        "name": "Beyzanur Uçan Cengiz",
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "09/02/2026",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.t24.com.tr/haber/cezaevinden-izinli-cikan-adam-tum-ailesini-katletti-annesini-8-yasindaki-kizini-esini-tabancayla-vurdu,1298052"
+    },
+    {
+        "name": "Nuran Çakaloğlu",
+        "age": "Reşit",
+        "location": "Aydın",
+        "date": "09/02/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://halktv.com.tr/service/amp/gundem/aydinda-yasli-cift-evlerinde-olu-bulunmustu-5-ozel-ekip-kuruldu-1007131h"
+    },
+    {
         "name": "Ceren Işık",
         "age": "Reşit",
         "location": "Iğdır",
