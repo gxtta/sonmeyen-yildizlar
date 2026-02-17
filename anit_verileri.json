@@ -1,5 +1,53 @@
 [
     {
+        "name": "Songül Hakbilir",
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "16/02/2026",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.evrensel.net/haber/5970847/songul-hakbilir-bosanma-asamasinda-oldugu-erkek-tarafindan-katledildi"
+    },
+    {
+        "name": "Emine Özer",
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "15/02/2026",
+        "reason": "Tartışma, Geçimsizlik",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/uykusunda-katledildi-43108435"
+    },
+    {
+        "name": "Kübra Kölge",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "14/02/2026",
+        "reason": "Tespie Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/kasimpasada-korkunc-olay-pencereden-dusen-21-yasindaki-kubra-hayatini-kaybetti-annesi-sinir-krizi-gecirdi-43107938"
+    },
+    {
+        "name": "Medine Akpınar",
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "13/02/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/mardinde-korkunc-olay-medine-akpinar-evinde-silahla-vurulmus-halde-olu-bulundu-43107293"
+    },
+    {
         "name": "Alev Koç",
         "age": "Reşit",
         "location": "Kahramanmaraş",
@@ -58,6 +106,18 @@
         "method": "Kesici Alet",
         "status": "Soruşturma Sürüyor",
         "source": "https://halktv.com.tr/service/amp/gundem/aydinda-yasli-cift-evlerinde-olu-bulunmustu-5-ozel-ekip-kuruldu-1007131h"
+    },
+    {
+        "name": "Bahar Taş",
+        "age": "Reşit",
+        "location": "Muğla",
+        "date": "09/02/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.ntv.com.tr/amp/turkiye/kiralik-teknede-sir-olay-35-yasindaki-bahar-olu-bulundu-1711147"
     },
     {
         "name": "Ceren Işık",
@@ -250,6 +310,18 @@
         "method": "Ateşli Silah",
         "status": "Tespit Edilemeyen",
         "source": "https://www.hurriyet.com.tr/gundem/mardinde-14-yasindaki-nur-banu-otunc-silahla-vurulmus-halde-bulunmustu-son-yolculuguna-ugurlandi-43091436"
+    },
+    {
+        "name": "Ergashalieva Sayyora",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "23/01/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/amp/sisli-de-basi-kesik-kadin-vahseti-umraniye-ye-uzandi-ayni-evde-ikinci-cinayet-p293438"
     },
     {
         "name": "Gözde Akbaba",
@@ -706,6 +778,18 @@
         "method": "Ateşli Silah",
         "status": "İntihara Teşebbüs",
         "source": "https://www.milliyet.com.tr/gundem/dayi-dehsetinde-sok-detaylar-gercekler-ortaya-cikacak-diye-katletti-7503248"
+    },
+    {
+        "name": "E.K.",
+        "age": "Reşit",
+        "location": "Eskişehir",
+        "date": "14/12/2025",
+        "reason": "Kaza",
+        "killer": "Torunu",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/evde-olu-bulunan-kadinin-torununun-kazara-actigi-atesle-hayatini-kaybettigi-belirlendi-43107486"
     },
     {
         "name": "Naime Z.",
