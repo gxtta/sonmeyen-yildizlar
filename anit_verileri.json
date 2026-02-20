@@ -1,5 +1,29 @@
 [
     {
+        "name": "Aylin Polat Dağ",
+        "age": "Reşit",
+        "location": "Kocaeli",
+        "date": "18/02/2026",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Var (Uzaklaşrtırma Kararı)",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/bosanma-asamasindaki-esini-vahsice-oldurdu-p295072"
+    },
+    {
+        "name": "Kübra Keleş",
+        "age": "Reşit",
+        "location": "Diyarbakır",
+        "date": "17/02/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://t24.com.tr/gundem/diyarbakir-da-supheli-kadin-olumu-21-yasindaki-kubra-keles-odasinda-olu-bulundu,1300245"
+    },
+    {
         "name": "Songül Hakbilir",
         "age": "Reşit",
         "location": "Ankara",
@@ -22,6 +46,30 @@
         "method": "Kesici Alet",
         "status": "Tutuklu",
         "source": "https://www.hurriyet.com.tr/gundem/uykusunda-katledildi-43108435"
+    },
+    {
+        "name": "Kezban Genç",
+        "age": "Reşit",
+        "location": "Tokat",
+        "date": "15/02/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.cumhuriyet.com.tr/kultur-sanat/70-lerin-istanbul-unda-bir-hikaye-muzeden-hayata-2479832"
+    },
+    {
+        "name": "Gülçin Bilgin Turna",
+        "age": "Reşit",
+        "location": "Rize",
+        "date": "14/02/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/akademisyen-gulcin-bilgin-turna-10uncu-kattaki-evinin-balkonundan-duserek-hayatini-kaybetti-43108182"
     },
     {
         "name": "Kübra Kölge",
