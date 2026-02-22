@@ -1,5 +1,29 @@
 [
     {
+        "name": "Cemile Yıldırım",
+        "age": "Reşilt",
+        "location": "Hatay",
+        "date": "21/02/2026",
+        "reason": "Kızını Korumaya Çalışırken",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://halktv.com.tr/service/amp/gundem/ablasina-mesaj-atti-evinde-bir-kadini-oldurup-intihar-etti-1009607h"
+    },
+    {
+        "name": "Aysun İnam",
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "19/02/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://halktv.com.tr/service/amp/gundem/ablasina-mesaj-atti-evinde-bir-kadini-oldurup-intihar-etti-1009607h"
+    },
+    {
         "name": "Aylin Polat Dağ",
         "age": "Reşit",
         "location": "Kocaeli",
@@ -10,6 +34,66 @@
         "method": "Ateşli Silah",
         "status": "Tutuklu",
         "source": "https://www.sozcu.com.tr/bosanma-asamasindaki-esini-vahsice-oldurdu-p295072"
+    },
+    {
+        "name": "Filiz Şğbangül",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "18/02/2026",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/arnavutkoyde-vahset-esini-cocuklarinin-gozu-onunde-bicaklayarak-oldurdu-43111075"
+    },
+    {
+        "name": "Gönül Alkan",
+        "age": "Reşit",
+        "location": "Van",
+        "date": "18/02/2026",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Belirtilmemiş",
+        "status": "Tutuklu",
+        "source": "https://ilketv.com.tr/vanda-kadin-cinayeti-uzaklastirma-karari-cikarttigi-erkek-tarafindan-olduruldu/"
+    },
+    {
+        "name": "İlknur Kor",
+        "age": "Reşit",
+        "location": "Orhaniye",
+        "date": "18/02/2026",
+        "reason": "Tartışma",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/osmaniyede-vahset-eski-esini-oldurup-intihar-etti-43110928"
+    },
+    {
+        "name": "Kübra Kılıç",
+        "age": "Reşit",
+        "location": "Aksaray",
+        "date": "18/02/2026",
+        "reason": "Eski Kocasının Başka Biriyle Evlenmesini İstememesi",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.ntv.com.tr/amp/turkiye/eski-esini-ve-onun-kuzenini-olduren-kisi-ayni-silahla-intihar-etti-1712566"
+    },
+    {
+        "name": "Zeynep Ayas",
+        "age": "Reşit",
+        "location": "Aksaray",
+        "date": "18/02/2026",
+        "reason": "Kuzenini Korumaya Çalışırken",
+        "killer": "Kuzeninin Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.ntv.com.tr/amp/turkiye/eski-esini-ve-onun-kuzenini-olduren-kisi-ayni-silahla-intihar-etti-1712566"
     },
     {
         "name": "Kübra Keleş",
