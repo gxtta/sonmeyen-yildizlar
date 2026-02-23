@@ -1,5 +1,29 @@
 [
     {
+        "name": "Gülten Ürkmez",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "22/02/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/catalcada-durakta-gordugu-esini-basindan-silahla-vurarak-oldurdu-43114161"
+    },
+    {
+        "name": "Emine Yusuf",
+        "age": "Reşit",
+        "location": "Gaziantep",
+        "date": "21/02/2026",
+        "reason": "Gasp",
+        "killer": "Tanıdığı Birileri",
+        "protection": "Yok",
+        "method": "Darp",
+        "status": "Tutuklu",
+        "source": "https://www.evrensel.net/haber/5971741/antepte-kadin-cinayeti-uvey-kardesinin-darbettigi-kadin-hayatini-kaybetti"
+    },
+    {
         "name": "Cemile Yıldırım",
         "age": "Reşilt",
         "location": "Hatay",
@@ -36,7 +60,7 @@
         "source": "https://www.sozcu.com.tr/bosanma-asamasindaki-esini-vahsice-oldurdu-p295072"
     },
     {
-        "name": "Filiz Şğbangül",
+        "name": "Filiz Şağbangül",
         "age": "Reşit",
         "location": "İstanbul",
         "date": "18/02/2026",
