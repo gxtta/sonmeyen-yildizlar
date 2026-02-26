@@ -1,5 +1,17 @@
 [
     {
+        "name": "Saliha Turan",
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "25/02/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tutuklu",
+        "source": "https://www.milliyet.com.tr/gundem/yol-kenarinda-kadin-cesedi-bulunmustu-soke-eden-gozalti-7544601"
+    },
+    {
         "name": "Nurcan Gündoğan",
         "age": "Reşit",
         "location": "Sakarya",
@@ -65782,6 +65794,18 @@
         "method": "Ateşli Silah",
         "status": "Bilinmiyor",
         "source": "http://www.milliyet.com.tr/Yasam/SonDakika.aspx?aType=SonDakika&ArticleID=1145324"
+    },
+    {
+        "name": "Ebru Koyuncu",
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "01/10/2009",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eski Eniştesi",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/14-aylik-bebek-ve-babasi-komsulari-tarafindan-darbedilmisti-guvenlik-kamerasi-goruntuleri-ortaya-cikti-43115349"
     },
     {
         "name": "Ayşegül Gürpınar",
