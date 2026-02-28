@@ -1,5 +1,29 @@
 [
     {
+        "name": "Sevim Özdemir",
+        "age": "Reşit",
+        "location": "Eskişehir",
+        "date": "27/02/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://t24.com.tr/gundem/eskisehirde-korkunc-olay-7inci-kattan-atladi-evinde-kadin-cesedi-bulundu,1303040"
+    },
+    {
+        "name": "Yeliz İ.",
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "26/02/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Asılarak",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.kemergozcu.com/amp/haber/camyuvada-karavanda-aci-son-45-yasindaki-kadin-olu-bulundu-28054.html"
+    },
+    {
         "name": "Saliha Turan",
         "age": "Reşit",
         "location": "Antalya",
@@ -10,6 +34,18 @@
         "method": "Tespit Edilemeyen",
         "status": "Tutuklu",
         "source": "https://www.milliyet.com.tr/gundem/yol-kenarinda-kadin-cesedi-bulunmustu-soke-eden-gozalti-7544601"
+    },
+    {
+        "name": "Amine Duman",
+        "age": "Reşit Değil",
+        "location": "Diyarbakır",
+        "date": "25/02/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.cumhuriyet.com.tr/turkiye/diyarbakir-da-14-yasindaki-amine-vurulmus-halde-olu-bulundu-2481896"
     },
     {
         "name": "Nurcan Gündoğan",
@@ -12997,15 +13033,7 @@
     },
     {
         "name": "Ayşe Altan",
-        "age": "Reşit",
-        "location": "Diyarbakır",
-        "date": "16/09/2023",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Kocası",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Tutuklu",
-        "source": "https://www.hurriyet.com.tr/gundem/diyarbakirda-kadin-cinayeti-ayse-altan-esi-tarafindan-pompali-tufekle-olduruldu-42331398"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "İsmi Bilinmiyor",
@@ -21565,15 +21593,7 @@
     },
     {
         "name": "Safiye Gülkaya",
-        "age": "Reşit",
-        "location": "Denizli",
-        "date": "07/01/2022",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Kocası",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Tutuklu",
-        "source": "https://www.hurriyet.com.tr/gundem/50-yillik-evlilikte-feci-son-cocuklari-gozyaslarina-boguldu-41976598"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Nurcan Kartal",
