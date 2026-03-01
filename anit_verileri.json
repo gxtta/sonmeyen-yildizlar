@@ -12,7 +12,7 @@
         "source": "https://t24.com.tr/gundem/eskisehirde-korkunc-olay-7inci-kattan-atladi-evinde-kadin-cesedi-bulundu,1303040"
     },
     {
-        "name": "Yeliz İ.",
+        "name": "Yeliz İnci",
         "age": "Reşit",
         "location": "Antalya",
         "date": "26/02/2026",
@@ -13033,7 +13033,15 @@
     },
     {
         "name": "Ayşe Altan",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Diyarbakır",
+        "date": "16/09/2023",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/diyarbakirda-kadin-cinayeti-ayse-altan-esi-tarafindan-pompali-tufekle-olduruldu-42331398"
     },
     {
         "name": "İsmi Bilinmiyor",
@@ -21593,7 +21601,15 @@
     },
     {
         "name": "Safiye Gülkaya",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Denizli",
+        "date": "07/01/2022",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/50-yillik-evlilikte-feci-son-cocuklari-gozyaslarina-boguldu-41976598"
     },
     {
         "name": "Nurcan Kartal",
