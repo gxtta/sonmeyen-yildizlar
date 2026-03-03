@@ -1,5 +1,17 @@
 [
     {
+        "name": "Gül Dağ",
+        "age": "Reşit",
+        "location": "Kocaeli",
+        "date": "28/02/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.koroglugazetesi.com/yatalak-annesine-yemek-hazirlarken-kanlar-icinde-bulunmustu-bogazinin-kesildigi-ogrenildi"
+    },
+    {
         "name": "Sevim Özdemir",
         "age": "Reşit",
         "location": "Eskişehir",
