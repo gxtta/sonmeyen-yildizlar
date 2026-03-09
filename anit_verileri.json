@@ -1,5 +1,17 @@
 [
     {
+        "name": "Nesrin Aladağ",
+        "age": "Reşit",
+        "location": "Adana",
+        "date": "06/03/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "https://www.haberturk.com/son-dakika-adana-haberleri-yine-bir-kadin-cinayeti-tartisma-yasadigi-3-cocugunun-annesini-bogarak-oldurdu-ardindan-teslim-oldu-3867553"
+    },
+    {
         "name": "Semiha Deniz",
         "age": "Reşit",
         "location": "İstanbul",
@@ -2449,15 +2461,7 @@
     },
     {
         "name": "Sevgi Yandık Şendilek",
-        "age": "Reşit",
-        "location": "Bursa",
-        "date": "27/08/2025",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Kocası",
-        "protection": "Yok",
-        "method": "Kesici Alet",
-        "status": "Tutuklu",
-        "source": "https://www.hurriyet.com.tr/gundem/daha-once-esini-bicaklamisti-esini-yine-bicaklayip-oldurdu-42927082"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Aric Aljarouk",
