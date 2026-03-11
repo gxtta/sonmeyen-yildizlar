@@ -1,5 +1,29 @@
 [
     {
+        "name": "Sermin Bacak",
+        "age": "Reşit",
+        "location": "Muğla",
+        "date": "08/03/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.ntv.com.tr/amp/yerel-haberler/muglada-kadin-cinayeti-kadinlar-gununde-esi-tarafindan-olduruldu-1715019"
+    },
+    {
+        "name": "Adile Tarhan",
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "08/03/2026",
+        "reason": "Aile içi husemet",
+        "killer": "Erkek Kardeşi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.iha.com.tr/izmir-haberleri/almanyadan-cinayet-icin-gelmis-ablasini-oldurdu-enistesini-agir-yaraladi-389486592"
+    },
+    {
         "name": "Nesrin Aladağ",
         "age": "Reşit",
         "location": "Adana",
@@ -2461,7 +2485,15 @@
     },
     {
         "name": "Sevgi Yandık Şendilek",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Bursa",
+        "date": "27/08/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/daha-once-esini-bicaklamisti-esini-yine-bicaklayip-oldurdu-42927082"
     },
     {
         "name": "Aric Aljarouk",
@@ -9185,27 +9217,11 @@
     },
     {
         "name": "Semiha Türk",
-        "age": "Reşit",
-        "location": "Niğde",
-        "date": "24/06/2024",
-        "reason": "Tartışma",
-        "killer": "Akrabası",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "İntihar",
-        "source": "https://www.hurriyet.com.tr/gundem/nigdedeki-arazi-kavgasinda-olenlerin-sayisi-4e-cikti-42480407"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Gizem Nazife Türk",
-        "age": "Reşit Değil",
-        "location": "Niğde",
-        "date": "24/06/2024",
-        "reason": "Tartışma",
-        "killer": "Akrabası",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "İntihar",
-        "source": "https://www.hurriyet.com.tr/gundem/nigdedeki-arazi-kavgasinda-olenlerin-sayisi-4e-cikti-42480407"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Hilal Kar",
@@ -9269,15 +9285,7 @@
     },
     {
         "name": "Leyla Erat",
-        "age": "Reşit",
-        "location": "Adana",
-        "date": "22/06/2024",
-        "reason": "Kızını Korumaya Çalışırken",
-        "killer": "Damadı",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Tutuklu",
-        "source": "https://www.hurriyet.com.tr/gundem/adanada-vahset-esini-kayinvalidesini-kayinbiraderini-ve-kayinpederini-katletti-42479840"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Fatma Nur Bezen",
