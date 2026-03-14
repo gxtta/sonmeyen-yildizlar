@@ -1,5 +1,29 @@
 [
     {
+        "name": "Emine İnce",
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "12/03/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.haberturk.com/yine-bir-kadin-cinayeti-vurulmus-halde-bulundu-3869279"
+    },
+    {
+        "name": "Zuhal Sayyar",
+        "age": "Reşit Değil",
+        "location": "Mardin",
+        "date": "12/03/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Abisi, Babası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.cumhuriyet.com.tr/cizerler/kim-kime-dum-duma-13-mart-2026-2486349"
+    },
+    {
         "name": "Songül Fidan",
         "age": "Reşit",
         "location": "Mersin",
