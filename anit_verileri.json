@@ -1,5 +1,17 @@
 [
     {
+        "name": "İrem Bostan",
+        "age": "Reşit",
+        "location": "Trabzon",
+        "date": "16/03/2026",
+        "reason": "Tartışma, Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/trabzonda-cani-koca-dehseti-bosanma-asamasindaki-esini-oldurup-intihar-etti-43129575"
+    },
+    {
         "name": "Emine İnce",
         "age": "Reşit",
         "location": "Mardin",
