@@ -1,5 +1,29 @@
 [
     {
+        "name": "Shaımas Abdi",
+        "age": "Reşit",
+        "location": "Mersin",
+        "date": "19/03/2026",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/mersinde-cani-koca-dehseti-2-cocuk-annesi-esi-tarafindan-olduruldu-43131973"
+    },
+    {
+        "name": "Kübra Öğrendik",
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "18/03/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.cumhuriyet.com.tr/turkiye/mardin-de-genc-kadinin-supheli-olumu-2487886"
+    },
+    {
         "name": "Nur Almuhammet",
         "age": "Reşit",
         "location": "Mersin",
