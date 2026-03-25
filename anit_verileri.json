@@ -24,6 +24,30 @@
         "source": "https://www.hurriyet.com.tr/gundem/rumeysa-ogretmenin-irmakta-cansiz-bedeni-bulundu-43134645"
     },
     {
+        "name": "S.K.",
+        "age": "Reşit",
+        "location": "Afyonkarahisar",
+        "date": "23/03/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.kocatepegazetesi.com/termal-otelde-sok-olay-genc-kadin-odasinda-olu-bulundu/402822/"
+    },
+    {
+        "name": "Nigar Arslan",
+        "age": "Reşit",
+        "location": "Samsun",
+        "date": "23/03/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eniştesi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.haberler.com/amp/samsun-da-baldizini-vuran-adam-intihar-etti-19682843-haberi/"
+    },
+    {
         "name": "Kısmet Erdoğan",
         "age": "Reşit",
         "location": "Nevşehir",
@@ -84,7 +108,7 @@
         "source": "https://www.milliyet.com.tr/gundem/fatihte-korkunc-olay-esini-oldurdu-ardindan-evi-atese-verdi-7558690"
     },
     {
-        "name": "Gamze S.",
+        "name": "Gamze Serçel",
         "age": "Reşit",
         "location": "Kayseri",
         "date": "20/03/2026",
