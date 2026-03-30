@@ -1,27 +1,99 @@
 [
     {
-        "name": "Aleyna Yaray",
+        "name": "Emel Akay",
         "age": "Reşit",
-        "location": "Diyarbakır",
-        "date": "23/03/2026",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Sevgilisi",
+        "location": "Hatay",
+        "date": "29/03/2026",
+        "reason": "Kayınvaldesini Korumaya Çalışırken",
+        "killer": "Kocası",
         "protection": "Yok",
-        "method": "Ateşli Silah",
+        "method": "Kesici Alet",
         "status": "Tutuklu",
-        "source": "https://www.hurriyet.com.tr/gundem/aleyna-yarayin-olumune-iliskin-yeni-detaylar-intihar-demisti-cinayetten-tutuklandi-tabanca-lavabonun-altinda-cikti-43134668"
+        "source": "https://www.sozcu.com.tr/annesini-doverken-kendisine-engel-olmak-isteyen-esini-oldurdu-p305599"
     },
     {
-        "name": "Rümeysa Güven",
-        "age": "Rşit",
-        "location": "Antalya",
-        "date": "23/03/2026",
+        "name": "Başak Zeliha Yaylacı",
+        "age": "Reşit",
+        "location": "Niğde",
+        "date": "29/03/2026",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.tgrthaber.com/3-sayfa/basak-zeliha-yaylaci-vahsice-katledildi-katil-zanlisinin-tedavisi-suruyor-3291051?s=1"
+    },
+    {
+        "name": "Hayal Alkış",
+        "age": "Reşit",
+        "location": "Aydın",
+        "date": "28/03/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Darp",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/amp/aydin-da-bas-infaz-koruma-memuru-evinde-olu-bulundu-erkek-meslektasi-gozaltina-alindi-p305335"
+    },
+    {
+        "name": "NermiN Duruk",
+        "age": "Reşit",
+        "location": "Karaman",
+        "date": "27/03/2026",
         "reason": "Tespit Edilemeyen",
         "killer": "Tespit Edilemeyen",
         "protection": "Yok",
         "method": "Tespit Edilemeyen",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.haberturk.com/karaman-da-genc-kadin-evinde-olu-bulundu-3872670"
+    },
+    {
+        "name": "Havva Çubukçu",
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "27/03/2026",
+        "reason": "Tartışma",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://halktv.com.tr/service/amp/gundem/izmirde-kadin-cinayeti-eski-esini-oldurup-intihar-etti-1018043h"
+    },
+    {
+        "name": "Nasıra Saigi",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "27/03/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Darp",
+        "status": "Tutuklu",
+        "source": "https://halktv.com.tr/service/amp/gundem/izmirde-kadin-cinayeti-eski-esini-oldurup-intihar-etti-1018043h"
+    },
+    {
+        "name": "Vesile Elmadibi",
+        "age": "Reşit",
+        "location": "Muğla",
+        "date": "26/03/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/esini-oldurup-intihar-etti-43136770"
+    },
+    {
+        "name": "Naile İlayda Ateş",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "25/03/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
         "status": "Soruşturma Sürüyor",
-        "source": "https://www.hurriyet.com.tr/gundem/rumeysa-ogretmenin-irmakta-cansiz-bedeni-bulundu-43134645"
+        "source": "https://www.sozcu.com.tr/amp/ilayda-hemsire-6-kattan-dustu-doktor-sevgilisi-olay-anini-anlatti-p304529"
     },
     {
         "name": "S.K.",
@@ -46,6 +118,30 @@
         "method": "Ateşli Silah",
         "status": "İntihar",
         "source": "https://www.haberler.com/amp/samsun-da-baldizini-vuran-adam-intihar-etti-19682843-haberi/"
+    },
+    {
+        "name": "Aleyna Yaray",
+        "age": "Reşit",
+        "location": "Diyarbakır",
+        "date": "23/03/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/aleyna-yarayin-olumune-iliskin-yeni-detaylar-intihar-demisti-cinayetten-tutuklandi-tabanca-lavabonun-altinda-cikti-43134668"
+    },
+    {
+        "name": "Rümeysa Güven",
+        "age": "Rşit",
+        "location": "Antalya",
+        "date": "23/03/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/rumeysa-ogretmenin-irmakta-cansiz-bedeni-bulundu-43134645"
     },
     {
         "name": "Kısmet Erdoğan",
