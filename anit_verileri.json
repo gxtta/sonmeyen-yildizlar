@@ -1,15 +1,39 @@
 [
     {
-        "name": "Emel Akay",
+        "name": "Özge Dülge",
         "age": "Reşit",
-        "location": "Hatay",
-        "date": "29/03/2026",
-        "reason": "Kayınvaldesini Korumaya Çalışırken",
+        "location": "Diyarbakır",
+        "date": "30/03/2026",
+        "reason": "Tartışma",
         "killer": "Kocası",
         "protection": "Yok",
-        "method": "Kesici Alet",
+        "method": "Ateşli Silah",
         "status": "Tutuklu",
-        "source": "https://www.sozcu.com.tr/annesini-doverken-kendisine-engel-olmak-isteyen-esini-oldurdu-p305599"
+        "source": "https://www.haberturk.com/diyarbakir-haberleri/117230941-diyarbakirda-esini-oldurdu-akrabasini-yaraladi"
+    },
+    {
+        "name": "Vahda Al Şevvah",
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "30/03/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.sozcu.com.tr/genc-kadin-evde-gogsunden-vurulmus-halde-bulundu-p305689"
+    },
+    {
+        "name": "Nilüfer Albayrak",
+        "age": "Reşit",
+        "location": "Van",
+        "date": "30/03/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilmeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.vanekspres.com.tr/vanda-genc-kadin-evinde-olu-bulundu-1/amp"
     },
     {
         "name": "Başak Zeliha Yaylacı",
@@ -22,6 +46,18 @@
         "method": "Kesici Alet",
         "status": "Tutuklu",
         "source": "https://www.tgrthaber.com/3-sayfa/basak-zeliha-yaylaci-vahsice-katledildi-katil-zanlisinin-tedavisi-suruyor-3291051?s=1"
+    },
+    {
+        "name": "Emel Akay",
+        "age": "Reşit",
+        "location": "Hatay",
+        "date": "29/03/2026",
+        "reason": "Kayınvaldesini Korumaya Çalışırken",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/annesini-doverken-kendisine-engel-olmak-isteyen-esini-oldurdu-p305599"
     },
     {
         "name": "Hayal Alkış",
