@@ -1,5 +1,29 @@
 [
     {
+        "name": "Sariye Nur Çoşkun",
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "31/03/2026",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/gundem/manisada-katliam-bosanma-asamasindaki-esinin-evini-basti-4-olu,1311094"
+    },
+    {
+        "name": "Fatma Girgin",
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "31/03/2026",
+        "reason": "Kızını Korumaya Çalışırken",
+        "killer": "Damadı",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/gundem/manisada-katliam-bosanma-asamasindaki-esinin-evini-basti-4-olu,1311094"
+    },
+    {
         "name": "Özge Dülge",
         "age": "Reşit",
         "location": "Diyarbakır",
