@@ -4,623 +4,1353 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sönmeyen Yıldızlar - Dijital Anıt</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        body { margin: 0; overflow: hidden; background-color: #050000; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        
-        /* Scrollbar */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            overflow: hidden;
+            background-color: #050000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #f3f4f6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Scrollbar ── */
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
         ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
-        
-        #tooltip { pointer-events: none; transform: translate(15px, 15px); z-index: 40; }
-        
+
+        /* ── Canvas ── */
+        #webgl {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            display: block;
+        }
+        body.selection-active #webgl { cursor: crosshair; }
+
+        /* ══════════════════════════════════
+           LOADING
+        ══════════════════════════════════ */
         #loading-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: #050000; z-index: 50; display: flex;
-            justify-content: center; align-items: center; flex-direction: column;
+            position: absolute;
+            inset: 0;
+            background: #050000;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
             transition: opacity 1s ease;
         }
+        .spinner {
+            width: 64px; height: 64px;
+            border: 4px solid #450000;
+            border-top-color: #f472b6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        #loading-overlay p {
+            color: #f9a8d4;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
 
-        .detail-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-        .detail-label { color: #9ca3af; font-size: 0.85rem; display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
-        .detail-value { color: #f3f4f6; font-weight: 500; font-size: 0.9rem; text-align: right; word-break: break-word; }
+        /* ══════════════════════════════════
+           MODAL BASE
+        ══════════════════════════════════ */
+        .modal-wrapper {
+            position: absolute;
+            inset: 0;
+            z-index: 60;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(6px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .modal-wrapper.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-content {
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+        .modal-wrapper.active .modal-content {
+            transform: scale(1);
+        }
 
-        #search-results::-webkit-scrollbar { width: 4px; }
+        /* ── Modal box ── */
+        .modal-box {
+            background: #100505;
+            border-radius: 16px;
+            box-shadow: 0 0 60px rgba(180,20,40,0.15);
+            position: relative;
+            width: 100%;
+        }
+        .modal-box.border-red   { border: 1px solid rgba(153,27,27,0.5); }
+        .modal-box.border-pink  { border: 1px solid rgba(157,23,77,0.3); }
+        .modal-box.border-blue  { border: 1px solid rgba(30,58,138,0.3); }
+        .modal-box.max-sm  { max-width: 448px; }
+        .modal-box.max-md  { max-width: 672px; max-height: 90vh; overflow-y: auto; }
+
+        .modal-inner { padding: 32px; }
+        .modal-inner.center { text-align: center; }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 16px; right: 16px;
+            background: none;
+            border: none;
+            color: #9ca3af;
+            font-size: 1.5rem;
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+        .modal-close-btn:hover { color: #fff; }
+
+        /* ── Intro modal ── */
+        #intro-modal { z-index: 50; }
+        .intro-icon {
+            width: 64px; height: 64px;
+            background: linear-gradient(135deg, #db2777, #7f1d1d);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+        .intro-icon i { font-size: 1.5rem; color: #fff; }
+        .modal-inner h2 { color: #fff; margin-bottom: 8px; }
+        .modal-inner p  { color: #d1d5db; font-size: 0.875rem; line-height: 1.7; margin-bottom: 24px; }
+        .modal-inner p span.highlight { color: #f472b6; font-weight: 600; }
+        .modal-inner p span.tag {
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 1px 8px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.08);
+            font-size: 0.75rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 10px 32px;
+            background: linear-gradient(to right, #7f1d1d, #be185d);
+            color: #fff;
+            border: none;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .btn-primary:hover { opacity: 0.9; transform: scale(1.04); }
+
+        /* ── Safety/Defense modal ── */
+        .modal-section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+        .modal-section-title i { color: #ec4899; }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+        .col-span-2 { grid-column: span 2; }
+        @media (max-width: 600px) { .col-span-2 { grid-column: span 1; } }
+
+        .card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            padding: 20px;
+            transition: border-color 0.2s;
+        }
+        .card:hover { border-color: rgba(236,72,153,0.3); }
+        .card.gradient { background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(131,24,67,0.1)); border-color: rgba(236,72,153,0.2); }
+        .card.gradient:hover { border-color: rgba(236,72,153,0.4); }
+
+        .card h3 {
+            color: #f9a8d4;
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card p  { color: #d1d5db; font-size: 0.75rem; line-height: 1.6; margin-bottom: 16px; }
+        .card ul { color: #9ca3af; font-size: 0.875rem; padding-left: 18px; }
+        .card ul li { margin-bottom: 6px; }
+        .card ul li strong { color: #fff; }
+
+        .store-btns { display: flex; gap: 8px; }
+        .store-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 6px;
+            padding: 8px;
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 0.75rem;
+            transition: background 0.2s;
+        }
+        .store-btn:hover { background: rgba(255,255,255,0.1); }
+
+        .emergency-list { list-style: none; padding: 0; }
+        .emergency-list li { color: #d1d5db; font-size: 0.875rem; margin-bottom: 8px; }
+        .emergency-list li span { font-weight: 700; color: #fff; }
+
+        /* ── Info modal ── */
+        .info-icon {
+            width: 64px; height: 64px;
+            background: rgba(30,58,138,0.3);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px;
+        }
+        .info-icon i { font-size: 1.75rem; color: #60a5fa; }
+        .tech-box {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: left;
+            margin-bottom: 16px;
+        }
+        .tech-box h3 { color: #fff; font-size: 0.875rem; font-weight: 700; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
+        .tech-box h3 i { color: #facc15; }
+        .tech-box p { color: #9ca3af; font-size: 0.75rem; margin: 0; }
+        .meta-text { font-size: 0.75rem; color: #6b7280; margin-top: 8px; }
+        .meta-text p { margin-bottom: 2px; color: #6b7280; }
+
+        /* ── Donate modal ── */
+        .donate-icon {
+            width: 64px; height: 64px;
+            background: rgba(131,24,67,0.3);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 16px;
+        }
+        .donate-icon i { font-size: 1.75rem; color: #f472b6; }
+        .donate-list { display: flex; flex-direction: column; gap: 10px; text-align: left; }
+        .donate-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background 0.2s, border-color 0.2s;
+        }
+        .donate-link:hover { background: rgba(255,255,255,0.08); }
+        .donate-link:hover h4 { color: #f9a8d4; }
+        .donate-link .dl-left { display: flex; align-items: center; gap: 12px; }
+        .donate-avatar {
+            width: 32px; height: 32px;
+            border-radius: 6px;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; color: #fff; font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+        .donate-link h4 { color: #fff; font-size: 0.875rem; font-weight: 700; margin-bottom: 2px; transition: color 0.2s; }
+        .donate-link p  { color: #6b7280; font-size: 0.65rem; margin: 0; }
+        .donate-link .dl-arrow { color: #4b5563; font-size: 0.75rem; transition: color 0.2s; }
+        .donate-link:hover .dl-arrow { color: #fff; }
+        .donate-hr { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 4px 0; }
+        .donate-disabled {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            background: linear-gradient(to right, #c2410c, #b91c1c);
+            color: #fff;
+            font-size: 0.875rem;
+            font-weight: 700;
+            border-radius: 10px;
+            opacity: 0.45;
+            cursor: not-allowed;
+            text-decoration: none;
+        }
+
+        /* ══════════════════════════════════
+           MAIN UI OVERLAY
+        ══════════════════════════════════ */
+        #ui {
+            position: relative;
+            z-index: 10;
+            pointer-events: none;
+            width: 100%;
+            height: 100vh;
+        }
+
+        /* ── Top-left title ── */
+        #title-area {
+            position: absolute;
+            top: 0; left: 0;
+            padding: 32px;
+            pointer-events: auto;
+        }
+        #title-area h1 {
+            font-size: 2.25rem;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            background: linear-gradient(to right, #f9a8d4, #dc2626);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+            line-height: 1.2;
+        }
+        #title-area p {
+            margin-top: 8px;
+            font-size: 0.875rem;
+            color: rgba(254,226,226,0.6);
+            font-weight: 300;
+            max-width: 400px;
+            line-height: 1.6;
+        }
+        #title-area p #total-count { font-weight: 700; color: #fff; }
+
+        /* ── Top-right controls ── */
+        #top-right {
+            position: absolute;
+            top: 24px; right: 24px;
+            pointer-events: auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-direction: row-reverse;
+        }
+
+        /* search wrapper */
+        .search-wrap { position: relative; }
+        #search-input {
+            width: 220px;
+            background: rgba(0,0,0,0.45);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 9999px;
+            padding: 9px 40px 9px 20px;
+            font-size: 0.875rem;
+            color: #fff;
+            outline: none;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: border-color 0.2s, background 0.2s;
+            font-family: inherit;
+        }
+        #search-input::placeholder { color: #6b7280; }
+        #search-input:focus { border-color: rgba(236,72,153,0.5); background: rgba(0,0,0,0.8); }
+        .search-icon {
+            position: absolute;
+            right: 14px; top: 50%;
+            transform: translateY(-50%);
+            color: #6b7280;
+            font-size: 0.875rem;
+            pointer-events: none;
+        }
+        #search-results {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            width: 100%;
+            background: rgba(10,5,5,0.97);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            max-height: 240px;
+            overflow-y: auto;
+            backdrop-filter: blur(12px);
+            z-index: 40;
+        }
         #search-results::-webkit-scrollbar-thumb { background: #db2777; border-radius: 4px; }
-
-        /* Seçim Modu İmleci */
-        body.selection-active canvas { cursor: crosshair !important; }
-        
-        /* Buton Animasyonu */
-        .pulse-border {
-            box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.7);
-            animation: pulse-red 2s infinite;
+        .search-result-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            color: #e5e7eb;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: background 0.15s;
         }
-        @keyframes pulse-red {
-            0% { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(219, 39, 119, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0); }
+        .search-result-item:last-child { border-bottom: none; }
+        .search-result-item:hover { background: rgba(255,255,255,0.05); }
+        .search-empty { padding: 12px 16px; font-size: 0.75rem; color: #6b7280; font-style: italic; text-align: center; }
+
+        /* icon buttons */
+        .icon-btn {
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #d1d5db;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+        .icon-btn:hover { background: rgba(255,255,255,0.2); color: #fff; }
+        .icon-btn.pink:hover { border-color: rgba(236,72,153,0.5); color: #f9a8d4; }
+        .icon-btn.blue:hover { border-color: rgba(59,130,246,0.5); color: #fff; }
+
+        /* ── Bottom-left controls ── */
+        #bottom-left {
+            position: absolute;
+            bottom: 32px; left: 32px;
+            pointer-events: auto;
+            display: flex;
+            align-items: flex-end;
+            gap: 16px;
         }
 
-        .modal-wrapper { opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
-        .modal-wrapper.active { opacity: 1; pointer-events: auto; }
-        .modal-content { transform: scale(0.95); transition: transform 0.3s ease; }
-        .modal-wrapper.active .modal-content { transform: scale(1); }
+        #toggle-selection-mode {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            background: rgba(0,0,0,0.6);
+            border: 1px solid #6b7280;
+            border-radius: 9999px;
+            color: #d1d5db;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: background 0.2s, border-color 0.2s, color 0.2s;
+            font-family: inherit;
+        }
+        #toggle-selection-mode:hover { background: rgba(0,0,0,0.8); }
+        #toggle-selection-mode.active {
+            background: rgba(131,24,67,0.5);
+            border-color: #ec4899;
+            color: #fff;
+        }
+
+        .mode-icon-wrap { position: relative; }
+        .mode-icon-wrap i { font-size: 1.1rem; }
+        #mode-indicator {
+            position: absolute;
+            top: -4px; right: -4px;
+            width: 8px; height: 8px;
+            background: #ef4444;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .mode-label { font-size: 0.625rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; }
+        #mode-text { font-size: 0.875rem; font-weight: 700; color: #fff; }
+
+        @keyframes pulse-border {
+            0%   { box-shadow: 0 0 0 0 rgba(219,39,119,0.7); }
+            70%  { box-shadow: 0 0 0 10px rgba(219,39,119,0); }
+            100% { box-shadow: 0 0 0 0 rgba(219,39,119,0); }
+        }
+        #toggle-selection-mode.active { animation: pulse-border 2s infinite; }
+
+        #open-donate-btn {
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7f1d1d, #9d174d);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            transition: transform 0.2s;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+        #open-donate-btn:hover { transform: scale(1.1); }
+
+        /* ── Bottom-right source ── */
+        #source-credit {
+            position: absolute;
+            bottom: 24px; right: 24px;
+            pointer-events: auto;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            color: #6b7280;
+            text-decoration: none;
+            backdrop-filter: blur(8px);
+            transition: color 0.2s, background 0.2s;
+        }
+        #source-credit:hover { color: #f9a8d4; background: rgba(0,0,0,0.6); }
+        #source-credit span:first-child { opacity: 0.5; }
+        #source-credit span:last-child { font-weight: 600; }
+
+        /* ── Tooltip ── */
+        #tooltip {
+            position: fixed;
+            pointer-events: none;
+            z-index: 40;
+            display: none;
+            background: rgba(0,0,0,0.9);
+            border: 1px solid rgba(239,68,68,0.35);
+            backdrop-filter: blur(6px);
+            padding: 8px 16px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(220,38,38,0.25);
+        }
+        #tooltip-name { display: block; font-weight: 700; color: #fbcfe8; font-size: 1rem; }
+        #tooltip-date { display: block; font-size: 0.75rem; color: #9ca3af; text-align: center; margin-top: 2px; }
+
+        /* ══════════════════════════════════
+           DETAIL PANEL
+        ══════════════════════════════════ */
+        #detail-panel {
+            position: absolute;
+            top: 0; right: 0;
+            height: 100%;
+            width: 100%;
+            max-width: 450px;
+            background: rgba(10,5,5,0.96);
+            backdrop-filter: blur(16px);
+            border-left: 1px solid rgba(153,27,27,0.3);
+            box-shadow: -8px 0 40px rgba(0,0,0,0.5);
+            z-index: 40;
+            pointer-events: auto;
+            display: flex;
+            flex-direction: column;
+            transform: translateX(100%);
+            transition: transform 0.5s ease;
+        }
+        #detail-panel.open { transform: translateX(0); }
+
+        #panel-scroll { padding: 32px; flex: 1; overflow-y: auto; }
+
+        #panel-close {
+            position: absolute;
+            top: 16px; right: 16px;
+            background: none;
+            border: none;
+            color: rgba(255,255,255,0.4);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 20;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+        #panel-close:hover { color: #fff; }
+
+        .panel-avatar-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 16px;
+            margin-bottom: 24px;
+        }
+        .panel-avatar {
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(to bottom, #db2777, #7f1d1d);
+            padding: 2px;
+            box-shadow: 0 0 30px rgba(220,38,38,0.35);
+        }
+        .panel-avatar-inner {
+            width: 100%; height: 100%;
+            background: #000;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .panel-avatar-inner i { font-size: 1.5rem; color: rgba(255,255,255,0.85); }
+        #panel-name {
+            margin-top: 16px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+        }
+        #panel-date-head {
+            font-size: 0.8rem;
+            color: #f472b6;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        .details-box {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .detail-row:last-child { border-bottom: none; }
+        .detail-label { color: #9ca3af; font-size: 0.85rem; flex-shrink: 0; }
+        .detail-value { color: #f3f4f6; font-weight: 500; font-size: 0.9rem; text-align: right; word-break: break-word; max-width: 65%; }
+        .detail-value.red { color: #fca5a5; }
+
+        #source-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 24px;
+            background: rgba(55,65,81,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            color: #9ca3af;
+            font-size: 0.75rem;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        #source-link:hover { background: rgba(55,65,81,0.7); color: #d1d5db; }
+
+        .panel-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 24px; }
+
+        .memory-title {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #f9a8d4;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        #memory-input {
+            width: 100%;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 0.875rem;
+            color: #fff;
+            font-family: inherit;
+            resize: none;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        #memory-input::placeholder { color: #4b5563; }
+        #memory-input:focus { border-color: rgba(236,72,153,0.5); }
+
+        .save-row {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+        #save-msg { font-size: 0.75rem; color: #4ade80; display: none; }
+        #save-btn {
+            padding: 8px 20px;
+            background: linear-gradient(to right, #7f1d1d, #9d174d);
+            border: none;
+            border-radius: 6px;
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: opacity 0.2s, transform 0.1s;
+            font-family: inherit;
+        }
+        #save-btn:hover { opacity: 0.9; }
+        #save-btn:active { transform: scale(0.96); }
     </style>
 </head>
-<body class="antialiased text-gray-100">
+<body>
 
-    <canvas id="webgl" class="absolute top-0 left-0 w-full h-full z-0 pointer-events-auto"></canvas>
+    <canvas id="webgl"></canvas>
 
-    <!-- Yükleme Ekranı -->
+    <!-- Loading -->
     <div id="loading-overlay">
-        <div class="w-16 h-16 border-4 border-red-900 border-t-pink-500 rounded-full animate-spin mb-4"></div>
-        <p class="text-pink-300 text-sm tracking-widest animate-pulse">VERİLER YÜKLENİYOR...</p>
+        <div class="spinner"></div>
+        <p>VERİLER YÜKLENİYOR...</p>
     </div>
 
-    <!-- ================= MODALLAR ================= -->
+    <!-- ══════════ MODALS ══════════ -->
 
-    <!-- 1. BAŞLANGIÇ -->
-    <div id="intro-modal" class="modal-wrapper active absolute inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
-        <div class="modal-content bg-[#1a0505] border border-red-900/50 rounded-2xl p-8 max-w-md text-center shadow-[0_0_50px_rgba(220,20,60,0.2)] mx-4 relative">
-            <div class="w-16 h-16 bg-gradient-to-br from-pink-600 to-red-900 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <i class="fa-solid fa-hand-pointer text-2xl text-white"></i>
-            </div>
-            <h2 class="text-2xl font-bold text-white mb-2">Hoş Geldiniz</h2>
-            <p class="text-gray-300 text-sm mb-6 leading-relaxed">
-                Sönmeyen Yıldızlar anıtında her bir ışık bir yaşamı temsil eder.<br><br>
-                <span class="text-pink-400 font-semibold">🖱️ Gezinmek için:</span> Ekranı sürükleyin.<br>
-                <span class="text-pink-400 font-semibold">✨ Detay görmek için:</span> Sol alttaki <br> <span class="border border-white/20 px-2 py-0.5 rounded bg-white/10 text-xs">Seçim Modu</span> butonunu açıp yıldızlara tıklayın.
-            </p>
-            <button id="close-intro-btn" class="px-8 py-3 bg-gradient-to-r from-red-900 to-pink-700 hover:from-red-800 hover:to-pink-600 text-white rounded-full font-medium transition-all transform hover:scale-105 shadow-lg">
-                Anladım, Başla
-            </button>
-        </div>
-    </div>
-
-    <!-- 2. GÜVENLİK REHBERİ (KALKAN) -->
-    <div id="defense-modal" class="modal-wrapper absolute inset-0 z-[60] flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
-        <div class="modal-content bg-[#100505] border border-pink-900/30 rounded-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl relative">
-            <button class="close-modal-btn absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
-            
-            <div class="p-8">
-                <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3 border-b border-white/10 pb-4">
-                    <i class="fa-solid fa-shield-halved text-pink-500"></i> Kadınlar İçin Güvenlik Rehberi
-                </h2>
-
-                <div class="grid gap-6 md:grid-cols-2">
-                    <!-- KADES -->
-                    <div class="bg-white/5 p-5 rounded-lg border border-white/5 hover:border-pink-500/30 transition-colors">
-                        <h3 class="text-pink-300 font-bold text-lg mb-2 flex items-center gap-2">
-                            <i class="fa-solid fa-mobile-screen-button"></i> KADES Uygulaması
-                        </h3>
-                        <p class="text-gray-300 text-xs leading-relaxed mb-4">
-                            Emniyet Genel Müdürlüğü'nün resmi uygulamasıdır. Tek tuşla konumunuzu paylaşarak en yakın polis ekibinin gelmesini sağlar.
-                        </p>
-                        <div class="flex gap-2">
-                            <a href="https://apps.apple.com/tr/app/kades/id1360309770" target="_blank" class="flex-1 flex items-center justify-center gap-2 bg-black/40 border border-white/20 rounded py-2 hover:bg-white/10 transition-colors">
-                                <i class="fa-brands fa-apple text-lg"></i> <span class="text-xs">App Store</span>
-                            </a>
-                            <a href="https://play.google.com/store/apps/details?id=tr.gov.egm.kades" target="_blank" class="flex-1 flex items-center justify-center gap-2 bg-black/40 border border-white/20 rounded py-2 hover:bg-white/10 transition-colors">
-                                <i class="fa-brands fa-google-play text-lg"></i> <span class="text-xs">Google Play</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- ACİL NUMARALAR -->
-                    <div class="bg-white/5 p-5 rounded-lg border border-white/5 hover:border-pink-500/30 transition-colors">
-                        <h3 class="text-pink-300 font-bold text-lg mb-2 flex items-center gap-2">
-                            <i class="fa-solid fa-phone-volume"></i> Acil Numaralar
-                        </h3>
-                        <ul class="text-gray-300 text-sm space-y-2">
-                            <li><span class="font-bold text-white">112</span> - Acil Çağrı Merkezi</li>
-                            <li><span class="font-bold text-white">183</span> - Sosyal Destek Hattı (7/24)</li>
-                            <li><span class="font-bold text-white">155</span> - Polis İmdat</li>
-                            <li><span class="font-bold text-white">156</span> - Jandarma İmdat</li>
-                        </ul>
-                    </div>
-
-                    <!-- 6284 -->
-                    <div class="bg-white/5 p-5 rounded-lg border border-white/5 hover:border-pink-500/30 transition-colors md:col-span-2">
-                        <h3 class="text-pink-300 font-bold text-lg mb-2 flex items-center gap-2">
-                            <i class="fa-solid fa-gavel"></i> 6284 Sayılı Kanun & Haklarınız
-                        </h3>
-                        <ul class="list-disc list-inside text-gray-400 text-sm space-y-1">
-                            <li>Belge aranmaksızın koruma kararı talep edebilirsiniz.</li>
-                            <li>Şiddet uygulayanın evden uzaklaştırılmasını isteyebilirsiniz.</li>
-                            <li>Barolardan ücretsiz avukat (Adli Yardım) talep edebilirsiniz.</li>
-                            <li>ŞÖNİM (Şiddet Önleme ve İzleme Merkezleri) size rehberlik eder.</li>
-                        </ul>
-                    </div>
-
-                    <!-- İPUÇLARI -->
-                    <div class="bg-gradient-to-br from-white/5 to-pink-900/10 p-5 rounded-lg border border-pink-500/20 hover:border-pink-500/40 transition-colors md:col-span-2">
-                        <h3 class="text-pink-300 font-bold text-lg mb-2 flex items-center gap-2">
-                            <i class="fa-solid fa-person-rays"></i> Kişisel Güvenlik İpuçları
-                        </h3>
-                        <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside marker:text-pink-500">
-                            <li><strong class="text-white">Konum:</strong> Takside veya güvensiz hissettiğinizde canlı konum paylaşın.</li>
-                            <li><strong class="text-white">Anahtarlar:</strong> Eve yaklaşırken anahtarlarınızı elinizde hazır tutun.</li>
-                            <li><strong class="text-white">Ses:</strong> Tehlike anında "Yangın" diye bağırmak daha fazla dikkat çekebilir.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 3. HAKKINDA (INFO) -->
-    <div id="info-modal" class="modal-wrapper absolute inset-0 z-[60] flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
-        <div class="modal-content bg-[#100505] border border-blue-900/30 rounded-xl w-full max-w-md shadow-2xl relative text-center">
-            <button class="close-modal-btn absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
-            
-            <div class="p-8">
-                <div class="w-16 h-16 bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fa-solid fa-laptop-code text-3xl text-blue-400"></i>
-                </div>
-                <h2 class="text-xl font-bold text-white mb-2">Hakkında</h2>
-                <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                    Bu proje, kadın cinayetlerine dikkat çekmek ve hayatını kaybeden kadınların anısını dijital bir evrende sonsuza kadar yaşatmak amacıyla oluşturulmuştur.
-                </p>
-                <div class="bg-white/5 p-4 rounded-lg border border-white/10 mb-4 text-left">
-                    <h3 class="text-white font-bold text-sm mb-2 flex items-center gap-2">
-                        <i class="fa-solid fa-wand-magic-sparkles text-yellow-400"></i> Teknoloji
-                    </h3>
-                    <p class="text-gray-400 text-xs">
-                        Bu websitesi, tasarımından kodlamasına kadar tamamen <strong>Google Gemini Yapay Zeka</strong> modeli ile geliştirilmiştir.
+    <!-- Intro -->
+    <div id="intro-modal" class="modal-wrapper active" style="z-index:50;">
+        <div class="modal-content">
+            <div class="modal-box border-red max-sm">
+                <div class="modal-inner center">
+                    <div class="intro-icon"><i class="fa-solid fa-hand-pointer"></i></div>
+                    <h2 style="font-size:1.5rem;">Hoş Geldiniz</h2>
+                    <p>
+                        Sönmeyen Yıldızlar anıtında her bir ışık bir yaşamı temsil eder.<br><br>
+                        <span class="highlight">🖱️ Gezinmek için:</span> Ekranı sürükleyin.<br>
+                        <span class="highlight">✨ Detay görmek için:</span> Sol alttaki
+                        <span class="tag">Seçim Modu</span> butonunu açıp yıldızlara tıklayın.
                     </p>
-                </div>
-                <div class="text-xs text-gray-500 mt-4">
-                    <p>Veri Kaynağı: Anıt Sayaç</p>
-                    <p>Tasarım & Kodlama: Gemini AI</p>
+                    <button id="close-intro-btn" class="btn-primary">Anladım, Başla</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 4. BAĞIŞ (DONATE) -->
-    <div id="donate-modal" class="modal-wrapper absolute inset-0 z-[60] flex items-center justify-center bg-black/90 backdrop-blur-md p-4">
-        <div class="modal-content bg-[#100505] border border-pink-900/30 rounded-xl w-full max-w-md shadow-2xl relative">
-            <button class="close-modal-btn absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
-            
-            <div class="p-8 text-center">
-                <div class="w-16 h-16 bg-pink-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <i class="fa-solid fa-hand-holding-heart text-3xl text-pink-400"></i>
-                </div>
-                <h2 class="text-xl font-bold text-white mb-2">Dayanışma Yaşatır</h2>
-                <p class="text-gray-400 text-xs mb-6">Kadın mücadelesini güçlendirmek için resmi kurumlara destek olabilirsiniz.</p>
-
-                <div class="space-y-3 text-left">
-                    <!-- Mor Çatı -->
-                    <a href="https://bagis.morcati.org.tr/" target="_blank" class="flex items-center justify-between p-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg group transition-all">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded bg-purple-600 flex items-center justify-center text-white font-bold">M</div>
-                            <div>
-                                <h4 class="text-white text-sm font-bold group-hover:text-pink-300">Mor Çatı Vakfı</h4>
-                                <p class="text-[10px] text-gray-500">Kadın sığınağı ve dayanışma merkezi.</p>
+    <!-- Safety Guide -->
+    <div id="defense-modal" class="modal-wrapper">
+        <div class="modal-content">
+            <div class="modal-box border-pink max-md">
+                <button class="modal-close-btn close-modal-btn">&times;</button>
+                <div class="modal-inner">
+                    <div class="modal-section-title">
+                        <i class="fa-solid fa-shield-halved"></i> Kadınlar İçin Güvenlik Rehberi
+                    </div>
+                    <div class="grid-2">
+                        <div class="card">
+                            <h3><i class="fa-solid fa-mobile-screen-button"></i> KADES Uygulaması</h3>
+                            <p>Emniyet Genel Müdürlüğü'nün resmi uygulamasıdır. Tek tuşla konumunuzu paylaşarak en yakın polis ekibinin gelmesini sağlar.</p>
+                            <div class="store-btns">
+                                <a href="https://apps.apple.com/tr/app/kades/id1360309770" target="_blank" class="store-btn"><i class="fa-brands fa-apple" style="font-size:1.1rem;"></i> App Store</a>
+                                <a href="https://play.google.com/store/apps/details?id=tr.gov.egm.kades" target="_blank" class="store-btn"><i class="fa-brands fa-google-play" style="font-size:1rem;"></i> Google Play</a>
                             </div>
                         </div>
-                        <i class="fa-solid fa-chevron-right text-gray-600 group-hover:text-white"></i>
-                    </a>
-
-                    <!-- KCDP -->
-                    <a href="https://fonzip.com/kcdp/online-bagis" target="_blank" class="flex items-center justify-between p-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg group transition-all">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded bg-red-600 flex items-center justify-center text-white font-bold"><i class="fa-solid fa-hand-fist"></i></div>
-                            <div>
-                                <h4 class="text-white text-sm font-bold group-hover:text-pink-300">Kadın Cinayetlerini D.P.</h4>
-                                <p class="text-[10px] text-gray-500">Hukuki mücadele ve eylem platformu.</p>
-                            </div>
+                        <div class="card">
+                            <h3><i class="fa-solid fa-phone-volume"></i> Acil Numaralar</h3>
+                            <ul class="emergency-list">
+                                <li><span>112</span> - Acil Çağrı Merkezi</li>
+                                <li><span>183</span> - Sosyal Destek Hattı (7/24)</li>
+                                <li><span>155</span> - Polis İmdat</li>
+                                <li><span>156</span> - Jandarma İmdat</li>
+                            </ul>
                         </div>
-                        <i class="fa-solid fa-chevron-right text-gray-600 group-hover:text-white"></i>
-                    </a>
-
-                    <!-- TKDF -->
-                    <a href="https://fonzip.com/tkdf/bagis" target="_blank" class="flex items-center justify-between p-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg group transition-all">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded bg-blue-600 flex items-center justify-center text-white font-bold">F</div>
-                            <div>
-                                <h4 class="text-white text-sm font-bold group-hover:text-pink-300">TKDF</h4>
-                                <p class="text-[10px] text-gray-500">Türkiye Kadın Dernekleri Federasyonu.</p>
-                            </div>
+                        <div class="card col-span-2">
+                            <h3><i class="fa-solid fa-gavel"></i> 6284 Sayılı Kanun & Haklarınız</h3>
+                            <ul>
+                                <li>Belge aranmaksızın koruma kararı talep edebilirsiniz.</li>
+                                <li>Şiddet uygulayanın evden uzaklaştırılmasını isteyebilirsiniz.</li>
+                                <li>Barolardan ücretsiz avukat (Adli Yardım) talep edebilirsiniz.</li>
+                                <li>ŞÖNİM (Şiddet Önleme ve İzleme Merkezleri) size rehberlik eder.</li>
+                            </ul>
                         </div>
-                        <i class="fa-solid fa-chevron-right text-gray-600 group-hover:text-white"></i>
-                    </a>
-
-                    <hr class="border-white/10 my-4">
-
-                    <!-- Patreon -->
-                    <a href="#" class="flex items-center justify-center gap-2 p-3 bg-gradient-to-r from-orange-600 to-red-600 text-white text-sm font-bold rounded-lg hover:opacity-90 transition-opacity opacity-50 cursor-not-allowed" title="Yakında eklenecek">
-                        <i class="fa-solid fa-coffee"></i> Geliştiriciye Kahve Ismarla (Yakında)
-                    </a>
+                        <div class="card gradient col-span-2">
+                            <h3><i class="fa-solid fa-person-rays"></i> Kişisel Güvenlik İpuçları</h3>
+                            <ul>
+                                <li><strong>Konum:</strong> Takside veya güvensiz hissettiğinizde canlı konum paylaşın.</li>
+                                <li><strong>Anahtarlar:</strong> Eve yaklaşırken anahtarlarınızı elinizde hazır tutun.</li>
+                                <li><strong>Ses:</strong> Tehlike anında "Yangın" diye bağırmak daha fazla dikkat çekebilir.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- ================= ANA ARAYÜZ ================= -->
+    <!-- Info -->
+    <div id="info-modal" class="modal-wrapper">
+        <div class="modal-content">
+            <div class="modal-box border-blue max-sm">
+                <button class="modal-close-btn close-modal-btn">&times;</button>
+                <div class="modal-inner center">
+                    <div class="info-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h2 style="font-size:1.25rem;">Hakkında</h2>
+                    <p>Bu proje, kadın cinayetlerine dikkat çekmek ve hayatını kaybeden kadınların anısını dijital bir evrende sonsuza kadar yaşatmak amacıyla oluşturulmuştur.</p>
+                    <div class="tech-box">
+                        <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Teknoloji</h3>
+                        <p>Bu websitesi, tasarımından kodlamasına kadar tamamen <strong>Google Gemini Yapay Zeka</strong> modeli ile geliştirilmiştir.</p>
+                    </div>
+                    <div class="meta-text">
+                        <p>Veri Kaynağı: Anıt Sayaç</p>
+                        <p>Tasarım & Kodlama: Gemini AI</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <div class="relative z-10 pointer-events-none w-full h-screen">
-        
-        <!-- Sol Üst Başlık -->
-        <div class="absolute top-0 left-0 p-8 pointer-events-auto z-10">
-            <h1 class="text-4xl font-light tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-pink-300 to-red-600 drop-shadow-lg">
-                SÖNMEYEN YILDIZLAR
-            </h1>
-            <p class="mt-2 text-sm text-red-100 opacity-70 max-w-md font-light">
+    <!-- Donate -->
+    <div id="donate-modal" class="modal-wrapper">
+        <div class="modal-content">
+            <div class="modal-box border-pink max-sm">
+                <button class="modal-close-btn close-modal-btn">&times;</button>
+                <div class="modal-inner center">
+                    <div class="donate-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                    <h2 style="font-size:1.25rem;">Dayanışma Yaşatır</h2>
+                    <p style="font-size:0.75rem; margin-bottom:20px;">Kadın mücadelesini güçlendirmek için resmi kurumlara destek olabilirsiniz.</p>
+                    <div class="donate-list">
+                        <a href="https://bagis.morcati.org.tr/" target="_blank" class="donate-link">
+                            <div class="dl-left">
+                                <div class="donate-avatar" style="background:#7e22ce;">M</div>
+                                <div><h4>Mor Çatı Vakfı</h4><p>Kadın sığınağı ve dayanışma merkezi.</p></div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right dl-arrow"></i>
+                        </a>
+                        <a href="https://fonzip.com/kcdp/online-bagis" target="_blank" class="donate-link">
+                            <div class="dl-left">
+                                <div class="donate-avatar" style="background:#b91c1c;"><i class="fa-solid fa-hand-fist" style="font-size:0.75rem;"></i></div>
+                                <div><h4>Kadın Cinayetlerini D.P.</h4><p>Hukuki mücadele ve eylem platformu.</p></div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right dl-arrow"></i>
+                        </a>
+                        <a href="https://fonzip.com/tkdf/bagis" target="_blank" class="donate-link">
+                            <div class="dl-left">
+                                <div class="donate-avatar" style="background:#1d4ed8;">F</div>
+                                <div><h4>TKDF</h4><p>Türkiye Kadın Dernekleri Federasyonu.</p></div>
+                            </div>
+                            <i class="fa-solid fa-chevron-right dl-arrow"></i>
+                        </a>
+                        <hr class="donate-hr">
+                        <a href="#" class="donate-disabled" title="Yakında eklenecek">
+                            <i class="fa-solid fa-coffee"></i> Geliştiriciye Kahve Ismarla (Yakında)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════ MAIN UI ══════════ -->
+    <div id="ui">
+
+        <!-- Title -->
+        <div id="title-area">
+            <h1>SÖNMEYEN YILDIZLAR</h1>
+            <p>
                 Her bir yıldız, aramızdan koparılan bir ışığı temsil eder.<br>
-                <span id="total-count" class="font-bold text-white">...</span> can sonsuzluğa karıştı.
+                <span id="total-count">...</span> can sonsuzluğa karıştı.
             </p>
         </div>
 
-        <!-- SAĞ ÜST: Arama ve Butonlar -->
-        <div class="absolute top-6 right-6 z-30 pointer-events-auto flex gap-3 items-center flex-row-reverse">
-            <!-- Arama -->
-            <div class="relative group w-48 md:w-64">
-                <input type="text" id="search-input" 
-                    class="w-full bg-black/40 border border-white/20 rounded-full py-2.5 pl-5 pr-10 text-sm text-white focus:outline-none focus:border-pink-500/50 focus:bg-black/80 transition-all placeholder-gray-500 backdrop-blur-sm shadow-lg"
-                    placeholder="İsim ara...">
-                <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 group-hover:text-pink-400 transition-colors">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button>
-                <div id="search-results" class="hidden mt-2 bg-[#0a0505]/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl max-h-60 overflow-y-auto absolute w-full z-40"></div>
+        <!-- Top Right -->
+        <div id="top-right">
+            <div class="search-wrap">
+                <input type="text" id="search-input" placeholder="İsim ara...">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <div id="search-results"></div>
             </div>
-
-            <!-- Bilgi Butonu -->
-            <button id="open-info-btn" class="w-8 h-8 rounded-full bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20 hover:text-white hover:border-blue-500/50 transition-all flex items-center justify-center backdrop-blur-sm" title="Hakkında">
-                <i class="fa-solid fa-info text-sm"></i>
+            <button id="open-info-btn" class="icon-btn blue" title="Hakkında">
+                <i class="fa-solid fa-info"></i>
             </button>
-
-            <!-- Güvenlik Rehberi Butonu -->
-            <button id="open-defense-btn" class="w-8 h-8 rounded-full bg-white/10 border border-white/20 text-gray-300 hover:bg-white/20 hover:text-pink-300 hover:border-pink-500/50 transition-all flex items-center justify-center backdrop-blur-sm" title="Güvenlik Rehberi">
-                <i class="fa-solid fa-shield-halved text-sm"></i>
+            <button id="open-defense-btn" class="icon-btn pink" title="Güvenlik Rehberi">
+                <i class="fa-solid fa-shield-halved"></i>
             </button>
         </div>
 
-        <!-- SOL ALT: Seçim Modu ve BAĞIŞ Butonu -->
-        <div class="absolute bottom-8 left-8 z-30 pointer-events-auto flex flex-row items-end gap-4">
-            
-            <!-- Seçim Modu Butonu -->
-            <button id="toggle-selection-mode" class="flex items-center gap-3 px-5 py-3 bg-black/60 border border-gray-500 text-gray-300 rounded-full backdrop-blur-md transition-all hover:bg-black/80 group shadow-lg">
-                <div class="relative">
-                    <i class="fa-solid fa-arrow-pointer text-lg transition-transform group-hover:-translate-y-1"></i>
-                    <span id="mode-indicator" class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full opacity-0 transition-opacity"></span>
+        <!-- Bottom Left -->
+        <div id="bottom-left">
+            <button id="toggle-selection-mode">
+                <div class="mode-icon-wrap">
+                    <i class="fa-solid fa-arrow-pointer"></i>
+                    <span id="mode-indicator"></span>
                 </div>
-                <div class="text-left">
-                    <div class="text-[10px] text-gray-500 uppercase tracking-wider font-bold">Seçim Modu</div>
-                    <div id="mode-text" class="text-sm font-bold text-white">KAPALI</div>
+                <div>
+                    <div class="mode-label">Seçim Modu</div>
+                    <div id="mode-text">KAPALI</div>
                 </div>
             </button>
-
-            <!-- Bağış Butonu -->
-            <button id="open-donate-btn" class="w-12 h-12 rounded-full bg-gradient-to-tr from-red-900 to-pink-800 border border-white/10 text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform group mb-1" title="Bağış Yap">
-                <i class="fa-solid fa-heart text-lg group-hover:animate-pulse"></i>
+            <button id="open-donate-btn" title="Bağış Yap">
+                <i class="fa-solid fa-heart"></i>
             </button>
         </div>
 
-        <!-- Kaynak Linki (Sağ Alt) -->
-        <a href="https://anitsayac.com/" target="_blank" class="absolute bottom-6 right-6 z-20 pointer-events-auto flex items-center gap-2 px-4 py-2 bg-black/40 border border-white/10 rounded-full text-xs text-gray-500 hover:text-pink-300 transition-all backdrop-blur-sm hover:bg-black/60">
-            <span class="opacity-50">Veri Kaynağı:</span><span class="font-semibold">Anıt Sayaç</span>
+        <!-- Source -->
+        <a id="source-credit" href="https://anitsayac.com/" target="_blank">
+            <span>Veri Kaynağı:</span><span>Anıt Sayaç</span>
         </a>
 
         <!-- Tooltip -->
-        <div id="tooltip" class="absolute hidden bg-black/90 border border-red-500/30 backdrop-blur px-4 py-2 rounded-lg shadow-[0_0_20px_rgba(255,0,0,0.3)] transition-opacity duration-200">
-            <span id="tooltip-name" class="font-bold text-pink-200 text-lg block">İsim</span>
-            <span id="tooltip-date" class="text-xs text-gray-400 block text-center mt-1">Tarih</span>
+        <div id="tooltip">
+            <span id="tooltip-name"></span>
+            <span id="tooltip-date"></span>
         </div>
 
-        <!-- Detay Paneli -->
-        <div id="detail-panel" class="absolute top-0 right-0 h-full w-full md:w-[450px] bg-[#0a0505]/95 backdrop-blur-xl border-l border-red-900/30 shadow-2xl pointer-events-auto transform transition-transform duration-500 translate-x-full flex flex-col z-40">
-            <button id="close-btn" class="absolute top-4 right-4 text-white/50 hover:text-white text-2xl z-20">&times;</button>
-            <div class="p-8 flex-1 overflow-y-auto relative">
-                <div class="flex flex-col items-center mt-4 mb-6">
-                    <div class="w-20 h-20 rounded-full bg-gradient-to-b from-pink-600 to-red-900 p-[2px] shadow-[0_0_30px_rgba(220,20,60,0.4)]"><div class="w-full h-full bg-black rounded-full flex items-center justify-center"><i class="fa-solid fa-dove text-2xl text-white/90"></i></div></div>
-                    <h2 id="panel-name" class="mt-4 text-2xl font-bold text-center text-white">...</h2>
-                    <p id="panel-date-head" class="text-sm text-pink-400 uppercase tracking-wider font-medium">...</p>
+        <!-- Detail Panel -->
+        <div id="detail-panel">
+            <button id="panel-close">&times;</button>
+            <div id="panel-scroll">
+                <div class="panel-avatar-wrap">
+                    <div class="panel-avatar">
+                        <div class="panel-avatar-inner">
+                            <i class="fa-solid fa-dove"></i>
+                        </div>
+                    </div>
+                    <div id="panel-name">...</div>
+                    <div id="panel-date-head">...</div>
                 </div>
-                <div class="bg-white/5 rounded-xl p-5 border border-white/5 mb-6">
+
+                <div class="details-box">
                     <div class="detail-row"><span class="detail-label">İl / İlçe</span><span id="det-location" class="detail-value">...</span></div>
                     <div class="detail-row"><span class="detail-label">Yaş</span><span id="det-age" class="detail-value">...</span></div>
-                    <div class="detail-row"><span class="detail-label">Fail</span><span id="det-killer" class="detail-value text-red-300">...</span></div>
+                    <div class="detail-row"><span class="detail-label">Fail</span><span id="det-killer" class="detail-value red">...</span></div>
                     <div class="detail-row"><span class="detail-label">Neden</span><span id="det-reason" class="detail-value">...</span></div>
                     <div class="detail-row"><span class="detail-label">Şekil</span><span id="det-method" class="detail-value">...</span></div>
                     <div class="detail-row"><span class="detail-label">Koruma</span><span id="det-protection" class="detail-value">...</span></div>
-                    <div class="detail-row border-none"><span class="detail-label">Durum</span><span id="det-status" class="detail-value">...</span></div>
+                    <div class="detail-row"><span class="detail-label">Durum</span><span id="det-status" class="detail-value">...</span></div>
                 </div>
-                <a id="source-link" href="#" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 mb-6 bg-gray-800/50 hover:bg-gray-800 text-gray-400 text-xs rounded transition-colors border border-white/10"><i class="fa-solid fa-external-link-alt"></i> Haberi Görüntüle</a>
-                <hr class="border-white/10 mb-6">
-                <div>
-                    <h3 class="text-lg font-medium text-pink-300 mb-2 flex items-center gap-2"><i class="fa-solid fa-pen-nib"></i> Anı Defteri</h3>
-                    <textarea id="memory-input" rows="4" class="w-full bg-black/40 border border-white/10 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-pink-500/50 transition-colors resize-none placeholder-gray-600" placeholder="Bir not bırakın..."></textarea>
-                    <div class="flex justify-end mt-3"><button id="save-btn" class="px-5 py-2 bg-gradient-to-r from-red-900 to-pink-800 hover:from-red-800 hover:to-pink-700 text-white text-xs font-bold rounded shadow-lg transition-all active:scale-95">KAYDET</button></div>
-                    <p id="save-msg" class="text-xs text-green-400 mt-2 text-right hidden">Kaydedildi.</p>
+
+                <a id="source-link" href="#" target="_blank">
+                    <i class="fa-solid fa-external-link-alt"></i> Haberi Görüntüle
+                </a>
+
+                <hr class="panel-divider">
+
+                <div class="memory-title"><i class="fa-solid fa-pen-nib"></i> Anı Defteri</div>
+                <textarea id="memory-input" rows="4" placeholder="Bir not bırakın..."></textarea>
+                <div class="save-row">
+                    <span id="save-msg">Kaydedildi.</span>
+                    <button id="save-btn">KAYDET</button>
                 </div>
             </div>
         </div>
-    </div>
+
+    </div><!-- /#ui -->
 
     <script>
-        let namesList = [];
-        let points = null; 
-        let geometry = null;
-        let isSelectionMode = false; 
+    // ══════════════════════════════════════════
+    //  STATE
+    // ══════════════════════════════════════════
+    let namesList = [];
+    let points    = null;
+    let geometry  = null;
+    let isSelectionMode   = false;
+    let currentSelectedName = null;
 
-        // --- MODAL YÖNETİMİ ---
-        const introModal = document.getElementById('intro-modal');
-        const infoModal = document.getElementById('info-modal');
-        const donateModal = document.getElementById('donate-modal');
-        const defenseModal = document.getElementById('defense-modal');
+    // ══════════════════════════════════════════
+    //  MODALS
+    // ══════════════════════════════════════════
+    function openModal(el) {
+        el.classList.remove('hidden');
+        requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('active')));
+    }
+    function closeModal(el) {
+        el.classList.remove('active');
+        setTimeout(() => el.classList.add('hidden'), 300);
+    }
 
-        function openModal(modal) {
-            modal.classList.remove('hidden');
-            void modal.offsetWidth;
-            modal.classList.add('active');
-        }
-        function closeModal(modal) {
-            modal.classList.remove('active');
-            setTimeout(() => modal.classList.add('hidden'), 300);
-        }
+    const introModal   = document.getElementById('intro-modal');
+    const defenseModal = document.getElementById('defense-modal');
+    const infoModal    = document.getElementById('info-modal');
+    const donateModal  = document.getElementById('donate-modal');
 
-        document.getElementById('close-intro-btn').onclick = () => closeModal(introModal);
-        document.getElementById('open-info-btn').onclick = () => openModal(infoModal);
-        document.getElementById('open-donate-btn').onclick = () => openModal(donateModal);
-        document.getElementById('open-defense-btn').onclick = () => openModal(defenseModal);
+    document.getElementById('close-intro-btn').onclick  = () => closeModal(introModal);
+    document.getElementById('open-defense-btn').onclick = () => openModal(defenseModal);
+    document.getElementById('open-info-btn').onclick    = () => openModal(infoModal);
+    document.getElementById('open-donate-btn').onclick  = () => openModal(donateModal);
 
-        document.querySelectorAll('.close-modal-btn').forEach(btn => {
-            btn.onclick = (e) => {
-                const modal = e.target.closest('.modal-wrapper');
-                if (modal) closeModal(modal);
-            };
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target.classList.contains('modal-wrapper')) closeModal(e.target);
-        });
-
-        // --- Seçim Modu Toggle ---
-        const modeBtn = document.getElementById('toggle-selection-mode');
-        const modeText = document.getElementById('mode-text');
-        const modeIndicator = document.getElementById('mode-indicator');
-
-        modeBtn.onclick = () => {
-            isSelectionMode = !isSelectionMode;
-            if(isSelectionMode) {
-                modeBtn.classList.remove('border-gray-500', 'text-gray-300', 'bg-black/60');
-                modeBtn.classList.add('border-pink-500', 'text-white', 'bg-pink-900/60', 'pulse-border');
-                document.body.classList.add('selection-active');
-                modeText.innerText = "AÇIK";
-                modeText.classList.add('text-pink-300');
-                modeIndicator.style.opacity = '1';
-            } else {
-                modeBtn.classList.add('border-gray-500', 'text-gray-300', 'bg-black/60');
-                modeBtn.classList.remove('border-pink-500', 'text-white', 'bg-pink-900/60', 'pulse-border');
-                document.body.classList.remove('selection-active');
-                modeText.innerText = "KAPALI";
-                modeText.classList.remove('text-pink-300');
-                modeIndicator.style.opacity = '0';
-                document.getElementById('tooltip').classList.add('hidden');
-            }
+    document.querySelectorAll('.close-modal-btn').forEach(btn => {
+        btn.onclick = e => {
+            const m = e.target.closest('.modal-wrapper');
+            if (m) closeModal(m);
         };
+    });
+    window.addEventListener('click', e => {
+        if (e.target.classList.contains('modal-wrapper')) closeModal(e.target);
+    });
 
-        // --- Arama Kutusu ---
-        const searchInput = document.getElementById('search-input');
-        const searchResults = document.getElementById('search-results');
-        searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.toLocaleLowerCase('tr');
-            searchResults.innerHTML = ''; 
-            if(query.length < 2) { searchResults.classList.add('hidden'); return; }
-            const matches = namesList.map((p, i) => ({...p, originalIndex: i})).filter(p => p.name.toLocaleLowerCase('tr').includes(query)).slice(0, 10);
-            if(matches.length > 0) {
-                searchResults.classList.remove('hidden');
-                matches.forEach(match => {
-                    const div = document.createElement('div');
-                    div.className = 'px-4 py-3 hover:bg-white/5 cursor-pointer border-b border-white/5 text-gray-200 text-sm';
-                    div.innerText = match.name;
-                    div.onclick = () => { 
-                        openPanel(match.originalIndex); 
-                        flyToStar(match.originalIndex); 
-                        searchResults.classList.add('hidden'); 
-                        searchInput.value = ''; 
-                    };
-                    searchResults.appendChild(div);
-                });
-            } else {
-                searchResults.classList.remove('hidden'); searchResults.innerHTML = '<div class="px-4 py-3 text-xs text-gray-500 italic text-center">Sonuç yok</div>';
-            }
+    // ══════════════════════════════════════════
+    //  SELECTION MODE
+    // ══════════════════════════════════════════
+    const modeBtn       = document.getElementById('toggle-selection-mode');
+    const modeText      = document.getElementById('mode-text');
+    const modeIndicator = document.getElementById('mode-indicator');
+
+    modeBtn.addEventListener('click', () => {
+        isSelectionMode = !isSelectionMode;
+        if (isSelectionMode) {
+            modeBtn.classList.add('active');
+            modeText.textContent = 'AÇIK';
+            modeText.style.color = '#f9a8d4';
+            modeIndicator.style.opacity = '1';
+            document.body.classList.add('selection-active');
+        } else {
+            modeBtn.classList.remove('active');
+            modeText.textContent = 'KAPALI';
+            modeText.style.color = '';
+            modeIndicator.style.opacity = '0';
+            document.body.classList.remove('selection-active');
+            document.getElementById('tooltip').style.display = 'none';
+        }
+    });
+
+    // ══════════════════════════════════════════
+    //  SEARCH
+    // ══════════════════════════════════════════
+    const searchInput   = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLocaleLowerCase('tr');
+        searchResults.innerHTML = '';
+        if (query.length < 2) { searchResults.style.display = 'none'; return; }
+
+        const matches = namesList
+            .map((p, i) => ({ ...p, originalIndex: i }))
+            .filter(p => p.name.toLocaleLowerCase('tr').includes(query))
+            .slice(0, 10);
+
+        searchResults.style.display = 'block';
+        if (matches.length === 0) {
+            searchResults.innerHTML = '<div class="search-empty">Sonuç yok</div>';
+            return;
+        }
+        matches.forEach(m => {
+            const div = document.createElement('div');
+            div.className = 'search-result-item';
+            div.textContent = m.name;
+            div.addEventListener('click', () => {
+                openPanel(m.originalIndex);
+                flyToStar(m.originalIndex);
+                searchResults.style.display = 'none';
+                searchInput.value = '';
+            });
+            searchResults.appendChild(div);
         });
-        document.addEventListener('click', (e) => { if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) searchResults.classList.add('hidden'); });
+    });
+    document.addEventListener('click', e => {
+        if (!searchInput.contains(e.target) && !searchResults.contains(e.target))
+            searchResults.style.display = 'none';
+    });
 
-        async function fetchNames() {
-            try {
-                const response = await fetch('anit_verileri.json?t=' + new Date().getTime());
-                if (!response.ok) throw new Error('Veri yok');
-                namesList = await response.json();
-                document.getElementById('total-count').innerText = namesList.length.toLocaleString();
-                generateGalaxy();
-                document.getElementById('loading-overlay').style.display = 'none';
-            } catch (error) {
-                namesList = [{name: "Özgecan Aslan", date: "11.02.2015"}, {name: "Emine Bulut", date: "18.08.2019"}];
-                for(let i=0; i<500; i++) namesList.push({name: "Bilinmiyor", date: "..."});
-                generateGalaxy();
-                document.getElementById('loading-overlay').style.display = 'none';
-            }
+    // ══════════════════════════════════════════
+    //  DATA
+    // ══════════════════════════════════════════
+    async function fetchNames() {
+        try {
+            const res = await fetch('anit_verileri.json?t=' + Date.now());
+            if (!res.ok) throw new Error();
+            namesList = await res.json();
+        } catch {
+            namesList = [
+                { name: 'Özgecan Aslan', date: '11.02.2015' },
+                { name: 'Emine Bulut',   date: '18.08.2019' }
+            ];
+            for (let i = 0; i < 500; i++)
+                namesList.push({ name: 'Bilinmiyor', date: '...' });
         }
+        document.getElementById('total-count').textContent = namesList.length.toLocaleString('tr-TR');
+        generateGalaxy();
+        document.getElementById('loading-overlay').style.display = 'none';
+    }
 
-        // --- Three.js Kurulumu ---
-        const canvas = document.getElementById('webgl');
-        const scene = new THREE.Scene();
-        scene.fog = new THREE.FogExp2('#050000', 0.03);
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
-        camera.position.set(0, 4, 8);
-        const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        const controls = new THREE.OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true; controls.autoRotate = true; controls.autoRotateSpeed = 0.5;
+    // ══════════════════════════════════════════
+    //  THREE.JS
+    // ══════════════════════════════════════════
+    const canvas   = document.getElementById('webgl');
+    const scene    = new THREE.Scene();
+    scene.fog      = new THREE.FogExp2('#050000', 0.03);
+    const camera   = new THREE.PerspectiveCamera(75, innerWidth / innerHeight, 0.1, 100);
+    camera.position.set(0, 4, 8);
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setSize(innerWidth, innerHeight);
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
 
-        function createHeartTexture() {
-            const c = document.createElement('canvas'); c.width=32; c.height=32; const x = c.getContext('2d');
-            x.fillStyle='#fff'; x.beginPath(); x.moveTo(16,28); x.bezierCurveTo(16,26,4,18,4,12);
-            x.bezierCurveTo(4,6,10,4,16,10); x.bezierCurveTo(22,4,28,6,28,12); x.bezierCurveTo(28,18,16,26,16,28);
-            x.fill(); x.shadowBlur=4; x.shadowColor="white"; x.fill(); return new THREE.CanvasTexture(c);
+    // ─────────────────────────────────────────────────────────────────────
+    // FIX: Replaced OrbitControls (CDN) with a minimal self-contained orbit.
+    //
+    // The original bug: OrbitControls.js attached its own pointerdown/up
+    // listeners to the canvas and consumed events internally, preventing
+    // the selection click from ever reaching our handler reliably.
+    // ─────────────────────────────────────────────────────────────────────
+    const orbit = {
+        theta: 0, phi: Math.PI / 3.5, radius: 10,
+        target: new THREE.Vector3(),
+        autoRotate: true, autoSpeed: 0.003,
+        dampTheta: 0, dampPhi: 0, dampFactor: 0.1,
+        dragging: false, prevX: 0, prevY: 0
+    };
+
+    function applyOrbit() {
+        orbit.phi = Math.max(0.15, Math.min(Math.PI - 0.15, orbit.phi));
+        const sp = Math.sin(orbit.phi), cp = Math.cos(orbit.phi);
+        camera.position.set(
+            orbit.target.x + orbit.radius * sp * Math.sin(orbit.theta),
+            orbit.target.y + orbit.radius * cp,
+            orbit.target.z + orbit.radius * sp * Math.cos(orbit.theta)
+        );
+        camera.lookAt(orbit.target);
+    }
+
+    // FIX: Track genuine click vs drag.
+    // Original used mousedown/mouseup with 3px threshold — OrbitControls
+    // drift easily exceeded this. Now using pointerdown/up with 8px threshold.
+    const CLICK_THRESHOLD = 8;
+    let pointerDownX = 0, pointerDownY = 0, didDrag = false;
+
+    canvas.addEventListener('pointerdown', e => {
+        if (e.button !== 0) return;
+        pointerDownX = e.clientX;
+        pointerDownY = e.clientY;
+        didDrag = false;
+        orbit.dragging = true;
+        orbit.prevX = e.clientX;
+        orbit.prevY = e.clientY;
+        orbit.autoRotate = false;
+        canvas.setPointerCapture(e.pointerId);
+    });
+
+    canvas.addEventListener('pointermove', e => {
+        if (orbit.dragging) {
+            orbit.dampTheta -= (e.clientX - orbit.prevX) * 0.005;
+            orbit.dampPhi   -= (e.clientY - orbit.prevY) * 0.005;
+            orbit.prevX = e.clientX;
+            orbit.prevY = e.clientY;
+            if (Math.abs(e.clientX - pointerDownX) > 3 ||
+                Math.abs(e.clientY - pointerDownY) > 3) didDrag = true;
         }
+        handleTooltip(e);
+    });
 
-        const generateGalaxy = () => {
-            if(namesList.length === 0) return;
-            const count = namesList.length;
-            geometry = new THREE.BufferGeometry();
-            const positions = new Float32Array(count * 3);
-            const colors = new Float32Array(count * 3);
-            const nameIndices = new Float32Array(count);
-            const colorIn = new THREE.Color('#ffc0cb');
-            const colorOut = new THREE.Color('#8a0000');
+    canvas.addEventListener('pointerup', e => {
+        if (e.button !== 0) return;
+        orbit.dragging = false;
+        canvas.releasePointerCapture(e.pointerId);
 
-            for(let i=0; i<count; i++) {
-                const i3 = i*3;
-                const r = Math.pow(i/count, 0.7) * 12; 
-                const s = r * 1.2; 
-                const b = (i % 4) / 4 * Math.PI * 2; 
-                const rx = Math.pow(Math.random(), 3) * (Math.random()<0.5?1:-1) * 0.5 * r;
-                const ry = Math.pow(Math.random(), 3) * (Math.random()<0.5?1:-1) * 0.5 * r;
-                const rz = Math.pow(Math.random(), 3) * (Math.random()<0.5?1:-1) * 0.5 * r;
+        const dx = Math.abs(e.clientX - pointerDownX);
+        const dy = Math.abs(e.clientY - pointerDownY);
+        const isClick = !didDrag && dx < CLICK_THRESHOLD && dy < CLICK_THRESHOLD;
 
-                positions[i3] = Math.cos(b+s)*r + rx;
-                positions[i3+1] = ry/2;
-                positions[i3+2] = Math.sin(b+s)*r + rz;
+        // Resume auto-rotate if panel is closed
+        if (document.getElementById('detail-panel').classList.contains('open') === false)
+            orbit.autoRotate = true;
 
-                const mixedColor = colorIn.clone(); mixedColor.lerp(colorOut, r/12);
-                colors[i3] = mixedColor.r; colors[i3+1] = mixedColor.g; colors[i3+2] = mixedColor.b;
-                nameIndices[i] = i;
-            }
-            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-            geometry.setAttribute('nameIndex', new THREE.BufferAttribute(nameIndices, 1));
-            const material = new THREE.PointsMaterial({ size: 0.25, sizeAttenuation: true, depthWrite: false, blending: THREE.AdditiveBlending, vertexColors: true, map: createHeartTexture(), transparent: true, opacity: 0.8 });
-            points = new THREE.Points(geometry, material);
-            scene.add(points);
+        // FIX: only raycast on a confirmed non-drag click while mode is on
+        if (isClick && isSelectionMode && points) doRaycast(e.clientX, e.clientY);
+    });
+
+    canvas.addEventListener('wheel', e => {
+        orbit.radius = Math.max(2, Math.min(30, orbit.radius + e.deltaY * 0.01));
+    }, { passive: true });
+
+    // ── Galaxy ──
+    function createHeartTexture() {
+        const c = document.createElement('canvas');
+        c.width = 32; c.height = 32;
+        const x = c.getContext('2d');
+        x.fillStyle = '#fff';
+        x.beginPath();
+        x.moveTo(16, 28);
+        x.bezierCurveTo(16, 26, 4, 18, 4, 12);
+        x.bezierCurveTo(4, 6, 10, 4, 16, 10);
+        x.bezierCurveTo(22, 4, 28, 6, 28, 12);
+        x.bezierCurveTo(28, 18, 16, 26, 16, 28);
+        x.fill();
+        x.shadowBlur = 4; x.shadowColor = 'white'; x.fill();
+        return new THREE.CanvasTexture(c);
+    }
+
+    const raycaster = new THREE.Raycaster();
+    const mouse     = new THREE.Vector2();
+
+    function generateGalaxy() {
+        if (!namesList.length) return;
+        const count = namesList.length;
+        geometry = new THREE.BufferGeometry();
+        const positions   = new Float32Array(count * 3);
+        const colors      = new Float32Array(count * 3);
+        const nameIndices = new Float32Array(count);
+        const cIn  = new THREE.Color('#ffc0cb');
+        const cOut = new THREE.Color('#8a0000');
+
+        for (let i = 0; i < count; i++) {
+            const i3 = i * 3;
+            const r  = Math.pow(i / count, 0.7) * 12;
+            const s  = r * 1.2;
+            const b  = (i % 4) / 4 * Math.PI * 2;
+            const rx = Math.pow(Math.random(), 3) * (Math.random() < .5 ? 1 : -1) * .5 * r;
+            const ry = Math.pow(Math.random(), 3) * (Math.random() < .5 ? 1 : -1) * .5 * r;
+            const rz = Math.pow(Math.random(), 3) * (Math.random() < .5 ? 1 : -1) * .5 * r;
+            positions[i3]     = Math.cos(b + s) * r + rx;
+            positions[i3 + 1] = ry / 2;
+            positions[i3 + 2] = Math.sin(b + s) * r + rz;
+            const mc = cIn.clone(); mc.lerp(cOut, r / 12);
+            colors[i3] = mc.r; colors[i3+1] = mc.g; colors[i3+2] = mc.b;
+            nameIndices[i] = i;
         }
+        geometry.setAttribute('position',  new THREE.BufferAttribute(positions, 3));
+        geometry.setAttribute('color',     new THREE.BufferAttribute(colors, 3));
+        geometry.setAttribute('nameIndex', new THREE.BufferAttribute(nameIndices, 1));
 
-        // --- RAYCASTER VE TIKLAMA MANTIĞI ---
-        const raycaster = new THREE.Raycaster();
-        // ÖNEMLİ: Threshold'u artırdık, böylece yıldıza tam isabet etmese de yakalar.
-        raycaster.params.Points.threshold = 0.5; // İdeal nokta
-        const mouse = new THREE.Vector2();
-        let clickStartX = 0;
-        let clickStartY = 0;
-
-        // KANVAS ÜZERİNE EVENT EKLİYORUZ (Tüm sayfa değil)
-        canvas.addEventListener('mousedown', (e) => {
-            clickStartX = e.clientX;
-            clickStartY = e.clientY;
+        const mat = new THREE.PointsMaterial({
+            size: 0.25, sizeAttenuation: true, depthWrite: false,
+            blending: THREE.AdditiveBlending, vertexColors: true,
+            map: createHeartTexture(), transparent: true, opacity: 0.8
         });
+        points = new THREE.Points(geometry, mat);
+        scene.add(points);
 
-        canvas.addEventListener('mouseup', (e) => {
-            if(e.button !== 0) return;
-            const diffX = Math.abs(e.clientX - clickStartX);
-            const diffY = Math.abs(e.clientY - clickStartY);
+        // FIX: set threshold HERE after points exists (setting it earlier has no effect)
+        raycaster.params.Points.threshold = 0.35;
+    }
 
-            if (diffX < 3 && diffY < 3) {
-                if (!isSelectionMode) return; 
+    // ── Raycast ──
+    function getHit(clientX, clientY) {
+        mouse.x =  (clientX / innerWidth)  * 2 - 1;
+        mouse.y = -(clientY / innerHeight) * 2 + 1;
+        raycaster.setFromCamera(mouse, camera);
+        const hits = raycaster.intersectObject(points);
+        return hits.length ? hits[0] : null;
+    }
 
-                mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
-                mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
-                
-                raycaster.setFromCamera(mouse, camera);
-                if(points) {
-                    const intersects = raycaster.intersectObject(points);
-                    if (intersects.length > 0) {
-                        const idx = intersects[0].index;
-                        const nameIdx = geometry.attributes.nameIndex.array[idx];
-                        openPanel(nameIdx);
-                        flyToStar(idx);
-                    }
-                }
-            }
-        });
+    function doRaycast(clientX, clientY) {
+        const hit = getHit(clientX, clientY);
+        if (!hit) return;
+        // FIX: Math.round() because Float32Array stores integers with tiny float error
+        const nameIdx = Math.round(geometry.attributes.nameIndex.array[hit.index]);
+        openPanel(nameIdx);
+        flyToStar(hit.index);
+    }
 
-        const tooltip = document.getElementById('tooltip');
-        const tooltipName = document.getElementById('tooltip-name');
-        const tooltipDate = document.getElementById('tooltip-date');
+    // ── Tooltip ──
+    const tooltip     = document.getElementById('tooltip');
+    const tooltipName = document.getElementById('tooltip-name');
+    const tooltipDate = document.getElementById('tooltip-date');
 
-        canvas.addEventListener('mousemove', (e) => {
-            // Hover her zaman çalışsın (Bilgi amaçlı)
-            if(points) {
-                mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
-                mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
-                
-                raycaster.setFromCamera(mouse, camera);
-                const intersects = raycaster.intersectObject(points);
-                
-                if (intersects.length > 0) {
-                    document.body.style.cursor = 'pointer';
-                    const idx = intersects[0].index;
-                    const nameIdx = geometry.attributes.nameIndex.array[idx];
-                    const person = namesList[nameIdx];
-                    
-                    tooltipName.innerText = person.name;
-                    tooltipDate.innerText = person.date || "";
-                    tooltip.style.left = (e.clientX + 15) + 'px';
-                    tooltip.style.top = (e.clientY + 15) + 'px';
-                    tooltip.classList.remove('hidden');
-                } else {
-                    document.body.style.cursor = isSelectionMode ? 'crosshair' : 'default';
-                    tooltip.classList.add('hidden');
-                }
-            }
-        });
-
-        const els = { name: document.getElementById('panel-name'), dateHead: document.getElementById('panel-date-head'), location: document.getElementById('det-location'), age: document.getElementById('det-age'), killer: document.getElementById('det-killer'), reason: document.getElementById('det-reason'), method: document.getElementById('det-method'), protection: document.getElementById('det-protection'), status: document.getElementById('det-status'), sourceLink: document.getElementById('source-link'), input: document.getElementById('memory-input'), saveMsg: document.getElementById('save-msg') };
-        let currentSelectedName = null;
-
-        function openPanel(index) {
-            controls.autoRotate = false;
-            const person = namesList[index];
-            currentSelectedName = person.name;
-            const safe = (val) => (val && val.length > 1) ? val : "Bilinmiyor";
-            els.name.innerText = person.name;
-            els.dateHead.innerText = safe(person.date);
-            els.location.innerText = safe(person.location);
-            els.age.innerText = safe(person.age);
-            els.killer.innerText = safe(person.killer);
-            els.reason.innerText = safe(person.reason);
-            els.method.innerText = safe(person.method);
-            els.protection.innerText = safe(person.protection);
-            els.status.innerText = safe(person.status);
-            if(person.source && person.source.startsWith('http')) { els.sourceLink.href = person.source; els.sourceLink.style.display = 'flex'; } else { els.sourceLink.style.display = 'none'; }
-            els.input.value = localStorage.getItem(`note_${person.name}`) || "";
-            els.saveMsg.classList.add('hidden');
-            document.getElementById('detail-panel').classList.remove('translate-x-full');
+    function handleTooltip(e) {
+        if (!points) return;
+        const hit = getHit(e.clientX, e.clientY);
+        if (hit) {
+            canvas.style.cursor = isSelectionMode ? 'crosshair' : 'pointer';
+            const nameIdx = Math.round(geometry.attributes.nameIndex.array[hit.index]);
+            const p = namesList[nameIdx];
+            tooltipName.textContent = p ? p.name : '?';
+            tooltipDate.textContent = p ? (p.date || '') : '';
+            tooltip.style.left    = (e.clientX + 15) + 'px';
+            tooltip.style.top     = (e.clientY + 15) + 'px';
+            tooltip.style.display = 'block';
+        } else {
+            canvas.style.cursor   = isSelectionMode ? 'crosshair' : 'default';
+            tooltip.style.display = 'none';
         }
+    }
 
-        function flyToStar(index) {
-            if (!geometry) return;
-            const positions = geometry.attributes.position.array;
-            const targetPos = new THREE.Vector3(positions[index*3], positions[index*3+1], positions[index*3+2]);
-            const offset = new THREE.Vector3(0, 0.5, 2); 
-            const camPos = targetPos.clone().add(offset);
-            new TWEEN.Tween(camera.position).to({x:camPos.x, y:camPos.y, z:camPos.z}, 2000).easing(TWEEN.Easing.Cubic.Out).start();
-            new TWEEN.Tween(controls.target).to({x:targetPos.x, y:targetPos.y, z:targetPos.z}, 2000).easing(TWEEN.Easing.Cubic.Out).start();
+    // ── Panel ──
+    const det = {
+        name:       document.getElementById('panel-name'),
+        dateHead:   document.getElementById('panel-date-head'),
+        location:   document.getElementById('det-location'),
+        age:        document.getElementById('det-age'),
+        killer:     document.getElementById('det-killer'),
+        reason:     document.getElementById('det-reason'),
+        method:     document.getElementById('det-method'),
+        protection: document.getElementById('det-protection'),
+        status:     document.getElementById('det-status'),
+        sourceLink: document.getElementById('source-link'),
+        input:      document.getElementById('memory-input'),
+        saveMsg:    document.getElementById('save-msg')
+    };
+    const detailPanel = document.getElementById('detail-panel');
+
+    function openPanel(index) {
+        orbit.autoRotate = false;
+        const p = namesList[index];
+        if (!p) return;
+        currentSelectedName = p.name;
+        const safe = v => (v && v.toString().trim().length > 1) ? v : 'Bilinmiyor';
+        det.name.textContent       = p.name;
+        det.dateHead.textContent   = safe(p.date);
+        det.location.textContent   = safe(p.location);
+        det.age.textContent        = safe(p.age);
+        det.killer.textContent     = safe(p.killer);
+        det.reason.textContent     = safe(p.reason);
+        det.method.textContent     = safe(p.method);
+        det.protection.textContent = safe(p.protection);
+        det.status.textContent     = safe(p.status);
+        if (p.source && p.source.startsWith('http')) {
+            det.sourceLink.href = p.source;
+            det.sourceLink.style.display = 'flex';
+        } else {
+            det.sourceLink.style.display = 'none';
         }
+        det.input.value = localStorage.getItem('note_' + p.name) || '';
+        det.saveMsg.style.display = 'none';
+        detailPanel.classList.add('open');
+    }
 
-        document.getElementById('close-btn').onclick = () => { document.getElementById('detail-panel').classList.add('translate-x-full'); controls.autoRotate = true; };
-        document.getElementById('save-btn').onclick = () => { if(currentSelectedName) { localStorage.setItem(`note_${currentSelectedName}`, els.input.value); els.saveMsg.classList.remove('hidden'); setTimeout(() => els.saveMsg.classList.add('hidden'), 2000); } };
-        window.addEventListener('resize', () => { camera.aspect = window.innerWidth/window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
+    function flyToStar(index) {
+        if (!geometry) return;
+        const pos = geometry.attributes.position.array;
+        const tx = pos[index*3], ty = pos[index*3+1], tz = pos[index*3+2];
+        new TWEEN.Tween(orbit.target)
+            .to({ x: tx, y: ty, z: tz }, 2000)
+            .easing(TWEEN.Easing.Cubic.Out).start();
+        new TWEEN.Tween(orbit)
+            .to({ radius: 3.5 }, 2000)
+            .easing(TWEEN.Easing.Cubic.Out).start();
+    }
 
-        function tick() {
-            TWEEN.update();
-            controls.update();
-            renderer.render(scene, camera);
-            requestAnimationFrame(tick);
+    document.getElementById('panel-close').addEventListener('click', () => {
+        detailPanel.classList.remove('open');
+        orbit.autoRotate = true;
+    });
+    document.getElementById('save-btn').addEventListener('click', () => {
+        if (!currentSelectedName) return;
+        localStorage.setItem('note_' + currentSelectedName, det.input.value);
+        det.saveMsg.style.display = 'inline';
+        setTimeout(() => { det.saveMsg.style.display = 'none'; }, 2000);
+    });
+
+    window.addEventListener('resize', () => {
+        camera.aspect = innerWidth / innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(innerWidth, innerHeight);
+    });
+
+    // ── Loop ──
+    function tick() {
+        TWEEN.update();
+        if (orbit.autoRotate) orbit.theta += orbit.autoSpeed;
+        if (!orbit.dragging) {
+            orbit.theta     += orbit.dampTheta;
+            orbit.phi       += orbit.dampPhi;
+            orbit.dampTheta *= 1 - orbit.dampFactor;
+            orbit.dampPhi   *= 1 - orbit.dampFactor;
+        } else {
+            orbit.theta += orbit.dampTheta;
+            orbit.phi   += orbit.dampPhi;
+            orbit.dampTheta = 0;
+            orbit.dampPhi   = 0;
         }
+        applyOrbit();
+        renderer.render(scene, camera);
+        requestAnimationFrame(tick);
+    }
 
-        fetchNames();
-        tick();
+    applyOrbit();
+    fetchNames();
+    tick();
     </script>
 </body>
 </html>
