@@ -1,5 +1,29 @@
 [
     {
+        "name": "Yonca Kölge",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "04/04/2026",
+        "reason": "Reddedilme",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Aranıyor",
+        "source": "https://www.evrensel.net/haber/5978155/bahcelievler-de-kadin-cinayeti-yonca-kolge-cezaevinden-izinli-cikan-bosandigi-erkek-tarafindan-olduruldu"
+    },
+    {
+        "name": "Mürşide B.",
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "01/04/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Darp",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.birgun.net/haber/manisada-65-yasindaki-kadin-evinde-olu-bulundu-yuzunde-darp-izleri-tespit-edildi-702768"
+    },
+    {
         "name": "Sariye Nur Çoşkun",
         "age": "Reşit",
         "location": "Manisa",
@@ -286,18 +310,6 @@
         "method": "Yüksekten Düşme",
         "status": "Tespit Edilemeyen",
         "source": "https://m.haber7.com/amphtml/edirne/haber/3613312-edirnede-genc-doktorun-supheli-olumu"
-    },
-    {
-        "name": "Cemre Nehir Karain",
-        "age": "Reşit",
-        "location": "İstanbul",
-        "date": "19/03/2026",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Tespit Edilemeyen",
-        "status": "Tespit Edilemeyen",
-        "source": "https://www.odatv.com/amp/guncel/universite-ogrencisiydi-genc-sair-cemre-nehir-karain-sir-olumu-120140076"
     },
     {
         "name": "Shaımas Abdi",
@@ -33613,15 +33625,7 @@
     },
     {
         "name": "Tuğçe Baran",
-        "age": "Reşit",
-        "location": "İzmir",
-        "date": "29/09/2019",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Erkek Arkadaşı",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Tutuklu",
-        "source": "http://www.milliyet.com.tr/gundem/evinde-basindan-vurulan-tugce-hayatini-kaybetti-6042935"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "A.M.M.A.O.",
