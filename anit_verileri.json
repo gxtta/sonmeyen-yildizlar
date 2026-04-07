@@ -30637,15 +30637,7 @@
     },
     {
         "name": "Hatice Batmaz",
-        "age": "Reşit",
-        "location": "Denizli",
-        "date": "04/06/2020",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Tespit Edilemeyen",
-        "status": "Bilinmiyor",
-        "source": "https://ilerihaber.org/icerik/denizlide-supheli-kadin-olumu-cansiz-bedeni-barajda-bulundu-113676.html"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Hülya K.",
@@ -33625,7 +33617,15 @@
     },
     {
         "name": "Tuğçe Baran",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "29/09/2019",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Erkek Arkadaşı",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "http://www.milliyet.com.tr/gundem/evinde-basindan-vurulan-tugce-hayatini-kaybetti-6042935"
     },
     {
         "name": "A.M.M.A.O.",
