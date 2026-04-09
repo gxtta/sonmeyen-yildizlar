@@ -30637,7 +30637,15 @@
     },
     {
         "name": "Hatice Batmaz",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Denizli",
+        "date": "04/06/2020",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Bilinmiyor",
+        "source": "https://ilerihaber.org/icerik/denizlide-supheli-kadin-olumu-cansiz-bedeni-barajda-bulundu-113676.html"
     },
     {
         "name": "Hülya K.",
