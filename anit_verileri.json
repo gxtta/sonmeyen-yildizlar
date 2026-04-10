@@ -1,5 +1,53 @@
 [
     {
+        "name": "Bahar Aksüt",
+        "age": "Reşit",
+        "location": "Adana",
+        "date": "09/04/2026",
+        "reason": "Hamile Olması",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/muhtarin-yasak-ask-dehseti-hamile-sevgilisini-oldurup-barajin-buzunu-kirarak-icine-atti-p308737"
+    },
+    {
+        "name": "Şahsenem Zoroğlu",
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "08/04/2026",
+        "reason": "Tartışma",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/ankarada-dehset-kiz-arkadasini-silahla-oldurup-intihar-etti-43146188"
+    },
+    {
+        "name": "Medine Hepgülnar",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "08/04/2026",
+        "reason": "Ailesini Sevmemesi",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sabah.com.tr/yasam/cekmekoyde-ailesini-katletmisti-ifadesinde-kotu-yasam-kosullarindan-dolayi-ailemin-yasamina-son-vermek-istedim-dedi-7559494"
+    },
+    {
+        "name": "Selver Sanlı",
+        "age": "Reşit",
+        "location": "Çanakkale",
+        "date": "06/04/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.ntv.com.tr/amp/turkiye/selver-esi-tarafindan-av-tufegiyle-katledildi-1719035"
+    },
+    {
         "name": "Yonca Kölge",
         "age": "Reşit",
         "location": "İstanbul",
@@ -12,7 +60,7 @@
         "source": "https://www.evrensel.net/haber/5978155/bahcelievler-de-kadin-cinayeti-yonca-kolge-cezaevinden-izinli-cikan-bosandigi-erkek-tarafindan-olduruldu"
     },
     {
-        "name": "Mürşide B.",
+        "name": "Mürşide Böcüne",
         "age": "Reşit",
         "location": "Manisa",
         "date": "01/04/2026",
