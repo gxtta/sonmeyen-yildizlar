@@ -1,5 +1,41 @@
 [
     {
+        "name": "Fatma Ekinci",
+        "age": "Reşit",
+        "location": "Bursa",
+        "date": "11/04/2026",
+        "reason": "Gasp",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/bursadaki-vahset-evinde-bogazi-kesilmis-halde-olu-bulunmustu-katil-zanlisi-caldigi-altinlarla-yakalandi-43148947"
+    },
+    {
+        "name": "Ceylinaz Şevgin",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "10/04/2026",
+        "reason": "Tartışma",
+        "killer": "Babası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Aranıyor",
+        "source": "https://www.milliyet.com.tr/gundem/zeytinburnunda-aile-faciasi-oz-kizini-oldurdu-eski-esini-yaraladi-7568832"
+    },
+    {
+        "name": "Nazlı Yılmaz",
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "10/04/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihara Teşebbüs",
+        "source": "https://www.cumhuriyet.com.tr/turkiye/yanindaki-kadini-oldurup-intihar-girisiminde-bulundu-2494038"
+    },
+    {
         "name": "Bahar Aksüt",
         "age": "Reşit",
         "location": "Adana",
@@ -34,6 +70,30 @@
         "method": "Ateşli Silah",
         "status": "Tutuklu",
         "source": "https://www.sabah.com.tr/yasam/cekmekoyde-ailesini-katletmisti-ifadesinde-kotu-yasam-kosullarindan-dolayi-ailemin-yasamina-son-vermek-istedim-dedi-7559494"
+    },
+    {
+        "name": "Deniz Büyükköprü",
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "08/04/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/emekli-uzman-cavus-beylik-tabancasi-ile-ailesine-dehseti-yasatmisti-komsulari-anlatti-evde-bazen-bagrismalar-olurdu-43146504"
+    },
+    {
+        "name": "Irmak Nehir Büyükköprü",
+        "age": "Reşit Değil",
+        "location": "Ankara",
+        "date": "08/04/2026",
+        "reason": "Aile İçi Tartışma",
+        "killer": "Babası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/emekli-uzman-cavus-beylik-tabancasi-ile-ailesine-dehseti-yasatmisti-komsulari-anlatti-evde-bazen-bagrismalar-olurdu-43146504"
     },
     {
         "name": "Selver Sanlı",
