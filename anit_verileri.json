@@ -15781,7 +15781,15 @@
     },
     {
         "name": "Vezire Ertürk",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Diyarbakır",
+        "date": "25/05/2023",
+        "reason": "Kavga",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.evrensel.net/haber/490827/vezire-erturk-adli-kadin-evli-oldugu-erkek-tarafindan-olduruldu"
     },
     {
         "name": "Basra Denizli",
@@ -18245,7 +18253,15 @@
     },
     {
         "name": "Nursel Bircan",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "16/10/2022",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Vurucu Alet",
+        "status": "Tutuklu",
+        "source": "https://www.haberturk.com/istanbul-da-vahset-cocugunun-gozu-onunde-cekicle-olduruldu-3529760?page=5"
     },
     {
         "name": "Vahide Duran",
