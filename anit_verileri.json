@@ -1,5 +1,29 @@
 [
     {
+        "name": "Türkan Bildik",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "13/04/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sondakika.com/amp/haber-zeytinburnu-nda-kayip-es-ve-kiz-cinayeti-supheli-t-19745113/"
+    },
+    {
+        "name": "Elif K.",
+        "age": "Reşit",
+        "location": "Erzurum",
+        "date": "13/04/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.haberturk.com/yerel-haberler/erzurum-haberleri/erzurumda-3-cocuk-annesi-kadin-kocasi-tarafindan-bicakla-olduruldu-41097630"
+    },
+    {
         "name": "Fatma Ekinci",
         "age": "Reşit",
         "location": "Bursa",
@@ -288,30 +312,6 @@
         "source": "https://www.sozcu.com.tr/amp/ilayda-hemsire-6-kattan-dustu-doktor-sevgilisi-olay-anini-anlatti-p304529"
     },
     {
-        "name": "S.K.",
-        "age": "Reşit",
-        "location": "Afyonkarahisar",
-        "date": "23/03/2026",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Soruşturma Sürüyor",
-        "source": "https://www.kocatepegazetesi.com/termal-otelde-sok-olay-genc-kadin-odasinda-olu-bulundu/402822/"
-    },
-    {
-        "name": "Nigar Arslan",
-        "age": "Reşit",
-        "location": "Samsun",
-        "date": "23/03/2026",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Eniştesi",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "İntihar",
-        "source": "https://www.haberler.com/amp/samsun-da-baldizini-vuran-adam-intihar-etti-19682843-haberi/"
-    },
-    {
         "name": "Aleyna Yaray",
         "age": "Reşit",
         "location": "Diyarbakır",
@@ -334,6 +334,30 @@
         "method": "Tespit Edilemeyen",
         "status": "Soruşturma Sürüyor",
         "source": "https://www.hurriyet.com.tr/gundem/rumeysa-ogretmenin-irmakta-cansiz-bedeni-bulundu-43134645"
+    },
+    {
+        "name": "S.K.",
+        "age": "Reşit",
+        "location": "Afyonkarahisar",
+        "date": "23/03/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.kocatepegazetesi.com/termal-otelde-sok-olay-genc-kadin-odasinda-olu-bulundu/402822/"
+    },
+    {
+        "name": "Nigar Arslan",
+        "age": "Reşit",
+        "location": "Samsun",
+        "date": "23/03/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eniştesi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.haberler.com/amp/samsun-da-baldizini-vuran-adam-intihar-etti-19682843-haberi/"
     },
     {
         "name": "Kısmet Erdoğan",
@@ -478,18 +502,6 @@
         "method": "Tespit Edilemeyen",
         "status": "Tespit Edilemeyen",
         "source": "https://www.evrensel.net/haber/5975281/van-yyu-ogrencisi-yurtta-olu-bulundu"
-    },
-    {
-        "name": "Ayşegül Eraslan",
-        "age": "Reşit",
-        "location": "İstanbul",
-        "date": "14/03/2026",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Tespit Edilemeyen",
-        "status": "Soruşturma Sürüyor",
-        "source": "https://www.cumhuriyet.com.tr/ekonomi/istanbul-finans-merkezi-santiyesinde-calisan-isciler-direniyor-yine-taseron-yine-hak-gaspi-2487730"
     },
     {
         "name": "Meryem Akgün",
