@@ -1,5 +1,17 @@
 [
     {
+        "name": "Fatma Kurt",
+        "age": "Reşit",
+        "location": "Kahramanmaraş",
+        "date": "14/04/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/bir-kadin-daha-cinayeti-daha-esi-tarafindan-basindan-vuruldu-p309979"
+    },
+    {
         "name": "Türkan Bildik",
         "age": "Reşit",
         "location": "İstanbul",
@@ -58825,7 +58837,15 @@
     },
     {
         "name": "Gaye",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "29/07/2013",
+        "reason": "Nefret Cinayeti",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Tespit Edilemeyen",
+        "method": "Boğulma",
+        "status": "Bilinmiyor",
+        "source": "http://kadincinayetlerinidurduracagiz.net/haber/585/trans-kadin-evinde-olduruldu"
     },
     {
         "name": "Nurgül Erbaş",
