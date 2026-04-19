@@ -1,5 +1,17 @@
 [
     {
+        "name": "Feyza Keskin",
+        "age": "Reşit Değil",
+        "location": "Isparta",
+        "date": "18/04/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tespit Edilemeyen",
+        "source": "https://t24.com.tr/gundem/16-yasindaki-milli-sporcu-feyza-insaat-alaninda-olu-bulundu,1315158?_t=1776537838099"
+    },
+    {
         "name": "Fatma Kurt",
         "age": "Reşit",
         "location": "Kahramanmaraş",
@@ -31738,6 +31750,18 @@
         "method": "Ateşli Silah",
         "status": "Tutuklu",
         "source": "https://ozgurmanset.net/agrida-bir-kadin-katledildi/"
+    },
+    {
+        "name": "Gülistan Doku",
+        "age": "Reşit",
+        "location": "Tunceli",
+        "date": "05/04/2020",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/gulistan-doku-sorusturmasi-eski-tunceli-valisi-nin-oglu-mustafa-turkay-sonel-tutuklandi-p312401"
     },
     {
         "name": "Hacer Metin",
