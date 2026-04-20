@@ -12,6 +12,42 @@
         "source": "https://t24.com.tr/gundem/16-yasindaki-milli-sporcu-feyza-insaat-alaninda-olu-bulundu,1315158?_t=1776537838099"
     },
     {
+        "name": "Zekiye Zont",
+        "age": "Reşit",
+        "location": "Hatay",
+        "date": "16/04/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.hurriyet.com.tr/gundem/hatayda-vahset-annenin-cesedi-topraga-gomulu-oglu-da-silahla-vurulmus-halde-bulundu-2-supheli-gozaltinda-43152369"
+    },
+    {
+        "name": "Ruhan Çalu",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "16/04/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/kartalda-kadin-cinayeti-evinde-bicaklanmis-halde-olu-bulundu-katil-zanlisi-kocaelide-yakalandi-43152606"
+    },
+    {
+        "name": "Hatice Kübra Dilan",
+        "age": "Reşit",
+        "location": "Gaziantep",
+        "date": "16/04/2026",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.turkiyegazetesi.com.tr/3-sayfa/gaziantepte-dehset-evi-bir-kadin-4-evladinin-gozu-onunde-katledildi-1784535?s=1"
+    },
+    {
         "name": "Fatma Kurt",
         "age": "Reşit",
         "location": "Kahramanmaraş",
