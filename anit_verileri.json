@@ -2965,7 +2965,15 @@
     },
     {
         "name": "Jawhara Aboucheikh",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "10/09/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/beyoglunda-20-yasindaki-fasli-kadin-rezidansta-olu-bulundu-kiz-arkadasim-rahatsizlandi-diyerek-kacan-erkek-arkadasi-tutuklandi-42943578"
     },
     {
         "name": "Başak Gürkan Aslan",
@@ -53321,15 +53329,7 @@
     },
     {
         "name": "Berivan Yaprak Turga",
-        "age": "Bilinmiyor",
-        "location": "Bursa",
-        "date": "08/03/2015",
-        "reason": "Tartışma",
-        "killer": "Sevgilisi",
-        "protection": "Yol",
-        "method": "Ateşli Silah",
-        "status": "Tutuklu",
-        "source": "https://www.hurriyet.com.tr/gundem/berivanin-cinayet-saniginin-cezasi-5-yildan-25-yila-cikti-42103573"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Ceylan Korkmaz",
@@ -62162,6 +62162,18 @@
         "method": "Ateşli Silah",
         "status": "Bilinmiyor",
         "source": "http://yurthaber.mynet.com/van-haberleri/depremin-vurdugu-vanda-tore-cinayeti-72873"
+    },
+    {
+        "name": "Yasemin Akpan",
+        "age": "Bilinmiyor",
+        "location": "Ankara",
+        "date": "13/11/2011",
+        "reason": "Tartışma, Reddedilme",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/polis-memuru-esini-ve-amirini-oldurdu-19229576"
     },
     {
         "name": "Gülay Armağan",
