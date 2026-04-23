@@ -53329,7 +53329,15 @@
     },
     {
         "name": "Berivan Yaprak Turga",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bursa",
+        "date": "08/03/2015",
+        "reason": "Tartışma",
+        "killer": "Sevgilisi",
+        "protection": "Yol",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/berivanin-cinayet-saniginin-cezasi-5-yildan-25-yila-cikti-42103573"
     },
     {
         "name": "Ceylan Korkmaz",
