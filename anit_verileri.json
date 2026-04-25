@@ -57601,7 +57601,15 @@
     },
     {
         "name": "Nebiye Katırcı",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "30/12/2013",
+        "reason": "İliskide Geçimsizlik",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Bilinmiyor",
+        "source": "http://gundem.milliyet.com.tr/cocuklarinin-gozleri-onunde-esini/gundem/detay/1815128/default.htm"
     },
     {
         "name": "Fatma Sezer",
@@ -57677,7 +57685,15 @@
     },
     {
         "name": "Nurgül E.",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "25/12/2013",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Boğulma",
+        "status": "Bilinmiyor",
+        "source": "http://www.bursahakimiyet.com.tr/haber/asayis/ogretmen-esini-bogarak-oldurdu-38946.html"
     },
     {
         "name": "Ayşe Bulut",
@@ -59781,15 +59797,7 @@
     },
     {
         "name": "Sarai Sierra",
-        "age": "Bilinmiyor",
-        "location": "Bilinmiyor",
-        "date": "19/03/2013",
-        "reason": "Reddetme",
-        "killer": "Tanımadığı birisi",
-        "protection": "Yok",
-        "method": "Vurucu Alet",
-        "status": "Bilinmiyor",
-        "source": "http://www.hurriyet.com.tr/gundem/22840568.asp"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Birgül B.",
