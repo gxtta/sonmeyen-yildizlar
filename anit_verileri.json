@@ -1,5 +1,41 @@
 [
     {
+        "name": "Nurcan Çubuk",
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "23/04/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/gundem/izmirde-kadin-cinayeti-karisini-bogazindan-silahla-vurarak-oldurdu,1316267?_t=1776964459728"
+    },
+    {
+        "name": "Ayşe Karademir",
+        "age": "Reşit",
+        "location": "Samsun",
+        "date": "22/04/2026",
+        "reason": "Tartışma",
+        "killer": "Oğlu",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/evlat-dehseti-annesini-oldurdukten-sonra-kendi-hayatina-son-verdi-43156816"
+    },
+    {
+        "name": "Medine Kaya",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "21/04/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://halktv.com.tr/service/amp/gundem/umraniyede-kadin-cinayeti-73-yasindaki-adam-esini-oldurup-polisi-aradi-1023867h"
+    },
+    {
         "name": "Feyza Keskin",
         "age": "Reşit Değil",
         "location": "Isparta",
@@ -562,6 +598,18 @@
         "method": "Tespit Edilemeyen",
         "status": "Tespit Edilemeyen",
         "source": "https://www.evrensel.net/haber/5975281/van-yyu-ogrencisi-yurtta-olu-bulundu"
+    },
+    {
+        "name": "Nazire-Asım Kasap",
+        "age": "Reşit",
+        "location": "Muğla",
+        "date": "14/03/2026",
+        "reason": "Gasp",
+        "killer": "Torunu ve Torunun Kocası",
+        "protection": "Yok",
+        "method": "Darp, Yakılarak",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/aile-boyu-vahset-43128382"
     },
     {
         "name": "Meryem Akgün",
@@ -59797,7 +59845,15 @@
     },
     {
         "name": "Sarai Sierra",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "19/03/2013",
+        "reason": "Reddetme",
+        "killer": "Tanımadığı birisi",
+        "protection": "Yok",
+        "method": "Vurucu Alet",
+        "status": "Bilinmiyor",
+        "source": "http://www.hurriyet.com.tr/gundem/22840568.asp"
     },
     {
         "name": "Birgül B.",
@@ -68102,6 +68158,18 @@
         "method": "İşkence",
         "status": "Bilinmiyor",
         "source": "http://arama.hurriyet.com.tr/arsivnews.aspx?id=9047649"
+    },
+    {
+        "name": "Müzeyyen Hiçgüngörmez",
+        "age": "Bilinmiyor",
+        "location": "İstanbul",
+        "date": "29/05/2008",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanımadığı Birisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.turkiyegazetesi.com.tr/3-sayfa/muzeyyen-hicgungormez-cinayeti-18-yil-sonra-aydinlatildi-faili-baska-bir-suctan-yakal-1785912?s=1"
     },
     {
         "name": "Yeliz Günel",
