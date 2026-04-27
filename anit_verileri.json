@@ -1,5 +1,17 @@
 [
     {
+        "name": "Cangül Çakıroğlu",
+        "age": "Reşit",
+        "location": "Mersin",
+        "date": "24/04/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.takvim.com.tr/video/guncel-videolari/mersin-anamur-cangul-cakiroglu-cinayeti-cani-koca-yakalandi"
+    },
+    {
         "name": "Nurcan Çubuk",
         "age": "Reşit",
         "location": "İzmir",
@@ -2542,6 +2554,18 @@
         "method": "Ateşli Silah",
         "status": "Tutuklu",
         "source": "https://haberglobal.com.tr/gundem/cezaevinden-izinli-olarak-cikan-kadin-kendisine-takinti-gelistiren-erkek-tarafindan-cocugunun-gozleri-onunde-katledildi-485584"
+    },
+    {
+        "name": "Alev Karagöz",
+        "age": "Reşit",
+        "location": "Afyonkarahisar",
+        "date": "18/10/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/intihar-dendi-cinayet-cikti-alev-karagoz-cinayetinde-eski-esi-tutuklandi-43157601"
     },
     {
         "name": "Suzan Elik",
