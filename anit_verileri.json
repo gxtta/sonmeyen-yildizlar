@@ -1,5 +1,29 @@
 [
     {
+        "name": "Hatice Kocaefe",
+        "age": "Reşit",
+        "location": "Bursa",
+        "date": "29/04/2026",
+        "reason": "Husumet",
+        "killer": "Tanııdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/bursa-da-kanli-pusu-genc-avukat-olduruldu-p315252"
+    },
+    {
+        "name": "Serpil Özlem Argüden",
+        "age": "Reşit",
+        "location": "Çanakkale",
+        "date": "28/04/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.evrensel.net/haber/5981593/canakkalede-kadin-cinayeti-serpil-ozlem-arguden-evli-oldugu-erkek-tarafindan-olduruldu"
+    },
+    {
         "name": "Cangül Çakıroğlu",
         "age": "Reşit",
         "location": "Mersin",
