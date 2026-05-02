@@ -1,5 +1,29 @@
 [
     {
+        "name": "Demet B.",
+        "age": "Reşit",
+        "location": "Kayseri",
+        "date": "01/05/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/kayseride-dehset-tartistigi-esini-oldurup-intihar-etti-43163789"
+    },
+    {
+        "name": "Gizem Özdemir",
+        "age": "Reşit Değil",
+        "location": "Edirne",
+        "date": "01/05/2026",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/edirnede-korkunc-olay-14-yasindaki-gizem-ozdemir-arkadasi-tarafindan-tufekle-vurularak-olduruldu-43163606"
+    },
+    {
         "name": "Hatice Kocaefe",
         "age": "Reşit",
         "location": "Bursa",
