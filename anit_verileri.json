@@ -24,6 +24,42 @@
         "source": "https://www.hurriyet.com.tr/gundem/edirnede-korkunc-olay-14-yasindaki-gizem-ozdemir-arkadasi-tarafindan-tufekle-vurularak-olduruldu-43163606"
     },
     {
+        "name": "Serap Yılmaz",
+        "age": "Reşit",
+        "location": "Muğla",
+        "date": "30/04/2026",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihara Teşebbüs",
+        "source": "https://t24.com.tr/gundem/muglada-kadin-cinayeti-tartistigi-iki-kadini-katleden-erkek-intihara-kalkissti,1318240?_t=1777565029057"
+    },
+    {
+        "name": "Hatice Yeysikan",
+        "age": "Reşit",
+        "location": "Muğla",
+        "date": "30/04/2026",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihara Teşebbüs",
+        "source": "https://t24.com.tr/gundem/muglada-kadin-cinayeti-tartistigi-iki-kadini-katleden-erkek-intihara-kalkissti,1318240?_t=1777565029057"
+    },
+    {
+        "name": "Müslümat Özer",
+        "age": "Reşit",
+        "location": "Kars",
+        "date": "30/04/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Damadı",
+        "protection": "Yok",
+        "method": "Darp",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/ardahanda-korkunc-olay-kayip-olarak-aranan-kadin-olu-bulundu-damadi-gozaltinda-43162477"
+    },
+    {
         "name": "Hatice Kocaefe",
         "age": "Reşit",
         "location": "Bursa",
