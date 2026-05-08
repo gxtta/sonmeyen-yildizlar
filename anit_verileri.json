@@ -1,5 +1,17 @@
 [
     {
+        "name": "Kübra Yapıcı",
+        "age": "Reşit",
+        "location": "Burdur",
+        "date": "07/05/2026",
+        "reason": "Borç Para",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/kubra-yapici-cinayetinde-yeni-gelisme-cansiz-bedeninin-bir-bolumu-bulundu-43168306"
+    },
+    {
         "name": "Demet B.",
         "age": "Reşit",
         "location": "Kayseri",
@@ -10453,15 +10465,7 @@
     },
     {
         "name": "Zinnetnur Ayar",
-        "age": "Reşit",
-        "location": "İstanbul",
-        "date": "24/05/2024",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Soruşturma Sürüyor",
-        "source": "https://www.hurriyet.com.tr/gundem/kagithanede-zinnetnur-ayarin-supheli-olumu-sevgilisinin-evinin-onunde-basindan-vurulmus-halde-bulundu-42466835"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Hangül Ciğerli",
