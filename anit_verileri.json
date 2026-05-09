@@ -10465,7 +10465,15 @@
     },
     {
         "name": "Zinnetnur Ayar",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "24/05/2024",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/kagithanede-zinnetnur-ayarin-supheli-olumu-sevgilisinin-evinin-onunde-basindan-vurulmus-halde-bulundu-42466835"
     },
     {
         "name": "Hangül Ciğerli",
@@ -66701,15 +66709,7 @@
     },
     {
         "name": "Songül Toromantekin",
-        "age": "Bilinmiyor",
-        "location": "Bilinmiyor",
-        "date": "17/10/2009",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Tespit Edilemeyen",
-        "status": "Bilinmiyor",
-        "source": "http://www.milliyet.com.tr/Yasam/SonDakika.aspx?aType=SonDakika&ArticleID=1151409"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "İlgin Özalp",
