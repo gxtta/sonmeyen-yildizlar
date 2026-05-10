@@ -49009,15 +49009,7 @@
     },
     {
         "name": "Menel İsmail",
-        "age": "Bilinmiyor",
-        "location": "Adana",
-        "date": "09/07/2016",
-        "reason": "Tartışma",
-        "killer": "Kocası",
-        "protection": "Yok",
-        "method": "Kesici Alet",
-        "status": "Tutuklu",
-        "source": "http://www.haberler.com/suriyeli-kadin-bicaklanarak-olduruldu-8594604-haberi/"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Fatma Şengül",
@@ -66709,7 +66701,15 @@
     },
     {
         "name": "Songül Toromantekin",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "17/10/2009",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Bilinmiyor",
+        "source": "http://www.milliyet.com.tr/Yasam/SonDakika.aspx?aType=SonDakika&ArticleID=1151409"
     },
     {
         "name": "İlgin Özalp",
