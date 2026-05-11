@@ -49009,7 +49009,15 @@
     },
     {
         "name": "Menel İsmail",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Adana",
+        "date": "09/07/2016",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "http://www.haberler.com/suriyeli-kadin-bicaklanarak-olduruldu-8594604-haberi/"
     },
     {
         "name": "Fatma Şengül",
