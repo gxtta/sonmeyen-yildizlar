@@ -1,5 +1,17 @@
 [
     {
+        "name": "Fatma Karakaya",
+        "age": "Reşit",
+        "location": "Malatya",
+        "date": "11/05/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/gundem/malatyada-kadin-cinayeti-eski-kocasi-sokak-ortasinda-tufekle-vurdu,1320890?_t=1778529270182"
+    },
+    {
         "name": "Kübra Yapıcı",
         "age": "Reşit",
         "location": "Burdur",
@@ -54769,15 +54781,7 @@
     },
     {
         "name": "Tuğba Garan",
-        "age": "Bilinmiyor",
-        "location": "Bilinmiyor",
-        "date": "20/11/2014",
-        "reason": "Tartışma",
-        "killer": "Sevgilisi",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Bilinmiyor",
-        "source": "http://www.kadincinayetlerinidurduracagiz.net/haber/1774/kayseride-kadin-cinayeti"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Fadime Ser",
