@@ -54781,7 +54781,15 @@
     },
     {
         "name": "Tuğba Garan",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "20/11/2014",
+        "reason": "Tartışma",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Bilinmiyor",
+        "source": "http://www.kadincinayetlerinidurduracagiz.net/haber/1774/kayseride-kadin-cinayeti"
     },
     {
         "name": "Fadime Ser",
@@ -56417,15 +56425,7 @@
     },
     {
         "name": "Tijen Demiralp",
-        "age": "Bilinmiyor",
-        "location": "Bilinmiyor",
-        "date": "02/06/2014",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Kocası",
-        "protection": "Yok",
-        "method": "Kesici Alet",
-        "status": "Bilinmiyor",
-        "source": "http://www.milliyet.com.tr/esrarengiz-cinayetlere-iliskin-gundem-1891542/"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Yıldız Etiket",
