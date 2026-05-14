@@ -56425,7 +56425,15 @@
     },
     {
         "name": "Tijen Demiralp",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "02/06/2014",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Bilinmiyor",
+        "source": "http://www.milliyet.com.tr/esrarengiz-cinayetlere-iliskin-gundem-1891542/"
     },
     {
         "name": "Yıldız Etiket",
