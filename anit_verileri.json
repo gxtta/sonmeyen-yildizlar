@@ -1,5 +1,17 @@
 [
     {
+        "name": "Amine Bozkurt",
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "15/05/2026",
+        "reason": "Tartışma",
+        "killer": "Dayısı",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/akran-zorbaligi-yine-can-aldi-son-kurban-15-yasindaki-abdulbaki-demirel-43173983"
+    },
+    {
         "name": "Fatma Karakaya",
         "age": "Reşit",
         "location": "Malatya",
