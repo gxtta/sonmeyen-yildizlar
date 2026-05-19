@@ -4584,6 +4584,18 @@
         "source": "https://www.nefes.com.tr/sebahat-yasam-mucadelesini-kaybetti-44737"
     },
     {
+        "name": "Muazzez Bayhan",
+        "age": "Reşit",
+        "location": "Konya",
+        "date": "27/06/2025",
+        "reason": "Kıskançlık",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/cezaevinden-izinli-cikip-eski-esini-oldurdu-dere-yatagina-gomdu-p320672"
+    },
+    {
         "name": "Oya Budak",
         "age": "Reşit",
         "location": "İstanbul",
@@ -68209,15 +68221,7 @@
     },
     {
         "name": "Sevilay Taşdemir",
-        "age": "Bilinmiyor",
-        "location": "Bilinmiyor",
-        "date": "25/07/2008",
-        "reason": "Kıskançlık",
-        "killer": "Kocası",
-        "protection": "Tespit Edilemeyen",
-        "method": "Kesici Alet",
-        "status": "Bilinmiyor",
-        "source": "http://www.hurriyet.com.tr/gundem/9511774.asp?gid=229&sz=821"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Nimet Küçükyılmaz",
