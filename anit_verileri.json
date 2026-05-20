@@ -68221,7 +68221,15 @@
     },
     {
         "name": "Sevilay Taşdemir",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "25/07/2008",
+        "reason": "Kıskançlık",
+        "killer": "Kocası",
+        "protection": "Tespit Edilemeyen",
+        "method": "Kesici Alet",
+        "status": "Bilinmiyor",
+        "source": "http://www.hurriyet.com.tr/gundem/9511774.asp?gid=229&sz=821"
     },
     {
         "name": "Nimet Küçükyılmaz",
