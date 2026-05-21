@@ -1,5 +1,17 @@
 [
     {
+        "name": "Arzu Özden",
+        "age": "Reşit",
+        "location": "Mersin",
+        "date": "20/05/2026",
+        "reason": "Tartışma",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/caninin-rotasi-barakada-bitti-6-kisiyi-oldurdu-8-kisiyi-yaraladi-43177550"
+    },
+    {
         "name": "Farkhondeh Ghaem Maghami",
         "age": "Reşit",
         "location": "Kırşehir",
