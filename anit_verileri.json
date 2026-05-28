@@ -1,5 +1,17 @@
 [
     {
+        "name": "Defne Boz",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "25/05/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.hurriyet.com.tr/gundem/defnenin-supheli-olumu-43183518"
+    },
+    {
         "name": "Arzu Özden",
         "age": "Reşit",
         "location": "Mersin",
