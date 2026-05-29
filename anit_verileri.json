@@ -1,5 +1,17 @@
 [
     {
+        "name": "Emine Esen",
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "26/05/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.evrensel.net/haber/5985982/mardin-kiziltepede-supheli-kadin-olumu-emine-esen-silahla-vurulmus-halde-bulundu"
+    },
+    {
         "name": "Defne Boz",
         "age": "Reşit",
         "location": "İstanbul",
@@ -12,6 +24,18 @@
         "source": "https://www.hurriyet.com.tr/gundem/defnenin-supheli-olumu-43183518"
     },
     {
+        "name": "Rukiye Görgin",
+        "age": "Reşit",
+        "location": "Sakarya",
+        "date": "25/05/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.hurriyet.com.tr/gundem/golette-kadin-cesedi-bulundu-43183546"
+    },
+    {
         "name": "Arzu Özden",
         "age": "Reşit",
         "location": "Mersin",
@@ -22,6 +46,18 @@
         "method": "Ateşli Silah",
         "status": "Tutuklu",
         "source": "https://www.hurriyet.com.tr/gundem/caninin-rotasi-barakada-bitti-6-kisiyi-oldurdu-8-kisiyi-yaraladi-43177550"
+    },
+    {
+        "name": "Zeliha Akkoyun",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "18/05/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilmeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "vhttps://www.sozcu.com.tr/tip-ogrencisi-zeliha-dan-aci-haber-cansiz-bedeni-istanbul-bogazi-nda-bulundu-p320651"
     },
     {
         "name": "Farkhondeh Ghaem Maghami",
@@ -67978,6 +68014,18 @@
         "method": "Tespit Edilemeyen",
         "status": "Tutuklu",
         "source": "https://www.hurriyet.com.tr/gundem/son-dakika-haberler-11-yil-sonra-dosya-yeniden-acildi-sasirtici-gelismeyi-muge-anli-canli-yayinda-duyurdu-41549116"
+    },
+    {
+        "name": "Nisan Yiğit",
+        "age": "Bilinmiyor",
+        "location": "Şanlıurfa",
+        "date": "07/08/2026",
+        "reason": "Kuma olarak kabul görmeme",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/babamla-evlenemezsin-dedim-dinlemedi-9604698"
     },
     {
         "name": "Medine Kızmaz",
