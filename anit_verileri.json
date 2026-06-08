@@ -1,5 +1,29 @@
 [
     {
+        "name": "Arzu Pekin",
+        "age": "Reşit",
+        "location": "Gümüşhane",
+        "date": "07/06/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Darp",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/1-5-yillik-esini-sopayla-dovup-katletti-firari-cani-yakalandiktan-sonra-tutuklandi-43196585"
+    },
+    {
+        "name": "Yağmur Demirkan",
+        "age": "Reşit",
+        "location": "Bursa",
+        "date": "05/06/2026",
+        "reason": "Kız kardeşinin eşinin karısıyla ilişki yaşadığını düşünmesi",
+        "killer": "Abisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/bursada-kanli-pusu-marketten-donen-kiz-kardesi-ve-enistesine-kursun-yagdirdi-43194157"
+    },
+    {
         "name": "Heriman Altundağ",
         "age": "Reşit",
         "location": "Şanlıurfa",
