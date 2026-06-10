@@ -1,5 +1,53 @@
 [
     {
+        "name": "Irmak Ayşe Koparan",
+        "age": "Reşit",
+        "location": "Ağrı",
+        "date": "09/06/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/agrida-supheli-olum-irmak-ogretmen-evinde-olu-bulundu-43198435"
+    },
+    {
+        "name": "Ayfer Karakayışlı",
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "09/06/2026",
+        "reason": "Kıskançlık",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Kimyasal Saldırı",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/agrida-supheli-olum-irmak-ogretmen-evinde-olu-bulundu-43198435"
+    },
+    {
+        "name": "Nurgül Aslan",
+        "age": "Reşit",
+        "location": "Aydın",
+        "date": "09/06/2026",
+        "reason": "Aldatma Şüphesi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/yasak-ask-cinayetinde-can-veren-nurgul-un-cenazesini-ailesi-kabul-etmedi-p326484"
+    },
+    {
+        "name": "Hamide Çiftçi",
+        "age": "Reşit",
+        "location": "Hakkari",
+        "date": "09/06/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.sozcu.com.tr/yasadigi-evde-olu-bulunan-kadinin-kayip-esi-yakalandi-p326383"
+    },
+    {
         "name": "Arzu Pekin",
         "age": "Reşit",
         "location": "Gümüşhane",
@@ -50092,11 +50140,11 @@
         "age": "Bilinmiyor",
         "location": "İstanbul",
         "date": "26/03/2016",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
+        "reason": "Dansözlük Yapması",
+        "killer": "Akrabası",
         "protection": "Yok",
         "method": "Ateşli Silah",
-        "status": "Tespit Edilemeyen",
+        "status": "Tutuklu",
         "source": "http://www.hurriyet.com.tr/daha-kac-kadin-olecek-yeter-artik-40076280"
     },
     {
