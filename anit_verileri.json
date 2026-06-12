@@ -48,6 +48,18 @@
         "source": "https://www.sozcu.com.tr/yasadigi-evde-olu-bulunan-kadinin-kayip-esi-yakalandi-p326383"
     },
     {
+        "name": "S.G.",
+        "age": "Reşit",
+        "location": "Muğla",
+        "date": "08/06/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Hız Halinde ki Araçtan Atılma",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.birgun.net/haber/mugla-da-kadin-cinayeti-seyir-halindeki-otomobilden-yola-atildi-717032"
+    },
+    {
         "name": "Arzu Pekin",
         "age": "Reşit",
         "location": "Gümüşhane",
@@ -60,6 +72,18 @@
         "source": "https://www.hurriyet.com.tr/gundem/1-5-yillik-esini-sopayla-dovup-katletti-firari-cani-yakalandiktan-sonra-tutuklandi-43196585"
     },
     {
+        "name": "Metanet Altınpolat",
+        "age": "Reşit",
+        "location": "Denizli",
+        "date": "06/06/2026",
+        "reason": "Tespit Edilmeyen",
+        "killer": "Eski Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sabah.com.tr/yasam/eski-sevgilisini-otomobilin-icinde-oldurdu-7597624"
+    },
+    {
         "name": "Yağmur Demirkan",
         "age": "Reşit",
         "location": "Bursa",
@@ -70,6 +94,18 @@
         "method": "Ateşli Silah",
         "status": "Tutuklu",
         "source": "https://www.hurriyet.com.tr/gundem/bursada-kanli-pusu-marketten-donen-kiz-kardesi-ve-enistesine-kursun-yagdirdi-43194157"
+    },
+    {
+        "name": "N.Ş.",
+        "age": "Reşit",
+        "location": "Konya",
+        "date": "05/06/2026",
+        "reason": "Gasp",
+        "killer": "Komşusu",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.evrensel.net/haber/5987079/konyada-kadin-cinayeti-komsusunu-olduren-erkek-gozaltina-alindi"
     },
     {
         "name": "Heriman Altundağ",
@@ -154,6 +190,30 @@
         "method": "Ateşli Silah",
         "status": "Tutuklu",
         "source": "https://www.hurriyet.com.tr/gundem/terk-edilmeyi-hazmedemeyen-koca-deryayi-katletti-43189214"
+    },
+    {
+        "name": "Telli Novruzova",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "31/05/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.birgun.net/haber/chpde-28-pm-uyesi-istifa-etti-tuzuk-geregi-45-gun-icinde-kurultaya-gidilmesi-gerekiyor-717516"
+    },
+    {
+        "name": "Hene Ebu Zeynep",
+        "age": "Reşit",
+        "location": "Konya",
+        "date": "31/05/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.evrensel.net/haber/5986386/konyada-supheli-kadin-olumu-19-yasindaki-kadin-calistigi-kafenin-deposunda-olu-bulundu"
     },
     {
         "name": "Ayten Öztürk",
@@ -21756,6 +21816,18 @@
         "source": "https://www.hurriyet.com.tr/gundem/aysu-derse-3-yildir-kayipti-korkunc-gercek-ortaya-cikti-esi-ve-kayinbiraderleri-tarafindan-oldurulmus-42883670"
     },
     {
+        "name": "Burçak Şişman",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "01/04/2022",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/gundem/kagithanede-supheli-dusus-komadan-uyanan-kadin-esinin-kendisini-balkondan-ittigini-anlatti,1325365?_t=1781169357904"
+    },
+    {
         "name": "Ayşe Perçem",
         "age": "Reşit",
         "location": "Kocaeli",
@@ -34417,15 +34489,7 @@
     },
     {
         "name": "Asiye Güzel",
-        "age": "Reşit",
-        "location": "Antalya",
-        "date": "24/09/2019",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Eski Kocası",
-        "protection": "Yok",
-        "method": "Darp",
-        "status": "Tutuklu",
-        "source": "https://www.mygazete.com/alanya/antalya-ya-sigindi-eski-koca-dehsetinden-kurtulamadi-h32451.html"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Birgül K.",
@@ -63145,7 +63209,15 @@
     },
     {
         "name": "Semra Aras",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "kars",
+        "date": "22/07/2011",
+        "reason": "Kriz ve İşsizlik",
+        "killer": "Kocası",
+        "protection": "Tespit Edilemeyen",
+        "method": "Ateşli Silah",
+        "status": "Bilinmiyor",
+        "source": "http://www.dha.com.tr/esini-vurduktan-sonra-intihar-etti_188184.html"
     },
     {
         "name": "Gamze Dikgöz",
