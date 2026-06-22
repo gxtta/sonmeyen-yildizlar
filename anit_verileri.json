@@ -1,15 +1,39 @@
 [
     {
-        "name": "Aslıhan Öztürk Bulak",
+        "name": "Sultan Çağan",
         "age": "Reşit",
-        "location": "Antalya",
-        "date": "15/06/2026",
+        "location": "İstanbul",
+        "date": "21/06/2026",
         "reason": "Tartışma",
-        "killer": "Kocası",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Darp, Boğulma",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/katili-tirnak-izleri-ele-verdi-tasla-kafasina-vurup-iple-bogdu-43212953"
+    },
+    {
+        "name": "Lamiya Azazi",
+        "age": "Reşit",
+        "location": "Hatay",
+        "date": "20/06/2026",
+        "reason": "Ayrılma Kararı",
+        "killer": "Nişanlısı",
         "protection": "Yok",
         "method": "Ateşli Silah",
         "status": "Tutuklu",
-        "source": "https://t24.com.tr/gundem/ogretmen-esini-ve-kayinpederini-olduren-zanlinin-ifadesine-ulasildi-surekli-tayin-istiyordu-ortak-hesaptaki-para-yuzunden-tartistik,1329031?_t=1781534249498"
+        "source": "https://t24.com.tr/gundem/hatay-ve-istanbulda-kadin-cinayeti-lamiya-ve-sultan-erkek-siddetiyle-katledildi,1330169?_t=1781965281642"
+    },
+    {
+        "name": "Sultan Ç.",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "20/06/2026",
+        "reason": "Ayrılma Kararı",
+        "killer": "Nişanlısı",
+        "protection": "Yok",
+        "method": "Darp",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/gundem/hatay-ve-istanbulda-kadin-cinayeti-lamiya-ve-sultan-erkek-siddetiyle-katledildi,1330169?_t=1781965281642"
     },
     {
         "name": "Hedla Çin",
@@ -24,16 +48,16 @@
         "source": "https://www.hurriyet.com.tr/gundem/mardinde-korkunc-olay-maganda-kursunu-evinin-balkonunda-oturan-kadini-oldurdu-43206294"
     },
     {
-        "name": "Ulviye Yılmaz",
+        "name": "Aslıhan Öztürk Bulak",
         "age": "Reşit",
-        "location": "Manisa",
-        "date": "14/06/2026",
+        "location": "Antalya",
+        "date": "15/06/2026",
         "reason": "Tartışma",
         "killer": "Kocası",
         "protection": "Yok",
         "method": "Ateşli Silah",
         "status": "Tutuklu",
-        "source": "https://www.hurriyet.com.tr/gundem/esini-silahla-oldurup-kizini-yaraladi-43205006"
+        "source": "https://t24.com.tr/gundem/ogretmen-esini-ve-kayinpederini-olduren-zanlinin-ifadesine-ulasildi-surekli-tayin-istiyordu-ortak-hesaptaki-para-yuzunden-tartistik,1329031?_t=1781534249498"
     },
     {
         "name": "Adilşah Gezer",
@@ -70,6 +94,18 @@
         "method": "Ateşli Silah",
         "status": "İntihara Teşebbüs",
         "source": "https://t24.com.tr/gundem/hakkaride-aile-katliami-uzman-cavus-kayinpederinin-evini-basti-4-olu,1328824?_t=1781534523096"
+    },
+    {
+        "name": "Ulviye Yılmaz",
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "14/06/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/esini-silahla-oldurup-kizini-yaraladi-43205006"
     },
     {
         "name": "Y.S.",
