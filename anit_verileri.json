@@ -1,5 +1,17 @@
 [
     {
+        "name": "S.K.",
+        "age": "Reşit",
+        "location": "Erzincan",
+        "date": "26/06/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/erzincanda-dehset-eski-esi-ile-yanindaki-kisiyi-pompali-tufekle-oldurdu-43219152"
+    },
+    {
         "name": "Emine S.",
         "age": "Reşit",
         "location": "Ordu",
@@ -16357,15 +16369,7 @@
     },
     {
         "name": "Ö.B.",
-        "age": "Reşit",
-        "location": "Kars",
-        "date": "12/06/2023",
-        "reason": "Reddedilme, Tartışma",
-        "killer": "Kocası",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Tutuklu",
-        "source": "https://www.hurriyet.com.tr/gundem/istanbuldan-karsa-korkunc-takip-esi-ile-kayinbiraderini-pompali-tufekle-oldurdu-42282489"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Hatice Tekin",
