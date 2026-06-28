@@ -10752,6 +10752,30 @@
         "source": "https://www.hurriyet.com.tr/gundem/haceri-30-bicak-darbesiyle-katletti-dehsete-dusuren-detaylar-babasi-evde-katiliyle-bas-basa-birakip-cikmis-iste-caninin-ilk-ifadesi-42477872"
     },
     {
+        "name": "Cemre Gürpınar",
+        "age": "Reşit",
+        "location": "Eskişehir",
+        "date": "15/06/2024",
+        "reason": "Tartışma",
+        "killer": "Üvey Babası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.haberturk.com/eskisehir-haberleri/108445066-esini-ve-uvey-kizini-tabancayla-oldurup-intihar-etti"
+    },
+    {
+        "name": "Sibel Çifçi",
+        "age": "Reşit",
+        "location": "Eskişehir",
+        "date": "15/06/2024",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.haberturk.com/eskisehir-haberleri/108445066-esini-ve-uvey-kizini-tabancayla-oldurup-intihar-etti"
+    },
+    {
         "name": "Victoria Vera Blyth",
         "age": "Reşit",
         "location": "Ankara",
@@ -16369,7 +16393,15 @@
     },
     {
         "name": "Ö.B.",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Kars",
+        "date": "12/06/2023",
+        "reason": "Reddedilme, Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/istanbuldan-karsa-korkunc-takip-esi-ile-kayinbiraderini-pompali-tufekle-oldurdu-42282489"
     },
     {
         "name": "Hatice Tekin",
@@ -32201,15 +32233,7 @@
     },
     {
         "name": "Ayşe D.",
-        "age": "Reşit",
-        "location": "Konya",
-        "date": "28/04/2020",
-        "reason": "Tartışma",
-        "killer": "Sevgilisi",
-        "protection": "Yok",
-        "method": "Kesici Alet",
-        "status": "Tutuklu",
-        "source": "https://www.milliyet.com.tr/gundem/son-dakika-kadir-seker-corona-virus-suphesiyle-hastaneye-kaldirildi-6200509"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Halime Mısırlı",
@@ -42521,15 +42545,7 @@
     },
     {
         "name": "Gülgülizar Ayalp",
-        "age": "Reşit",
-        "location": "Kahramanmaraş",
-        "date": "04/03/2018",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Kocası",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Tutuklu",
-        "source": "http://www.milliyet.com.tr/esini-olduren-kocaya-muebbet--gundem-2847052/"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Hümeyra A.",
