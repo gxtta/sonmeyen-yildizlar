@@ -32233,7 +32233,15 @@
     },
     {
         "name": "Ayşe D.",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Konya",
+        "date": "28/04/2020",
+        "reason": "Tartışma",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.milliyet.com.tr/gundem/son-dakika-kadir-seker-corona-virus-suphesiyle-hastaneye-kaldirildi-6200509"
     },
     {
         "name": "Halime Mısırlı",
@@ -42545,7 +42553,15 @@
     },
     {
         "name": "Gülgülizar Ayalp",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Kahramanmaraş",
+        "date": "04/03/2018",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "http://www.milliyet.com.tr/esini-olduren-kocaya-muebbet--gundem-2847052/"
     },
     {
         "name": "Hümeyra A.",
