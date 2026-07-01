@@ -1,5 +1,17 @@
 [
     {
+        "name": "Ece Naz",
+        "age": "Reşit",
+        "location": "Kocaeli",
+        "date": "29/06/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birileri",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/gundem/18-yasindaki-ece-naz-basindan-vurularak-olduruldu,1332526?_t=1782756817577"
+    },
+    {
         "name": "S.K.",
         "age": "Reşit",
         "location": "Erzincan",
@@ -7477,15 +7489,7 @@
     },
     {
         "name": "Hüsne Tehci",
-        "age": "Reşit",
-        "location": "Adana",
-        "date": "15/01/2025",
-        "reason": "Tartışma",
-        "killer": "Damadı",
-        "protection": "Yok",
-        "method": "Kesici Alet",
-        "status": "Tutuklu",
-        "source": "https://www.hurriyet.com.tr/gundem/adanada-korkunc-olay-ayni-aileden-3-kisinin-bogazi-kesilmis-halde-bulundu-42659385"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Semiha Tehci",
