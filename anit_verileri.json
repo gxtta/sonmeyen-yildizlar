@@ -7489,7 +7489,15 @@
     },
     {
         "name": "Hüsne Tehci",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Adana",
+        "date": "15/01/2025",
+        "reason": "Tartışma",
+        "killer": "Damadı",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/adanada-korkunc-olay-ayni-aileden-3-kisinin-bogazi-kesilmis-halde-bulundu-42659385"
     },
     {
         "name": "Semiha Tehci",
@@ -37121,15 +37129,7 @@
     },
     {
         "name": "Sabah Meşaıl",
-        "age": "Reşit",
-        "location": "Bursa",
-        "date": "09/04/2019",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Damadı",
-        "protection": "Yok",
-        "method": "Boğularak, Darp",
-        "status": "Tutuklu",
-        "source": "https://www.haberturk.com/bursa-da-oldurulen-suriyeli-kadinin-annesi-de-olu-bulundu-2428594"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Mukadder Nogay",
