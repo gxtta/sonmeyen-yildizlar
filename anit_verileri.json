@@ -1,5 +1,65 @@
 [
     {
+        "name": "Emine D.",
+        "age": "Reşit",
+        "location": "Şanlıurfa",
+        "date": "08/07/2026",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/gundem/sanliurfada-bosanma-asamasindaki-kadin-kocasi-tarafindan-silahla-yaralanarak-hayatini-kaybetti,1334719?_t=1783584811830"
+    },
+    {
+        "name": "Gülay Polat",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "08/07/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://t24.com.tr/gundem/kartal-da-metruk-gecekonduda-bulunan-cesedin-sirri-cozuldu-is-arkadasi-gozaltina-alindi,1334711?_t=1783585049928"
+    },
+    {
+        "name": "Çisem Çalkantı",
+        "age": "Reşit",
+        "location": "Kırklareli",
+        "date": "08/07/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/kirklarelide-eski-esini-oldurup-kizini-agir-yaralayan-zanli-yasamina-son-verdi-43233949"
+    },
+    {
+        "name": "Emine Gülen",
+        "age": "Reşit",
+        "location": "Ordu",
+        "date": "08/07/2026",
+        "reason": "Husumet, Tartışma",
+        "killer": "Kayınbiraderi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/agabeyini-yegenini-ve-yengesini-katletmisti-emekli-imam-polise-teslim-oldu-43232969"
+    },
+    {
+        "name": "Ece Naz Macit",
+        "age": "Reşit",
+        "location": "Kocaeli",
+        "date": "07/07/2026",
+        "reason": "Tespit Edliemeyen",
+        "killer": "Tanıdığı Birileri",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/gundem/yemek-yaparken-basindan-burulan-vurulan-ece-nazin-annesi-ben-adalet-istiyorum,1334511?_t=1783585807684"
+    },
+    {
         "name": "Ece Naz",
         "age": "Reşit",
         "location": "Kocaeli",
@@ -13741,7 +13801,15 @@
     },
     {
         "name": "Doğa Etyemez",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "19/11/2023",
+        "reason": "Reddedilme, Tartışma",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/manisada-korkunc-olay-devrim-guler-ile-kizi-asansorde-olu-bulundu-42363509"
     },
     {
         "name": "Çiğdem Dıvrak",
