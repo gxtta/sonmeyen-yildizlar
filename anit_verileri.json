@@ -1,6 +1,54 @@
 [
     {
-        "name": "Şengül Ş.",
+        "name": "Dursiniye Öztürk",
+        "age": "Reşit",
+        "location": "Konya",
+        "date": "14/07/2026",
+        "reason": "Tartışma",
+        "killer": "Üvey Oğlu",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/gundem/konyada-vahset-tartistigi-uvey-annesi-ve-kiz-kardesini-bogazlarini-keserek-oldurdu,1336088?_t=1784039111078"
+    },
+    {
+        "name": "Esmanur Öztürk",
+        "age": "Reşit",
+        "location": "Konya",
+        "date": "14/07/2026",
+        "reason": "Tartışma",
+        "killer": "Üvey Kardeşi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/gundem/konyada-vahset-tartistigi-uvey-annesi-ve-kiz-kardesini-bogazlarini-keserek-oldurdu,1336088?_t=1784039111078"
+    },
+    {
+        "name": "Merve Erbek",
+        "age": "Reşit Değil",
+        "location": "Mardin",
+        "date": "14/07/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://t24.com.tr/gundem/mardinde-evinin-odasinda-basindan-vurulmustu-15-yasindaki-merve-hayatini-kaybetti,1336044?_t=1784039281267"
+    },
+    {
+        "name": "Cemre Esila Kayaalp",
+        "age": "Reşit Değil",
+        "location": "Siirt",
+        "date": "14/07/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://t24.com.tr/gundem/balkondan-dusen-15-yasindaki-cemre-esila-hayatini-kaybetti-sorusturma-baslatildi,1336030?_t=1784039300997"
+    },
+    {
+        "name": "Sergül Şen",
         "age": "Reşit",
         "location": "Düzce",
         "date": "11/07/2026",
