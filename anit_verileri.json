@@ -1,5 +1,17 @@
 [
     {
+        "name": "Hülya Akkurt",
+        "age": "Reşit",
+        "location": "Kilis",
+        "date": "15/07/2026",
+        "reason": "Boşanma Talebi, Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.cumhuriyet.com.tr/turkiye/esi-tarafindan-oldurulen-kadin-son-yolculuguna-ugurlandi-2521156"
+    },
+    {
         "name": "Dursiniye Öztürk",
         "age": "Reşit",
         "location": "Konya",
