@@ -1,5 +1,17 @@
 [
     {
+        "name": "Nazar Çakmak",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "18/07/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilmeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/beylikduzunde-supheli-olum-evinin-onunde-bayginlik-geciren-kadin-hastaneye-goturulurken-yolda-hayatini-kaybetti-43243598"
+    },
+    {
         "name": "Hülya Akkurt",
         "age": "Reşit",
         "location": "Kilis",
@@ -67629,7 +67641,7 @@
         "protection": "Yok",
         "method": "Tespit Edilemeyen",
         "status": "Tutuklu",
-        "source": "https://www.hurriyet.com.tr/gundem/14-aylik-bebek-ve-babasi-komsulari-tarafindan-darbedilmisti-guvenlik-kamerasi-goruntuleri-ortaya-cikti-43115349"
+        "source": "https://www.hurriyet.com.tr/gundem/17-yillik-kayip-dosyasinda-kan-donduran-itiraf-gozyaslariyla-topraga-verildi-43244280"
     },
     {
         "name": "Ayşegül Gürpınar",
