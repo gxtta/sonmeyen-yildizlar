@@ -68617,7 +68617,15 @@
     },
     {
         "name": "Goncagül Köseoğlu",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "12/01/2009",
+        "reason": "Boşanma",
+        "killer": "Aile Meclisi - Erkek Kardeşi",
+        "protection": "Bilinmiyor",
+        "method": "Ateşli Silah",
+        "status": "Bilinmiyor",
+        "source": "http://www.milliyet.com.tr/default.aspx?aType=SonDakika&ArticleID=1045942"
     },
     {
         "name": "Kader Sağlam",
