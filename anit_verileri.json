@@ -1,5 +1,53 @@
 [
     {
+        "name": "Sultan Görel Gök",
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "22/07/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/koruma-kararina-ofkelenip-eve-geldi-darbettigi-esini-5-bicak-darbesiyle-oldurdu-43248285"
+    },
+    {
+        "name": "Yüksel Uçar",
+        "age": "Reşit",
+        "location": "Isparta",
+        "date": "22/07/2026",
+        "reason": "Yüksek Ses",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/piyanistin-ailesine-yuksek-ses-bicagi-anne-oldu-kizi-agir-yarali-43247416"
+    },
+    {
+        "name": "Tutku Burcu Köseoğlu",
+        "age": "Reşit",
+        "location": "Karabük",
+        "date": "22/07/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/birlikte-yasadigi-kadini-defalarca-bicaklayarak-oldurdu-43247444"
+    },
+    {
+        "name": "Sibel Gül",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "21/07/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/yalniz-yasayan-kadinin-supheli-olumu-4-gundur-haber-alinamiyordu-43247331"
+    },
+    {
         "name": "Nazar Çakmak",
         "age": "Reşit",
         "location": "İstanbul",
@@ -756,7 +804,7 @@
         "source": "https://www.hurriyet.com.tr/gundem/akran-zorbaligi-yine-can-aldi-son-kurban-15-yasindaki-abdulbaki-demirel-43173983"
     },
     {
-        "name": "Fatma Karakaya",
+        "name": "Feride Kaya",
         "age": "Reşit",
         "location": "Malatya",
         "date": "11/05/2026",
