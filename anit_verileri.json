@@ -1,5 +1,65 @@
 [
     {
+        "name": "Hatice Mine Kocamaz",
+        "age": "Reşit",
+        "location": "Adana",
+        "date": "29/07/2026",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/vahsete-kiziyla-kapi-actirdi-43254700"
+    },
+    {
+        "name": "Emine Kürekci",
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "28/07/2026",
+        "reason": "Tartışma",
+        "killer": "Damadı",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/ankarada-kayinpederi-ve-kayinvalidesini-olduren-damat-adliyede-43253963"
+    },
+    {
+        "name": "Bedriye Karaçay",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "27/07/2026",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/istanbuldaki-kadin-cinayetinde-yeni-detaylar-cesedi-battaniyeye-sarip-ormanlik-alana-taksiyle-goturmus-43253013"
+    },
+    {
+        "name": "Saime K.",
+        "age": "Reşit",
+        "location": "Düzce",
+        "date": "27/07/2026",
+        "reason": "Tartışma",
+        "killer": "Akrabası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/arazi-kavgasi-kanli-bitti-av-tufegiyle-vurulan-kadin-oldu-43253461"
+    },
+    {
+        "name": "Semra Yılmaz",
+        "age": "Reşit",
+        "location": "Adana",
+        "date": "26/07/2026",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/gordukleri-manzara-yuzunden-oldurulmusler-kan-donduran-cinayet-3-can-kaybi-43252304"
+    },
+    {
         "name": "Sultan Görel Gök",
         "age": "Reşit",
         "location": "Manisa",
