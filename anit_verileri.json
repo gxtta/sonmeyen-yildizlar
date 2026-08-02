@@ -1,5 +1,29 @@
 [
     {
+        "name": "Buse Taşer",
+        "age": "Reşit",
+        "location": "Bursa",
+        "date": "30/07/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/bursada-buse-taser-evde-tabanca-ile-vurulmus-halde-olu-bulundu-1-kisi-gozaltinda-43256194"
+    },
+    {
+        "name": "Aysel Bulut",
+        "age": "Reşit",
+        "location": "Şanlıurfa",
+        "date": "29/07/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/sanliurfada-esini-tabancayla-olduren-koca-ayni-silahla-intihar-etti-43255291"
+    },
+    {
         "name": "Hatice Mine Kocamaz",
         "age": "Reşit",
         "location": "Adana",
@@ -58,6 +82,18 @@
         "method": "Ateşli Silah",
         "status": "Tutuklu",
         "source": "https://www.hurriyet.com.tr/gundem/gordukleri-manzara-yuzunden-oldurulmusler-kan-donduran-cinayet-3-can-kaybi-43252304"
+    },
+    {
+        "name": "Reyhan Acar",
+        "age": "Reşit",
+        "location": "Adana",
+        "date": "25/07/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/adanada-sokak-ortasinda-vahset-24-yasindaki-reyhan-acar-silahli-saldirida-hayatini-kaybetti-43251082"
     },
     {
         "name": "Sultan Görel Gök",
@@ -13954,6 +13990,42 @@
         "method": "Ateşli Silah",
         "status": "Soruşturma Sürüyor",
         "source": "https://www.sozcu.com.tr/2023/gundem/evde-karnindan-vurulan-gulcan-katledildi-polis-sevgilisi-gozaltinda-7870469/"
+    },
+    {
+        "name": "Behiye Turgut",
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "23/11/2023",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/ayni-aileden-5-kisiyi-oldurmustu-yargitay-5-kez-muebbet-alan-sanik-hakkindaki-karari-bozdu-43258802"
+    },
+    {
+        "name": "Sunay Turgut",
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "23/11/2023",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/ayni-aileden-5-kisiyi-oldurmustu-yargitay-5-kez-muebbet-alan-sanik-hakkindaki-karari-bozdu-43258802"
+    },
+    {
+        "name": "Ceyda Turgut",
+        "age": "Reşit Değil",
+        "location": "Ankara",
+        "date": "23/11/2023",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/ayni-aileden-5-kisiyi-oldurmustu-yargitay-5-kez-muebbet-alan-sanik-hakkindaki-karari-bozdu-43258802"
     },
     {
         "name": "Hürü Babat",
