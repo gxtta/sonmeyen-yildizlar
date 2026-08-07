@@ -1,5 +1,29 @@
 [
     {
+        "name": "Nilda Müge Şahin",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "06/08/2026",
+        "reason": "Reddedilme",
+        "killer": "Eski Sevgilisi",
+        "protection": "Var (Koruma Kararı)",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/peki-muge-nin-ne-sucu-vardi-p342835"
+    },
+    {
+        "name": "Figen Baran",
+        "age": "Reşit",
+        "location": "Diyarbakır",
+        "date": "04/08/2026",
+        "reason": "Kaza Kurşunu",
+        "killer": "Tanıdığı Birileri",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.sozcu.com.tr/18-yasindaki-figen-husumetli-ailelerin-kurbani-oldu-p342230"
+    },
+    {
         "name": "Ekram Hassan",
         "age": "Reşit",
         "location": "Bursa",
@@ -27721,15 +27745,7 @@
     },
     {
         "name": "Gamze Gider",
-        "age": "Reşit",
-        "location": "Antalya",
-        "date": "16/03/2021",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Erkek Kardeşi",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "İntihar",
-        "source": "https://www.hurriyet.com.tr/gundem/antalyada-luks-villadaki-dehsetin-detaylari-ortaya-cikti-4-kisinin-cansiz-bedeni-bulunmustu-41763998"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Gülbahar Asabay",
