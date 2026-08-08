@@ -27745,7 +27745,15 @@
     },
     {
         "name": "Gamze Gider",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "16/03/2021",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Erkek Kardeşi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/antalyada-luks-villadaki-dehsetin-detaylari-ortaya-cikti-4-kisinin-cansiz-bedeni-bulunmustu-41763998"
     },
     {
         "name": "Gülbahar Asabay",
