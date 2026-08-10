@@ -5700,6 +5700,18 @@
         "source": "https://www.haberturk.com/gaziantep-te-anne-ve-kizi-kilitli-odada-olu-bulundu-3797530"
     },
     {
+        "name": "Evindar Tiğrak",
+        "age": "Reşit",
+        "location": "Batman",
+        "date": "07/06/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birileri",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/gundem/bir-yildir-kayip-olan-evindar-tigrakin-sorusturmasinda-cinayet-suphesi-iki-kisi-tutuklandi-ekipler-cesedi-ariyor,1340686?_t=1786275631255"
+    },
+    {
         "name": "Gülcan Koç",
         "age": "Reşit",
         "location": "Kuşadası",
@@ -13488,6 +13500,18 @@
         "source": "https://www.hurriyet.com.tr/gundem/eski-esini-katletti-42388420"
     },
     {
+        "name": "Damlanur Sarihan",
+        "age": "Reşit Değil",
+        "location": "Van",
+        "date": "10/01/2024",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birileri",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/iki-supheli-olum-cinayet-cikti-43266837"
+    },
+    {
         "name": "Ulviye Eskici",
         "age": "Reşit",
         "location": "Manisa",
@@ -15937,7 +15961,15 @@
     },
     {
         "name": "Ayyüce Dilşat Çalışkan",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Kayseri",
+        "date": "30/07/2023",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.milliyet.com.tr/gundem/izmirden-1-ay-once-calismak-icin-kayseriye-geldi-genc-kizin-feci-olumu-6983523"
     },
     {
         "name": "Melek Baştürk",
