@@ -1,5 +1,29 @@
 [
     {
+        "name": "Gülistan Karadağ",
+        "age": "Reşit",
+        "location": "Diyarbakır",
+        "date": "11/08/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birileri",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/gulistan-in-olumuyle-ilgili-yeni-gelisme-p344411"
+    },
+    {
+        "name": "Canan Matur",
+        "age": "Reşit",
+        "location": "Bursa",
+        "date": "11/08/2026",
+        "reason": "Aldatma Şüphesi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/enistesini-sokakta-esini-evde-oldurdu-p344360"
+    },
+    {
         "name": "Nilda Müge Şahin",
         "age": "Reşit",
         "location": "İstanbul",
