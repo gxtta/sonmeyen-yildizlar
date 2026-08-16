@@ -1,5 +1,29 @@
 [
     {
+        "name": "Özlem Gültekin",
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "15/08/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.sozcu.com.tr/unlu-haber-spikerinin-esinin-olumu-supheli-bulundu-p349566"
+    },
+    {
+        "name": "Asya Cebe",
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "14/08/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/yatalak-esini-bicaklayarak-oldurdu-43273618"
+    },
+    {
         "name": "Gülistan Karadağ",
         "age": "Reşit",
         "location": "Diyarbakır",
@@ -12877,15 +12901,7 @@
     },
     {
         "name": "Nasim Gol Karımı",
-        "age": "Reşit",
-        "location": "Denizli",
-        "date": "27/02/2024",
-        "reason": "Tartışma",
-        "killer": "Kocası",
-        "protection": "Yok",
-        "method": "Kesici Alet",
-        "status": "Tutuklu",
-        "source": "https://www.hurriyet.com.tr/gundem/cekmekoyde-evde-rehin-aldigi-karisini-silahla-oldurdu-42412066"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Dilan Özdemir",
@@ -61774,6 +61790,18 @@
         "method": "Ateşli Silah",
         "status": "Bilinmiyor",
         "source": "http://kadincinayetlerinidurduracagiz.net/haber/413/pinar-unluer-davasina-platform-mudahil"
+    },
+    {
+        "name": "Gülizar Aydın",
+        "age": "Reşit",
+        "location": "Muğla",
+        "date": "02/12/2012",
+        "reason": "Tespit Edilmeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tutuklu",
+        "source": "https://t24.com.tr/gundem/14-yillik-cinayetin-sirri-dna-incelemesiyle-cozuldu-oldurulen-kadinin-kocasi-tutuklandi,1341976?_t=1786823668516"
     },
     {
         "name": "Edibe Çalar",
