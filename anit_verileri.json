@@ -12901,7 +12901,15 @@
     },
     {
         "name": "Nasim Gol Karımı",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Denizli",
+        "date": "27/02/2024",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/cekmekoyde-evde-rehin-aldigi-karisini-silahla-oldurdu-42412066"
     },
     {
         "name": "Dilan Özdemir",
