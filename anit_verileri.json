@@ -1,5 +1,17 @@
 [
     {
+        "name": "Selin Gökhan",
+        "age": "Reşit",
+        "location": "Kayseri",
+        "date": "18/08/2026",
+        "reason": "Tartışma",
+        "killer": "Tanıdığı Biri",
+        "protection": "Yok",
+        "method": "Kesici Alet, Yüksekten Düşme",
+        "status": "Tutuklu",
+        "source": "https://www.cumhuriyet.com.tr/turkiye/kayseri-de-selin-gokhan-cinayeti-protesto-edildi-kadin-cinayetlerini-normallestirmenize-izin-vermeyecegiz-2530230"
+    },
+    {
         "name": "Özlem Gültekin",
         "age": "Reşit",
         "location": "İzmir",
@@ -22,6 +34,18 @@
         "method": "Kesici Alet",
         "status": "Tutuklu",
         "source": "https://www.hurriyet.com.tr/gundem/yatalak-esini-bicaklayarak-oldurdu-43273618"
+    },
+    {
+        "name": "Bedriye Naz",
+        "age": "Reşit",
+        "location": "Mardin",
+        "date": "11/08/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/mardinde-balkondan-dusup-olen-bedriyenin-ablasi-kocasi-5inci-kattan-iterek-oldurdu-43279376"
     },
     {
         "name": "Gülistan Karadağ",
@@ -58,6 +82,18 @@
         "method": "Ateşli Silah",
         "status": "Tutuklu",
         "source": "https://www.sozcu.com.tr/peki-muge-nin-ne-sucu-vardi-p342835"
+    },
+    {
+        "name": "Gülay Akgün Mutlu",
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "05/08/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Erkek Kardeşi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.ntv.com.tr/turkiye/ankarada-ablasini-olduren-agabey-yakalandi-1-kisi-tutuklandi-5-kisi-gozaltinda-1735993"
     },
     {
         "name": "Figen Baran",
@@ -52474,6 +52510,18 @@
         "method": "Ateşli Silah",
         "status": "Tutuklu",
         "source": "https://t24.com.tr/haber/dilek-dogani-olduren-polis-vicdanim-rahat-dedi-mahkeme-6-yil-3-ay-cezayi-yeterli-gordu,394312"
+    },
+    {
+        "name": "Zeynep Aydın",
+        "age": "Bilinmiyor",
+        "location": "Tekirdağ",
+        "date": "19/10/2015",
+        "reason": "Reddedilme, İntikam",
+        "killer": "Kızının Eski Erkek Arkadaşı",
+        "protection": "Yok",
+        "method": "Kesic Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/dunya/uydu-goruntuleri-ortaya-cikardi-natonun-sinirlerini-test-eden-hamle-1000-kilometrelik-yeni-tehdit-43276728"
     },
     {
         "name": "Fatma Karacayaka",
