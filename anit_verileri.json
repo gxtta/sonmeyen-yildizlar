@@ -1,5 +1,29 @@
 [
     {
+        "name": "Sultan Pelit Derin",
+        "age": "Reşit",
+        "location": "Yalova",
+        "date": "22/08/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/yalovadaki-vahsette-yeni-detay-2-yasindaki-kizini-disari-cikarip-kapiyi-kilitledi-operasyonla-alinan-bebek-hayata-boyle-tutundu-43281576"
+    },
+    {
+        "name": "Elina Şengün",
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "21/08/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/yalovadaki-vahsette-yeni-detay-2-yasindaki-kizini-disari-cikarip-kapiyi-kilitledi-operasyonla-alinan-bebek-hayata-boyle-tutundu-43281576"
+    },
+    {
         "name": "Selin Gökhan",
         "age": "Reşit",
         "location": "Kayseri",
@@ -29917,7 +29941,15 @@
     },
     {
         "name": "Büşra Gizem Güzelsoy",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Konya",
+        "date": "28/10/2020",
+        "reason": "Ayrılma Talebi",
+        "killer": "Nişanlısı",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://t24.com.tr/haber/koruma-karari-aldirmak-icin-basvurmustu-bir-kadin-ve-annesi-ayrildigi-nisanlisi-tarafindan-olduruldu,911758"
     },
     {
         "name": "Gülya Barutçu",
@@ -33881,7 +33913,15 @@
     },
     {
         "name": "Deniz Gezginci",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "14/01/2020",
+        "reason": "Ayrılma Talebi",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/2020/gundem/evine-gizlice-girdigi-kiz-arkadasini-hunharca-oldurdu-5566791/"
     },
     {
         "name": "Mesrure Gemirci",
