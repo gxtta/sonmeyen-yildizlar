@@ -1,5 +1,29 @@
 [
     {
+        "name": "Şerife Gezer",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "25/08/2026",
+        "reason": "Reddedilme",
+        "killer": "Eski Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/istanbul-da-hareketli-dakikalar-karisina-ates-etti-silahi-kendi-basina-dayadi-p352488"
+    },
+    {
+        "name": "Hacer Saydan",
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "24/08/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/kocasinin-bogmaya-calistigi-kadin-hastanede-hayatini-kaybetti-p352345"
+    },
+    {
         "name": "Sultan Pelit Derin",
         "age": "Reşit",
         "location": "Yalova",
