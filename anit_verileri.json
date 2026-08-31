@@ -1,5 +1,29 @@
 [
     {
+        "name": "Süheyla Yıldırım",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "30/08/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.sozcu.com.tr/fatih-te-bir-aileyi-yok-eden-dehset-2-olu-1-intihar-p353966"
+    },
+    {
+        "name": "Gülşah Yıldırım",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "30/08/2026",
+        "reason": "Tartışma",
+        "killer": "Babası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.sozcu.com.tr/fatih-te-bir-aileyi-yok-eden-dehset-2-olu-1-intihar-p353966"
+    },
+    {
         "name": "Şerife Gezer",
         "age": "Reşit",
         "location": "İstanbul",
