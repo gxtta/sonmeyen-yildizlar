@@ -1,5 +1,17 @@
 [
     {
+        "name": "Asya Erdoğan",
+        "age": "Reşit",
+        "location": "Adana",
+        "date": "31/08/2026",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/3-cocuk-annesi-asyaya-son-veda-eski-esi-sokak-ortasinda-katletmisti-43291231"
+    },
+    {
         "name": "Süheyla Yıldırım",
         "age": "Reşit",
         "location": "İstanbul",
