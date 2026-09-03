@@ -1,5 +1,17 @@
 [
     {
+        "name": "Nisa Nur Oğul",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "02/09/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.sozcu.com.tr/kagithane-de-26-yasindaki-nisa-nur-26-kattan-dustu-p354723"
+    },
+    {
         "name": "Asya Erdoğan",
         "age": "Reşit",
         "location": "Adana",
@@ -19930,6 +19942,18 @@
         "method": "Ateşli Silah",
         "status": "Tutuklu",
         "source": "https://www.milliyet.com.tr/gundem/korkunc-olay-kendisinden-37-yas-kucuk-esini-kiskanclik-yuzunden-oldurdu-6835952"
+    },
+    {
+        "name": "Zeynep Yıldırım",
+        "age": "Reşit Değil",
+        "location": "İstanbul",
+        "date": "04/10/2022",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanımadığı Birisi",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tutuklu",
+        "source": "https://www.ntv.com.tr/turkiye/zeynep-yildirim-dosyasinda-korkunc-gercek-cezaevinden-getirildi-cesedin-yerini-gosterdi-1739867"
     },
     {
         "name": "Kibet Erdoğan",
