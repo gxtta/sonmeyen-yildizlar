@@ -1,5 +1,17 @@
 [
     {
+        "name": "Dilek Bağrıaçık",
+        "age": "Reşit",
+        "location": "Kahramanmaraş",
+        "date": "03/09/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/bakan-gurlek-duyurdu-ankaradaki-seri-cinayetlerin-faili-yakalandi-43281425"
+    },
+    {
         "name": "Nisa Nur Oğul",
         "age": "Reşit",
         "location": "İstanbul",
@@ -38388,6 +38400,18 @@
         "source": "http://www.milliyet.com.tr/alev-i-bosandigi-esi-kacirip--gundem-2827002/"
     },
     {
+        "name": "Hüsna Ala",
+        "age": "Reşit",
+        "location": "Osmaniye",
+        "date": "13/02/2019",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanımadığı Birisi",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/bakan-gurlek-duyurdu-ankaradaki-seri-cinayetlerin-faili-yakalandi-43281425"
+    },
+    {
         "name": "İ.E.K",
         "age": "Reşit",
         "location": "Adana",
@@ -60097,15 +60121,7 @@
     },
     {
         "name": "Nilüfer Türkoğlu",
-        "age": "Bilinmiyor",
-        "location": "Bilinmiyor",
-        "date": "28/08/2013",
-        "reason": "Boşanmak istediği için",
-        "killer": "Kocası",
-        "protection": "Korunma Talebi Var",
-        "method": "Ateşli Silah",
-        "status": "Bilinmiyor",
-        "source": "http://gundem.milliyet.com.tr/bosanmak-isteyen-esini-pompali/gundem/detay/1755880/default.htm"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Çilem Hülya Berkil",
