@@ -60121,7 +60121,15 @@
     },
     {
         "name": "Nilüfer Türkoğlu",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "28/08/2013",
+        "reason": "Boşanmak istediği için",
+        "killer": "Kocası",
+        "protection": "Korunma Talebi Var",
+        "method": "Ateşli Silah",
+        "status": "Bilinmiyor",
+        "source": "http://gundem.milliyet.com.tr/bosanmak-isteyen-esini-pompali/gundem/detay/1755880/default.htm"
     },
     {
         "name": "Çilem Hülya Berkil",
