@@ -1,5 +1,17 @@
 [
     {
+        "name": "Saliha Özkol",
+        "age": "Reşit",
+        "location": "Kıbrıs",
+        "date": "07/09/2026",
+        "reason": "Tartışma",
+        "killer": "Eski Kocası",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Kesici Alet",
+        "status": "İntlhara Teşebbüs",
+        "source": "https://www.yeniduzen.com/aygunde-cinayet-199100h.htm"
+    },
+    {
         "name": "Dilek Bağrıaçık",
         "age": "Reşit",
         "location": "Kahramanmaraş",
@@ -48,7 +60,7 @@
         "source": "https://www.sozcu.com.tr/fatih-te-bir-aileyi-yok-eden-dehset-2-olu-1-intihar-p353966"
     },
     {
-        "name": "Gülşah Yıldırım",
+        "name": "Elif Gülşah Yıldırım",
         "age": "Reşit",
         "location": "İstanbul",
         "date": "30/08/2026",
