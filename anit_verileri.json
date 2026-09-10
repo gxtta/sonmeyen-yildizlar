@@ -1,5 +1,17 @@
 [
     {
+        "name": "Hayriye Üykü",
+        "age": "Reşit",
+        "location": "Elazığ",
+        "date": "09/09/2026",
+        "reason": "Tespit Edilmeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.hurriyet.com.tr/gundem/altinlari-calip-katlettiler-kari-kocayi-oldurup-evlerini-atese-verdiler-43301080"
+    },
+    {
         "name": "Saliha Özkol",
         "age": "Reşit",
         "location": "Kıbrıs",
@@ -7933,15 +7945,7 @@
     },
     {
         "name": "Meryem D.",
-        "age": "Reşit",
-        "location": "Ankara",
-        "date": "28/01/2025",
-        "reason": "Tartışma",
-        "killer": "Kocası",
-        "protection": "Yok",
-        "method": "Kesici Alet",
-        "status": "İntihar",
-        "source": "https://www.ntv.com.tr/amp/turkiye/ankarada-kadin-cinayeti,8WwhmkJdvUSw07_TleGbAg"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Hale El Şıh İsmail",
