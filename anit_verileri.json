@@ -7945,7 +7945,15 @@
     },
     {
         "name": "Meryem D.",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "28/01/2025",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "İntihar",
+        "source": "https://www.ntv.com.tr/amp/turkiye/ankarada-kadin-cinayeti,8WwhmkJdvUSw07_TleGbAg"
     },
     {
         "name": "Hale El Şıh İsmail",
