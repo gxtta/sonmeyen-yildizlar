@@ -1,5 +1,41 @@
 [
     {
+        "name": "Merve Emin",
+        "age": "Reşit",
+        "location": "Bursa",
+        "date": "11/09/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/bursada-aci-olay-4uncu-katin-balkonundan-dusen-merve-emin-hayatini-kaybetti-43303795"
+    },
+    {
+        "name": "Nursel Akyol",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "11/09/2026",
+        "reason": "Tartışma",
+        "killer": "Kiracısı",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/istanbuldaki-vahsette-dikkat-ceken-detaylar-ortaya-cikti-ev-sahibi-cifti-olduren-kiraci-ifadesinde-bunlari-anlatti-43303529"
+    },
+    {
+        "name": "Nurcan Akpirinç",
+        "age": "Reşit",
+        "location": "Diyarbakır",
+        "date": "11/09/2026",
+        "reason": "Tartışma",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Asılarak",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/diyarbakirda-supheli-olum-evde-yok-dediler-2-saat-sonra-aci-haberi-geldi-43303420"
+    },
+    {
         "name": "Hayriye Üykü",
         "age": "Reşit",
         "location": "Elazığ",
@@ -53629,15 +53665,7 @@
     },
     {
         "name": "Ayser K.",
-        "age": "Bilinmiyor",
-        "location": "Bilinmiyor",
-        "date": "01/07/2015",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Kocası",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Bilinmiyor",
-        "source": "http://www.anahaberim.com/haber/547/tokat-niksarda-kadin-cinayeti-olayi.html"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Sevgi Pektaş",
