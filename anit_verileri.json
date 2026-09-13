@@ -53665,7 +53665,15 @@
     },
     {
         "name": "Ayser K.",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "01/07/2015",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Bilinmiyor",
+        "source": "http://www.anahaberim.com/haber/547/tokat-niksarda-kadin-cinayeti-olayi.html"
     },
     {
         "name": "Sevgi Pektaş",
