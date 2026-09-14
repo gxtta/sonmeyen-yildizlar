@@ -1,5 +1,17 @@
 [
     {
+        "name": "Narin Süer",
+        "age": "Reşit",
+        "location": "Mersin",
+        "date": "13/09/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.sozcu.com.tr/tartistigi-esini-silahla-oldurup-intihar-etti-p357849"
+    },
+    {
         "name": "Merve Emin",
         "age": "Reşit",
         "location": "Bursa",
