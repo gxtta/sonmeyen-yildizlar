@@ -1,5 +1,41 @@
 [
     {
+        "name": "Ayşegül Çoşkun",
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "16/09/2026",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Ateşli Silah",
+        "status": "Aranıyor",
+        "source": "https://www.sozcu.com.tr/antalya-da-katliam-yapti-esini-kaynanasini-ve-kayinbabasini-kursun-yagmuruna-tuttu-p358743"
+    },
+    {
+        "name": "Cemile Engel",
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "16/09/2026",
+        "reason": "Kızının Damadından Boşanma Talebi",
+        "killer": "Damadı",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Ateşli Silah",
+        "status": "Aranıyor",
+        "source": "https://www.sozcu.com.tr/antalya-da-katliam-yapti-esini-kaynanasini-ve-kayinbabasini-kursun-yagmuruna-tuttu-p358743"
+    },
+    {
+        "name": "Hatice Güngör",
+        "age": "Reşit Değil",
+        "location": "Aydın",
+        "date": "16/09/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Babası",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "İntihar",
+        "source": "https://www.sozcu.com.tr/yurek-parcalayan-aile-faciasi-p358594"
+    },
+    {
         "name": "Narin Süer",
         "age": "Reşit",
         "location": "Mersin",
