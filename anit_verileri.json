@@ -1,5 +1,29 @@
 [
     {
+        "name": "Fadime Ünlü",
+        "age": "Reşit",
+        "location": "Tekirdağ",
+        "date": "21/09/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/esini-oldurup-sabaha-kadar-basinda-bekledi-evlada-en-aci-telefon-annenizi-oldurdum-43314078"
+    },
+    {
+        "name": "Merve Keklikçi",
+        "age": "Reşit",
+        "location": "Gaziantep",
+        "date": "20/09/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/gaziantepte-kan-donduran-olay-evde-esini-oldurdu-sokaga-cikip-rastgele-ates-acti-4-yarali-43313548"
+    },
+    {
         "name": "Didar Filiz",
         "age": "Reşit",
         "location": "Osmaniye",
@@ -58,6 +82,18 @@
         "method": "Kesici Alet",
         "status": "İntihar",
         "source": "https://www.hurriyet.com.tr/gundem/aile-faciasinda-4-olu-belediye-baskani-korkunc-bir-olayla-sarsildik-43311537"
+    },
+    {
+        "name": "Yasemin Yanık",
+        "age": "Reşit",
+        "location": "Çorum",
+        "date": "17/09/2026",
+        "reason": "Tartışma",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.haberturk.com/gundem/son-dakika-haberi-markette-katledilen-yasemin-yanik-a-veda-corum-haberleri-3913171"
     },
     {
         "name": "Ayşegül Çoşkun",
@@ -192,6 +228,18 @@
         "source": "https://www.sozcu.com.tr/kagithane-de-26-yasindaki-nisa-nur-26-kattan-dustu-p354723"
     },
     {
+        "name": "Berfin Zelal Kaya",
+        "age": "Reşit",
+        "location": "Muğla",
+        "date": "01/09/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Eski Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.sozcu.com.tr/eve-giren-polis-ekipleri-genc-kizi-kanlar-icerisinde-buldu-p354541"
+    },
+    {
         "name": "Asya Erdoğan",
         "age": "Reşit",
         "location": "Adana",
@@ -298,6 +346,18 @@
         "method": "Tespit Edilemeyen",
         "status": "Soruşturma Sürüyor",
         "source": "https://www.sozcu.com.tr/unlu-haber-spikerinin-esinin-olumu-supheli-bulundu-p349566"
+    },
+    {
+        "name": "Sevilay Dönge",
+        "age": "Reşit",
+        "location": "Samsun",
+        "date": "15/08/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/samsun-genc-kadin-balkondan-duserek-oldu-p349666"
     },
     {
         "name": "Asya Cebe",
