@@ -1,5 +1,17 @@
 [
     {
+        "name": "Ayşe K.",
+        "age": "Reşit",
+        "location": "Isparta",
+        "date": "23/09/2026",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/isparta-da-dehset-esini-sokakta-pompali-tufekle-oldurdu-p362776"
+    },
+    {
         "name": "Fadime Ünlü",
         "age": "Reşit",
         "location": "Tekirdağ",
