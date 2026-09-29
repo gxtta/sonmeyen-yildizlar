@@ -1,5 +1,17 @@
 [
     {
+        "name": "Mümire Acar",
+        "age": "Reşit",
+        "location": "Manisa",
+        "date": "27/09/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Sillah",
+        "status": "Soruştuma Sürüyor",
+        "source": "https://www.sozcu.com.tr/yeni-evli-cift-evlerinde-vurularak-olduruldu-p363835"
+    },
+    {
         "name": "Ayfer Çakmak",
         "age": "Reşit",
         "location": "Diyarbakır",
@@ -12,7 +24,7 @@
         "source": "https://www.sozcu.com.tr/diyarbakir-da-kacmaya-calisan-esini-merdivenlerde-tufekle-vurup-oldurdu-p363909"
     },
     {
-        "name": "Fatma Ç.",
+        "name": "Fatma Çiğli",
         "age": "Reşit",
         "location": "Kocaeli",
         "date": "27/09/2026",
@@ -20,20 +32,8 @@
         "killer": "Eski Kocası",
         "protection": "Yok",
         "method": "Ateşli Silah",
-        "status": "Aranıyor",
+        "status": "Tutuklu",
         "source": "https://www.sozcu.com.tr/bosandigi-kocasi-tarafindan-olduruldu-p363843"
-    },
-    {
-        "name": "Mümire Acar",
-        "age": "Reşit",
-        "location": "Manisa",
-        "date": "27/09/2026",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Ateşli Sillah",
-        "status": "Soruştuma Sürüyor",
-        "source": "https://www.sozcu.com.tr/yeni-evli-cift-evlerinde-vurularak-olduruldu-p363835"
     },
     {
         "name": "Fatma Özcan",
