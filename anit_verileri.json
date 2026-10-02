@@ -29281,15 +29281,7 @@
     },
     {
         "name": "Sevgi Tekin",
-        "age": "Reşit",
-        "location": "Ankara",
-        "date": "05/01/2021",
-        "reason": "Reddedilme",
-        "killer": "Eski Sevgilisi",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Tutuklu",
-        "source": "https://www.milliyet.com.tr/gundem/son-dakika-camdan-girip-canini-aldi-beni-birakamazsin-6397673"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Sevda Kösecik",
@@ -62965,7 +62957,15 @@
     },
     {
         "name": "Hülya Ç.",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "27/06/2012",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Yakalanamadı",
+        "source": "http://www.haber7.com/polisiye-vakalar/haber/896423-esini-oldurdu-kaynanasini-yaraladi"
     },
     {
         "name": "Esin Tavaslı",
