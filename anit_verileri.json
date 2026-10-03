@@ -1,5 +1,17 @@
 [
     {
+        "name": "Nalan Temelkıran",
+        "age": "Reşit",
+        "location": "Kütahya",
+        "date": "30/09/2026",
+        "reason": "Husumet",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.gazeteduvar.com.tr/kutahyada-hediyelik-esya-dukkaninda-cinayet-haber-1766564"
+    },
+    {
         "name": "Mümire Acar",
         "age": "Reşit",
         "location": "Manisa",
@@ -29281,7 +29293,15 @@
     },
     {
         "name": "Sevgi Tekin",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "05/01/2021",
+        "reason": "Reddedilme",
+        "killer": "Eski Sevgilisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.milliyet.com.tr/gundem/son-dakika-camdan-girip-canini-aldi-beni-birakamazsin-6397673"
     },
     {
         "name": "Sevda Kösecik",
