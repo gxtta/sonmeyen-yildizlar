@@ -264,6 +264,18 @@
         "source": "https://www.hurriyet.com.tr/gundem/diyarbakirda-supheli-olum-evde-yok-dediler-2-saat-sonra-aci-haberi-geldi-43303420"
     },
     {
+        "name": "Büşra Balıkçı",
+        "age": "Reşit Değil",
+        "location": "Sivas",
+        "date": "10/09/2026",
+        "reason": "Tespit Edilmeyen",
+        "killer": "Babası",
+        "protection": "Yok",
+        "method": "Darp",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/sir-perdesi-aralaniyor-busra-bebek-olayinda-kan-donduran-itiraf-43327849"
+    },
+    {
         "name": "Hayriye Üykü",
         "age": "Reşit",
         "location": "Elazığ",
