@@ -1,5 +1,17 @@
 [
     {
+        "name": "Gökçe Alkan",
+        "age": "Reşit",
+        "location": "Bursa",
+        "date": "05/10/2026",
+        "reason": "Tartışma",
+        "killer": "Sevgilisi",
+        "protection": "Yok",
+        "method": "Kesici Alet",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/sevgili-vahseti-43329682"
+    },
+    {
         "name": "Nalan Temelkıran",
         "age": "Reşit",
         "location": "Kütahya",
@@ -7801,15 +7813,7 @@
     },
     {
         "name": "Pınar Akıncı",
-        "age": "Reşit",
-        "location": "Ordu",
-        "date": "25/02/2025",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Tespit Edilemeyen",
-        "status": "Soruşturma Sürüyor",
-        "source": "https://www.t24.com.tr/haber/ordu-da-kayip-olarak-aranan-kadinin-cesedi-dere-yataginda-bulundu,1221564"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Necla Özbiber",
@@ -13741,7 +13745,15 @@
     },
     {
         "name": "Seher Kındaç",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Bursa",
+        "date": "29/01/2024",
+        "reason": "Tartışma",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Aranıyor",
+        "source": "https://www.hurriyet.com.tr/gundem/korkunc-olay-42-yasindaki-kadin-vahsice-katledildi-baldizina-oldurdum-diye-mesaj-atti-42397921"
     },
     {
         "name": "İsmi Bilinmiyor",
@@ -20249,7 +20261,15 @@
     },
     {
         "name": "Burcu Tokaç",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "06/10/2022",
+        "reason": "Reddedilme",
+        "killer": "Eski Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/vahset-cocuklarin-gozu-onunde-eski-esini-oldurdu-42149233"
     },
     {
         "name": "Dilek Çorap",
