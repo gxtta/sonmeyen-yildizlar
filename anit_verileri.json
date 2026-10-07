@@ -7813,7 +7813,15 @@
     },
     {
         "name": "Pınar Akıncı",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Ordu",
+        "date": "25/02/2025",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.t24.com.tr/haber/ordu-da-kayip-olarak-aranan-kadinin-cesedi-dere-yataginda-bulundu,1221564"
     },
     {
         "name": "Necla Özbiber",
