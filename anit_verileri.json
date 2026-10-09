@@ -1,5 +1,29 @@
 [
     {
+        "name": "Fadime Akbal",
+        "age": "Reşit",
+        "location": "Aydın",
+        "date": "08/10/2026",
+        "reason": "Tartışma",
+        "killer": "Eski Kocası",
+        "protection": "Yok (EskiUzaklştırma Kararı Var)",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/maltepede-6-katli-bina-coktu-arama-kurtarma-ekibi-sevk-edildi-43333414"
+    },
+    {
+        "name": "Merve F.",
+        "age": "Reşit Değil",
+        "location": "Adıyaman",
+        "date": "08/10/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/evde-tabancayla-oynayan-16-yasindaki-merve-kazara-kendini-vurdu-43333484"
+    },
+    {
         "name": "Gökçe Alkan",
         "age": "Reşit",
         "location": "Bursa",
@@ -32785,15 +32809,7 @@
     },
     {
         "name": "Fatma Günay",
-        "age": "Reşit",
-        "location": "Edirne",
-        "date": "26/05/2020",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Oğlu",
-        "protection": "Yok",
-        "method": "Darp",
-        "status": "Tutuklu",
-        "source": "https://www.milliyet.com.tr/gundem/son-dakika-sazlikta-cesedi-bulunan-kadinin-oglu-ve-2-komsusu-tutuklandi-6220001"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "M.Ç.",
@@ -35125,7 +35141,15 @@
     },
     {
         "name": "Fatma Efe",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Adana",
+        "date": "30/10/2019",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyem",
+        "protection": "Yok",
+        "method": "Boğularak",
+        "status": "Tespit Edilemeyen",
+        "source": "http://www.hurriyet.com.tr/gundem/4-gun-sonra-aci-haber-41362429"
     },
     {
         "name": "Çiğdem Tokgöz",
@@ -56825,7 +56849,15 @@
     },
     {
         "name": "Songül Kılıçaslan",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "07/10/2014",
+        "reason": "Boşanma Talebi",
+        "killer": "Kocası",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Bilinmiyor",
+        "source": "http://www.ankarahaber.com/haber/Ankara-da-bir-kadın-cinayeti-daha-islendi/165933"
     },
     {
         "name": "Ayşe Güneş",
