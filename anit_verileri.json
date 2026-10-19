@@ -1,5 +1,29 @@
 [
     {
+        "name": "Yadigar Yılmaz",
+        "age": "Reşit",
+        "location": "Eskişehir",
+        "date": "17/10/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.sozcu.com.tr/komsusunun-evinde-fenalasip-oldu-p369958"
+    },
+    {
+        "name": "Müyesser Kartav",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "12/10/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Tespit Edilemeyen",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/muyesserin-supheli-olumu-43338166"
+    },
+    {
         "name": "Canan Yıldırım",
         "age": "Reşit",
         "location": "Antalya",
@@ -24649,15 +24673,7 @@
     },
     {
         "name": "Mülkiye Kazan",
-        "age": "Reşit",
-        "location": "Şanlıurfa",
-        "date": "21/12/2021",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Nişanlısı",
-        "protection": "Yok",
-        "method": "Darp",
-        "status": "Tutuklu",
-        "source": "https://www.hurriyet.com.tr/galeri-mulkiye-kazana-ne-oldu-bulundu-mu-mulkiye-kazanin-kaybinda-son-gelismeler-41964758/2"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Berna K.",
@@ -69361,15 +69377,7 @@
     },
     {
         "name": "Sevilay Beştepe",
-        "age": "Bilinmiyor",
-        "location": "Bilinmiyor",
-        "date": "23/04/2009",
-        "reason": "Reddetme",
-        "killer": "Arkadaşı",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "Bilinmiyor",
-        "source": "http://www.hurriyet.com.tr/gundem/11498364.asp"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Filiz Tintaş",
