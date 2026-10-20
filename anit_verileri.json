@@ -24673,7 +24673,15 @@
     },
     {
         "name": "Mülkiye Kazan",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Şanlıurfa",
+        "date": "21/12/2021",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Nişanlısı",
+        "protection": "Yok",
+        "method": "Darp",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/galeri-mulkiye-kazana-ne-oldu-bulundu-mu-mulkiye-kazanin-kaybinda-son-gelismeler-41964758/2"
     },
     {
         "name": "Berna K.",
@@ -69377,7 +69385,15 @@
     },
     {
         "name": "Sevilay Beştepe",
-        "date": "Veri Alınamadı"
+        "age": "Bilinmiyor",
+        "location": "Bilinmiyor",
+        "date": "23/04/2009",
+        "reason": "Reddetme",
+        "killer": "Arkadaşı",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "Bilinmiyor",
+        "source": "http://www.hurriyet.com.tr/gundem/11498364.asp"
     },
     {
         "name": "Filiz Tintaş",
