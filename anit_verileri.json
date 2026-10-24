@@ -1,5 +1,29 @@
 [
     {
+        "name": "Sevda Dinler",
+        "age": "Reşit",
+        "location": "Adana",
+        "date": "23/10/2026",
+        "reason": "Reddedilme",
+        "killer": "Komşusu",
+        "protection": "Var (Uzaklaştırma Kararı)",
+        "method": "Ateşli Silah",
+        "status": "Tutuklu",
+        "source": "https://www.sozcu.com.tr/sevda-nin-katili-kapi-komsusu-cikti-acili-annenin-anlattiklari-kahretti-p371943"
+    },
+    {
+        "name": "Özge Penbegül",
+        "age": "Reşit",
+        "location": "İzmir",
+        "date": "22/10/2026",
+        "reason": "Tartışma",
+        "killer": "Nişanlısı",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "intihar",
+        "source": "https://www.sozcu.com.tr/polis-avukat-nisanlisini-oldurup-intihar-etti-p371767"
+    },
+    {
         "name": "Yadigar Yılmaz",
         "age": "Reşit",
         "location": "Eskişehir",
@@ -21385,15 +21409,7 @@
     },
     {
         "name": "Beyza Doğan",
-        "age": "Reşit Değil",
-        "location": "İstanbul",
-        "date": "08/08/2022",
-        "reason": "Reddedilme",
-        "killer": "Tanıdığı Birisi",
-        "protection": "Yok",
-        "method": "Ateşli Silah",
-        "status": "İntihar",
-        "source": "https://www.hurriyet.com.tr/gundem/bahcelievlerde-saplanti-dehseti-eve-zorla-girdi-16-yasindaki-beyza-dogani-oldurdu-42114675"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Mehlika Derici",
@@ -25225,15 +25241,7 @@
     },
     {
         "name": "Gamze Yağlıoğlu",
-        "age": "Reşit",
-        "location": "Antalya",
-        "date": "24/11/2021",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Yüksekten Düşme",
-        "status": "Tespit Edilemeyen",
-        "source": "https://www.hurriyet.com.tr/gundem/oldurdugu-esi-yerde-yatarken-sosyal-medyaya-girmis-42227988"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Minel Y.",
