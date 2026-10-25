@@ -21409,7 +21409,15 @@
     },
     {
         "name": "Beyza Doğan",
-        "date": "Veri Alınamadı"
+        "age": "Reşit Değil",
+        "location": "İstanbul",
+        "date": "08/08/2022",
+        "reason": "Reddedilme",
+        "killer": "Tanıdığı Birisi",
+        "protection": "Yok",
+        "method": "Ateşli Silah",
+        "status": "İntihar",
+        "source": "https://www.hurriyet.com.tr/gundem/bahcelievlerde-saplanti-dehseti-eve-zorla-girdi-16-yasindaki-beyza-dogani-oldurdu-42114675"
     },
     {
         "name": "Mehlika Derici",
@@ -25241,7 +25249,15 @@
     },
     {
         "name": "Gamze Yağlıoğlu",
-        "date": "Veri Alınamadı"
+        "age": "Reşit",
+        "location": "Antalya",
+        "date": "24/11/2021",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Tespit Edilemeyen",
+        "source": "https://www.hurriyet.com.tr/gundem/oldurdugu-esi-yerde-yatarken-sosyal-medyaya-girmis-42227988"
     },
     {
         "name": "Minel Y.",
