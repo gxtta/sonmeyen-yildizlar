@@ -1,5 +1,17 @@
 [
     {
+        "name": "Aisulu Bekmakhanova",
+        "age": "Reşit",
+        "location": "İstanbul",
+        "date": "25/10/2026",
+        "reason": "Tespit Edilemeyen",
+        "killer": "Tespit Edilemeyen",
+        "protection": "Yok",
+        "method": "Yüksekten Düşme",
+        "status": "Soruşturma Sürüyor",
+        "source": "https://www.hurriyet.com.tr/gundem/balkondan-yan-binanin-catisina-gecmisti-tenteye-basinca-metrelerce-yukseklikten-dustu-43354295"
+    },
+    {
         "name": "Sevda Dinler",
         "age": "Reşit",
         "location": "Adana",
@@ -5458,6 +5470,18 @@
         "method": "Ateşli Silah",
         "status": "Tespit Edilemeyen",
         "source": "https://www.milliyet.com.tr/gundem/bodrumda-korkunc-olay-iki-sevgili-basindan-vurulmus-halde-bulundu-7425519"
+    },
+    {
+        "name": "Aleyna Kaya",
+        "age": "Reşit",
+        "location": "Ankara",
+        "date": "11/08/2025",
+        "reason": "Reddedilme",
+        "killer": "Eski Sevgilisi",
+        "protection": "Yok",
+        "method": "İntihar",
+        "status": "Tutuklu",
+        "source": "https://www.hurriyet.com.tr/gundem/aleyna-icin-ezber-bozan-mutalaa-intihara-sevk-degil-kasten-oldurme-43352952"
     },
     {
         "name": "Neşe Karakaya",
@@ -25201,15 +25225,7 @@
     },
     {
         "name": "Helin K.",
-        "age": "Reşit",
-        "location": "Şırnak",
-        "date": "25/11/2021",
-        "reason": "Tespit Edilemeyen",
-        "killer": "Tespit Edilemeyen",
-        "protection": "Yok",
-        "method": "Tespit Edilemeyen",
-        "status": "Tespit Edilemeyen",
-        "source": "https://politikahaber.org/sirnakta-supheli-kadin-olumu/"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Ulaş Çelikten",
@@ -26365,15 +26381,7 @@
     },
     {
         "name": "Ebru Gürcan",
-        "age": "Reşit",
-        "location": "Bursa",
-        "date": "02/09/2021",
-        "reason": "Tartışma",
-        "killer": "Kocası",
-        "protection": "Var Uzaklaştırma Kararı",
-        "method": "Kesici Alet",
-        "status": "Tutuklu",
-        "source": "https://www.ensonhaber.com/3-sayfa/bursada-koca-dehseti-bicaklanan-kadin-hayatini-kaybetti"
+        "date": "Veri Alınamadı"
     },
     {
         "name": "Sally Ali Challab Al-Abbood",
